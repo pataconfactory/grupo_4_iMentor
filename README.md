@@ -34,6 +34,6 @@ Actualmente aprendiendo Desarrollo Web Full Stack. Amante de la fotografía, los
  
  <b>Referencias</b>
  
- <ul> <li><a>https://apps.apple.com/mx/app/xba-strategic-business-advisor/id1549580157 </a></li>
+ <a><ul><li><a>https://apps.apple.com/mx/app/xba-strategic-business-advisor/id1549580157 </li></a>
  
- <li><a> https://www.gostudent.org/mx</a> </li></ul>
+ <a><li> https://www.gostudent.org/mx </li></ul></a>
