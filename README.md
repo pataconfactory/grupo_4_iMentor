@@ -28,5 +28,5 @@ Repositorio para el proyecto de sitio web de mentores
 <li>Patricia Williams: </li> </ul>
 
 <b><p>Equipo México </p> </b>
-<ul><li>Patricia Garza: </li>
+<ul><li>Patricia Garza: Tiene 10 años de experiencia gestionando proyectos de tecnología, recientemente se ha adentrado a desarrollar sus capacidades como Web Developer. Conoce HTML y JavaScript </li>
  </ul>
