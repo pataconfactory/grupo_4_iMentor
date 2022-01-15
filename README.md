@@ -30,3 +30,7 @@ Actualmente aprendiendo Desarrollo Web Full Stack. Amante de la fotografía, los
 <b><p>Equipo México </p> </b>
 <ul><li>Patricia Garza: Tiene 10 años de experiencia gestionando proyectos de tecnología, recientemente se ha adentrado a desarrollar sus capacidades como Web Developer. Conoce HTML y JavaScript </li>
  </ul>
+ 
+ <b>Referencias</b>
+ 
+ <a>https://apps.apple.com/mx/app/xba-strategic-business-advisor/id1549580157 </a>
