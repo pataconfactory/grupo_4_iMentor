@@ -26,9 +26,9 @@ Repositorio para el proyecto de sitio web de mentores
 <ul><li>Patricia Williams: Tiene 4 años de experiencia en IT en la parte de Disaster Recovery y soporte de infraestructura de aplicaciones. 
 Actualmente aprendiendo Desarrollo Web Full Stack. Amante de la fotografía, los viajes, y la gastronomía </li> </ul>
 
-<li>Victoria Defagot: Ingeniera Industrial con experiencia en Data Analytics y front-end de aplicaciones.
+<ul><li>Victoria Defagot: Ingeniera Industrial con experiencia en Data Analytics y front-end de aplicaciones.
 
-<li>Quizaira Rodriguez: Comenzando en el mun de del  Desarrollo Web Full Stack, QA trainee. </li>
+<ul><li>Quizaira Rodriguez: Comenzando en el mun de del  Desarrollo Web Full Stack, QA trainee. </li>
  
 <b><p>Equipo México </p> </b>
 <ul><li>Patricia Garza: Tiene 10 años de experiencia gestionando proyectos de tecnología, recientemente se ha adentrado a desarrollar sus capacidades como Web Developer. Conoce HTML y JavaScript </li>
