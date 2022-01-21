@@ -2,7 +2,7 @@
 Repositorio para el proyecto de sitio web de mentores
 
 <b>Nuestros Productos </b>
-<p>Ofrecemos una plataforma que conecta profecionales con mentores en todo lo que concierne a desarrollo digital para garantizar que nuestros usuarios logran sus objetivos.</p> 
+<p>Ofrecemos una plataforma que conecta profesionales con mentores en todo lo que concierne a desarrollo digital para garantizar que nuestros usuarios logran sus objetivos.</p> 
 <p>Brindamos servicio de contacto con los mejores mentores de México y Argentina en lo que se refiere al desarrollo.</p> 
 
 
