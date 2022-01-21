@@ -25,6 +25,7 @@ Repositorio para el proyecto de sitio web de mentores
 <b><p>Equipo Argentina </p> </b>
 <ul><li>Patricia Williams: Tiene 4 años de experiencia en IT en la parte de Disaster Recovery y soporte de infraestructura de aplicaciones. 
 Actualmente aprendiendo Desarrollo Web Full Stack. Amante de la fotografía, los viajes, y la gastronomía </li> </ul>
+Victoria Defagot
 
 <li>Quizaira Rodriguez: Comenzando en el mun de del  Desarrollo Web Full Stack, QA trainee. </li>
  
