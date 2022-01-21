@@ -1,4 +1,4 @@
-# grupo_4_webmentores
+# grupo_4_iMentor
 Repositorio para el proyecto de sitio web de mentores
 
 <b>Nuestros Productos </b>
