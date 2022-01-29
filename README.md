@@ -36,12 +36,21 @@ Actualmente aprendiendo Desarrollo Web Full Stack. Amante de la fotografía, los
  <b>Referencias</b>
  
  <a><li> https://apps.apple.com/mx/app/xba-strategic-business-advisor/id1549580157 </li></a>
+ <p>Este sitio a pesar de ser una aplicación mobile, lo tomamos como referencia ya que es una plataforma que ofrece servicios de asesoría virtual profesional en diferentes áreas (marketing, legal, nuevos negocios, fiscal, etc) a Pymes y emprendedores </p> </b>
+ <p>Presenta el servicio con el pérfil del profesional y un rango de calificación</p>
  
  <a><li> https://www.gostudent.org/mx </li></a>
+ <p>Esta página ofrece como servicio la tutoría de profesores a alumnos a través de clases virtuales, se pueden tomar como ejemplos las herramientas que utilizan para describir y promocionar el servicio </p> </b>
  
  <a><li> https://www.digitalhouse.com/mx </li></a>
+ <p>De esta página hablamos sobre el header y como organizar los servicios en el menú de navegación, también es una página cuyo producto es un servicio</p> </b>
  
  <a><li> https://takelessons.com/ </li></a>
  
  <a><li> https://tutoreando.com/ </li></a>
+ <p>Esta página la escogemos como referencia ya que tiene una amplia lista de tutorias en más de 10 áreas, el diagrama de la página para la busqueda de la turoria es interesante porque tiene para filtrar por área (pudiendo seleccionar más de una), tiene para filtrar por gratuito o pagos, y además por nivel (inicial, intermedio, avanzado). </p> </b>
+ 
+  <p>Otra referencia importante de esta página es que en los botones del header tiene el botón "solicita un tutor" que lleva al usuario a llenar un formulario "podemos ayudarte" donde el usuario detalla la necesidad que tiene y deja su contacto</p> </b>
+  
+   <p>También desde el botón "tutorias" en el header lista las tutorias disponibles, con el perfil del tutor, el precio, la cantidad de horas de la tutoria, la descripción de lo que incluye y dentro del curso se puede hacer la compra</p> </b>
 
