@@ -46,6 +46,7 @@ Actualmente aprendiendo Desarrollo Web Full Stack. Amante de la fotografía, los
  <p>De esta página hablamos sobre el header y como organizar los servicios en el menú de navegación, también es una página cuyo producto es un servicio</p> </b>
  
  <a><li> https://takelessons.com/ </li></a>
+ <p>Esta página ofrece un servicio similar al que queremos ofrecer, nos puede servir para diagramar nuestra página, como modelo para crear el perfil del profesional (experiencia, educación, lenguajes, certificaciones etc, tiene reviews de los clientes, la disponibilidad horaria del asesor, el precio por 30, 45, 60 y 90 minutos de asesoría, y el botón de compra que lleva al formulario de login o crear cuenta (si el usuario no está logueado) para completar la compra y coordinar el horario </p> </b>
  
  <a><li> https://tutoreando.com/ </li></a>
  <p>Esta página la escogemos como referencia ya que tiene una amplia lista de tutorias en más de 10 áreas, el diagrama de la página para la busqueda de la turoria es interesante porque tiene para filtrar por área (pudiendo seleccionar más de una), tiene para filtrar por gratuito o pagos, y además por nivel (inicial, intermedio, avanzado). </p> </b>
