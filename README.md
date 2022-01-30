@@ -4,12 +4,14 @@ Repositorio para el proyecto de sitio web de mentores
 <b>Nuestros Productos </b>
 <p>Ofrecemos una plataforma que conecta profesionales con mentores en todo lo que concierne a desarrollo digital, para garantizar que nuestros usuarios logren sus objetivos.</p> 
 <p>Brindamos un servicio de contacto con los mejores mentores de México y Argentina en lo que se refiere al desarrollo.</p> 
+<p>Asesorías personales, gift cards, asesorías empresariales y membresías que ofrecen descuentos en las asesorías que se necesiten.</p> 
 
 
 <b>Nuestros Clientres</b>
 
 <ul><li>Personas tanto junior como senior que busquen desarrollar habilidades digitales, que generen un impacto en su desarrollo profesional.</li>
-<li>Emprendedores que quieran acelerar el desarrollo de sus innovaciones, por medio de guías que les faciliten la solución de problemas.</li> </ul>
+<li>Emprendedores que quieran acelerar el desarrollo de sus innovaciones, por medio de guías que les faciliten la solución de problemas.</li>
+<li>Empresas que necesiten capacitar a su personal en un área de asesoría específica.</li> </ul>
 
 <b>Propuesta de Valor</b>
 
