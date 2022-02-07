@@ -5,6 +5,72 @@
 body {
     font-family: "Roboto", sans-serif;
     font-size: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+body footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 95vw;
+    font-size: 10px;
+    margin: 1% 2%;
+}
+
+footer .links, .socialmedia, .newsletter {
+    width: 28%;
+}
+
+footer div.logo{
+    width: 15%;
+    padding: 3% 3% 0% 0%;
+}
+
+footer .logo img{
+    width: 23vw;
+}
+
+footer .socialmedia {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .socialmedia .icons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-right: 35%;
+}
+
+footer .newsletterJoin .input{
+    background-color: #FFF;
+    border: 1px solid #000;
+    outline: none;
+    color: #666;
+    padding: 2px;
+    width: 80%;
+}
+
+footer .newsletter .suscription {
+    text-align: center;
+    background-color: #b4b8a9;
+    border-radius: 5px;
+    border-color: #b4b8a9;
+    color: #FFF;
+    padding: 5px;
+    margin: 10px 0px;
+    font-size: 10px;
+}
+
+footer .newsletter .agree {
+    display: flex;
+    justify-content: flex-start;
+}
+
+footer .newsletter p, .input {
+    font-size: 70%;
 }
 
 footer ul {
@@ -17,11 +83,3 @@ footer ul li a{
     color: #000;
 }
 
-footer .newsletterJoin .input{
-    background-color: #FFF;
-    border: 1px solid #000;
-    outline: none;
-    color: #666;
-    padding: 2px;
-    width: 10%;s
-}
