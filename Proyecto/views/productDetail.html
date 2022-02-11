@@ -4,148 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
     <title>iMentor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="css/productDetail-styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="iconos">
-        <span><img src="img/carrito.png" alt="carrito"></span>
-        <span><img src="img/bandera-argentina.png" alt="pais"></span>
-        <span><img src="img/usuario.png" alt="usuario"></span>
-      </div> 
-    
-    <div class="menu">
-            <a href="#plataforma">Plataforma</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#giftCard">Gift Card</a>    
-            <a href="#paraEmpresas">Para Empresas</a>
-            <a href="#membresias">Membresías</a>
-            <a class="active" href="#home">Home</a>
-            <input type="text" placeholder="Asesoría..">
-          </div>
-
-    <main>
-        <div class = "container-slide">
-            <ul class = "slider">
-                <li id = "slide1">
-                    <img src="img/Asesoría.jpg" alt="imagen del producto 1">
-                </li>
-
-                <li id = "slide2">
-                    <img src="img/desarrollo.jpg" alt="Imagenes de asesorías">
-                </li>
-
-                <li id = "slide3">
-                    <img src="img/marketing.jpg" alt="Imagenes de asesorías">
-                </li>
-
-                <li id = "slide4">
-                    <img src="img/testingQA.jpg" alt="Imagenes de asesorías">
-                </li>
-            </ul>
-
-            <ul class = "menu-slider">
-                <li>
-                    <a href="#slide1"></a>
-                </li>
-
-                <li>
-                    <a href="#slide2"></a>
-                </li>
-
-                <li>
-                    <a href="#slide3"></a>
-                </li>
-
-                <li>
-                    <a href="#slide4"></a>
-                </li>
-            </ul>
-
-            </article>
-        </div>
-
-        <section class="informacionProduct">
-
-          <h1>Mentoría Individual Marketing Digital</h1>
-          <h3 class="rates"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h3>
-          <p class ="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum consectetur tempore incidunt magni, ipsum eos?</p>
-            
-          <h2>Qué vas a aprender</h2>
-          <ul>
-              <li>SEO</li>
-              <li>Big Data</li>
-              <li>Big Data</li>
-              <li>analítica</li>
-              <li>almacenamiento en la nube</li>
-              <li>User Experience</li>
-          </ul>
-        
-        
+    <header>
+        <section class="navegacion">
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <a href="#" class="enlace-logo">
+                    <img src="img/Logo-iMentor1.png" alt="Logo iMentor" class="logo">
+                </a>
+                <div class="buscar">
+                    <input type="text" placeholder="Buscar" required>
+                    <div class="btn">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <a href="#" class="enlace-cuenta">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                <a href="#" class="enlace-cesta">
+                    <i class="fas fa-shopping-basket"></i>
+                </a>
+                <a href="#" class="enlace-pais">
+                    <i class="fas fa-globe"></i>
+                </a>
+                <button class="boton-header-crear-cuenta" type="submit">¡Crea tu cuenta!</button>
+                <button class="boton-header-ingresar" type="submit">Ingresar</button>
+                <ul>
+                    <li><a class="active" href = "#">Home</a></li>
+                    <li><a href = "#">Servicios</a></li>
+                    <li><a href = "#">Nosotros</a></li>
+                    <li><a href = "#">Plataforma</a></li>
+                    <li class="cesta"><a href = "#"><i class="fas fa-shopping-basket"></i></a></li>
+                    <li class="crea-cuenta"><a href = "#">¡Crea tu cuenta!</a></li>
+                    <li class="ingresar"><a href = "#">Ingresar</a></li>
+                </ul>
+            </nav>
         </section>
-
-
-
-        <section class="buy-cart">
-            <article class="precio-compra-agregar">
-            <h2>Precio</h2>
-            <button id="comprar" type="submit"><h3>comprar</h3></button>
-            <button id="carrito" type="submit"><i class="fas fa-cart-plus"></i></button>
-
-      </main>
-
-      
+    </header>
+    <main>
+        
+    </main>
     <footer>
-        <div class="logo">
-            <img src="img/Logo-iMentor.jpg" alt="Logo iMentor">
-        </div>
-        <div class="links">
-            <ul>
-                <h4>Servicios</h4>
-                <li><a href="#">Enlace 1</a></li>
-                <li><a href="#">Enlace 2</a></li>
-                <li><a href="#">Enlace 3</a></li>
-            </ul>
-            <ul>
-                <h4>Nosotros</h4>
-                <li><a href="#">Enlace 1</a></li>
-                <li><a href="#">Enlace 2</a></li>
-                <li><a href="#">Enlace 3</a></li>
-            </ul>
-            <ul>
-                <h4>Contacto</h4>
-                <li><a href="#">Enlace 1</a></li>
-                <li><a href="#">Enlace 2</a></li>
-                <li><a href="#">Enlace 3</a></li>
-            </ul>
-        </div>
-
-
-        <div class="socialmedia">
-            <h4>Síguenos en</h4>
-            <div class="icons">
-                <i class="fab fa-facebook-square"></i>
-                <i class="fab fa-twitter-square"></i>
-                <i class="fab fa-instagram-square"></i>
-                <i class="fab fa-linkedin"></i>
-                <i class="fab fa-youtube-square"></i>
-            </div>
-        </div>
-        <div class="newsletter">
-            <h4>Súmate en nuestro Newsletter</h4>
-            <div class="agree">
-                <input type="checkbox">
-                <p>Acepto términos y condiciones</p>
-            </div>
-            <div class="newsletterJoin" action="#" method="GET">
-                <div class="input">tuemail@ejemplo.com</div>
-            </div>
-            <button class="suscription">Suscribirme</button>
-        </div>
     </footer>
 </body>
 </html>

@@ -1,0 +1,269 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+}
+
+header .navegacion nav{
+    height: 90px;
+    width: 100%;
+    background-color: #3587A4;
+    position: fixed;
+}
+
+header .navegacion .enlace-logo{
+    position: absolute;
+    padding: 10px 0px;
+}
+
+header .navegacion .logo{
+    height: 40px;
+    margin-left: 10px;
+}
+
+header .navegacion .buscar{
+    position: fixed;
+    padding: 5px;
+    top: 10px;
+    left: 120px;
+}
+
+header .navegacion .buscar input{
+    width:0px;
+    height: 25px;
+    padding: 0px 5px;
+    font-size: 18px;
+    color: black;
+    outline: none;;
+    border: solid 1px silver;
+    border-radius: 30px;
+    transition: all 0.5s ease;
+}
+
+header .navegacion .buscar .btn{
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: #C1DFF0;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+header .navegacion .buscar:hover input{
+    width:115px;
+}
+
+header .navegacion .buscar input:focus{
+    width:115px;
+}    
+
+header .navegacion .enlace-cesta{
+    position: fixed;
+    padding: 10px 0px;
+    right: 75px;
+    width: 35px;
+    text-align: center;
+}
+
+header .navegacion nav .enlace-cesta i{
+    font-size: 30px;
+    color: black;
+}
+
+header .navegacion nav ul .cesta{
+    display: none;
+}
+
+header .navegacion nav ul .crea-cuenta, header .navegacion nav ul .ingresar{
+    display: block;
+}
+
+header .navegacion .enlace-cuenta{
+    position: fixed;
+    padding: 10px 0px;
+    right: 38px;
+    width: 35px;
+    text-align: center;
+}
+
+header .navegacion nav .enlace-cuenta i{
+    font-size: 30px;
+    color: black;
+}
+
+header .navegacion .enlace-pais{
+    position: fixed;
+    padding: 10px 0px;
+    right: 5px;
+    width: 35px;
+    text-align: center;
+}
+
+header .navegacion nav .enlace-pais i{
+    font-size: 30px;
+    color: black;
+}
+
+
+header .navegacion nav ul{
+    position: fixed;
+    width: 100%;
+    height: calc(100vh - 90px);
+    background-color: #C1DFF0;
+    top: 90px;
+    left: -100%;
+    text-align: center;
+}
+
+header .navegacion nav ul li{
+    display: block;
+    line-height: 15px;
+    margin: 50px 0px;
+}
+
+header .navegacion nav ul li a{
+    color: black;
+    font-size: 20px;
+    padding: 7px 13px;
+    border-radius: 3px;
+}
+
+header .navegacion nav ul li a:hover{
+    color: white;
+}
+
+header .navegacion nav .checkbtn{
+    font-size: 25px;
+    color: black;
+    position: fixed;
+    right: 8px;
+    line-height: 80px;
+    cursor: pointer;
+    display: block;
+    top: 33px;
+} 
+
+header .navegacion nav #check{
+    display: none;
+}
+
+header .navegacion nav #check:checked ~ ul{
+    left:0%;
+}
+
+.boton-header-crear-cuenta, .boton-header-ingresar{
+    display: none;
+}
+
+main{
+    position: relative;
+    top: 90px;
+    bottom: 90px;
+    width: 100%;
+}
+
+/*Media Queries*/
+
+@media (min-width: 361px){
+    header .navegacion nav{
+        height: 70px;
+    }
+
+    header .navegacion nav ul{
+        position: fixed;
+        width: 100%;
+        height: 25px;
+        top: 11%;
+        float: right;
+        background-color: #3587A4;
+        left: 0%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 10px;
+        align-items: center;
+    }
+
+    header .navegacion nav ul li{
+        display: inline-flex;
+        margin: 0px 5px;
+    }
+
+    header .navegacion nav ul .cesta, header .navegacion nav ul .crea-cuenta, header .navegacion nav ul .ingresar{
+        display: none;
+    }
+
+    header .navegacion nav ul li a{
+        font-size: 16px;
+        padding: 0px;
+    }
+
+    header .navegacion nav .checkbtn{
+        display: none;
+    }
+    
+    header .navegacion .buscar:hover input{
+        width:33vw;
+    }
+    
+    header .navegacion .buscar input:focus{
+        width:33vw;
+    }    
+
+}
+
+@media (min-width: 769px){
+    header .navegacion nav .checkbtn{
+        display: none;
+    }
+
+    header .navegacion nav ul li a{
+        font-size: 22px;
+    }
+
+    header .navegacion nav ul .cesta{
+        display: block;
+    }
+
+    header .navegacion nav .enlace-cesta {
+        display: none;
+    }
+
+    .boton-header-crear-cuenta{
+        display: block;
+        position: fixed;
+        padding: 0px;
+        top: 10px;
+        right: 150px;
+        width: 120px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .boton-header-ingresar{
+        display: block;
+        position: fixed;
+        padding: 0px;
+        top: 10px;
+        right: 76px;
+        width: 70px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    header .navegacion .buscar:hover input{
+        width:45vw;
+    }
+    
+    header .navegacion .buscar input:focus{
+        width:45vw;
+    }  
+}
