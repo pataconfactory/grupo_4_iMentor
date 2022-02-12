@@ -8,50 +8,188 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link href="css/productDetail-styles.css" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <section class="navegacion">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@100;400&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <title>Product Detail</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@100;400&display=swap"
+            rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+        <link rel="shortcut icon" href="img/Logo-iMentor1.png" type="image/x-icon">
+        <link rel="stylesheet" href="css/productDetail-styles.css">
+        <title>Product Detail</title>
+    </head>
+    
+    <body>
+        <header>
             <nav>
-                <input type="checkbox" id="check">
-                <label for="check" class="checkbtn">
-                    <i class="fas fa-bars"></i>
-                </label>
-                <a href="#" class="enlace-logo">
+                <a href="#">Membresías</a>
+                <a href="#">Nosotros</a>
+                <a href="#">Plataforma</a>
+                <a href="#">Para Empresas</a>
+                <a href="#">Gift Card</a>
+            </nav>
+            
+            <section class = "logo-header">
+            <div class = "imagen-logo">
                     <img src="img/Logo-iMentor1.png" alt="Logo iMentor" class="logo">
-                </a>
-                <div class="buscar">
-                    <input type="text" placeholder="Buscar" required>
-                    <div class="btn">
-                        <i class="fas fa-search"></i>
+            </div>
+
+        </section>
+            <section class="textos-header">
+                <h1>El poder del conocimiento en tus manos</h1>
+                <h2>Un mentor según tus necesidades</h2>
+            </section>
+            <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                    style="height: 100%; width: 100%;">
+                    <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                        style="stroke: none; fill: #2D898B;"></path>
+                </svg></div>
+        </header>
+    
+        <main>
+            <section class="contenedor sobre-servicios">
+                <h2 class="titulo">Nuestros servicios</h2>
+                <div class="contenedor-sobre-servicios">
+                    <img src="img/ilustracion1.svg" alt="Acá va una ilustracion .svg" class="ilustracion-sobre-servicios">
+                    <div class="contenido-textos">
+                        <h3><span>1</span>Mentorías individuales</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil asperiores minus eaque quae id
+                            illo rerum modi quos iste recusandae.</p>
+                        <h3><span>2</span>Membresias</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil numquam nostrum molestias nisi?
+                            Temporibus enim possimus velit at ipsum sunt.</p>
+                        <h3><span>3</span>Asesorías para empresas</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel excepturi iusto nesciunt optio
+                            reprehenderit. Cum unde nostrum iste nesciunt quaerat!</p>
                     </div>
                 </div>
-                <a href="#" class="enlace-cuenta">
-                    <i class="fas fa-user-circle"></i>
-                </a>
-                <a href="#" class="enlace-cesta">
-                    <i class="fas fa-shopping-basket"></i>
-                </a>
-                <a href="#" class="enlace-pais">
-                    <i class="fas fa-globe"></i>
-                </a>
-                <button class="boton-header-crear-cuenta" type="submit">¡Crea tu cuenta!</button>
-                <button class="boton-header-ingresar" type="submit">Ingresar</button>
-                <ul>
-                    <li><a class="active" href = "#">Home</a></li>
-                    <li><a href = "#">Servicios</a></li>
-                    <li><a href = "#">Nosotros</a></li>
-                    <li><a href = "#">Plataforma</a></li>
-                    <li class="cesta"><a href = "#"><i class="fas fa-shopping-basket"></i></a></li>
-                    <li class="crea-cuenta"><a href = "#">¡Crea tu cuenta!</a></li>
-                    <li class="ingresar"><a href = "#">Ingresar</a></li>
-                </ul>
-            </nav>
-        </section>
-    </header>
-    <main>
+            </section>
+    
+            <section class="portafolio-mentorias">
+                <div class="contenedor">
+                    <h2 class="titulo">Asesorías por temática</h2>
+                    
+                    <div class="galeria-mentorias">
+                            <div class="imagen-mentorias">
+                            <img src="img/desarrollo.jpg" alt="Acá se muestra la imagen de asesoría desarrollo">
+                            <div class="hover-galeria">
+                          <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+                              <!--   <P>Desarrollo Web</P> -->
+                            </div>
+                        </div>
+                        <div class="imagen-mentorias">
+                            <img src="img/design-thinking.jpg" alt="Acá se muestra la imagen de asesoría design thinking">
+                            <div class="hover-galeria">
+                            <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+                               <!--   <P>Design Thinking</P> -->
+                            </div>
+                        </div>
+                            <div class="imagen-mentorias">
+                            <img src="img/diseñografico.jpg" alt="Acá se muestra la imagen de asesoría diseño gráfico">
+                            <div class="hover-galeria">
+                             <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+                               <!--   <P>Diseño Gráfico</P> -->
+                            </div>
+                        </div>
+                        <div class="imagen-mentorias">
+                        <img src="img/marketing.jpg" alt="Acá se muestra la imagen de asesoría marketing">
+                        <div class="hover-galeria">
+                        <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+                           <!--   <P>Marketing Digital</P> -->
+                        </div>
+                    </div>
+                    <div class="imagen-mentorias">
+                    <img src="img/testingQA.jpg" alt="Acá se muestra la imagen de asesoría testingQA">
+                    <div class="hover-galeria">
+                      <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+                       <!--   <P>Testing QA</P> -->
+                    </div>
+                </div>
         
-    </main>
+            <div class="imagen-mentorias">
+                <img src="img/empresas.jpg" alt="Acá se muestra la imagen de asesoría empresas">
+                <div class="hover-galeria">
+                <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+                   <!--   <P>Asesoría empresas</P> -->
+                </div>
+            </div>
+                </div>
+                </div>
+            </section>
+    
+            <section class="sobre-mentores">
+                <div class="contenedor">
+                    <h2 class="titulo">Mentores</h2>
+                    <div class="mentores-cont">
+                        <div class="cada-mentor">
+                            <img src="img/mentor1.jpg" alt="">
+                            <h3>Name</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
+                        </div>
+                        <div class="cada-mentor">
+                            <img src="img/mentor2.jpg" alt="">
+                            <h3>Name</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
+                        </div>
+                        <div class="cada-mentor">
+                            <img src="img/mentor3.jpg" alt="">
+                            <h3>Name</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
+                        </div>
+                        <div class="cada-mentor">
+                            <img src="img/mentor4.jpg" alt="">
+                            <h3>Name</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section>
+                <div class="contenedor-clientes">
+                    <h2 class="titulo">¿Qué dicen nuestros clientes?</h2>
+                    <div class="cards">
+                        <div class="card">
+                        <img src="img/cliente1.jpg" alt="Foto del primer cliente">
+                        <div class="contenido-texto-card">
+                            <h4>Lorena Sacarías</h4>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, cum fugiat? Esse labore
+                                earum exercitationem voluptatem iste rerum voluptatum dolor repellat ducimus pariatur
+                                numquam, possimus, blanditiis aliquam, dignissimos dolorum animi?</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/cliente2.jpg" alt="Foto del primer cliente">
+                        <div class="contenido-texto-card">
+                            <h4>Juan Carlos Gonzalez</h4>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, cum fugiat? Esse labore
+                                earum exercitationem voluptatem iste rerum voluptatum dolor repellat ducimus pariatur
+                                numquam, possimus, blanditiis aliquam, dignissimos dolorum animi?</p>
+                        </div>
+                    </div>
+                </div>
+             
+            </section>
+    
+            
+        </main>
+    
     <footer>
     </footer>
 </body>
