@@ -267,3 +267,170 @@ main{
         width:45vw;
     }  
 }
+
+body header {
+    height: 10vw;
+}
+
+body main {
+    height: 80vw;
+}
+
+body footer {
+    height: 10vw;
+}
+
+
+/*Main*/
+
+main h3 {
+    display: flex;
+    justify-content: center;
+}
+
+main p {
+    display: flex;
+    justify-content: center;
+    font-size: 8px;
+}
+
+main form.register-form {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 10px;
+    flex-direction: column;
+    padding: 5% 0% 0% 10%;
+}
+
+main .register-form .register-username, .register-email, .register-password {
+    margin: 3% 0%;
+}
+
+main .register-form .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 50%;
+    border-color: rgb(217,217,217);
+    border-width: 1px;
+}
+
+main .terminos {
+    display: flex;
+    flex-direction: row;
+    font-size: 8px;
+    align-items: center;
+    padding: 5% 0% 0% 10%;
+  }
+
+main .register-password {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+main .show-password {
+    display: flex;
+    font-size: 6px;
+    align-items: center;
+    margin-top: 2px;
+  }
+
+main .register-accept {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+main .register-button {
+    font-size: 9px;
+    background-color: rgb(217,217,217);
+    border-radius: 4px;
+    padding: 3px 5px;
+}
+
+main .already-register {
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    font-size: 8px;
+    text-decoration: underline;
+}
+
+/*Footer*/
+
+body footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 7px;
+    width: 95vw;
+}
+
+footer .socialmedia, .newsletter {
+    width: 20%;
+    padding: 1%;
+}
+
+footer .links {
+  width: 30%;
+  padding: 0% 1%;
+}
+
+footer div.logo{
+    width: 10%;
+    padding: 1%;
+}
+
+footer .socialmedia {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .socialmedia .icons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5%;
+}
+
+footer .links {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer .links h4 {
+  padding: 0px;
+}
+
+footer .terminos {
+  display: flex;
+  flex-direction: row;
+  font-size: 5px;
+  align-items: center;
+}
+
+footer .newsletterJoin {
+  width: 97%;
+}
+
+footer .newsletterJoin, .suscriptionbutton {
+   font-size: 5px;
+}
+
+footer .suscription {
+  display: flex;
+  justify-content: center;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li a{
+    text-decoration: none;
+    color: #000;
+}

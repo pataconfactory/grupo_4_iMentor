@@ -50,9 +50,42 @@
         </section>
     </header>
     <main>
-        
+        <h3>!Creá tu cuenta!</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        <form action="/register" method="POST" class="register-form">
+
+            <div class="register-username">
+                <label for="user-name"><i class="fas fa-user"></i>Nombre completo</label>
+                <input class="boxes" type="text" name="user-name" id="user-name" required>
+            </div>
+
+            <div class="register-email">
+                <label for="email"><i class="fas fa-envelope"></i>E-mail</label>
+                <input class="boxes" type="email" name="email" id="email" required>
+            </div>
+
+            <div class="register-password">
+                <label for="password"><i class="fas fa-lock"></i>Contraseña</label>
+                <input class="boxes" type="password" name="password" value="" id="password" required>
+                <div class="show-password">
+                    <input type="checkbox" name="show-password">
+                    <label>Mostrar contraseña</label>
+                </div>
+            </div>
+        </form>
+        <div class="terminos">
+            <input type="checkbox" name="terminos" id="terminos">
+            <label for="terminos">Acepto los términos y condiciones</label>
+        </div>
+        <div class="register-accept">
+            <button class="register-button">Crear cuenta</button>
+        </div>
+        <div class="already-register">
+            <a href="/login.html">¡Ya tienes una cuenta!</a>
+        </div>
     </main>
     <footer>
+        
     </footer>
 </body>
 </html>
