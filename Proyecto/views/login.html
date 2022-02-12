@@ -10,49 +10,47 @@
     <link href="css/login-styles.css" rel="stylesheet">
 </head>
 <body>
+
     <header>
-        <section class="navegacion">
-            <nav>
-                <input type="checkbox" id="check">
-                <label for="check" class="checkbtn">
-                    <i class="fas fa-bars"></i>
-                </label>
-                <a href="#" class="enlace-logo">
-                    <img src="img/Logo-iMentor1.png" alt="Logo iMentor" class="logo">
-                </a>
-                <div class="buscar">
-                    <input type="text" placeholder="Buscar" required>
-                    <div class="btn">
-                        <i class="fas fa-search"></i>
-                    </div>
-                </div>
-                <a href="#" class="enlace-cuenta">
-                    <i class="fas fa-user-circle"></i>
-                </a>
-                <a href="#" class="enlace-cesta">
-                    <i class="fas fa-shopping-basket"></i>
-                </a>
-                <a href="#" class="enlace-pais">
-                    <i class="fas fa-globe"></i>
-                </a>
-                <button class="boton-header-crear-cuenta" type="submit">¡Crea tu cuenta!</button>
-                <button class="boton-header-ingresar" type="submit">Ingresar</button>
-                <ul>
-                    <li><a class="active" href = "#">Home</a></li>
-                    <li><a href = "#">Servicios</a></li>
-                    <li><a href = "#">Nosotros</a></li>
-                    <li><a href = "#">Plataforma</a></li>
-                    <li class="cesta"><a href = "#"><i class="fas fa-shopping-basket"></i></a></li>
-                    <li class="crea-cuenta"><a href = "#">¡Crea tu cuenta!</a></li>
-                    <li class="ingresar"><a href = "#">Ingresar</a></li>
-                </ul>
-            </nav>
-        </section>
     </header>
+
     <main>
-        
+        <div class="logo">
+            <img src="img/Logo-iMentor2.png" alt="Logo iMentor">
+        </div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        <div class="login">
+            <form action="/login" method="POST">
+                <div class="login-email">
+                    <input class="box-email" type="email" name="email" placeholder="&#xf0e0; E-mail" id="email" required>
+                </div>
+                <div class="login-password">
+                    <input class="box-password" type="password" name="password" value="" placeholder="&#xf023; Contraseña" id="password" required>
+                </div>
+            </form>
+        </div>
+        <div class="references">
+            <div class="not-register">
+                <a href="/register.html">¿No estás registrado?</a>
+            </div>
+            <div class="password-forgotten">
+                <a href="#">Olvidé mi contraseña</a>
+            </div>
+        </div>
+        <div class="login-accept">
+            <button class="login-button">Ingresar</button>
+        </div>
+        <div class="help">
+            <a href="#">¡Necesito ayuda!</a>
+        </div>
+        <p class="terms">Términos y Condiciones · Política de Privacidad</p>
+        <div class="end-img">
+            <img src="img/banner_iMentor.jpg" alt="xxx">
+        </div>
     </main>
+
     <footer>
     </footer>
+
 </body>
 </html>

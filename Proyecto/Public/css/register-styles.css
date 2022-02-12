@@ -6,31 +6,26 @@
     list-style: none;
     font-family: "Poppins", sans-serif;
 }
-
 header .navegacion nav{
     height: 90px;
     width: 100%;
     background-color: #3587A4;
     position: fixed;
 }
-
 header .navegacion .enlace-logo{
     position: absolute;
     padding: 10px 0px;
 }
-
 header .navegacion .logo{
     height: 40px;
     margin-left: 10px;
 }
-
 header .navegacion .buscar{
     position: fixed;
     padding: 5px;
     top: 10px;
     left: 120px;
 }
-
 header .navegacion .buscar input{
     width:0px;
     height: 25px;
@@ -42,7 +37,6 @@ header .navegacion .buscar input{
     border-radius: 30px;
     transition: all 0.5s ease;
 }
-
 header .navegacion .buscar .btn{
     width: 33px;
     height: 33px;
@@ -57,15 +51,12 @@ header .navegacion .buscar .btn{
     border-radius: 50%;
     cursor: pointer;
 }
-
 header .navegacion .buscar:hover input{
     width:115px;
 }
-
 header .navegacion .buscar input:focus{
     width:115px;
 }    
-
 header .navegacion .enlace-cesta{
     position: fixed;
     padding: 10px 0px;
@@ -73,20 +64,16 @@ header .navegacion .enlace-cesta{
     width: 35px;
     text-align: center;
 }
-
 header .navegacion nav .enlace-cesta i{
     font-size: 30px;
     color: black;
 }
-
 header .navegacion nav ul .cesta{
     display: none;
 }
-
 header .navegacion nav ul .crea-cuenta, header .navegacion nav ul .ingresar{
     display: block;
 }
-
 header .navegacion .enlace-cuenta{
     position: fixed;
     padding: 10px 0px;
@@ -94,12 +81,10 @@ header .navegacion .enlace-cuenta{
     width: 35px;
     text-align: center;
 }
-
 header .navegacion nav .enlace-cuenta i{
     font-size: 30px;
     color: black;
 }
-
 header .navegacion .enlace-pais{
     position: fixed;
     padding: 10px 0px;
@@ -107,13 +92,10 @@ header .navegacion .enlace-pais{
     width: 35px;
     text-align: center;
 }
-
 header .navegacion nav .enlace-pais i{
     font-size: 30px;
     color: black;
 }
-
-
 header .navegacion nav ul{
     position: fixed;
     width: 100%;
@@ -123,24 +105,20 @@ header .navegacion nav ul{
     left: -100%;
     text-align: center;
 }
-
 header .navegacion nav ul li{
     display: block;
     line-height: 15px;
     margin: 50px 0px;
 }
-
 header .navegacion nav ul li a{
     color: black;
     font-size: 20px;
     padding: 7px 13px;
     border-radius: 3px;
 }
-
 header .navegacion nav ul li a:hover{
     color: white;
 }
-
 header .navegacion nav .checkbtn{
     font-size: 25px;
     color: black;
@@ -151,33 +129,26 @@ header .navegacion nav .checkbtn{
     display: block;
     top: 33px;
 } 
-
 header .navegacion nav #check{
     display: none;
 }
-
 header .navegacion nav #check:checked ~ ul{
     left:0%;
 }
-
 .boton-header-crear-cuenta, .boton-header-ingresar{
     display: none;
 }
-
 main{
     position: relative;
     top: 90px;
     bottom: 90px;
     width: 100%;
 }
-
 /*Media Queries*/
-
 @media (min-width: 361px){
     header .navegacion nav{
         height: 70px;
     }
-
     header .navegacion nav ul{
         position: fixed;
         width: 100%;
@@ -191,21 +162,17 @@ main{
         padding: 0px 10px;
         align-items: center;
     }
-
     header .navegacion nav ul li{
         display: inline-flex;
         margin: 0px 5px;
     }
-
     header .navegacion nav ul .cesta, header .navegacion nav ul .crea-cuenta, header .navegacion nav ul .ingresar{
         display: none;
     }
-
     header .navegacion nav ul li a{
         font-size: 16px;
         padding: 0px;
     }
-
     header .navegacion nav .checkbtn{
         display: none;
     }
@@ -217,26 +184,20 @@ main{
     header .navegacion .buscar input:focus{
         width:33vw;
     }    
-
 }
-
 @media (min-width: 769px){
     header .navegacion nav .checkbtn{
         display: none;
     }
-
     header .navegacion nav ul li a{
         font-size: 22px;
     }
-
     header .navegacion nav ul .cesta{
         display: block;
     }
-
     header .navegacion nav .enlace-cesta {
         display: none;
     }
-
     .boton-header-crear-cuenta{
         display: block;
         position: fixed;
@@ -247,7 +208,6 @@ main{
         text-align: center;
         cursor: pointer;
     }
-
     .boton-header-ingresar{
         display: block;
         position: fixed;
@@ -258,7 +218,6 @@ main{
         text-align: center;
         cursor: pointer;
     }
-
     header .navegacion .buscar:hover input{
         width:45vw;
     }
@@ -268,30 +227,19 @@ main{
     }  
 }
 
-body header {
-    height: 10vw;
-}
-
-body main {
-    height: 80vw;
-}
-
-body footer {
-    height: 10vw;
-}
-
-
-/*Main*/
+/* Register Page Main*/
 
 main h3 {
     display: flex;
     justify-content: center;
+    padding-top: 20px;
 }
 
 main p {
     display: flex;
     justify-content: center;
     font-size: 8px;
+    padding-top: 10px;
 }
 
 main form.register-form {
@@ -313,6 +261,8 @@ main .register-form .boxes {
     width: 50%;
     border-color: rgb(217,217,217);
     border-width: 1px;
+    font-size: 9px;
+    height: 6vw;
 }
 
 main .terminos {
@@ -357,6 +307,7 @@ main .already-register {
     font-size: 8px;
     text-decoration: underline;
 }
+
 
 /*Footer*/
 
@@ -433,4 +384,4 @@ footer ul {
 footer ul li a{
     text-decoration: none;
     color: #000;
-}
+} 
