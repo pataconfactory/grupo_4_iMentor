@@ -171,6 +171,194 @@ main{
     width: 100%;
 }
 
+main .responsive {
+    width: 50%;
+    max-width: 400px;
+    height: auto;
+  }
+
+main .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 70%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    position:relative;
+    display: block;
+    margin: 0 auto}
+  
+  main .active, main .accordion:hover {
+    background-color: #ccc; 
+  }
+  
+  main .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+    width:70%;
+    display:block;
+    margin:0 auto;
+    
+  }
+  
+  main .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    align-content: center
+    
+  }
+  
+  main .slideshow-container img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
+       
+    
+  } 
+  
+  main .prev, main .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+      margin-left: 40px;
+    margin-right: 40px;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  main .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  main .prev:hover, main .next:hover {
+    background-color:lightgray
+  }
+  
+  /* Caption text */
+  main .text {
+    color: black;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: relative;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  main .text-descripcion {
+    color: black;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: relative;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+
+  /* Number text (1/3 etc) */
+  main .numbertext {
+    color: #f2f2f2;
+    font-size: 11px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  main .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  main .active, main .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  main .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  
+  main .button {
+    background-color: #3587A4; /* Azul Patacon */
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+    margin: 0 auto;
+    border-radius: 4px;
+  
+  }
+  
+  main .button:hover {
+    background-color: #C1DFF0;
+    color: black;
+  }
+  
+  
+  main .banner {
+    /* The image used */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://cdn.shrm.org/image/upload/c_crop%2ch_705%2cw_1254%2cx_0%2cy_15/c_fit%2cf_auto%2cq_auto%2cw_767/v1/Employee%20Relations/iStock-1266809682_lflvjj?databtoa=eyIxNng5Ijp7IngiOjAsInkiOjE1LCJ4MiI6MTI1NCwieTIiOjcyMCwidyI6MTI1NCwiaCI6NzA1fX0%3d);
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;}
+    
+    main img.banner {  min-height: 100%;
+        min-width: 1024px;
+    }
+    
+    main .banner-text {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+    }
+    
+    main h1 {
+      color:  white;
+      text-align: center;
+    }
+
+  
+
+
 /*Media Queries*/
 
 @media (min-width: 361px){
@@ -217,6 +405,17 @@ main{
     header .navegacion .buscar input:focus{
         width:33vw;
     }    
+
+main .banner {
+    height: 100%;
+  
+}    
+
+main h1 {
+    font-size: 45px;
+
+}
+
 
 }
 
@@ -266,4 +465,27 @@ main{
     header .navegacion .buscar input:focus{
         width:45vw;
     }  
+
+    main h1 {
+        font-size: 75px;
+    
+    }
+}
+
+
+
+@media only screen and (min-width: 380px) {
+    main .prev, main .next,main .text {font-size: 14px}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+
 }
