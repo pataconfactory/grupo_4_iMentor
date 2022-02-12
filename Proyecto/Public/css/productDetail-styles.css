@@ -91,6 +91,10 @@ header .textos-header{
 
 /*####Section sobre servicios#####*/
 
+main .sobre-servicios {
+ padding: 25px 0 60px 0;
+}
+
 .contenedor-sobre-servicios{
     display: flex;
     justify-content: space-evenly;
@@ -197,6 +201,11 @@ header .textos-header{
 
 .contenedor-clientes{
     background: #f2f2f2;
+
+}
+
+.contenedor-clientes h2 {
+    padding-top: 10px;
 }
 .cards{
     display: flex;
@@ -213,6 +222,8 @@ header .textos-header{
         border-radius: 5px;
         box-shadow: 0 0 6px 0 rgb(0, 0, 0, .5);
     }
+
+
 
     .cards .card img {
         width: 100px;
@@ -274,7 +285,7 @@ header .textos-header{
      /*en tablets el diseño se ve bien, comienzo a trabajar esta media query para dispositivos menores a 500px*/
      
      
-     @media (max-width: 420px){
+     @media screen and (max-width: 700px){
          header {
              background-position: center;
          }
@@ -298,9 +309,13 @@ header .textos-header{
          .titulo{ 
             font-size: 28px;
          }
-
+         
+        .contenedor-clientes .titulo{ 
+            font-size: 28px;
+            padding-top: 30px;
+         }
          .textos-header h1 {
-            font-size: 30px;
+            font-size: 40px;
          }
 
          /*Section galeria de mentorias*/
@@ -344,7 +359,49 @@ header .textos-header{
     }
      }
 
+     @media screen and (max-width: 500px)
+{
+    nav{
+        text-align: center;
+        padding: 30px 0 0 0;
 
+    }
+    .nav .a {
+        margin-right: 5px;
+    }
+
+    .textos-header h1 {
+        font-size: 30px;
+     }
+
+     .textos-header h2 {
+        font-size: 20px;
+     }
+
+     .ilustracion-sobre-servicios {
+        width: 99%;
+        margin-bottom: 60px;
+    }
+
+    .sobre-servicios .contenido-textos {
+        width: 92%;
+    }
+    .imagen-mentorias {
+        width: 95%;
+    }
+
+    /*clientes*/
+
+    .cards .card{
+        width: 95%;
+        height: 100px;
+
+    }
+    .cada-mentor img {
+        width: 95%;
+    }
+
+}
 
 
 
