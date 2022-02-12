@@ -21,7 +21,7 @@ body {
 
 .titulo {
     color: #3587A4;
-    font-size: 45px;
+    font-size: 40px;
     text-align: center;
     margin-bottom: 60px;
 }
@@ -270,3 +270,82 @@ header .textos-header{
         text-align: justify;
         
      }
+
+     /*en tablets el diseño se ve bien, comienzo a trabajar esta media query para dispositivos menores a 500px*/
+     
+     
+     @media (max-width: 420px){
+         header {
+             background-position: center;
+         }
+
+         .contenedor-sobre-servicios {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+         }
+
+         .sobre-servicios .contenido-textos {
+             width: 90%;
+         }
+
+         .ilustracion-sobre-servicios {
+             width: 90%;
+         }
+
+         .titulo{ 
+            font-size: 28px;
+         }
+
+         .textos-header h1 {
+            font-size: 30px;
+         }
+
+         /*Section galeria de mentorias*/
+         .imagen-mentorias{
+            width: 44%;
+         }
+
+         /*Section galeria de mentorias*/
+
+         .cards{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+         }
+         .cards .card {
+             width: 90%;
+             font-size: 12px;
+         }
+
+         .cards .card:first-child {
+            margin-bottom: 30px;
+        }
+
+        .mentores-cont {
+            justify-content: center;
+            flex-direction: column;
+       }
+
+       .cada-mentor {
+           width: 100%;
+           text-align: center;
+
+       }
+       .cada-mentor:nth-child(1), .cada-mentor:nth-child(2), .cada-mentor:nth-child(3){
+           margin-bottom: 60px;
+       }
+
+       .cada-mentor img {
+        width: 90%;
+       
+    }
+     }
+
+
+
+
+
+
