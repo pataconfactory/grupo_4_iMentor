@@ -185,6 +185,7 @@ body footer {
     position: fixed;
     bottom: 0px;
     padding: 10px 0px;
+    z-index: 1;
 }
 
 footer .socialmedia, .newsletter {
