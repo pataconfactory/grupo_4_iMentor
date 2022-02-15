@@ -1,151 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@100;400&display=swap"
+        rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>iMentor</title>
+    <link rel="shortcut icon" href="img/Logo-iMentor.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/product.css">
+    <title>Product Detail</title>
 </head>
+
 <body>
-    <div class="iconos">
-        <span><img src="img/carrito.png" alt="carrito"></span>
-        <span><img src="img/bandera-argentina.png" alt="pais"></span>
-        <span><img src="img/usuario.png" alt="usuario"></span>
-      </div> 
-    
-    <div class="menu">
-            <a href="#plataforma">Plataforma</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#giftCard">Gift Card</a>    
-            <a href="#paraEmpresas">Para Empresas</a>
-            <a href="#membresias">Membresías</a>
-            <a class="active" href="#home">Home</a>
-            <input type="text" placeholder="Asesoría..">
-          </div>
+    <header>
+        <nav>
+            <a href="#">Membresías</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Plataforma</a>
+            <a href="#">Para Empresas</a>
+            <a href="#">Gift Card</a>
+        </nav>
+
+        <section class="textos-header">
+            <h1>El poder del conocimiento en tus manos</h1>
+            <h2>Un mentor según tus necesidades</h2>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #2D898B;"></path>
+            </svg></div>
+    </header>
 
     <main>
-        <div class = "container-slide">
-            <ul class = "slider">
-                <li id = "slide1">
-                    <img src="img/Asesoría.jpg" alt="imagen del producto 1">
-                </li>
-
-                <li id = "slide2">
-                    <img src="img/desarrollo.jpg" alt="Imagenes de asesorías">
-                </li>
-
-                <li id = "slide3">
-                    <img src="img/marketing.jpg" alt="Imagenes de asesorías">
-                </li>
-
-                <li id = "slide4">
-                    <img src="img/testingQA.jpg" alt="Imagenes de asesorías">
-                </li>
-            </ul>
-
-            <ul class = "menu-slider">
-                <li>
-                    <a href="#slide1"></a>
-                </li>
-
-                <li>
-                    <a href="#slide2"></a>
-                </li>
-
-                <li>
-                    <a href="#slide3"></a>
-                </li>
-
-                <li>
-                    <a href="#slide4"></a>
-                </li>
-            </ul>
-
-            </article>
-        </div>
-
-        <section class="informacionProduct">
-
-          <h1>Mentoría Individual Marketing Digital</h1>
-          <h3 class="rates"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h3>
-          <p class ="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum consectetur tempore incidunt magni, ipsum eos?</p>
-            
-          <h2>Qué vas a aprender</h2>
-          <ul>
-              <li>SEO</li>
-              <li>Big Data</li>
-              <li>Big Data</li>
-              <li>analítica</li>
-              <li>almacenamiento en la nube</li>
-              <li>User Experience</li>
-          </ul>
-        
-        
+        <section class="contenedor sobre-servicios">
+            <h2 class="titulo">Nuestros servicios</h2>
+            <div class="contenedor-sobre-servicios">
+                <img src="img/ilustracion1.svg" alt="Acá va una ilustracion .svg" class="ilustracion-sobre-servicios">
+                <div class="contenido-textos">
+                    <h3><span>1</span>Mentorías individuales</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil asperiores minus eaque quae id
+                        illo rerum modi quos iste recusandae.</p>
+                    <h3><span>2</span>Membresias</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil numquam nostrum molestias nisi?
+                        Temporibus enim possimus velit at ipsum sunt.</p>
+                    <h3><span>3</span>Asesorías para empresas</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel excepturi iusto nesciunt optio
+                        reprehenderit. Cum unde nostrum iste nesciunt quaerat!</p>
+                </div>
+            </div>
         </section>
 
+        <section class="portafolio-mentorias">
+            <div class="contenedor">
+                <h2 class="titulo">Asesorías por temática</h2>
+                
+                <div class="galeria-mentorias">
+                        <div class="imagen-mentorias">
+                        <img src="img/desarrollo.jpg" alt="Acá se muestra la imagen de asesoría desarrollo">
+                        <div class="hover-galeria">
+                      <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+                          <!--   <P>Desarrollo Web</P> -->
+                        </div>
+                    </div>
+                    <div class="imagen-mentorias">
+                        <img src="img/design-thinking.jpg" alt="Acá se muestra la imagen de asesoría design thinking">
+                        <div class="hover-galeria">
+                        <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+                           <!--   <P>Design Thinking</P> -->
+                        </div>
+                    </div>
+                        <div class="imagen-mentorias">
+                        <img src="img/diseñografico.jpg" alt="Acá se muestra la imagen de asesoría diseño gráfico">
+                        <div class="hover-galeria">
+                         <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+                           <!--   <P>Diseño Gráfico</P> -->
+                        </div>
+                    </div>
+                    <div class="imagen-mentorias">
+                    <img src="img/marketing.jpg" alt="Acá se muestra la imagen de asesoría marketing">
+                    <div class="hover-galeria">
+                    <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+                       <!--   <P>Marketing Digital</P> -->
+                    </div>
+                </div>
+                <div class="imagen-mentorias">
+                <img src="img/testingQA.jpg" alt="Acá se muestra la imagen de asesoría testingQA">
+                <div class="hover-galeria">
+                  <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+                   <!--   <P>Testing QA</P> -->
+                </div>
+            </div>
+    
+        <div class="imagen-mentorias">
+            <img src="img/empresas.jpg" alt="Acá se muestra la imagen de asesoría empresas">
+            <div class="hover-galeria">
+            <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+               <!--   <P>Asesoría empresas</P> -->
+            </div>
+        </div>
+            </div>
+            </div>
+        </section>
 
+        <section class="sobre-mentores">
+            <div class="contenedor">
+                <h2 class="titulo">Mentores</h2>
+                <div class="mentores-cont">
+                    <div class="cada-mentor">
+                        <img src="img/mentor1.jpg" alt="">
+                        <h3>Name</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
+                    </div>
+                    <div class="cada-mentor">
+                        <img src="img/mentor2.jpg" alt="">
+                        <h3>Name</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
+                    </div>
+                    <div class="cada-mentor">
+                        <img src="img/mentor3.jpg" alt="">
+                        <h3>Name</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
+                    </div>
+                    <div class="cada-mentor">
+                        <img src="img/mentor4.jpg" alt="">
+                        <h3>Name</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section class="buy-cart">
-            <article class="precio-compra-agregar">
-            <h2>Precio</h2>
-            <button id="comprar" type="submit"><h3>comprar</h3></button>
-            <button id="carrito" type="submit"><i class="fas fa-cart-plus"></i></button>
+        <section>
+            <div class="contenedor-clientes">
+                <h2 class="titulo">¿Qué dicen nuestros clientes?</h2>
+                <div class="cards">
+                    <div class="card">
+                    <img src="img/cliente1.jpg" alt="Foto del primer cliente">
+                    <div class="contenido-texto-card">
+                        <h4>Lorena Sacarías</h4>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, cum fugiat? Esse labore
+                            earum exercitationem voluptatem iste rerum voluptatum dolor repellat ducimus pariatur
+                            numquam, possimus, blanditiis aliquam, dignissimos dolorum animi?</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/cliente2.jpg" alt="Foto del primer cliente">
+                    <div class="contenido-texto-card">
+                        <h4>Juan Carlos Gonzalez</h4>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam, cum fugiat? Esse labore
+                            earum exercitationem voluptatem iste rerum voluptatum dolor repellat ducimus pariatur
+                            numquam, possimus, blanditiis aliquam, dignissimos dolorum animi?</p>
+                    </div>
+                </div>
+            </div>
+         
+        </section>
 
-      </main>
+        
+    </main>
 
-      
     <footer>
-        <div class="logo">
-            <img src="img/Logo-iMentor.jpg" alt="Logo iMentor">
-        </div>
-        <div class="links">
-            <ul>
-                <h4>Servicios</h4>
-                <li><a href="#">Enlace 1</a></li>
-                <li><a href="#">Enlace 2</a></li>
-                <li><a href="#">Enlace 3</a></li>
-            </ul>
-            <ul>
-                <h4>Nosotros</h4>
-                <li><a href="#">Enlace 1</a></li>
-                <li><a href="#">Enlace 2</a></li>
-                <li><a href="#">Enlace 3</a></li>
-            </ul>
-            <ul>
+        <div class="contenedor-footer">
+            <div class="content-foo">
                 <h4>Contacto</h4>
-                <li><a href="#">Enlace 1</a></li>
-                <li><a href="#">Enlace 2</a></li>
-                <li><a href="#">Enlace 3</a></li>
-            </ul>
-        </div>
-
-
-        <div class="socialmedia">
-            <h4>Síguenos en</h4>
-            <div class="icons">
-                <i class="fab fa-facebook-square"></i>
-                <i class="fab fa-twitter-square"></i>
-                <i class="fab fa-instagram-square"></i>
-                <i class="fab fa-linkedin"></i>
-                <i class="fab fa-youtube-square"></i>
+                <p>114803-11334</p>
+            </div>
+            <div class="content-foo">
+                <h4>Email</h4>
+                <p>iMentor@mentorias.com</p>
             </div>
         </div>
-        <div class="newsletter">
-            <h4>Súmate en nuestro Newsletter</h4>
-            <div class="agree">
-                <input type="checkbox">
-                <p>Acepto términos y condiciones</p>
-            </div>
-            <div class="newsletterJoin" action="#" method="GET">
-                <div class="input">tuemail@ejemplo.com</div>
-            </div>
-            <button class="suscription">Suscribirme</button>
-        </div>
+        <h2 class="titulo-final">&copy; PataconFactory | iMentor</h2>
     </footer>
 </body>
+
 </html>
