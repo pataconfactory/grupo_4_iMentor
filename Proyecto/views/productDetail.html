@@ -1,258 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@100;400&display=swap"
-            rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-        <link rel="shortcut icon" href="img/Logo-iMentor1.png" type="image/x-icon">
-        <link rel="stylesheet" href="css/productDetail-styles.css">
-        <title>Product Detail</title>
-    </head>
-    
-    <body>
-        <header>
-            <nav>
-                <a href="#">Membresías</a>
-                <a href="#">Nosotros</a>
-                <a href="#">Plataforma</a>
-                <a href="#">Para Empresas</a>
-                <a href="#">Gift Card</a>
-            </nav>
-            
-            <section class = "logo-header">
-            <div class = "imagen-logo">
-                    <img src="img/Logo-iMentor1.png" alt="Logo iMentor" class="logo">
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@100;400&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/Logo-iMentor1.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/productDetail-styles.css">
+    <title>Product Detail</title>
+</head>
 
-        </section>
-            <section class="textos-header">
-                <h1>El poder del conocimiento en tus manos</h1>
-                <h2>Un mentor según tus necesidades</h2>
-            </section>
-            <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
-                    style="height: 100%; width: 100%;">
-                    <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-                        style="stroke: none; fill: #2D898B;"></path>
-                </svg></div>
-        </header>
-    
-        <main>
-            <section class="contenedor sobre-servicios">
-                <h2 class="titulo">Nuestros servicios</h2>
-                <div class="contenedor-sobre-servicios">
-                    <img src="img/ilustracion1.svg" alt="Acá va una ilustracion .svg" class="ilustracion-sobre-servicios">
-                    <div class="contenido-textos">
-                        <h3><span>1</span>Mentorías individuales</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil asperiores minus eaque quae id
-                            illo rerum modi quos iste recusandae.</p>
-                        <h3><span>2</span>Membresias</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil numquam nostrum molestias nisi?
-                            Temporibus enim possimus velit at ipsum sunt.</p>
-                        <h3><span>3</span>Asesorías para empresas</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel excepturi iusto nesciunt optio
-                            reprehenderit. Cum unde nostrum iste nesciunt quaerat!</p>
+<body>
+    <header>
+        <section class="navegacion">
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <a href="/#" class="enlace-logo">
+                    <img src="img/Logo-iMentor1.png" alt="Logo iMentor" class="logo">
+                </a>
+                <div class="buscar">
+                    <input type="text" placeholder="Buscar" required>
+                    <div class="btn">
+                        <i class="fas fa-search"></i>
                     </div>
                 </div>
-            </section>
-    
-            <section class="portafolio-mentorias">
-                <div class="contenedor">
-                    <h2 class="titulo">Especialidades</h2>
-                    
-                    <div class="galeria-mentorias">
-                            <div class="imagen-mentorias">
-                            <img src="img/desarrollo.jpg" alt="Acá se muestra la imagen de asesoría desarrollo">
-                            <div class="hover-galeria">
-                          <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
-                              <!--   <P>Desarrollo Web</P> -->
-                            </div>
-                        </div>
-                        <div class="rate-mentoria">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nihil.</p>
-                        <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                        <section class="buy-cart">
-                            <article class="comprar-asesoria">
-                              <h4>Precio: 40USD$</h4>
-                              <button id="comprar" type="submit"><h3>comprar</h3></button>
-                            </article>
-                            </section>
-                    </div>
-                        <div class="imagen-mentorias">
-                            <img src="img/design-thinking.jpg" alt="Acá se muestra la imagen de asesoría design thinking">
-                            <div class="hover-galeria">
-                            <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
-                               <!--   <P>Design Thinking</P> -->
-                            </div>
-                        </div>
-                        <div class="rate-mentoria">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nihil.</p>
-                            <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                            <section class="buy-cart">
-                                <article class="comprar-asesoria">
-                                  <h4>Precio: 40USD$</h4>
-                                  <button id="comprar" type="submit"><h3>comprar</h3></button>
-                                </article>
-                                </section>
-                        </div>
-                            <div class="imagen-mentorias">
-                            <img src="img/diseñografico.jpg" alt="Acá se muestra la imagen de asesoría diseño gráfico">
-                            <div class="hover-galeria">
-                             <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
-                               <!--   <P>Diseño Gráfico</P> -->
-                            </div>
-                        </div>
-                        <div class="rate-mentoria">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nihil.</p>
-                            <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                            <section class="buy-cart">
-                                <article class="comprar-asesoria">
-                                  <h4>Precio: 40USD$</h4>
-                                  <button id="comprar" type="submit"><h3>comprar</h3></button>
-                                </article>
-                                </section>
-                        </div>
-                        <div class="imagen-mentorias">
-                        <img src="img/marketing.jpg" alt="Acá se muestra la imagen de asesoría marketing">
+                <a href="/login" class="enlace-cuenta">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                <a href="/productCart" class="enlace-cesta">
+                    <i class="fas fa-shopping-basket"></i>
+                </a>
+                <a href="#" class="enlace-pais">
+                    <i class="fas fa-globe"></i>
+                </a>
+                <button class="boton-header-crear-cuenta" type="submit"><a href="/register">¡Crea tu
+                        cuenta!</a></button>
+                <button class="boton-header-ingresar" type="submit"><a href="/login">Ingresar</a></button>
+                <ul>
+                    <li><a class="active" href="/#">Home</a></li>
+                    <li><a href="/productDetail">Servicios</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Plataforma</a></li>
+                    <li class="cesta"><a href="/productCart"><i class="fas fa-shopping-basket"></i></a></li>
+                    <li class="crea-cuenta"><a href="/register">¡Crea tu cuenta!</a></li>
+                    <li class="ingresar"><a href="/login">Ingresar</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    <main>
+        <section class="contenedor sobre-servicios">
+            <h2 class="titulo">Nuestros servicios</h2>
+            <div class="contenedor-sobre-servicios">
+                <img src="img/ilustracion1.svg" alt="Acá va una ilustracion .svg" class="ilustracion-sobre-servicios">
+                <div class="contenido-textos">
+                    <h3><span>1</span>Mentorías individuales</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil asperiores minus eaque quae id
+                        illo rerum modi quos iste recusandae.</p>
+                    <h3><span>2</span>Membresias</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil numquam nostrum molestias nisi?
+                        Temporibus enim possimus velit at ipsum sunt.</p>
+                    <h3><span>3</span>Asesorías para empresas</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel excepturi iusto nesciunt optio
+                        reprehenderit. Cum unde nostrum iste nesciunt quaerat!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="portafolio-mentorias">
+            <div class="contenedor">
+                <h2 class="titulo">Especialidades</h2>
+
+                <div class="galeria-mentorias">
+                    <div class="imagen-mentorias">
+                        <img src="img/desarrollo.jpg" alt="Acá se muestra la imagen de asesoría desarrollo">
                         <div class="hover-galeria">
-                        <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
-                           <!--   <P>Marketing Digital</P> -->
+                            <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+                            <!--   <P>Desarrollo Web</P> -->
                         </div>
                     </div>
                     <div class="rate-mentoria">
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nihil.</p>
-                        <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                        <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
                         <section class="buy-cart">
                             <article class="comprar-asesoria">
-                              <h4>Precio: 40USD$</h4>
-                              <button id="comprar" type="submit"><h3>comprar</h3></button>
+                                <h4>Precio: 40USD$</h4>
+                                <button id="comprar" type="submit">
+                                    <h3>comprar</h3>
+                                </button>
                             </article>
-                            </section>
+                        </section>
                     </div>
                     <div class="imagen-mentorias">
-                    <img src="img/testingQA.jpg" alt="Acá se muestra la imagen de asesoría testingQA">
-                    <div class="hover-galeria">
-                      <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
-                       <!--   <P>Testing QA</P> -->
+                        <img src="img/design-thinking.jpg" alt="Acá se muestra la imagen de asesoría design thinking">
+                        <div class="hover-galeria">
+                            <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+                            <!--   <P>Design Thinking</P> -->
+                        </div>
                     </div>
-                </div>
-                <div class="rate-mentoria">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nihil.</p>
-                    <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                    <section class="buy-cart">
-                        <article class="comprar-asesoria">
-                          <h4>Precio: 40USD$</h4>
-                          <button id="comprar" type="submit"><h3>comprar</h3></button>
-                        </article>
+                    <div class="rate-mentoria">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nihil.</p>
+                        <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                        <section class="buy-cart">
+                            <article class="comprar-asesoria">
+                                <h4>Precio: 40USD$</h4>
+                                <button id="comprar" type="submit">
+                                    <h3>comprar</h3>
+                                </button>
+                            </article>
                         </section>
-                </div>
-            <div class="imagen-mentorias">
-                <img src="img/empresas.jpg" alt="Acá se muestra la imagen de asesoría empresas">
-                <div class="hover-galeria">
-                <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
-                   <!--   <P>Asesoría empresas</P> -->
-                </div>
-            </div>
-            <div class="rate-mentoria">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nihil.</p>
-                <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                <section class="buy-cart">
-                    <article class="comprar-asesoria">
-                      <h4>Precio: 40USD$</h4>
-                      <button id="comprar" type="submit"><h3>comprar</h3></button>
-                    </article>
-                    </section>
-            </div>
-                </div>
-                </div>
-            </section>
-    
-            <section class="sobre-mentores">
-                <div class="contenedor">
-                    <h2 class="titulo">Mentoría personalizada</h2>
-                    <div class="mentores-cont">
-                        <div class="cada-mentor">
-                            <img src="img/mentor1.jpg" alt="">
-                            <h3 class="nombre-mentor">Name</h3>
-                            <h4>Especialidad</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
-                            <section class="contactar-cart">
-                                <p class="reseña"><i class="fas fa-star"></i> Calificación</p>
-                                <p class="reseña"><i class="fas fa-star"></i> Reseña</p>
-                                <p class="reseña"><i class="fas fa-star"></i> Estudiantes</p>
-                                <p class="reseña"><i class="fas fa-star"></i> Asesorías</p>
-                                <p class="reseña"><i class="fas fa-star"></i> País</p>
-                                <article class="comprar-asesoria">
-                                  <button id="Contactar" type="submit"><h3>Contactar</h3></button>
-                                </article>
-                                </section>
-                        </div>
-                        <div class="cada-mentor">
-                            <img src="img/mentor2.jpg" alt="">
-                            <h3 class="nombre-mentor">Name</h3>
-                            <h4>Especialidad</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
-                            <section class="contactar-cart">
-                                <p class="reseña"><i class="fas fa-star"></i> Calificación</p>
-                                <p class="reseña"><i class="fas fa-star"></i> Reseña</p>
-                                <p class="reseña"><i class="fas fa-star"></i> Estudiantes</p>
-                                <p class="reseña"><i class="fas fa-star"></i> Asesorías</p>
-                                <p class="reseña"><i class="fas fa-star"></i> País</p>
-                                <article class="comprar-asesoria">
-                                  <button id="Contactar" type="submit"><h3>Contactar</h3></button>
-                                </article>
-                                </section>
-                        </div>
-                        <div class="cada-mentor">
-                            <img src="img/mentor3.jpg" alt="">
-                            <h3 class="nombre-mentor">Name</h3>
-                            <h4>Especialidad</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
-                            <section class="contactar-cart">
-                                <p class="reseña"><i class="fas fa-star"></i> Calificación</p>
-                                <p class="reseña"><i class="fas fa-star"></i> Reseña</p>
-                                <p class="reseña"><i class="fas fa-star"></i> Estudiantes</p>
-                                <p class="reseña"><i class="fas fa-star"></i> Asesorías</p>
-                                <p class="reseña"><i class="fas fa-star"></i> País</p>
-                                <article class="comprar-asesoria">
-                                  <button id="Contactar" type="submit"><h3>Contactar</h3></button>
-                                </article>
-                                </section>
-                        </div>
-                        <div class="cada-mentor">
-                            <img src="img/mentor4.jpg" alt="">
-                            <h3>Name</h3>
-                            <h4>Especialidad</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
-                            <section class="contactar-cart">
-                                <p class="reseña"><i class="fas fa-star"></i> Calificación</p>
-                                <p class="reseña"><i class="fas fa-star"></i> Reseña</p>
-                                <p class="reseña"><i class="fas fa-star"></i> Estudiantes</p>
-                                <p class="reseña"><i class="fas fa-star"></i> Asesorías</p>
-                                <p class="reseña"><i class="fas fa-star"></i> País</p>
-                                <article class="comprar-asesoria">
-                                  <button id="Contactar" type="submit"><h3>Contactar</h3></button>
-                                </article>
-                                </section>
+                    </div>
+                    <div class="imagen-mentorias">
+                        <img src="img/diseñografico.jpg" alt="Acá se muestra la imagen de asesoría diseño gráfico">
+                        <div class="hover-galeria">
+                            <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+                            <!--   <P>Diseño Gráfico</P> -->
                         </div>
                     </div>
+                    <div class="rate-mentoria">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nihil.</p>
+                        <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                        <section class="buy-cart">
+                            <article class="comprar-asesoria">
+                                <h4>Precio: 40USD$</h4>
+                                <button id="comprar" type="submit">
+                                    <h3>comprar</h3>
+                                </button>
+                            </article>
+                        </section>
+                    </div>
+                    <div class="imagen-mentorias">
+                        <img src="img/marketing.jpg" alt="Acá se muestra la imagen de asesoría marketing">
+                        <div class="hover-galeria">
+                            <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+                            <!--   <P>Marketing Digital</P> -->
+                        </div>
+                    </div>
+                    <div class="rate-mentoria">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nihil.</p>
+                        <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                        <section class="buy-cart">
+                            <article class="comprar-asesoria">
+                                <h4>Precio: 40USD$</h4>
+                                <button id="comprar" type="submit">
+                                    <h3>comprar</h3>
+                                </button>
+                            </article>
+                        </section>
+                    </div>
+                    <div class="imagen-mentorias">
+                        <img src="img/testingQA.jpg" alt="Acá se muestra la imagen de asesoría testingQA">
+                        <div class="hover-galeria">
+                            <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+                            <!--   <P>Testing QA</P> -->
+                        </div>
+                    </div>
+                    <div class="rate-mentoria">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nihil.</p>
+                        <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                        <section class="buy-cart">
+                            <article class="comprar-asesoria">
+                                <h4>Precio: 40USD$</h4>
+                                <button id="comprar" type="submit">
+                                    <h3>comprar</h3>
+                                </button>
+                            </article>
+                        </section>
+                    </div>
+                    <div class="imagen-mentorias">
+                        <img src="img/empresas.jpg" alt="Acá se muestra la imagen de asesoría empresas">
+                        <div class="hover-galeria">
+                            <!--  <img class = "click-hover"src="img/click-icon.png" alt=""> -->
+                            <!--   <P>Asesoría empresas</P> -->
+                        </div>
+                    </div>
+                    <div class="rate-mentoria">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, nihil.</p>
+                        <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                        <section class="buy-cart">
+                            <article class="comprar-asesoria">
+                                <h4>Precio: 40USD$</h4>
+                                <button id="comprar" type="submit">
+                                    <h3>comprar</h3>
+                                </button>
+                            </article>
+                        </section>
+                    </div>
                 </div>
-            </section>
-    
-            <section>
-                <div class="contenedor-clientes">
-                    
-                    <h2 class="titulo">¿Qué dicen nuestros clientes?</h2>
-                    <div class="cards">
-                        <div class="card">
+            </div>
+        </section>
+
+        <section class="sobre-mentores">
+            <div class="contenedor">
+                <h2 class="titulo">Mentoría personalizada</h2>
+                <div class="mentores-cont">
+                    <div class="cada-mentor">
+                        <img src="img/mentor1.jpg" alt="">
+                        <h3 class="nombre-mentor">Name</h3>
+                        <h4>Especialidad</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
+                        <section class="contactar-cart">
+                            <p class="reseña"><i class="fas fa-star"></i> Calificación</p>
+                            <p class="reseña"><i class="fas fa-star"></i> Reseña</p>
+                            <p class="reseña"><i class="fas fa-star"></i> Estudiantes</p>
+                            <p class="reseña"><i class="fas fa-star"></i> Asesorías</p>
+                            <p class="reseña"><i class="fas fa-star"></i> País</p>
+                            <article class="comprar-asesoria">
+                                <button id="Contactar" type="submit">
+                                    <h3>Contactar</h3>
+                                </button>
+                            </article>
+                        </section>
+                    </div>
+                    <div class="cada-mentor">
+                        <img src="img/mentor2.jpg" alt="">
+                        <h3 class="nombre-mentor">Name</h3>
+                        <h4>Especialidad</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
+                        <section class="contactar-cart">
+                            <p class="reseña"><i class="fas fa-star"></i> Calificación</p>
+                            <p class="reseña"><i class="fas fa-star"></i> Reseña</p>
+                            <p class="reseña"><i class="fas fa-star"></i> Estudiantes</p>
+                            <p class="reseña"><i class="fas fa-star"></i> Asesorías</p>
+                            <p class="reseña"><i class="fas fa-star"></i> País</p>
+                            <article class="comprar-asesoria">
+                                <button id="Contactar" type="submit">
+                                    <h3>Contactar</h3>
+                                </button>
+                            </article>
+                        </section>
+                    </div>
+                    <div class="cada-mentor">
+                        <img src="img/mentor3.jpg" alt="">
+                        <h3 class="nombre-mentor">Name</h3>
+                        <h4>Especialidad</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
+                        <section class="contactar-cart">
+                            <p class="reseña"><i class="fas fa-star"></i> Calificación</p>
+                            <p class="reseña"><i class="fas fa-star"></i> Reseña</p>
+                            <p class="reseña"><i class="fas fa-star"></i> Estudiantes</p>
+                            <p class="reseña"><i class="fas fa-star"></i> Asesorías</p>
+                            <p class="reseña"><i class="fas fa-star"></i> País</p>
+                            <article class="comprar-asesoria">
+                                <button id="Contactar" type="submit">
+                                    <h3>Contactar</h3>
+                                </button>
+                            </article>
+                        </section>
+                    </div>
+                    <div class="cada-mentor">
+                        <img src="img/mentor4.jpg" alt="">
+                        <h3>Name</h3>
+                        <h4>Especialidad</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
+                        <section class="contactar-cart">
+                            <p class="reseña"><i class="fas fa-star"></i> Calificación</p>
+                            <p class="reseña"><i class="fas fa-star"></i> Reseña</p>
+                            <p class="reseña"><i class="fas fa-star"></i> Estudiantes</p>
+                            <p class="reseña"><i class="fas fa-star"></i> Asesorías</p>
+                            <p class="reseña"><i class="fas fa-star"></i> País</p>
+                            <article class="comprar-asesoria">
+                                <button id="Contactar" type="submit">
+                                    <h3>Contactar</h3>
+                                </button>
+                            </article>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="contenedor-clientes">
+
+                <h2 class="titulo">¿Qué dicen nuestros clientes?</h2>
+                <div class="cards">
+                    <div class="card">
                         <img src="img/cliente1.jpg" alt="Foto del primer cliente">
                         <div class="contenido-texto-card">
                             <h4>Lorena Sacarías</h4>
@@ -267,64 +308,65 @@
                         </div>
                     </div>
                 </div>
-             
-            </section>
-    
-            
-        </main>
-    
-        <footer>
-            <section class="contenedor-footer">
-          <!--    <div class="logo">
+
+        </section>
+
+
+    </main>
+
+    <footer>
+        <section class="contenedor-footer">
+            <!--    <div class="logo">
               <img src="img/Logo-iMentor1.png" alt="">
             </div>  No puedo ajustar el logo al footer pm-->
-            
-                <div class="links">
-                    <ul class="servicios">
-                        <h4>Servicios</h4>
-                        <li><a href="#">Enlace 1</a></li>
-                        <li><a href="#">Enlace 2</a></li>
-                        <li><a href="#">Enlace 3</a></li>
-                    </ul>
-                    <ul class="nosotros">
-                        <h4>Nosotros</h4>
-                        <li><a href="#">Enlace 1</a></li>
-                        <li><a href="#">Enlace 2</a></li>
-                        <li><a href="#">Enlace 3</a></li>
-                    </ul>
-                    <ul class="contacto">
-                        <h4>Contacto</h4>
-                        <li><a href="#">Enlace 1</a></li>
-                        <li><a href="#">Enlace 2</a></li>
-                        <li><a href="#">Enlace 3</a></li>
-                    </ul>
+
+            <div class="links">
+                <ul class="servicios">
+                    <h4>Servicios</h4>
+                    <li><a href="#">Enlace 1</a></li>
+                    <li><a href="#">Enlace 2</a></li>
+                    <li><a href="#">Enlace 3</a></li>
+                </ul>
+                <ul class="nosotros">
+                    <h4>Nosotros</h4>
+                    <li><a href="#">Enlace 1</a></li>
+                    <li><a href="#">Enlace 2</a></li>
+                    <li><a href="#">Enlace 3</a></li>
+                </ul>
+                <ul class="contacto">
+                    <h4>Contacto</h4>
+                    <li><a href="#">Enlace 1</a></li>
+                    <li><a href="#">Enlace 2</a></li>
+                    <li><a href="#">Enlace 3</a></li>
+                </ul>
+            </div>
+
+            <div class="socialmedia">
+                <h4>Síguenos en</h4>
+                <div class="icons">
+                    <i class="fab fa-facebook-square"></i>
+                    <i class="fab fa-twitter-square"></i>
+                    <i class="fab fa-instagram-square"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-youtube-square"></i>
                 </div>
 
-                <div class="socialmedia">
-                    <h4>Síguenos en</h4>
-                    <div class="icons">
-                        <i class="fab fa-facebook-square"></i>
-                        <i class="fab fa-twitter-square"></i>
-                        <i class="fab fa-instagram-square"></i>
-                        <i class="fab fa-linkedin"></i>
-                        <i class="fab fa-youtube-square"></i>
-                    </div>
-
+            </div>
+            <div class="newsletter">
+                <h4>Súmate en nuestro Newsletter</h4>
+                <div class="terminos">
+                    <input type="checkbox" name="terminos" id="terminos">
+                    <label for="terminos">Acepto los términos y condiciones</label>
                 </div>
-                <div class="newsletter">
-                    <h4>Súmate en nuestro Newsletter</h4>
-                    <div class="terminos">
-                        <input type="checkbox" name="terminos" id="terminos">
-                        <label for="terminos">Acepto los términos y condiciones</label>
-                    </div>
-                    <form action="/newsletter" method="POST">
-                        <input class="newsletterJoin" type="email" name="email" placeholder="tuemail@ejemplo.com">
-                    </form>
-                    <div class="suscription">
-                        <button class="suscriptionbutton">Suscribirme</button>
-                    </div>
+                <form action="/newsletter" method="POST">
+                    <input class="newsletterJoin" type="email" name="email" placeholder="tuemail@ejemplo.com">
+                </form>
+                <div class="suscription">
+                    <button class="suscriptionbutton">Suscribirme</button>
                 </div>
-            </section>
-          </footer>
+            </div>
+        </section>
+    </footer>
 </body>
+
 </html>
