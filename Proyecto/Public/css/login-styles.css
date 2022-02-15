@@ -1,0 +1,242 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* Login Page Main*/
+
+main {
+    width: 100vw;
+    height: 100vw;
+}
+
+main img {
+    width: 40vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5%;
+}
+
+main .logo {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(217,217,217);
+}
+
+main p {
+    display: flex;
+    justify-content: center;
+    font-size: 11px;
+    margin-top: 15px;
+}
+
+main div.login {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+main .login-email, .login-password  {
+    display: flex;
+    width: 60vw;
+}
+
+main .box-password, .box-email {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    border-color: rgb(217,217,217);
+    border-width: 1px;
+    padding: 2%;
+    margin: 6% 0%;
+    font-size: 9px;
+    border-radius: 2px;
+    width: 100%;
+}
+
+main .box-password::placeholder {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 600;
+    content: "/f0e0";
+}
+
+main .box-email::placeholder {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 600;
+    content: "/f023";
+}
+
+main .not-register, .password-forgotten {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 9px;
+    text-decoration: underline;
+}
+
+main .login-button {
+    padding: 2%;
+    border-radius: 4px;
+    border: 0;
+    font-size: 8px;
+    background-color: rgb(217,217,217);
+    width: 30%;
+    font-size: 9px;
+}
+
+main .login-button:hover {
+    background-color: #3587A4;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgb(217,217,217);
+  }
+
+main .references {
+    display: flex;
+    justify-content: space-around;
+}
+
+main .login-accept {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8%;
+}
+
+main div.help {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 7px;
+    text-decoration: underline;
+}
+
+main a.terms {
+    font-size: 7px;
+    color: black;
+}
+
+main .politics {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+main .end-img {
+    display: flex;
+    justify-content: center;
+}
+
+main .end-img img {
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+/*Footer*/
+
+body footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 7px;
+    background-color: rgb(217,217,217);
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    bottom: 0px;
+    padding: 10px 0px;
+    z-index: 1;
+}
+
+footer .links .socialmedia {
+    width: 30%;
+}
+
+footer .newsletter {
+    width: 40%;
+}
+
+footer .links h4 {
+    display: none;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    padding-bottom: 5px;
+}
+
+footer ul li a{
+    text-decoration: none;
+    color: #000;
+}
+
+footer .newsletterJoin {
+    width: 90%;
+    border: 0;
+    padding: 2%
+  }
+
+footer .suscriptionbutton {
+    font-size: 7px;
+ }
+
+ footer .newsletterJoin {
+    font-size: 7px;
+ }
+
+ footer .terminos {
+    display: flex;
+    flex-direction: row;
+    font-size: 7px;
+    align-items: center;
+    margin: 3% 0%;
+    border-radius: 2px;
+  }
+
+  footer .terminos input {
+    border: 0;
+    border-radius: 2px;
+  }
+  
+  footer .suscription {
+    display: flex;
+    justify-content: center;
+    margin: 4% 0%;
+  }
+
+  footer .suscriptionbutton {
+      padding: 2%;
+      border-radius: 4px;
+      border: 0;
+      font-size: 8px;
+      background-color: white;
+  }
+
+ footer .suscriptionbutton:hover {
+    background-color: #3587A4;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgb(217,217,217);
+  }
+
+footer .socialmedia .icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 10%;
+    width: 100%;
+}

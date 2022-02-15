@@ -1,0 +1,625 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+}
+
+header .navegacion nav{
+    height: 90px;
+    width: 100%;
+    background-color: #3587A4;
+    position: fixed;
+    z-index: 1;
+}
+
+header .navegacion .enlace-logo{
+    position: absolute;
+    padding: 10px 0px;
+}
+
+header .navegacion .logo{
+    height: 40px;
+    margin-left: 10px;
+}
+
+header .navegacion .buscar{
+    position: fixed;
+    padding: 5px;
+    top: 10px;
+    left: 120px;
+}
+
+header .navegacion .buscar input{
+    width:0px;
+    height: 25px;
+    padding: 0px 5px;
+    font-size: 18px;
+    color: black;
+    outline: none;;
+    border: solid 1px silver;
+    border-radius: 30px;
+    transition: all 0.5s ease;
+}
+
+header .navegacion .buscar .btn{
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: #C1DFF0;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+header .navegacion .buscar:hover input{
+    width:115px;
+}
+
+header .navegacion .buscar input:focus{
+    width:115px;
+}    
+
+header .navegacion .enlace-cesta{
+    position: fixed;
+    padding: 10px 0px;
+    right: 75px;
+    width: 35px;
+    text-align: center;
+}
+
+header .navegacion nav .enlace-cesta i{
+    font-size: 30px;
+    color: black;
+}
+
+header .navegacion nav ul .cesta{
+    display: none;
+}
+
+header .navegacion nav ul .crea-cuenta, header .navegacion nav ul .ingresar{
+    display: block;
+}
+
+header .navegacion .enlace-cuenta{
+    position: fixed;
+    padding: 10px 0px;
+    right: 38px;
+    width: 35px;
+    text-align: center;
+}
+
+header .navegacion nav .enlace-cuenta i{
+    font-size: 30px;
+    color: black;
+}
+
+header .navegacion .enlace-pais{
+    position: fixed;
+    padding: 10px 0px;
+    right: 5px;
+    width: 35px;
+    text-align: center;
+}
+
+header .navegacion nav .enlace-pais i{
+    font-size: 30px;
+    color: black;
+}
+
+
+header .navegacion nav ul{
+    position: fixed;
+    width: 100%;
+    height: calc(100vh - 90px);
+    background-color: #C1DFF0;
+    top: 90px;
+    left: -100%;
+    text-align: center;
+}
+
+header .navegacion nav ul li{
+    display: block;
+    line-height: 15px;
+    margin: 50px 0px;
+}
+
+header .navegacion nav ul li a{
+    color: black;
+    font-size: 20px;
+    padding: 7px 13px;
+    border-radius: 3px;
+}
+
+header .navegacion nav ul li a:hover{
+    color: white;
+}
+
+header .navegacion nav .checkbtn{
+    font-size: 25px;
+    color: black;
+    position: fixed;
+    right: 8px;
+    line-height: 80px;
+    cursor: pointer;
+    display: block;
+    top: 33px;
+} 
+
+header .navegacion nav #check{
+    display: none;
+}
+
+header .navegacion nav #check:checked ~ ul{
+    left:0%;
+}
+
+header .botones {  display:inline-block;
+  
+    position: absolute;
+    z-index: 1;
+      top: 0px;
+    right: 5px;
+    
+   
+
+}
+
+
+/*header .button-header{
+    font: 8 px ;
+    text-decoration: none;
+    background-color: #88CCF1;
+    color: white;
+    padding: 2px 6px 2px 6px;
+    border-top: 0px solid white;
+    border-right: 0px solid white;
+    border-bottom: 0px solid white;
+    border-left: 0px solid white;
+    display: inline-block;
+  border-radius: 8px;
+  margin-top: 15px;
+  position: relative;
+
+  }*/
+
+  header .boton-header-crear-cuenta a, header .boton-header-ingresar a{
+    color: white;
+    font-size: 12px ;
+  }
+header .boton-header-crear-cuenta, header .boton-header-ingresar{
+    display: none;
+    text-decoration: none;
+    background-color: #88CCF1;
+    padding: 2px 6px 2px 6px;
+    border-top: 0px solid white;
+    border-right: 0px solid white;
+    border-bottom: 0px solid white;
+    border-left: 0px solid white;
+    display: inline-block;
+  border-radius: 8px;
+
+}
+
+header .boton-header-crear-cuenta:hover {
+    
+    background-color: #C1DFF0;
+    color: black;
+
+  }
+
+
+header .boton-header-ingresar:hover{
+    
+    background-color: #C1DFF0;
+    color: black;
+
+  }
+
+
+main{
+    position: relative;
+    top: 90px;
+    bottom: 90px;
+    width: 100%;
+}
+
+main .responsive {
+    width: 50%;
+    max-width: 400px;
+    height: auto;
+  }
+
+main .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 70%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    position:relative;
+    display: block;
+    margin: 0 auto}
+  
+  main .active, main .accordion:hover {
+    background-color: #ccc; 
+  }
+  
+  main .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+    width:70%;
+    display:block;
+    margin:0 auto;
+    
+  }
+  
+  main .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    align-content: center
+    
+  }
+  
+  main .slideshow-container img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
+       
+    
+  } 
+  
+  main .prev, main .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+      margin-left: 40px;
+    margin-right: 40px;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  main .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  main .prev:hover, main .next:hover {
+    background-color:lightgray
+  }
+  
+  /* Caption text */
+  main .text {
+    color: black;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: relative;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  main .text-descripcion {
+    color: black;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: relative;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+
+  /* Number text (1/3 etc) */
+  main .numbertext {
+    color: #f2f2f2;
+    font-size: 11px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  main .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  main .active, main .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  main .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  
+  main .button {
+    background-color: #3587A4; /* Azul Patacon */
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+    margin: 0 auto;
+    border-radius: 4px;
+  
+  }
+  
+  main .button:hover {
+    background-color: #C1DFF0;
+    color: black;
+  }
+  
+  
+  main .banner {
+    /* The image used */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://cdn.shrm.org/image/upload/c_crop%2ch_705%2cw_1254%2cx_0%2cy_15/c_fit%2cf_auto%2cq_auto%2cw_767/v1/Employee%20Relations/iStock-1266809682_lflvjj?databtoa=eyIxNng5Ijp7IngiOjAsInkiOjE1LCJ4MiI6MTI1NCwieTIiOjcyMCwidyI6MTI1NCwiaCI6NzA1fX0%3d);
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;}
+    
+    main img.banner {  min-height: 100%;
+        min-width: 1024px;
+    }
+    
+    main .banner-text {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+    }
+    
+    main h1 {
+      color:  white;
+      text-align: center;
+    }
+
+    body footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 7px;
+        background-color: rgb(217,217,217);
+        width: 95vw;
+    }
+    
+    footer .socialmedia, .newsletter {
+        width: 20%;
+        padding: 1%;
+    }
+    
+    footer .links {
+      width: 30%;
+      padding: 0% 1%;
+    }
+    
+    footer div.logo{
+        width: 10%;
+        padding: 1%;
+    }
+    
+    footer .socialmedia {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    footer .socialmedia .icons {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 5%;
+    }
+    
+    footer .links {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    footer .links h4 {
+      padding: 0px;
+    }
+    
+    footer .terminos {
+      display: flex;
+      flex-direction: row;
+      font-size: 5px;
+      align-items: center;
+    }
+    
+    footer .newsletterJoin {
+      width: 97%;
+    }
+    
+    footer .newsletterJoin, .suscriptionbutton {
+       font-size: 5px;
+    }
+    
+    footer .suscription {
+      display: flex;
+      justify-content: center;
+    }
+    
+    footer ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    footer ul li a{
+        text-decoration: none;
+        color: #000;
+    }
+
+
+/*Media Queries*/
+
+@media (min-width: 361px){
+    header .navegacion nav{
+        height: 70px;
+    }
+
+    header .navegacion nav ul{
+        position: fixed;
+        width: 100%;
+        height: 25px;
+        top: 45px;
+        float: right;
+        background-color: #3587A4;
+        left: 0%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 10px;
+        align-items: center;
+    }
+
+    header .navegacion nav ul li{
+        display: inline-flex;
+        margin: 0px 5px;
+    }
+
+    header .navegacion nav ul .cesta, header .navegacion nav ul .crea-cuenta, header .navegacion nav ul .ingresar{
+        display: none;
+    }
+
+    header .navegacion nav ul li a{
+        font-size: 16px;
+        padding: 0px;
+    }
+
+    header .navegacion nav .checkbtn{
+        display: none;
+    }
+    
+    header .navegacion .buscar:hover input{
+        width:33vw;
+    }
+    
+    header .navegacion .buscar input:focus{
+        width:33vw;
+    }    
+
+main .banner {
+    height: 100%;
+  
+}    
+
+main h1 {
+    font-size: 45px;
+
+}
+
+
+}
+
+@media (min-width: 769px){
+    header .navegacion nav .checkbtn{
+        display: none;
+    }
+
+    header .navegacion nav ul li a{
+        font-size: 22px;
+    }
+
+    header .navegacion nav ul .cesta{
+        display: block;
+    }
+
+    header .navegacion nav .enlace-cesta {
+        display: none;
+    }
+
+    .boton-header-crear-cuenta{
+        display: block;
+        position: fixed;
+        padding: 0px;
+        top: 10px;
+        right: 150px;
+        width: 120px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .boton-header-ingresar{
+        display: block;
+        position: fixed;
+        padding: 0px;
+        top: 10px;
+        right: 76px;
+        width: 70px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    header .navegacion .buscar:hover input{
+        width:45vw;
+    }
+    
+    header .navegacion .buscar input:focus{
+        width:45vw;
+    }  
+
+    main h1 {
+        font-size: 75px;
+    
+    }
+}
+
+
+
+@media only screen and (min-width: 380px) {
+    main .prev, main .next,main .text {font-size: 14px}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iMentor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="css/register-styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <section class="navegacion">
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <a href="#" class="enlace-logo">
+                    <img src="img/Logo-iMentor1.png" alt="Logo iMentor" class="logo">
+                </a>
+                <div class="buscar">
+                    <input type="text" placeholder="Buscar" required>
+                    <div class="btn">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <a href="#" class="enlace-cuenta">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                <a href="#" class="enlace-cesta">
+                    <i class="fas fa-shopping-basket"></i>
+                </a>
+                <a href="#" class="enlace-pais">
+                    <i class="fas fa-globe"></i>
+                </a>
+                <button class="boton-header-crear-cuenta" type="submit">¡Crea tu cuenta!</button>
+                <button class="boton-header-ingresar" type="submit">Ingresar</button>
+                <ul>
+                    <li><a class="active" href = "#">Home</a></li>
+                    <li><a href = "#">Servicios</a></li>
+                    <li><a href = "#">Nosotros</a></li>
+                    <li><a href = "#">Plataforma</a></li>
+                    <li class="cesta"><a href = "#"><i class="fas fa-shopping-basket"></i></a></li>
+                    <li class="crea-cuenta"><a href = "#">¡Crea tu cuenta!</a></li>
+                    <li class="ingresar"><a href = "#">Ingresar</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+    <main>
+        <h3>!Creá tu cuenta!</h3>
+        <p>Te invitamos a formar parte de nuestra comunidad</p>
+        <form action="/register" method="POST" class="register-form">
+
+            <div class="register-username">
+                <label for="user-name"><i class="fas fa-user"></i>Nombre completo</label>
+                <input class="boxes" type="text" name="user-name" placeholder="Nombre y Apellido" id="user-name" required>
+            </div>
+
+            <div class="register-email">
+                <label for="email"><i class="fas fa-envelope"></i>E-mail</label>
+                <input class="boxes" type="email" name="email" placeholder="tuemail@ejemplo.com" id="email" required>
+            </div>
+
+            <div class="register-password">
+                <label for="password"><i class="fas fa-lock"></i>Contraseña</label>
+                <input class="boxes" type="password" name="password" value="" id="password" required>
+                <div class="show-password">
+                    <input type="checkbox" name="show-password">
+                    <label>Mostrar contraseña</label>
+                </div>
+            </div>
+        </form>
+        <div class="terminos">
+            <input type="checkbox" name="terminos" id="terminos">
+            <label for="terminos">Acepto los términos y condiciones</label>
+        </div>
+        <div class="register-accept">
+            <button class="register-button">Crear cuenta</button>
+        </div>
+        <div class="already-register">
+            <a href="/login.html">¿Ya tienes una cuenta?</a>
+        </div>
+    </main>
+    <footer>
+        <div class="simbolo">
+
+        </div>
+            <div class="links">
+                <ul class="links-utiles">
+                    <h4>LINKS ÚTILES</h4>
+                    <li><a href="#">Beneficios</a></li>
+                    <li><a href="#">Trabajá con nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+                <ul class="comunidad">
+                    <h4>Nosotros</h4>
+                    <li><a href="#">Webinars</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Sobre iMentor</a></li>
+                </ul>
+            </div>
+        <div class="socialmedia">
+              <h4>Síguenos en</h4>
+              <div class="icons">
+                  <i class="fab fa-facebook-square"></i>
+                  <i class="fab fa-twitter-square"></i>
+                  <i class="fab fa-instagram-square"></i>
+                  <i class="fab fa-linkedin"></i>
+                  <i class="fab fa-youtube-square"></i>
+              </div>
+        </div>
+        <div class="newsletter">
+              <h4>Súmate al Newsletter</h4>
+              <div class="terminos">
+                  <input type="checkbox" name="terminos" id="terminos">
+                  <label for="terminos">Acepto los términos y condiciones</label>
+                </div>
+            <form action="/newsletter" method="POST">
+                  <input class="newsletterJoin" type="email" name="email" placeholder="tuemail@ejemplo.com">
+            </form>
+            <div class="suscription">
+                <button class="suscriptionbutton">Suscribirme</button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iMentor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="css/login-styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+    </header>
+
+    <main>
+        <div class="logo">
+            <img src="img/Logo-iMentor2.png" alt="Logo iMentor">
+        </div>
+        <p>Te damos la bienvenida :)</p>
+        <div class="login">
+            <form action="/login" method="POST">
+                <div class="login-email">
+                    <input class="box-email" type="email" name="email" placeholder="&#xf0e0; E-mail" id="email" required>
+                </div>
+                <div class="login-password">
+                    <input class="box-password" type="password" name="password" value="" placeholder="&#xf023; Contraseña" id="password" required>
+                </div>
+            </form>
+        </div>
+        <div class="references">
+            <div class="not-register">
+                <a href="/register.html">¿No estás registrado?</a>
+            </div>
+            <div class="password-forgotten">
+                <a href="#">Olvidé mi contraseña</a>
+            </div>
+        </div>
+        <div class="login-accept">
+            <button class="login-button">Ingresar</button>
+        </div>
+        <div class="help">
+            <a href="#">¡Necesito ayuda!</a>
+        </div>
+        <div class="politics">
+            <a href="#" class="terms">Términos y Condiciones · Política de Privacidad</a>
+        </div>
+        <div class="end-img">
+            <img src="img/banner_iMentor.jpg" alt="xxx">
+        </div>
+    </main>
+
+    <footer>
+        <div class="simbolo">
+
+        </div>
+            <div class="links">
+                <ul class="links-utiles">
+                    <h4>LINKS ÚTILES</h4>
+                    <li><a href="#">Beneficios</a></li>
+                    <li><a href="#">Trabajá con nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+                <ul class="comunidad">
+                    <h4>Nosotros</h4>
+                    <li><a href="#">Webinars</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Sobre iMentor</a></li>
+                </ul>
+            </div>
+        <div class="socialmedia">
+              <h4>Síguenos en</h4>
+              <div class="icons">
+                  <i class="fab fa-facebook-square"></i>
+                  <i class="fab fa-twitter-square"></i>
+                  <i class="fab fa-instagram-square"></i>
+                  <i class="fab fa-linkedin"></i>
+                  <i class="fab fa-youtube-square"></i>
+              </div>
+        </div>
+        <div class="newsletter">
+              <h4>Súmate al Newsletter</h4>
+              <div class="terminos">
+                  <input type="checkbox" name="terminos" id="terminos">
+                  <label for="terminos">Acepto los términos y condiciones</label>
+                </div>
+            <form action="/newsletter" method="POST">
+                  <input class="newsletterJoin" type="email" name="email" placeholder="tuemail@ejemplo.com">
+            </form>
+            <div class="suscription">
+                <button class="suscriptionbutton">Suscribirme</button>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
