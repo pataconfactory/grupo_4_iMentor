@@ -72,12 +72,13 @@ header .navegacion .buscar .btn{
     position: absolute;
     top: 0px;
     right: 0px;
-    background: #C1DFF0;
+    background: #88CCF1;
     text-align: center;
     color: black;
     font-size: 20px;
     border-radius: 50%;
     cursor: pointer;
+    border: solid 1px white;
 }
 
 header .navegacion .buscar:hover input{
@@ -628,7 +629,7 @@ footer .suscriptionbutton {
       border-radius: 4px;
       border: 0;
       font-size: 8px;
-      background-color: white;
+      background-color: grey;
   }
 
  footer .suscriptionbutton:hover {
