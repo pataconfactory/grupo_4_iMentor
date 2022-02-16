@@ -425,7 +425,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    font-size: 7px;
+    font-size: 8px;
     background-color: rgb(217,217,217);
     width: 100%;
     height: 90px;
@@ -435,16 +435,12 @@ footer {
     z-index: 1;
 }
 
-footer .links .socialmedia {
-    width: 30%;
-}
-
-footer .newsletter {
-    width: 40%;
-}
-
 footer .links h4 {
     display: none;
+}
+
+footer .links li {
+  display: none;
 }
 
 footer ul {
@@ -459,10 +455,15 @@ footer ul li a{
 }
 
 footer .newsletterJoin {
-    width: 90%;
+    width: 80%;
     border: 0;
-    padding: 2%
+    margin-top: 2%;
+    padding: 1%
   }
+
+  footer .socialmedia, .newsletter {
+    width: 50%;
+}
 
 footer .suscriptionbutton {
     font-size: 7px;
@@ -477,23 +478,18 @@ footer .suscriptionbutton {
     flex-direction: row;
     font-size: 7px;
     align-items: center;
-    margin: 3% 0%;
-    border-radius: 2px;
-  }
-
-  footer .terminos input {
-    border: 0;
+    margin: 2% 0%;
     border-radius: 2px;
   }
   
   footer .suscription {
     display: flex;
     justify-content: center;
-    margin: 4% 0%;
+    margin: 3% 0%;
   }
 
   footer .suscriptionbutton {
-      padding: 2%;
+      padding: 1% 3%;
       border-radius: 4px;
       border: 0;
       font-size: 8px;
@@ -508,12 +504,23 @@ footer .suscriptionbutton {
     box-shadow: 3px 3px 5px rgb(217,217,217);
   }
 
+footer .socialmedia h4 {
+  text-align: center;
+}
+
 footer .socialmedia .icons {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding-top: 10%;
-    width: 100%;
+    padding-top: 2%;
+    width: 60%;
+    margin-left: 20%;
+    font-size: 15px;
+}
+
+footer .socialmedia .icons a {
+  text-decoration: none;
+  color: #000;
 }
 
 /*Media Queries*/
@@ -642,6 +649,47 @@ header .boton-header-ingresar:hover{
     display: inline-block
   }
 
+  footer h4 {
+    font-size: 9px;
+  }
+
+  footer .socialmedia .icons {
+    width: 60%;
+    margin-left: 20%;
+    font-size: 18px;
+}
+
+    footer .newsletterJoin {
+      width: 90%;
+    }
+
+    footer .mail-button {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    footer form {
+      width: 70%;
+    }
+
+    footer .suscriptionbutton {
+      padding: 2% 10%;
+      font-size: 8px;
+  }
+
+      footer .newsletterJoin {
+        font-size: 8px;
+        margin-top: 0%;
+    }
+
+    footer .terminos {
+      font-size: 7.5px;
+      margin: 3% 1% 0% 0%;
+    }
+
 }
 
 @media (min-width: 769px){
@@ -700,9 +748,9 @@ header .boton-header-ingresar:hover{
     color: white;
     font-size: 12px ;
     display: inline-block
-  }
+    }
 
-header .boton-header-crear-cuenta, header .boton-header-ingresar{
+    header .boton-header-crear-cuenta, header .boton-header-ingresar{
        display: inline-block;
     text-decoration: none;
     background-color: #88CCF1;
@@ -711,27 +759,103 @@ header .boton-header-crear-cuenta, header .boton-header-ingresar{
     border-right: 0px solid white;
     border-bottom: 0px solid white;
     border-left: 0px solid white;
-    
-  border-radius: 8px;
+    border-radius: 8px;
+  }
 
+    header .boton-header-crear-cuenta:hover {
+    
+    background-color: #C1DFF0;
+    color: black;
+     display: inline-block
+
+  }
+
+
+    header .boton-header-ingresar:hover{
+    
+    background-color: #C1DFF0;
+    color: black;
+     display: inline-block
+
+    }
+
+
+  footer .links h4 {
+      display: block;
+      margin-bottom: 4%;
+  }
+
+  footer .links li {
+    display: block;
+  }
+
+  footer .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  footer div.links, div.socialmedia {
+    width: 30%;
+  }
+
+  footer .links-utiles, .comunidad {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer .newsletter {
+    width: 40%;
+  }
+
+  footer h4 {
+    font-size: 10px;
+  }
+
+  footer ul {
+    font-size: 9px;
+  }
+
+  footer  .icons {
+    width: 50%;
+    font-size: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  footer div.icons {
+    width: 50%;
+    margin-left: 0%;
+    font-size: 30px;
 }
 
-header .boton-header-crear-cuenta:hover {
-    
-    background-color: #C1DFF0;
-    color: black;
-     display: inline-block
+footer .socialmedia h4 {
+  text-align: center;
+}
 
-  }
+footer .suscriptionbutton {
+  font-size: 8px;
+  margin: 0;
+}
 
+footer .newsletterJoin {
+  font-size: 9px;
+  margin: 0px;
+}
 
-header .boton-header-ingresar:hover{
-    
-    background-color: #C1DFF0;
-    color: black;
-     display: inline-block
+footer .terminos {
+  font-size: 8.5px;
+  margin: 0% 0%;
+  margin-top: 1%;
+  border-radius: 2px;
+}
 
-  }
+footer .suscriptionbutton {
+  padding: 5% 10%;
+  font-size: 9px;
+  margin: 0px;
+}
 
 }
 

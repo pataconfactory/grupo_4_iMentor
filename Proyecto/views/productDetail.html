@@ -315,57 +315,45 @@
     </main>
 
     <footer>
-        <section class="contenedor-footer">
-            <!--    <div class="logo">
-              <img src="img/Logo-iMentor1.png" alt="">
-            </div>  No puedo ajustar el logo al footer pm-->
-
-            <div class="links">
-                <ul class="servicios">
-                    <h4>Servicios</h4>
-                    <li><a href="#">Enlace 1</a></li>
-                    <li><a href="#">Enlace 2</a></li>
-                    <li><a href="#">Enlace 3</a></li>
-                </ul>
-                <ul class="nosotros">
-                    <h4>Nosotros</h4>
-                    <li><a href="#">Enlace 1</a></li>
-                    <li><a href="#">Enlace 2</a></li>
-                    <li><a href="#">Enlace 3</a></li>
-                </ul>
-                <ul class="contacto">
-                    <h4>Contacto</h4>
-                    <li><a href="#">Enlace 1</a></li>
-                    <li><a href="#">Enlace 2</a></li>
-                    <li><a href="#">Enlace 3</a></li>
-                </ul>
+        <div class="links">
+            <ul class="links-utiles">
+                <h4>LINKS ÚTILES</h4>
+                <li><a href="/beneficios">Beneficios</a></li>
+                <li><a href="/formulario-trabajo">Trabajá con nosotros</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+            </ul>
+            <ul class="comunidad">
+                <h4>NOSOTROS</h4>
+                <li><a href="/webinars">Webinars</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/iMentor-historia">Sobre iMentor</a></li>
+            </ul>
+        </div>
+        <div class="socialmedia">
+          <h4>Síguenos en</h4>
+          <div class="icons">
+              <a href="/facebook"><i class="fab fa-facebook-square"></i></a>
+              <a href="/twitter"><i class="fab fa-twitter-square"></i></a>
+              <a href="/instagram"><i class="fab fa-instagram-square"></i></a>
+              <a href="/linkedin"><i class="fab fa-linkedin"></i></a>
+              <a href="/youtube"><i class="fab fa-youtube-square"></i></a>
+          </div>
+        </div>
+        <div class="newsletter">
+          <h4>Súmate al Newsletter</h4>
+          <div class="terminos">
+              <input type="checkbox" name="terminos" id="terminos">
+              <label for="terminos">Acepto los términos y condiciones</label>
+          </div>
+          <div class="mail-button">
+              <form action="/newsletter" method="POST">
+                <input class="newsletterJoin" type="email" name="email" placeholder="tuemail@ejemplo.com">
+              </form>
+              <div class="suscription">
+                <button class="suscriptionbutton">Suscribirme</button>
             </div>
-
-            <div class="socialmedia">
-                <h4>Síguenos en</h4>
-                <div class="icons">
-                    <i class="fab fa-facebook-square"></i>
-                    <i class="fab fa-twitter-square"></i>
-                    <i class="fab fa-instagram-square"></i>
-                    <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-youtube-square"></i>
-                </div>
-
-            </div>
-            <div class="newsletter">
-                <h4>Súmate en nuestro Newsletter</h4>
-                <div class="terminos">
-                    <input type="checkbox" name="terminos" id="terminos">
-                    <label for="terminos">Acepto los términos y condiciones</label>
-                </div>
-                <form action="/newsletter" method="POST">
-                    <input class="newsletterJoin" type="email" name="email" placeholder="tuemail@ejemplo.com">
-                </form>
-                <div class="suscription">
-                    <button class="suscriptionbutton">Suscribirme</button>
-                </div>
-            </div>
-        </section>
+          </div>
+        </div>
     </footer>
 </body>
 

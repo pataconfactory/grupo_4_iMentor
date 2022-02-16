@@ -199,46 +199,45 @@
      
     </main>
     <footer>
-      <div class="simbolo">
-
-      </div>
           <div class="links">
               <ul class="links-utiles">
                   <h4>LINKS ÚTILES</h4>
-                  <li><a href="#">Beneficios</a></li>
-                  <li><a href="#">Trabajá con nosotros</a></li>
-                  <li><a href="#">Contacto</a></li>
+                  <li><a href="/beneficios">Beneficios</a></li>
+                  <li><a href="/formulario-trabajo">Trabajá con nosotros</a></li>
+                  <li><a href="/contacto">Contacto</a></li>
               </ul>
               <ul class="comunidad">
-                  <h4>Nosotros</h4>
-                  <li><a href="#">Webinars</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">Sobre iMentor</a></li>
+                  <h4>NOSOTROS</h4>
+                  <li><a href="/webinars">Webinars</a></li>
+                  <li><a href="/blog">Blog</a></li>
+                  <li><a href="/iMentor-historia">Sobre iMentor</a></li>
               </ul>
           </div>
-      <div class="socialmedia">
+          <div class="socialmedia">
             <h4>Síguenos en</h4>
             <div class="icons">
-                <i class="fab fa-facebook-square"></i>
-                <i class="fab fa-twitter-square"></i>
-                <i class="fab fa-instagram-square"></i>
-                <i class="fab fa-linkedin"></i>
-                <i class="fab fa-youtube-square"></i>
+                <a href="/facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="/twitter"><i class="fab fa-twitter-square"></i></a>
+                <a href="/instagram"><i class="fab fa-instagram-square"></i></a>
+                <a href="/linkedin"><i class="fab fa-linkedin"></i></a>
+                <a href="/youtube"><i class="fab fa-youtube-square"></i></a>
             </div>
-      </div>
-      <div class="newsletter">
+          </div>
+          <div class="newsletter">
             <h4>Súmate al Newsletter</h4>
             <div class="terminos">
                 <input type="checkbox" name="terminos" id="terminos">
                 <label for="terminos">Acepto los términos y condiciones</label>
+            </div>
+            <div class="mail-button">
+                <form action="/newsletter" method="POST">
+                  <input class="newsletterJoin" type="email" name="email" placeholder="tuemail@ejemplo.com">
+                </form>
+                <div class="suscription">
+                  <button class="suscriptionbutton">Suscribirme</button>
               </div>
-          <form action="/newsletter" method="POST">
-                <input class="newsletterJoin" type="email" name="email" placeholder="tuemail@ejemplo.com">
-          </form>
-          <div class="suscription">
-              <button class="suscriptionbutton">Suscribirme</button>
+            </div>
           </div>
-      </div>
   </footer>
 </body>
 </html>
