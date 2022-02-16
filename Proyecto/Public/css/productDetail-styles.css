@@ -9,11 +9,6 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
-    font-family: "open sans";
-
-}
-
 
 .contenedor {
     padding: 30px 0px;
@@ -28,12 +23,12 @@ body {
     color: #3587A4;
     font-size: 40px;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
 
 /*ACÁ COMIENZA HEADER*/
 
-header .navegacion nav {
+header .navegacion nav{
     height: 90px;
     width: 100%;
     background-color: #3587A4;
@@ -41,37 +36,36 @@ header .navegacion nav {
     z-index: 1;
 }
 
-header .navegacion .enlace-logo {
+header .navegacion .enlace-logo{
     position: absolute;
     padding: 10px 0px;
 }
 
-header .navegacion .logo {
+header .navegacion .logo{
     height: 40px;
     margin-left: 10px;
 }
 
-header .navegacion .buscar {
+header .navegacion .buscar{
     position: fixed;
     padding: 5px;
     top: 10px;
     left: 120px;
 }
 
-header .navegacion .buscar input {
-    width: 0px;
+header .navegacion .buscar input{
+    width:0px;
     height: 25px;
     padding: 0px 5px;
     font-size: 18px;
     color: black;
     outline: none;
-    ;
     border: solid 1px silver;
     border-radius: 30px;
     transition: all 0.5s ease;
 }
 
-header .navegacion .buscar .btn {
+header .navegacion .buscar .btn{
     width: 33px;
     height: 33px;
     line-height: 33px;
@@ -86,15 +80,15 @@ header .navegacion .buscar .btn {
     cursor: pointer;
 }
 
-header .navegacion .buscar:hover input {
-    width: 115px;
+header .navegacion .buscar:hover input{
+    width:115px;
 }
 
-header .navegacion .buscar input:focus {
-    width: 115px;
-}
+header .navegacion .buscar input:focus{
+    width:115px;
+}    
 
-header .navegacion .enlace-cesta {
+header .navegacion .enlace-cesta{
     position: fixed;
     padding: 10px 0px;
     right: 75px;
@@ -102,21 +96,20 @@ header .navegacion .enlace-cesta {
     text-align: center;
 }
 
-header .navegacion nav .enlace-cesta i {
+header .navegacion nav .enlace-cesta i{
     font-size: 30px;
     color: black;
 }
 
-header .navegacion nav ul .cesta {
+header .navegacion nav ul .cesta{
     display: none;
 }
 
-header .navegacion nav ul .crea-cuenta,
-header .navegacion nav ul .ingresar {
+header .navegacion nav ul .crea-cuenta, header .navegacion nav ul .ingresar{
     display: block;
 }
 
-header .navegacion .enlace-cuenta {
+header .navegacion .enlace-cuenta{
     position: fixed;
     padding: 10px 0px;
     right: 38px;
@@ -124,12 +117,12 @@ header .navegacion .enlace-cuenta {
     text-align: center;
 }
 
-header .navegacion nav .enlace-cuenta i {
+header .navegacion nav .enlace-cuenta i{
     font-size: 30px;
     color: black;
 }
 
-header .navegacion .enlace-pais {
+header .navegacion .enlace-pais{
     position: fixed;
     padding: 10px 0px;
     right: 5px;
@@ -137,40 +130,40 @@ header .navegacion .enlace-pais {
     text-align: center;
 }
 
-header .navegacion nav .enlace-pais i {
+header .navegacion nav .enlace-pais i{
     font-size: 30px;
     color: black;
 }
 
 
-header .navegacion nav ul {
+header .navegacion nav ul{
     position: fixed;
-    width: 100%;
-    height: calc(100vh - 90px);
+    width: 100vW;
+    height: calc(100vh - 180px);
     background-color: #C1DFF0;
     top: 90px;
-    left: -100%;
+    left: -100vw;
     text-align: center;
 }
 
-header .navegacion nav ul li {
+header .navegacion nav ul li{
     display: block;
-    line-height: 15px;
-    margin: 50px 0px;
+    line-height: 10px;
+    margin: 44px 0px;
 }
 
-header .navegacion nav ul li a {
+header .navegacion nav ul li a{
     color: black;
     font-size: 20px;
-    padding: 7px 13px;
+    padding: 5px 13px;
     border-radius: 3px;
 }
 
-header .navegacion nav ul li a:hover {
+header .navegacion nav ul li a:hover{
     color: white;
 }
 
-header .navegacion nav .checkbtn {
+header .navegacion nav .checkbtn{
     font-size: 25px;
     color: black;
     position: fixed;
@@ -179,81 +172,39 @@ header .navegacion nav .checkbtn {
     cursor: pointer;
     display: block;
     top: 33px;
-}
+} 
 
-header .navegacion nav #check {
+header .navegacion nav #check{
     display: none;
 }
 
-header .navegacion nav #check:checked~ul {
-    left: 0%;
+header .navegacion nav #check:checked ~ ul{
+    left:0%;
 }
 
-header .botones {
-    display: inline-block;
-
-    position: absolute;
-    z-index: 1;
-    top: 0px;
-    right: 5px;
-
-
-
-}
-
-
-/*header .button-header{
-    font: 8 px ;
-    text-decoration: none;
-    background-color: #88CCF1;
+header .boton-header-crear-cuenta a, header .boton-header-ingresar a{
     color: white;
-    padding: 2px 6px 2px 6px;
-    border-top: 0px solid white;
-    border-right: 0px solid white;
-    border-bottom: 0px solid white;
-    border-left: 0px solid white;
-    display: inline-block;
-  border-radius: 8px;
-  margin-top: 15px;
-  position: relative;
-  }*/
-
-header .boton-header-crear-cuenta a,
-header .boton-header-ingresar a {
-    color: white;
-    font-size: 12px;
+    font-size: 12px ;
 }
 
-header .boton-header-crear-cuenta,
-header .boton-header-ingresar {
+header .boton-header-crear-cuenta, header .boton-header-ingresar{
     display: none;
     text-decoration: none;
     background-color: #88CCF1;
     padding: 2px 6px 2px 6px;
-    border-top: 0px solid white;
-    border-right: 0px solid white;
-    border-bottom: 0px solid white;
-    border-left: 0px solid white;
-    display: inline-block;
+    border: 0px solid white;
     border-radius: 8px;
-
 }
 
-header .boton-header-crear-cuenta:hover {
-
+header .boton-header-crear-cuenta:hover{
     background-color: #C1DFF0;
     color: black;
-
 }
 
-
-header .boton-header-ingresar:hover {
-
+header .boton-header-ingresar:hover{
     background-color: #C1DFF0;
     color: black;
-
 }
-
 
 /*TERMINA EL HEADER*/
 
@@ -262,7 +213,7 @@ header .boton-header-ingresar:hover {
         /* The image used */
         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url(https://cdn.shrm.org/image/upload/c_crop%2ch_705%2cw_1254%2cx_0%2cy_15/c_fit%2cf_auto%2cq_auto%2cw_767/v1/Employee%20Relations/iStock-1266809682_lflvjj?databtoa=eyIxNng5Ijp7IngiOjAsInkiOjE1LCJ4MiI6MTI1NCwieTIiOjcyMCwidyI6MTI1NCwiaCI6NzA1fX0%3d);
-        height: 50%;
+        height: 100%;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -347,6 +298,8 @@ main .sobre-servicios {
 .portafolio-mentorias {
     background: #f2f2f2;
     transition-duration: 400ms;
+    justify-content: center;
+    align-items: center;
 }
 
 .rating {
@@ -360,26 +313,46 @@ main .sobre-servicios {
 
 .galeria-mentorias {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     transition-duration: 400ms;
 
 }
 
+.rate-mentoria p {
+    font-weight: 300;
+    text-align: justify;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
 /*##################################################*/
 /*Boton comprar asesoria por tema*/
+
+article .comprar-asesoria {
+    justify-content: center;
+    align-items: center;
+}
+
 .buy-cart .comprar-asesoria button {
     margin: 5px 5px;
     border-radius: 5px;
-    width: 25%;
+    width: 50%;
     color: #f2f2f2;
     background-color: #2D848A;
     cursor: pointer;
+    justify-content: center;
 }
 
-.comprar-asesoria #comprar:hover {
+.comprar-asesoria #adquirir:hover {
     background-color: #2D848A;
     transition: all 100ms;
+}
+
+.comprar-asesoria #adquirir {
+    justify-content: center;
 }
 
 /*##################################################*/
@@ -438,7 +411,7 @@ main .sobre-servicios {
 
 .contenedor-clientes {
     background: #f2f2f2;
-    padding-bottom: 20px;
+    padding-bottom: 80px;
 
 }
 
@@ -491,7 +464,6 @@ main .sobre-servicios {
 .sobre-mentores {
     display: flex;
     background: white;
-    padding-bottom: 30px;
     position: relative;
     justify-content: space-between;
 
@@ -539,10 +511,8 @@ main .sobre-servicios {
 
 }
 
-.cada-mentor h3,
-h4 {
+.cada-mentor #Contactar {
     font-weight: 300;
-    text-align: justify;
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -583,7 +553,7 @@ h4 {
     display: content;
 }
 
-/*Footer*/
+/*Footer**/
 
 footer {
     display: flex;
@@ -627,6 +597,7 @@ footer .newsletterJoin {
 
   footer .socialmedia, .newsletter {
     width: 50%;
+    
 }
 
 footer .suscriptionbutton {
@@ -670,7 +641,13 @@ footer .suscriptionbutton {
 
 footer .socialmedia h4 {
   text-align: center;
+  font-weight: bold;
 }
+
+footer .newsletter h4 {
+    font-weight: bold;
+    text-align: left;
+  }
 
 footer .socialmedia .icons {
     display: flex;
@@ -685,7 +662,7 @@ footer .socialmedia .icons {
 footer .socialmedia .icons a {
   text-decoration: none;
   color: #000;
-}
+} 
 
 /*en tablets el diseño se ve bien, comienzo a trabajar esta media query para dispositivos menores a 500px*/
 /*AC+A COMIENZAN LAS MEDIAS QUERYS*/
