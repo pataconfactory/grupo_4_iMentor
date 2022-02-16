@@ -14,9 +14,9 @@
   <p>Victoria hace footer</p>
   <p>Pat hace el detalle del producto</p>
   <p>Pato hace la home</p>
-  <p> Pato se ocupa de que el home sea responsivo</p>
+  <p>Pato se ocupa de que el home sea responsivo</p>
   <p>Pato linkea en el header</p>
-  <p> Quiz hace el carrito</p>
+  <p>Quiz hace el carrito</p>
   <p>Quiz modifica z-index del header</p>
   <p>Footer lo hace Vic más responsivo</p>
   <p>Definición de la retro</p>
@@ -24,8 +24,9 @@
   <p>Victoria hace Login page versión mobile</p>
   <p>Hacer responsive la Register page, medias queries</p>
   <p>Hacer responsive la Login page, medias queries</p>
-  
-
+  <p>Hacer responsive carrito de compras y Header, medias queries</p>
+  <p>Colocar las tareas en el Trello</p>
+  <p>Hojas de estilo ordenadas</p>
   
   </li></ul>
   <br>
