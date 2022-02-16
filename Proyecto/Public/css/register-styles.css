@@ -165,36 +165,15 @@ header .botones {  display:inline-block;
   
     position: absolute;
     z-index: 1;
-      top: 0px;
+    top: 0px;
     right: 5px;
-    
-   
-
 }
 
-
-/*header .button-header{
-    font: 8 px ;
-    text-decoration: none;
-    background-color: #88CCF1;
-    color: white;
-    padding: 2px 6px 2px 6px;
-    border-top: 0px solid white;
-    border-right: 0px solid white;
-    border-bottom: 0px solid white;
-    border-left: 0px solid white;
-    display: inline-block;
-  border-radius: 8px;
-  margin-top: 15px;
-  position: relative;
-
-  }*/
-
-  header .boton-header-crear-cuenta a, header .boton-header-ingresar a{
+header .boton-header-crear-cuenta a, header .boton-header-ingresar a{
     color: white;
     font-size: 12px ;
     display: none
-  }
+}
 
 header .boton-header-crear-cuenta, header .boton-header-ingresar{
     display: none;
@@ -205,33 +184,30 @@ header .boton-header-crear-cuenta, header .boton-header-ingresar{
     border-right: 0px solid white;
     border-bottom: 0px solid white;
     border-left: 0px solid white;
-    
-  border-radius: 8px;
-
+    border-radius: 8px;
 }
 
 header .boton-header-crear-cuenta:hover {
-    
     background-color: #C1DFF0;
     color: black;
-display: none;
-  }
+    display: none;
+}
 
 
 header .boton-header-ingresar:hover{
-    
     background-color: #C1DFF0;
     color: black;
-display: none;
-  }
-main{
+    display: none;
+}
+
+/* Register Page Main*/
+
+main {
     position: relative;
     top: 90px;
     bottom: 90px;
     width: 100%;
 }
-
-/* Register Page Main*/
 
 main h3 {
     display: flex;
@@ -312,7 +288,7 @@ main .register-button {
 main .register-button a {
     text-decoration: none;
     color: #000;
-  }
+}
 
 main .register-button:hover {
     background-color: #3587A4;
@@ -320,7 +296,7 @@ main .register-button:hover {
     font-weight: bold;
     cursor: pointer;
     box-shadow: 3px 3px 5px rgb(217,217,217);
-  }
+}
 
 main .already-register {
     padding-top: 15px;
@@ -379,15 +355,15 @@ main .already-register {
         width:33vw;
     }    
 
-main .banner {
-    height: 100%;
-  
-}    
+    main .banner {
+        height: 100%;
+    
+    }    
 
-main h1 {
-    font-size: 45px;
+    main h1 {
+        font-size: 45px;
 
-}
+    }
 
     .boton-header-crear-cuenta{
         display: none;
@@ -419,92 +395,91 @@ main h1 {
         width:45vw;
     }  
 
-header .boton-header-crear-cuenta, header .boton-header-ingresar{
-   
+    header .boton-header-crear-cuenta, header .boton-header-ingresar{
     text-decoration: none;
-   display: none;
+    display: none;
     background-color: #88CCF1;
     padding: 2px 6px 2px 6px;
     border-top: 0px solid white;
     border-right: 0px solid white;
     border-bottom: 0px solid white;
     border-left: 0px solid white;
-   margin-left:300px;
-  z-index:3;
-    
-  border-radius: 8px;
+    margin-left:300px;
+    z-index: 3;
+    border-radius: 8px;
+    }
 
-}
-
-header .boton-header-crear-cuenta:hover {
-    
-    background-color: #C1DFF0;
-    color: black;
-    display: none;
-  }
+    header .boton-header-crear-cuenta:hover {
+        background-color: #C1DFF0;
+        color: black;
+        display: none;
+    }
 
 
-header .boton-header-ingresar:hover{
-    
-    background-color: #C1DFF0;
-    color: black;
-    display: none;
-  }
+    header .boton-header-ingresar:hover{  
+        background-color: #C1DFF0;
+        color: black;
+        display: none;
+    }
 
 
-      header .boton-header-crear-cuenta a, header .boton-header-ingresar a{
-    color: white;
-    font-size: 12px ;
-    display: none
-  }
+    header .boton-header-crear-cuenta a, header .boton-header-ingresar a{
+        color: white;
+        font-size: 12px ;
+        display: none
+    }
 
+    main h3 {
+        font-size: 23px;
+        padding-top: 12px;
+    }
 
-main h3 {
-    font-size: 23px;
-}
+    main p {
+        font-size: 11px;
+    }
 
-main p {
-    font-size: 11px;
-}
+    main form.register-form {
+        padding: 0% 0% 0% 10%;
+    }
 
-main form.register-form {
-    padding: 2% 0% 0% 10%;
-}
+    main .register-username, .register-email, .register-password {
+        font-size: 10px;
+        margin: 3.5% 0%;
+    }
 
-main .register-username, .register-email, .register-password {
-    font-size: 10px;
-}
+    main .register-form .boxes {
+        font-size: 9.5px;
+        padding: 1.2%;
+        margin-top: 1%;
+        width: 60%;
+    }
 
-main .register-form .boxes {
-    font-size: 9.5px;
-    padding: 1.5%;
-    margin-top: 2%;
-}
+    main .terminos {
+        font-size: 9px;
+        padding: 4% 0% 0% 10%;
+    }
 
-main .terminos {
-    font-size: 9px;
-    padding: 6% 0% 0% 10%;
-  }
+    main .show-password {
+        font-size: 8px;
+    }
 
-main .show-password {
-    font-size: 8px;
-  }
+    main .register-accept {
+        margin-top: 3%;
+    }
 
-main .register-accept {
-    margin-top: 6%;
-}
+    main .register-button {
+        font-size: 11px;
+    }
 
-main .register-button {
-    font-size: 11px;
-}
+    main .already-register {
+        font-size: 9px;
+        padding-top: 10px;
+    }
 
-main .already-register {
-    font-size: 9px;
-}
-
-}
+    }
 
 @media (min-width: 769px){
+
     header .navegacion nav .checkbtn{
         display: none;
     }
@@ -553,113 +528,114 @@ main .already-register {
 
     main h1 {
         font-size: 75px;
-    
     }
 
     header .boton-header-crear-cuenta a, header .boton-header-ingresar a{
-    color: white;
-    font-size: 12px ;
-    display: none
-  }
+        color: white;
+        font-size: 12px ;
+        display: none
+    }
 
-header .boton-header-crear-cuenta, header .boton-header-ingresar{
+    header .boton-header-crear-cuenta, header .boton-header-ingresar{
        display: none;
-    text-decoration: none;
-    background-color: #88CCF1;
-    padding: 2px 6px 2px 6px;
-    border-top: 0px solid white;
-    border-right: 0px solid white;
-    border-bottom: 0px solid white;
-    border-left: 0px solid white;
+        text-decoration: none;
+        background-color: #88CCF1;
+        padding: 2px 6px 2px 6px;
+        border-top: 0px solid white;
+        border-right: 0px solid white;
+        border-bottom: 0px solid white;
+        border-left: 0px solid white; 
+        border-radius: 8px;
+    }
+
+    header .boton-header-crear-cuenta:hover {
+        background-color: #C1DFF0;
+        color: black;
+        display: none
+    }
+
+
+    header .boton-header-ingresar:hover{
+        background-color: #C1DFF0;
+        color: black;
+        display: none
+    }
+
+    main h3 {
+        font-size: 27px;
+        padding-top: 7px;
+    }
+
+    main p {
+        font-size: 14px;
+    }
+
+    main form.register-form {
+        padding: 0% 0% 0% 10%;
+    }
+
+    main .register-username, .register-email, .register-password {
+        font-size: 13px;
+        margin: 3% 0%;
+    }
+
+    main .register-form .boxes {
+        font-size: 11.5px;
+        padding: 1%;
+        margin-top: 1%;
+        margin-right: 2%;
+        width: 50%;
+    }
+
+    main .terminos {
+        font-size: 11px;
+        padding: 0.5% 0% 0% 10%;
+    }
+
+    main .show-password {
+        font-size: 10px;
+    }
+
+    main .box-showpassword {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    main .register-button {
+        font-size: 13px;
+        padding: 0.5% 2%;
+    }
+
+    main .already-register {
+        font-size: 11px;
+        padding-top: 6px;
+    }
+
+    main form i {
+        font-size: 14px;
+        margin-right: 1%;
+    }
+
+    main .register-accept {
+        margin-top: 2%;
+    }
     
-  border-radius: 8px;
-
-}
-
-header .boton-header-crear-cuenta:hover {
-    
-    background-color: #C1DFF0;
-    color: black;
-     display: none
-
-  }
-
-
-header .boton-header-ingresar:hover{
-    
-    background-color: #C1DFF0;
-    color: black;
-     display: none
-
-  }
-
-  main h3 {
-    font-size: 27px;
-}
-
-main p {
-    font-size: 14px;
-}
-
-main form.register-form {
-    padding: 1% 0% 0% 10%;
-}
-
-main .register-username, .register-email, .register-password {
-    font-size: 13px;
-}
-
-main .register-form .boxes {
-    font-size: 11.5px;
-    padding: 1.5%;
-    margin-top: 1%;
-    margin-right: 2%;
-}
-
-main .terminos {
-    font-size: 11px;
-    padding: 3% 0% 0% 10%;
-  }
-
-main .show-password {
-    font-size: 10px;
-  }
-
-main .box-showpassword {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-main .register-button {
-    font-size: 13px;
-}
-
-main .already-register {
-    font-size: 11px;
-}
-
-main form i {
-    font-size: 14px;
-    margin-right: 1%;
-}
-  
-}
-
+    }
 
 
 @media only screen and (min-width: 380px) {
     main .prev, main .next,main .text {font-size: 14px}
 
+
 @-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+    from {opacity: .4} 
+    to {opacity: 1}
 }
 
 @keyframes fade {
     from {opacity: .4} 
     to {opacity: 1}
-  }
-  
+}
 
 }
