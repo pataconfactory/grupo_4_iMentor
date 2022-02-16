@@ -29,7 +29,7 @@
                 <a href="#" class="enlace-cuenta">
                     <i class="fas fa-user-circle"></i>
                 </a>
-                <a href="#" class="enlace-cesta">
+                <a href="/productCart" class="enlace-cesta">
                     <i class="fas fa-shopping-basket"></i>
                 </a>
                 <a href="#" class="enlace-pais">
@@ -38,102 +38,257 @@
                 <button class="boton-header-crear-cuenta" type="submit"><a href= "/register">¡Crea tu cuenta!</a></button>
                 <button class="boton-header-ingresar" type="submit"><a href= "/login">Ingresar</a></button>
                 <ul>
-                    <li><a class="active" href = "#">Home</a></li>
-                    <li><a href = "#">Servicios</a></li>
+                    <li><a class="active" href = "/">Home</a></li>
+                    <li><a href = "/productDetail">Servicios</a></li>
                     <li><a href = "#">Nosotros</a></li>
                     <li><a href = "#">Plataforma</a></li>
-                    <li class="cesta"><a href = "#"><i class="fas fa-shopping-basket"></i></a></li>
-                    <li class="crea-cuenta"><a href = "#">¡Crea tu cuenta!</a></li>
-                    <li class="ingresar"><a href = "#">Ingresar</a></li>
+                    <li class="cesta"><a href = "/productCart"><i class="fas fa-shopping-basket"></i></a></li>
+                    <li class="crea-cuenta"><a href = "/register">¡Crea tu cuenta!</a></li>
+                    <li class="ingresar"><a href = "/login">Ingresar</a></li>
                 </ul>
             </nav>
         </section>
     </header>
     <main>
-        <div class="wrapper">
-            <h1>Servicios de la Canasta</h1>
-            <div class="project">
-                <div class="shop">
-                    <div class="box">
-                        <img src="1.jpg">
+        <div class="contenedor">
+            <h1>Servicios en la Cesta</h1>
+            <div class="shop">
+                <div class="seccion-productos">
+                    <article class="servicio">
+                        <img src="img/desarrollo.jpg" alt="Imagen de Asesoría de Desarrollo Web">
                         <div class="content">
-                            <h3>Women Lipsticks</h3>
-                            <h4>Price: $40</h4>
-                            <p class="unit">Quantity: <input name="" value="2"></p>
-                            <p class="btn-area"><i aria-hidden="true" class="fa fa-trash"></i> <span class="btn2">Remove</span></p>
+                            <h3><a href="/productDetail">Asesoría de Desarrollo Web</a></h3>
+                            <div class="estrellas">
+                                <form>
+                                    <p class="clasificacion">
+                                    <input id="radio1" type="radio" name="estrellas" value="5">
+                                    <label for="radio1">★</label>
+                                    <input id="radio2" type="radio" name="estrellas" value="4">
+                                    <label for="radio2">★</label>
+                                    <input id="radio3" type="radio" name="estrellas" value="3">
+                                    <label for="radio3">★</label>
+                                    <input id="radio4" type="radio" name="estrellas" value="2">
+                                    <label for="radio4">★</label>
+                                    <input id="radio5" type="radio" name="estrellas" value="1">
+                                    <label for="radio5">★</label>
+                                    </p>
+                                </form>
+                            </div>
+                            <br>
+                            <h4>Mentor: Lucas Sequeira</h4>
+                            <h4 class="horas">03 horas</h4> 
+                            <h4>Desarrollo Web Full Stack</h4>
+                            <h4>40USD$<i class="fas fa-tag"></i></h4>
+                            <h4 class="unit">Cantidad:<input type="number" name="cantidad" min="1" value="1"></h4>
+                            <button class="btn-area" type="submit"><a href="#"><i class="fa fa-trash"></i><span class="btn2">Eliminar</span></a></button>
                         </div>
-                    </div>
-                    <div class="box">
-                        <img src="2.jpg">
-                        <div class="content">
-                            <h3>Man's Watches</h3>
-                            <h4>Price: $40</h4>
-                            <p class="unit">Quantity: <input name="" value="1"></p>
-                            <p class="btn-area"><i aria-hidden="true" class="fa fa-trash"></i> <span class="btn2">Remove</span></p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <img src="3.jpg">
-                        <div class="content">
-                            <h3>Samsung Mobile</h3>
-                            <h4>Price: $250</h4>
-                            <p class="unit">Quantity: <input name="" value="0"></p>
-                            <p class="btn-area"><i aria-hidden="true" class="fa fa-trash"></i> <span class="btn2">Remove</span></p>
-                        </div>
-                    </div>
+                    </article>                    
                 </div>
                 <div class="right-bar">
-                    <p><span>Subtotal</span> <span>$120</span></p>
+                    <p><span>Subtotal</span> <span>40USD$</span></p>
                     <hr>
-                    <p><span>Tax (5%)</span> <span>$6</span></p>
+                    <p><span>Tax (5%)</span> <span>2USD$</span></p>
                     <hr>
-                    <p><span>Shipping</span> <span>$15</span></p>
+                    <p><span>Promoción</span> <span>USD$</span> </p>
                     <hr>
-                    <p><span>Total</span> <span>$141</span></p><a href="#"><i class="fa fa-shopping-cart"></i>Checkout</a>
+                    <p><input type="text" name="promocion" id="promocion" placeholder="Promoción a aplicar" class="promocion"></p>
+                    <hr>
+                    <p><span>Total</span> <span>42USD$</span></p><a href="/"><i class="fa fa-shopping-cart"></i>Pagar</a>
                 </div>
             </div>
+        </div>
+        <h2>También podría interesarte</h2>
+        <div class="slide-container">
+            <i class="fas fa-arrow-circle-left"></i>
+            <section class="container" id="slider">           
+                <div class="miniatura">
+                    <img src="img/mentor3.jpg" alt="Imagen de la mentora Patricia Garza">
+                    <div class="product-details">
+                        <h3>Asesoría</h3>
+                        <h3 class="name-product">Desarrollo Web</h3>
+                        <h3>Patricia Garza</h3>
+                        <form>
+                            <p class="clasificacion">
+                            <input id="radio1" type="radio" name="estrellas" value="5">
+                            <label for="radio1">★</label>
+                            <input id="radio2" type="radio" name="estrellas" value="4">
+                            <label for="radio2">★</label>
+                            <input id="radio3" type="radio" name="estrellas" value="3">
+                            <label for="radio3">★</label>
+                            <input id="radio4" type="radio" name="estrellas" value="2">
+                            <label for="radio4">★</label>
+                            <input id="radio5" type="radio" name="estrellas" value="1">
+                            <label for="radio5">★</label>
+                            </p>
+                        </form>
+                        <p><span>40USD$</span>03 horas</p>
+                        <a href="/productDetail">Ver</a>
+                    </div>
+                </div>
+                <div class="miniatura">
+                    <img src="img/mentor4.jpg" alt="Imagen de la mentora Quizaira Rodriguez">
+                    <div class="product-details">
+                        <h3>Asesoría</h3>
+                        <h3 class="name-product">Desarrollo Web</h3>
+                        <h3>Quizaira Rodriguez</h3>
+                        <form>
+                            <p class="clasificacion">
+                            <input id="radio1" type="radio" name="estrellas" value="5">
+                            <label for="radio1">★</label>
+                            <input id="radio2" type="radio" name="estrellas" value="4">
+                            <label for="radio2">★</label>
+                            <input id="radio3" type="radio" name="estrellas" value="3">
+                            <label for="radio3">★</label>
+                            <input id="radio4" type="radio" name="estrellas" value="2">
+                            <label for="radio4">★</label>
+                            <input id="radio5" type="radio" name="estrellas" value="1">
+                            <label for="radio5">★</label>
+                            </p>
+                        </form>
+                        <p><span>40USD$</span>03 horas</p>
+                        <a href="/productDetail">Ver</a>
+                    </div>
+                </div>
+                <div class="miniatura">
+                    <img src="img/mentor5.jpg" alt="Imagen del mentor Pedro Gonzalez">
+                    <div class="product-details">
+                        <h3>Asesoría</h3>
+                        <h3 class="name-product">Desarrollo Web</h3>
+                        <h3>Pedro Gonzalez</h3>
+                        <form>
+                            <p class="clasificacion">
+                            <input id="radio1" type="radio" name="estrellas" value="5">
+                            <label for="radio1">★</label>
+                            <input id="radio2" type="radio" name="estrellas" value="4">
+                            <label for="radio2">★</label>
+                            <input id="radio3" type="radio" name="estrellas" value="3">
+                            <label for="radio3">★</label>
+                            <input id="radio4" type="radio" name="estrellas" value="2">
+                            <label for="radio4">★</label>
+                            <input id="radio5" type="radio" name="estrellas" value="1">
+                            <label for="radio5">★</label>
+                            </p>
+                        </form>
+                        <p><span>40USD$</span>03 horas</p>
+                        <a href="/productDetail">Ver</a>
+                    </div>
+                </div>
+                <div class="miniatura">
+                    <img src="img/mentor6.png" alt="Imagen del mentor Lucas Sequeira">
+                    <div class="product-details">
+                        <h3>Asesoría</h3>
+                        <h3 class="name-product">Desarrollo Web</h3>
+                        <h3>Lucas Sequeira</h3>
+                        <form>
+                            <p class="clasificacion">
+                            <input id="radio1" type="radio" name="estrellas" value="5">
+                            <label for="radio1">★</label>
+                            <input id="radio2" type="radio" name="estrellas" value="4">
+                            <label for="radio2">★</label>
+                            <input id="radio3" type="radio" name="estrellas" value="3">
+                            <label for="radio3">★</label>
+                            <input id="radio4" type="radio" name="estrellas" value="2">
+                            <label for="radio4">★</label>
+                            <input id="radio5" type="radio" name="estrellas" value="1">
+                            <label for="radio5">★</label>
+                            </p>
+                        </form>
+                        <p><span>40USD$</span>03 horas</p>
+                        <a href="/productDetail">Ver</a>
+                    </div>
+                </div>
+                <div class="miniatura">
+                    <img src="img/profe-tutora.jpg" alt="Imagen de la mentora Patricia Williams">
+                    <div class="product-details">
+                        <h3>Asesoría</h3>
+                        <h3 class="name-product">Diseño Gráfico</h3>
+                        <h3>Patricia Williams</h3>
+                        <form>
+                            <p class="clasificacion">
+                            <input id="radio1" type="radio" name="estrellas" value="5">
+                            <label for="radio1">★</label>
+                            <input id="radio2" type="radio" name="estrellas" value="4">
+                            <label for="radio2">★</label>
+                            <input id="radio3" type="radio" name="estrellas" value="3">
+                            <label for="radio3">★</label>
+                            <input id="radio4" type="radio" name="estrellas" value="2">
+                            <label for="radio4">★</label>
+                            <input id="radio5" type="radio" name="estrellas" value="1">
+                            <label for="radio5">★</label>
+                            </p>
+                        </form>
+                        <p><span>40USD$</span>03 horas</p>
+                        <a href="/productDetail">Ver</a>
+                    </div>
+                </div>
+                <div class="miniatura">
+                    <img src="img/mentor7.jpg" alt="Imagen de la mentora Victoria Defagot">
+                    <div class="product-details">
+                        <h3>Asesoría</h3>
+                        <h3 class="name-product">Design Thinking</h3>
+                        <h3>Victoria Defagot</h3>
+                        <form>
+                            <p class="clasificacion">
+                            <input id="radio1" type="radio" name="estrellas" value="5">
+                            <label for="radio1">★</label>
+                            <input id="radio2" type="radio" name="estrellas" value="4">
+                            <label for="radio2">★</label>
+                            <input id="radio3" type="radio" name="estrellas" value="3">
+                            <label for="radio3">★</label>
+                            <input id="radio4" type="radio" name="estrellas" value="2">
+                            <label for="radio4">★</label>
+                            <input id="radio5" type="radio" name="estrellas" value="1">
+                            <label for="radio5">★</label>
+                            </p>
+                        </form>
+                        <p><span>40USD$</span>03 horas</p>
+                        <a href="/productDetail">Ver</a>
+                    </div>
+                </div>
+            </section>
+            <i class="fas fa-arrow-circle-right"></i>
         </div>
     </main>
     <footer>
-        <div class="links">
-            <ul class="links-utiles">
-                <h4>LINKS ÚTILES</h4>
-                <li><a href="/beneficios">Beneficios</a></li>
-                <li><a href="/formulario-trabajo">Trabajá con nosotros</a></li>
-                <li><a href="/contacto">Contacto</a></li>
-            </ul>
-            <ul class="comunidad">
-                <h4>NOSOTROS</h4>
-                <li><a href="/webinars">Webinars</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/iMentor-historia">Sobre iMentor</a></li>
-            </ul>
-        </div>
-        <div class="socialmedia">
-          <h4>Síguenos en</h4>
-          <div class="icons">
-              <a href="/facebook"><i class="fab fa-facebook-square"></i></a>
-              <a href="/twitter"><i class="fab fa-twitter-square"></i></a>
-              <a href="/instagram"><i class="fab fa-instagram-square"></i></a>
-              <a href="/linkedin"><i class="fab fa-linkedin"></i></a>
-              <a href="/youtube"><i class="fab fa-youtube-square"></i></a>
-          </div>
-        </div>
-        <div class="newsletter">
-          <h4>Súmate al Newsletter</h4>
-          <div class="terminos">
-              <input type="checkbox" name="terminos" id="terminos">
-              <label for="terminos">Acepto los términos y condiciones</label>
-          </div>
-          <div class="mail-button">
-              <form action="/newsletter" method="POST">
-                <input class="newsletterJoin" type="email" name="email" placeholder="tuemail@ejemplo.com">
-              </form>
-              <div class="suscription">
-                <button class="suscriptionbutton">Suscribirme</button>
+            <div class="links">
+                <ul class="links-utiles">
+                    <h4>LINKS ÚTILES</h4>
+                    <li><a href="/beneficios">Beneficios</a></li>
+                    <li><a href="/formulario-trabajo">Trabajá con nosotros</a></li>
+                    <li><a href="/contacto">Contacto</a></li>
+                </ul>
+                <ul class="comunidad">
+                    <h4>NOSOTROS</h4>
+                    <li><a href="/webinars">Webinars</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/iMentor-historia">Sobre iMentor</a></li>
+                </ul>
             </div>
-          </div>
-        </div>
+            <div class="socialmedia">
+              <h4>Síguenos en</h4>
+              <div class="icons">
+                  <a href="/facebook"><i class="fab fa-facebook-square"></i></a>
+                  <a href="/twitter"><i class="fab fa-twitter-square"></i></a>
+                  <a href="/instagram"><i class="fab fa-instagram-square"></i></a>
+                  <a href="/linkedin"><i class="fab fa-linkedin"></i></a>
+                  <a href="/youtube"><i class="fab fa-youtube-square"></i></a>
+              </div>
+            </div>
+            <div class="newsletter">
+              <h4>Súmate al Newsletter</h4>
+              <div class="terminos">
+                  <input type="checkbox" name="terminos" id="terminos">
+                  <label for="terminos">Acepto los términos y condiciones</label>
+              </div>
+              <div class="mail-button">
+                  <form action="/newsletter" method="POST">
+                    <input class="newsletterJoin" type="email" name="email" placeholder="tuemail@ejemplo.com">
+                  </form>
+                  <div class="suscription">
+                    <button class="suscriptionbutton">Suscribirme</button>
+                </div>
+              </div>
+            </div>
     </footer>
 </body>
 </html>
