@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>iMentor</title>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-        <link href="css/productDetail-styles.css" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iMentor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="css/productDetail-styles.css" rel="stylesheet">
+</head>
 
 <body>
     <header>
@@ -28,25 +28,26 @@
                         <i class="fas fa-search"></i>
                     </div>
                 </div>
-                          <a href="/login" class="enlace-cuenta">
-                              <i class="fas fa-user-circle"></i>
-                          </a>
-                          <a href="/productCart" class="enlace-cesta">
-                              <i class="fas fa-shopping-basket"></i>
-                          </a>
-                          <a href="#" class="enlace-pais">
-                              <i class="fas fa-globe"></i>
-                          </a>
-                          <button class="boton-header-crear-cuenta" type="submit"><a href="/register">¡Crea tu cuenta!</a></button>
-                          <button class="boton-header-ingresar" type="submit"><a href="/login">Ingresar</a></button>
+                <a href="/login" class="enlace-cuenta">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                <a href="/productCart" class="enlace-cesta">
+                    <i class="fas fa-shopping-basket"></i>
+                </a>
+                <a href="#" class="enlace-pais">
+                    <i class="fas fa-globe"></i>
+                </a>
+                <button class="boton-header-crear-cuenta" type="submit"><a href="/register">¡Crea tu
+                        cuenta!</a></button>
+                <button class="boton-header-ingresar" type="submit"><a href="/login">Ingresar</a></button>
                 <ul>
-                    <li><a class="active" href = "/#">Home</a></li>
-                    <li><a href = "/productDetail">Servicios</a></li>
-                    <li><a href = "#">Nosotros</a></li>
-                    <li><a href = "#">Plataforma</a></li>
-                    <li class="cesta"><a href = "/productCart"><i class="fas fa-shopping-basket"></i></a></li>
-                    <li class="crea-cuenta"><a href = "/register">¡Crea tu cuenta!</a></li>
-                    <li class="ingresar"><a href = "/login">Ingresar</a></li>
+                    <li><a class="active" href="/#">Home</a></li>
+                    <li><a href="/productDetail">Servicios</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Plataforma</a></li>
+                    <li class="cesta"><a href="/productCart"><i class="fas fa-shopping-basket"></i></a></li>
+                    <li class="crea-cuenta"><a href="/register">¡Crea tu cuenta!</a></li>
+                    <li class="ingresar"><a href="/login">Ingresar</a></li>
                 </ul>
             </nav>
         </section>
@@ -97,9 +98,9 @@
                         <section class="buy-cart">
                             <article class="comprar-asesoria">
                                 <h5><i class="fas fa-light fas fa-dollar-sign"></i>30 USD</h5>
-                                <button id="Adquirir" type="submit">
-                                    <h3>Adquirir</h3>
-                                </button>
+                                <div class="btn-cart">
+                                <a href="/productCart"><i class="fa fa-shopping-cart"></i>Adquirir</a>
+                                </div>
                             </article>
                         </section>
                     </div>
@@ -117,11 +118,10 @@
                         <section class="buy-cart">
                             <article class="comprar-asesoria">
                                 <h5><i class="fas fa-light fas fa-dollar-sign"></i>40 USD</h5>
-                                <article class="comprar-asesoria">
-                                    <button id="Adquirir" type="submit">
-                                        <h3>Adquirir</h3>
-                                    </button>
-                                </article>
+                                <div class="btn-cart">
+                                <a href="/productCart"><i class="fa fa-shopping-cart"></i>Adquirir</a>
+                                </div>
+                            </article>
                             </article>
                         </section>
                     </div>
@@ -146,8 +146,9 @@
                             <p class="reseña"><i class="fas fa-light fas fa-chalkboard"></i> Asesorías</p>
                             <p class="reseña"><i class="fas fa-light fas fa-globe"></i> País</p>
                             <article class="comprar-asesoria">
-                                <button id="Contactar" type="submit">
-                                    <h3>Contactar</h3>
+                                <div class="btn-cart">
+                                <a href="/productCart"><i class="fa fa-shopping-cart"></i>Contactar</a>
+                                </div>
                                 </button>
                             </article>
                         </section>
@@ -164,8 +165,9 @@
                             <p class="reseña"><i class="fas fa-light fas fa-chalkboard"></i> Asesorías</p>
                             <p class="reseña"><i class="fas fa-light fas fa-globe"></i> País</p>
                             <article class="comprar-asesoria">
-                                <button id="Contactar" type="submit">
-                                    <h3>Contactar</h3>
+                                <div class="btn-cart">
+                                <a href="/productCart"><i class="fa fa-shopping-cart"></i>Contactar</a>
+                                </div>
                                 </button>
                             </article>
                         </section>
@@ -210,29 +212,29 @@
             </ul>
         </div>
         <div class="socialmedia">
-          <h4>Síguenos en</h4>
-          <div class="icons">
-              <a href="/facebook"><i class="fab fa-facebook-square"></i></a>
-              <a href="/twitter"><i class="fab fa-twitter-square"></i></a>
-              <a href="/instagram"><i class="fab fa-instagram-square"></i></a>
-              <a href="/linkedin"><i class="fab fa-linkedin"></i></a>
-              <a href="/youtube"><i class="fab fa-youtube-square"></i></a>
-          </div>
+            <h4>Síguenos en</h4>
+            <div class="icons">
+                <a href="/facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="/twitter"><i class="fab fa-twitter-square"></i></a>
+                <a href="/instagram"><i class="fab fa-instagram-square"></i></a>
+                <a href="/linkedin"><i class="fab fa-linkedin"></i></a>
+                <a href="/youtube"><i class="fab fa-youtube-square"></i></a>
+            </div>
         </div>
         <div class="newsletter">
-          <h4>Súmate al Newsletter</h4>
-          <div class="terminos">
-              <input type="checkbox" name="terminos" id="terminos">
-              <label for="terminos">Acepto los términos y condiciones</label>
-          </div>
-          <div class="mail-button">
-              <form action="/newsletter" method="POST">
-                <input class="newsletterJoin" type="email" name="email" placeholder="tuemail@ejemplo.com">
-              </form>
-              <div class="suscription">
-                <button class="suscriptionbutton">Suscribirme</button>
+            <h4>Súmate al Newsletter</h4>
+            <div class="terminos">
+                <input type="checkbox" name="terminos" id="terminos">
+                <label for="terminos">Acepto los términos y condiciones</label>
             </div>
-          </div>
+            <div class="mail-button">
+                <form action="/newsletter" method="POST">
+                    <input class="newsletterJoin" type="email" name="email" placeholder="tuemail@ejemplo.com">
+                </form>
+                <div class="suscription">
+                    <button class="suscriptionbutton">Suscribirme</button>
+                </div>
+            </div>
         </div>
     </footer>
 

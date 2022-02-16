@@ -337,23 +337,22 @@ article .comprar-asesoria {
     align-items: center;
 }
 
-.buy-cart .comprar-asesoria button {
-    margin: 5px 5px;
+div.btn-cart {
+    margin: 10px 0px 0px 0px;
+    background-color: #3587A4;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
     border-radius: 5px;
-    width: 50%;
-    color: #f2f2f2;
-    background-color: #2D848A;
     cursor: pointer;
-    justify-content: center;
 }
 
-.comprar-asesoria #adquirir:hover {
-    background-color: #2D848A;
-    transition: all 100ms;
-}
-
-.comprar-asesoria #adquirir {
-    justify-content: center;
+div.btn-cart a {
+    color: #fff;
+    cursor: pointer;
 }
 
 /*##################################################*/
