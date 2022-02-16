@@ -7,6 +7,185 @@
     font-family: "Poppins", sans-serif;
 }
 
+/*Header*/
+header .navegacion nav{
+    height: 90px;
+    width: 100%;
+    background-color: #3587A4;
+    position: fixed;
+    z-index: 1;
+}
+
+header .navegacion .enlace-logo{
+    position: absolute;
+    padding: 10px 0px;
+}
+
+header .navegacion .logo{
+    height: 40px;
+    margin-left: 10px;
+}
+
+header .navegacion .buscar{
+    position: fixed;
+    padding: 5px;
+    top: 10px;
+    left: 120px;
+}
+
+header .navegacion .buscar input{
+    width:0px;
+    height: 25px;
+    padding: 0px 5px;
+    font-size: 18px;
+    color: black;
+    outline: none;
+    border: solid 1px silver;
+    border-radius: 30px;
+    transition: all 0.5s ease;
+}
+
+header .navegacion .buscar .btn{
+    width: 33px;
+    height: 33px;
+    line-height: 33px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: #88CCF1;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: solid 1px white;
+}
+
+header .navegacion .buscar:hover input{
+    width:115px;
+}
+
+header .navegacion .buscar input:focus{
+    width:115px;
+}    
+
+header .navegacion .enlace-cesta{
+    position: fixed;
+    padding: 10px 0px;
+    right: 75px;
+    width: 35px;
+    text-align: center;
+}
+
+header .navegacion nav .enlace-cesta i{
+    font-size: 30px;
+    color: black;
+}
+
+header .navegacion nav ul .cesta{
+    display: none;
+}
+
+header .navegacion nav ul .crea-cuenta, header .navegacion nav ul .ingresar{
+    display: block;
+}
+
+header .navegacion .enlace-cuenta{
+    position: fixed;
+    padding: 10px 0px;
+    right: 38px;
+    width: 35px;
+    text-align: center;
+}
+
+header .navegacion nav .enlace-cuenta i{
+    font-size: 30px;
+    color: black;
+}
+
+header .navegacion .enlace-pais{
+    position: fixed;
+    padding: 10px 0px;
+    right: 5px;
+    width: 35px;
+    text-align: center;
+}
+
+header .navegacion nav .enlace-pais i{
+    font-size: 30px;
+    color: black;
+}
+
+header .navegacion nav ul{
+    position: fixed;
+    width: 100vW;
+    height: calc(100vh - 180px);
+    background-color: #C1DFF0;
+    top: 90px;
+    left: -100vw;
+    text-align: center;
+}
+
+header .navegacion nav ul li{
+    display: block;
+    line-height: 10px;
+    margin: 44px 0px;
+}
+
+header .navegacion nav ul li a{
+    color: black;
+    font-size: 20px;
+    padding: 5px 13px;
+    border-radius: 3px;
+}
+
+header .navegacion nav ul li a:hover{
+    color: white;
+}
+
+header .navegacion nav .checkbtn{
+    font-size: 25px;
+    color: black;
+    position: fixed;
+    right: 8px;
+    line-height: 80px;
+    cursor: pointer;
+    display: block;
+    top: 33px;
+} 
+
+header .navegacion nav #check{
+    display: none;
+}
+
+header .navegacion nav #check:checked ~ ul{
+    left:0%;
+}
+
+header .boton-header-crear-cuenta a, header .boton-header-ingresar a{
+    color: white;
+    font-size: 12px ;
+}
+
+header .boton-header-crear-cuenta, header .boton-header-ingresar{
+    display: none;
+    text-decoration: none;
+    background-color: #88CCF1;
+    padding: 2px 6px 2px 6px;
+    border: 0px solid white;
+    border-radius: 8px;
+}
+
+header .boton-header-crear-cuenta:hover{
+    background-color: #C1DFF0;
+    color: black;
+}
+
+header .boton-header-ingresar:hover{
+    background-color: #C1DFF0;
+    color: black;
+}
+
 
 /* Login Page Main*/
 
