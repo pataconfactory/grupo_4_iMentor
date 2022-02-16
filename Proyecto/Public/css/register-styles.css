@@ -390,7 +390,7 @@ main h1 {
 }
 
     .boton-header-crear-cuenta{
-        display: block;
+        display: none;
         position: fixed;
         padding: 0px;
         top: 10px;
@@ -401,7 +401,7 @@ main h1 {
     }
 
     .boton-header-ingresar{
-        display: block;
+        display: none;
         position: fixed;
         padding: 0px;
         top: 10px;
@@ -422,7 +422,7 @@ main h1 {
 header .boton-header-crear-cuenta, header .boton-header-ingresar{
    
     text-decoration: none;
-   display: inline-block;
+   display: none;
     background-color: #88CCF1;
     padding: 2px 6px 2px 6px;
     border-top: 0px solid white;
@@ -440,7 +440,7 @@ header .boton-header-crear-cuenta:hover {
     
     background-color: #C1DFF0;
     color: black;
-    display: inline-block;
+    display: none;
   }
 
 
@@ -448,14 +448,14 @@ header .boton-header-ingresar:hover{
     
     background-color: #C1DFF0;
     color: black;
-    display: inline-block;
+    display: none;
   }
 
 
       header .boton-header-crear-cuenta a, header .boton-header-ingresar a{
     color: white;
     font-size: 12px ;
-    display: inline-block
+    display: none
   }
 
 
@@ -522,7 +522,7 @@ main .already-register {
     }
 
     .boton-header-crear-cuenta{
-        display: block;
+        display: none;
         position: fixed;
         padding: 0px;
         top: 10px;
@@ -533,7 +533,7 @@ main .already-register {
     }
 
     .boton-header-ingresar{
-        display: block;
+        display: none;
         position: fixed;
         padding: 0px;
         top: 10px;
@@ -559,11 +559,11 @@ main .already-register {
     header .boton-header-crear-cuenta a, header .boton-header-ingresar a{
     color: white;
     font-size: 12px ;
-    display: inline-block
+    display: none
   }
 
 header .boton-header-crear-cuenta, header .boton-header-ingresar{
-       display: inline-block;
+       display: none;
     text-decoration: none;
     background-color: #88CCF1;
     padding: 2px 6px 2px 6px;
@@ -580,7 +580,7 @@ header .boton-header-crear-cuenta:hover {
     
     background-color: #C1DFF0;
     color: black;
-     display: inline-block
+     display: none
 
   }
 
@@ -589,7 +589,7 @@ header .boton-header-ingresar:hover{
     
     background-color: #C1DFF0;
     color: black;
-     display: inline-block
+     display: none
 
   }
 
