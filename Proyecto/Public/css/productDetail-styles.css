@@ -30,6 +30,8 @@ body {
     margin-bottom: 60px;
 }
 
+/*ACÁ COMIENZA HEADER*/
+
 header .navegacion nav {
     height: 90px;
     width: 100%;
@@ -213,7 +215,6 @@ header .botones {
   border-radius: 8px;
   margin-top: 15px;
   position: relative;
-
   }*/
 
 header .boton-header-crear-cuenta a,
@@ -253,7 +254,7 @@ header .boton-header-ingresar:hover {
 }
 
 
-
+/*TERMINA EL HEADER*/
 .wave {
     position: absolute;
     bottom: 0;
@@ -391,7 +392,6 @@ main .sobre-servicios {
 /*.hover-galeria p {
     color: whitesmoke;
     font-weight: 500;
-
 } */
 
 .hover-galeria:hover {
