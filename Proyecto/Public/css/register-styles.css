@@ -220,7 +220,7 @@ main p {
     display: flex;
     justify-content: center;
     font-size: 9px;
-    padding-top: 10px;
+    padding-top: 7px;
 }
 
 main form.register-form {
@@ -228,11 +228,11 @@ main form.register-form {
     flex-wrap: wrap;
     font-size: 9px;
     flex-direction: column;
-    padding: 5% 0% 0% 10%;
+    padding: 1% 0% 0% 10%;
 }
 
 main .register-username, .register-email, .register-password {
-    margin: 5% 0%;
+    margin: 4.5% 0%;
 }
 
 main .register-form .boxes {
@@ -259,7 +259,7 @@ main .terminos {
     flex-direction: row;
     font-size: 8.5px;
     align-items: center;
-    padding: 8% 0% 0% 10%;
+    padding: 4% 0% 0% 10%;
   }
 
 main .show-password {
@@ -273,7 +273,7 @@ main .register-accept {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 6%;
+    margin-top: 3%;
     margin-bottom: 1.5%;
 }
 
@@ -299,7 +299,7 @@ main .register-button:hover {
 }
 
 main .already-register {
-    padding-top: 15px;
+    padding-top: 4px;
     display: flex;
     justify-content: center;
     font-size: 8.5px;
