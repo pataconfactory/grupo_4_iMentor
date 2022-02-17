@@ -233,29 +233,54 @@ main .box-password, .box-email {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    border-color: rgb(217,217,217);
-    border-width: 1px;
-    padding: 2%;
-    margin: 6% 0%;
     font-size: 9px;
-    border-radius: 2px;
-    width: 100%;
+    border: none;
 }
 
-main .box-password::placeholder {
-    font-family: "Font Awesome 5 Free"; 
-    font-weight: 600;
-    content: "/f0e0";
+main .login-email {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px rgb(217,217,217) solid;
+    margin: 5% 0%;
+    padding: 3%;
+    border-radius: 4px;
 }
 
-main .box-email::placeholder {
-    font-family: "Font Awesome 5 Free"; 
-    font-weight: 600;
-    content: "/f023";
+main .login-email i {
+    width: 10%;
+    margin-left: 2%;
+    color: rgb(170,170,170);
+    font-size: 14px;
+}
+
+main .login-email .box-email {
+    width: 80%;
+}
+
+main .login-password {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px rgb(217,217,217) solid;
+    margin: 5% 0% 2% 0%;
+    padding: 3%;
+    border-radius: 4px;
+}
+
+main .login-password i {
+    width: 10%;
+    margin-left: 2%;
+    color: rgb(170,170,170);
+    font-size: 14px;
+}
+
+main .login-password .box-password {
+    width: 80%;
 }
 
 main .not-register, .password-forgotten {
-    padding-top: 10px;
+    padding-top: 20px;
     display: flex;
     justify-content: center;
     font-size: 8px;
@@ -268,7 +293,12 @@ main .login-button {
     border: 0;
     background-color: rgb(217,217,217);
     width: 30%;
-    font-size: 9px;
+    font-size: 11px;
+}
+
+main .login-button a {
+    text-decoration: none;
+    color: #000;
 }
 
 main .login-button:hover {
@@ -295,12 +325,12 @@ main div.help {
     padding-top: 10px;
     display: flex;
     justify-content: center;
-    font-size: 7px;
+    font-size: 8px;
     text-decoration: underline;
 }
 
 main a.terms {
-    font-size: 7px;
+    font-size: 8px;
     color: black;
 }
 
@@ -323,16 +353,170 @@ main .end-img img {
     margin-top: 4%;
 }
 
+main div.remember-me {
+    font-size: 7px;
+    align-items: center;
+    display: flex;
+}
+
+main .remember-me label {
+    margin-left: 4px;
+}
+
 
 /* Medias queries */
 
 @media (min-width: 361px){
 
+    main img {
+        width: 40vw;
+    }
+    
+    main p {
+        font-size: 14px;
+    }
+    
+    main div.login {
+        margin-top: 1%;
+    }
+
+    main .box-password, .box-email {
+        font-size: 11px;
+    }
+    
+    main .login-email {
+        margin: 6% 0%;
+        padding: 2.5%;
+    }
+    
+    main .login-email i {
+        margin-left: 1%;
+        font-size: 17px;
+    }
+    
+    main .login-password {
+        margin: 5% 0% 2% 0%;
+        padding: 2.5%;
+    }
+    
+    main .login-password i {
+        margin-left: 1%;
+        font-size: 17px;
+    }
+
+    main .login-button {
+        padding: 1.4%;
+        width: 22%;
+    }
+    
+    main .not-register, .password-forgotten {
+        padding-top: 4%;
+        font-size: 10px;
+    }
+    
+    main .login-accept {
+        margin-top: 5%;
+    }
+    
+    main div.help {
+        padding-top: 15px;
+        font-size: 9.5px;
+    }
+    
+    main a.terms {
+        font-size: 8.5px;
+    }
+    
+    main .end-img img {
+        width: 50vw;
+        margin-top: 2%;
+    }
+
+    main .politics {
+        margin-top: 5%;
+    }
+
+    main div.remember-me {
+        font-size: 8.5px;
+    }
+    
+    main .remember-me label {
+        margin-left: 5px;
+    }
 
 }
 
-
 @media (min-width: 769px){
 
+    main img {
+        width: 30vw;
+    }
+    
+    main p {
+        font-size: 17px;
+        margin-top: 3%;
+    }
+
+    main .login-email, .login-password  {
+        width: 55vw;
+    }
+
+    main .box-password, .box-email {
+        margin: 2% 0% 1% 0%;
+        font-size: 12px;
+    }
+    
+    main .login-email {
+        padding: 1.5%;
+        margin: 4% 0%;
+    }
+    
+    main .login-email i {
+        font-size: 20px;
+    }
+    
+    main .login-password {
+        padding: 1.5%;
+        margin: 4% 0%;
+    }
+    
+    main .login-password i {
+        font-size: 20px;
+    }
+    
+    main .not-register, .password-forgotten {
+        padding-top: 4%;
+        font-size: 12px;
+    }
+    
+    main .login-button {
+        font-size: 13.5px;
+        padding: 1%;
+        width: 15%;
+    }
+
+    main .login-accept {
+        margin-top: 2%;
+    }
+    
+    main div.help {
+        font-size: 12px;
+    }
+    
+    main a.terms {
+        font-size: 9.5px;
+    }
+
+    main .politics {
+        margin-top: 3%;
+    }
+
+    main div.remember-me {
+        font-size: 9px;
+    }
+    
+    main .remember-me label {
+        margin-left: 5px;
+    }
 
 }

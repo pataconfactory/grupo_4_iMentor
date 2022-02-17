@@ -20,23 +20,29 @@
         <div class="login">
             <form action="/login" method="POST">
                 <div class="login-email">
-                    <input class="box-email" type="email" name="email" placeholder="&#xf0e0; E-mail" id="email" required>
+                    <i class="fas fa-solid fas fa-lock"></i>
+                    <input class="box-email" type="email" name="email" placeholder="E-mail" required>
                 </div>
                 <div class="login-password">
-                    <input class="box-password" type="password" name="password" value="" placeholder="&#xf023; Contraseña" id="password" required>
+                    <i class="fas fa-solid fas fa-envelope"></i>
+                    <input class="box-password" type="password" name="password" value="" placeholder="Contraseña" required>
+                </div>
+                <div class="remember-me">
+                    <input type="checkbox" name="remember-me">
+                    <label>Recordarme</label>
                 </div>
             </form>
         </div>
         <div class="references">
             <div class="not-register">
-                <a href="/register.html">¿No estás registrado?</a>
+                <a href="/register">¿No estás registrado?</a>
             </div>
             <div class="password-forgotten">
                 <a href="#">Olvidé mi contraseña</a>
             </div>
         </div>
         <div class="login-accept">
-            <button class="login-button">Ingresar</button>
+            <button class="login-button" type="submit"><a href="/">Ingresar</a></button>
         </div>
         <div class="help">
             <a href="#">¡Necesito ayuda!</a>

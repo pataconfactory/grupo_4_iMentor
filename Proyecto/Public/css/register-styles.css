@@ -307,6 +307,111 @@ main .already-register {
     margin-bottom: 15%;
 }
 
+/*Footer*/
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 8px;
+    background-color: rgb(217,217,217);
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    bottom: 0px;
+    padding: 10px 0px;
+    z-index: 1;
+}
+
+footer .links h4 {
+    display: none;
+}
+
+footer .links li {
+  display: none;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    padding-bottom: 5px;
+}
+
+footer ul li a{
+    text-decoration: none;
+    color: #000;
+}
+
+footer .newsletterJoin {
+    width: 80%;
+    border: 0;
+    margin-top: 2%;
+    padding: 1%
+  }
+
+  footer .socialmedia, .newsletter {
+    width: 50%;
+}
+
+footer .suscriptionbutton {
+    font-size: 7px;
+ }
+
+ footer .newsletterJoin {
+    font-size: 7px;
+ }
+
+ footer .terminos {
+    display: flex;
+    flex-direction: row;
+    font-size: 7px;
+    align-items: center;
+    margin: 2% 0%;
+    border-radius: 2px;
+  }
+  
+  footer .suscription {
+    display: flex;
+    justify-content: center;
+    margin: 3% 0%;
+  }
+
+  footer .suscriptionbutton {
+      padding: 1% 3%;
+      border-radius: 4px;
+      border: 0;
+      font-size: 8px;
+      background-color: grey;
+  }
+
+ footer .suscriptionbutton:hover {
+    background-color: #3587A4;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgb(217,217,217);
+  }
+
+footer .socialmedia h4 {
+  text-align: center;
+}
+
+footer .socialmedia .icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 2%;
+    width: 60%;
+    margin-left: 20%;
+    font-size: 15px;
+}
+
+footer .socialmedia .icons a {
+  text-decoration: none;
+  color: #000;
+}
+
+
 
 /*Media Queries*/
 
@@ -431,7 +536,7 @@ main .already-register {
 
     main h3 {
         font-size: 23px;
-        padding-top: 12px;
+        padding-top: 0px;
     }
 
     main p {
@@ -475,6 +580,47 @@ main .already-register {
         font-size: 9px;
         padding-top: 10px;
     }
+
+    footer h4 {
+        font-size: 9px;
+      }
+    
+      footer .socialmedia .icons {
+        width: 60%;
+        margin-left: 20%;
+        font-size: 18px;
+    }
+    
+        footer .newsletterJoin {
+          width: 90%;
+        }
+    
+        footer .mail-button {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          margin: 0px;
+          padding: 0px;
+        }
+    
+        footer form {
+          width: 70%;
+        }
+    
+        footer .suscriptionbutton {
+          padding: 2% 10%;
+          font-size: 8px;
+      }
+    
+          footer .newsletterJoin {
+            font-size: 8px;
+            margin-top: 0%;
+        }
+    
+        footer .terminos {
+          font-size: 7.5px;
+          margin: 3% 1% 0% 0%;
+        }
 
     }
 
@@ -620,6 +766,83 @@ main .already-register {
     main .register-accept {
         margin-top: 2%;
     }
+
+    footer .links h4 {
+        display: block;
+        margin-bottom: 4%;
+    }
+  
+    footer .links li {
+      display: block;
+    }
+  
+    footer .links {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  
+    footer div.links, div.socialmedia {
+      width: 30%;
+    }
+  
+    footer .links-utiles, .comunidad {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    footer .newsletter {
+      width: 40%;
+    }
+  
+    footer h4 {
+      font-size: 10px;
+    }
+  
+    footer ul {
+      font-size: 9px;
+    }
+  
+    footer  .icons {
+      width: 50%;
+      font-size: 10px;
+      display: flex;
+      flex-direction: row;
+    }
+  
+    footer div.icons {
+      width: 50%;
+      margin-left: 0%;
+      font-size: 30px;
+  }
+  
+  footer .socialmedia h4 {
+    text-align: center;
+  }
+  
+  footer .suscriptionbutton {
+    font-size: 8px;
+    margin: 0;
+  }
+  
+  footer .newsletterJoin {
+    font-size: 9px;
+    margin: 0px;
+  }
+  
+  footer .terminos {
+    font-size: 8.5px;
+    margin: 0% 0%;
+    margin-top: 1%;
+    border-radius: 2px;
+  }
+  
+  footer .suscriptionbutton {
+    padding: 5% 10%;
+    font-size: 9px;
+    margin: 0px;
+  }
     
     }
 
