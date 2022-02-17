@@ -259,7 +259,7 @@ main .terminos {
     flex-direction: row;
     font-size: 8.5px;
     align-items: center;
-    padding: 4% 0% 0% 10%;
+    padding: 4% 0% 0% 0%;
   }
 
 main .show-password {
@@ -267,22 +267,20 @@ main .show-password {
     font-size: 7px;
     align-items: center;
     margin-top: 2%;
-  }
+}
 
-main .register-accept {
+main .register-button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 3%;
     margin-bottom: 1.5%;
-}
-
-main .register-button {
     font-size: 10px;
     background-color: rgb(217,217,217);
     border-radius: 4px;
     padding: 1% 3%;
     border: 0;
+    width: 70%;
 }
 
 main .register-button a {
@@ -561,19 +559,15 @@ footer .socialmedia .icons a {
 
     main .terminos {
         font-size: 9px;
-        padding: 4% 0% 0% 10%;
     }
 
     main .show-password {
         font-size: 8px;
     }
 
-    main .register-accept {
-        margin-top: 3%;
-    }
-
     main .register-button {
         font-size: 11px;
+        width: 60%;
     }
 
     main .already-register {
@@ -735,7 +729,7 @@ footer .socialmedia .icons a {
 
     main .terminos {
         font-size: 11px;
-        padding: 0.5% 0% 0% 10%;
+        padding: 0.5% 0% 0% 0%;
     }
 
     main .show-password {
@@ -751,6 +745,7 @@ footer .socialmedia .icons a {
     main .register-button {
         font-size: 13px;
         padding: 0.5% 2%;
+        width: 50%;
     }
 
     main .already-register {
@@ -761,10 +756,6 @@ footer .socialmedia .icons a {
     main form i {
         font-size: 14px;
         margin-right: 1%;
-    }
-
-    main .register-accept {
-        margin-top: 2%;
     }
 
     footer .links h4 {
