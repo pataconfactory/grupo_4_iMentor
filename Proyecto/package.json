@@ -1,5 +1,5 @@
 {
-  "name": "proyecto",
+  "name": "n",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -11,5 +11,6 @@
     "express": "^4.17.2",
     "nodemon": "^2.0.15"
   },
+  "devDependencies": {},
   "description": ""
 }
