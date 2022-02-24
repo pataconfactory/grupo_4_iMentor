@@ -204,21 +204,21 @@ header .boton-header-ingresar:hover{
 
 /* Register Page Main*/
 
-main {
+main .banner-register {
     position: relative;
     top: 90px;
     bottom: 90px;
     width: 100%;
 }
 
-main h3 {
+main .banner-register h3 {
     display: flex;
     justify-content: center;
     padding-top: 20px;
     font-size: 19px;
 }
 
-main p {
+main .banner-register p {
     display: flex;
     justify-content: center;
     font-size: 9px;
@@ -229,7 +229,7 @@ main .banner-register img {
     display: none;
 }
 
-main form.register-form {
+main  form.register-form {
     display: flex;
     flex-wrap: wrap;
     font-size: 9px;
@@ -237,7 +237,8 @@ main form.register-form {
     padding: 1% 0% 0% 10%;
 }
 
-main .register-username, .register-email, .register-password {
+main .register-username, .register-email, 
+.register-password, .register-birth {
     margin: 4.5% 0%;
 }
 
@@ -254,13 +255,13 @@ main .register-form .boxes {
     margin-top: 1.5%;
 }
 
-main form i {
+main .banner-register form i {
     font-size: 12px;
     color: #3587A4;
     margin-right: 2%;
 }
 
-main .terminos {
+main .box-register .terminos {
     display: flex;
     flex-direction: row;
     font-size: 8.5px;
@@ -268,14 +269,14 @@ main .terminos {
     padding: 4% 0% 0% 0%;
   }
 
-main .show-password {
+main .box-register .show-password {
     display: flex;
     font-size: 7px;
     align-items: center;
     margin-top: 2%;
 }
 
-main .register-button {
+main .box-register .register-button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -289,12 +290,12 @@ main .register-button {
     width: 70%;
 }
 
-main .register-button a {
+main .box-register .register-button a {
     text-decoration: none;
     color: #000;
 }
 
-main .register-button:hover {
+main .box-register .register-button:hover {
     background-color: #3587A4;
     color: white;
     font-weight: bold;
@@ -302,7 +303,7 @@ main .register-button:hover {
     box-shadow: 3px 3px 5px rgb(217,217,217);
 }
 
-main .already-register {
+main .box-register .already-register {
     padding-top: 4px;
     display: flex;
     justify-content: center;
@@ -528,7 +529,7 @@ footer .socialmedia .icons a {
 
     /* Register Page Main Media Queries (min-width: 361px)*/
 
-    main {
+    main .banner-register {
         top: 70px;
     }
 
@@ -538,8 +539,7 @@ footer .socialmedia .icons a {
         width: 100vw;
         height: 100vw;
     }
-
-    /*
+    
     main .background-register {
         width: 100%;
         height: 100%;
@@ -548,14 +548,15 @@ footer .socialmedia .icons a {
         left: 0px;
         background-color: rgba(0, 0, 0, 0.2);
     }
-    */
 
     main .box-register {
         position: absolute;
-        width: 250px;
+        width: 300px;
         justify-content: center;
         background-color: white;
         border-radius: 5px;
+        margin-left: 3%;
+        margin-top: 3%;
     }
 
     main .banner-register img {
@@ -565,12 +566,12 @@ footer .socialmedia .icons a {
         bottom: 90px;
     }
    
-    main h3 {
-        font-size: 18px;
-        padding-top: 0px;
+    main .banner-register h3 {
+        font-size: 15px;
+        padding-top: 10px;
     }
 
-    main p {
+    main .banner-register p {
         font-size: 9px;
     }
 
@@ -578,32 +579,34 @@ footer .socialmedia .icons a {
         padding: 0% 0% 0% 10%;
     }
 
-    main .register-username, .register-email, .register-password {
-        font-size: 10px;
-        margin: 3.5% 0%;
+    main .register-username, .register-email, 
+    .register-password, .register-birth {
+        font-size: 9px;
+        margin: 2.5% 0%;
     }
 
     main .register-form .boxes {
-        font-size: 9.5px;
-        padding: 1.2%;
+        display: flex;
+        font-size: 8px;
+        padding: 1%;
         margin-top: 1%;
         width: 60%;
     }
 
-    main .terminos {
+    main .box-register .terminos {
         font-size: 9px;
     }
 
-    main .show-password {
+    main .box-register .show-password {
         font-size: 8px;
     }
 
-    main .register-button {
+    main .box-register .register-button {
         font-size: 11px;
         width: 60%;
     }
 
-    main .already-register {
+    main .box-register .already-register {
         font-size: 9px;
         padding-top: 10px;
     }
@@ -734,12 +737,14 @@ footer .socialmedia .icons a {
         display: none
     }
 
-    main h3 {
+    /* Register Page Main Media Queries (min-width: 769px)*/
+
+    main .banner-register h3 {
         font-size: 27px;
         padding-top: 7px;
     }
 
-    main p {
+    main .banner-register p {
         font-size: 14px;
     }
 
@@ -747,7 +752,8 @@ footer .socialmedia .icons a {
         padding: 0% 0% 0% 10%;
     }
 
-    main .register-username, .register-email, .register-password {
+    main .register-username, .register-email, 
+    .register-password, .register-birth {
         font-size: 13px;
         margin: 3% 0%;
     }
@@ -760,33 +766,33 @@ footer .socialmedia .icons a {
         width: 50%;
     }
 
-    main .terminos {
+    main .box-register .terminos {
         font-size: 11px;
         padding: 0.5% 0% 0% 0%;
     }
 
-    main .show-password {
+    main .box-register .show-password {
         font-size: 10px;
     }
 
-    main .box-showpassword {
+    main .box-register .box-showpassword {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
     }
 
-    main .register-button {
+    main .box-register .register-button {
         font-size: 13px;
         padding: 0.5% 2%;
         width: 50%;
     }
 
-    main .already-register {
+    main .box-register .already-register {
         font-size: 11px;
         padding-top: 6px;
     }
 
-    main form i {
+    main .box-register form i {
         font-size: 14px;
         margin-right: 1%;
     }

@@ -9,7 +9,7 @@
 
 /* Login Page Main*/
 
-.banner{
+.banner-login {
     width: 100vw;
     height: 100vh;
     animation: banner 10s infinite linear alternate;
@@ -20,7 +20,7 @@
     align-items: center;
 }
 
-@keyframes banner{
+@keyframes banner-login {
     0%, 20%{
         background-image: url(../img/banner1.jpg);
     }
@@ -35,7 +35,7 @@
     }
 }
 
-.capa{
+main .background-login {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -44,15 +44,7 @@
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.caja-login{
-    z-index: 1;
-    width: 250px;
-    justify-content: center;
-    background-color: white;
-    border-radius: 5px;
-}
-
-main img {
+main .box-login img {
     width: 80%;
     display: flex;
     flex-wrap: wrap;
@@ -60,21 +52,21 @@ main img {
     margin: 1%;
 }
 
-main .logo {
+main .box-login .logo {
     display: flex;
     justify-content: center;
     background-color: rgb(217,217,217);
     margin: 5px 5px;
 }
 
-main p {
+main .banner-login p {
     display: flex;
     justify-content: center;
     font-size: 14px;
     margin-top: 15px;
 }
 
-main div.login {
+main .box-login div.login {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -90,7 +82,7 @@ main .login-email input, .login-password input {
     width: 85%;
 }
 
-main .box-password, .box-email {
+main .box-login .box-password, .box-email {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -99,7 +91,7 @@ main .box-password, .box-email {
     border: none;
 }
 
-main .login-email {
+main .box-login .login-email {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -110,14 +102,14 @@ main .login-email {
     width: 225px;
 }
 
-main .login-email i {
+main .box-login .login-email i {
     width: 10%;
     margin-left: 1%;
     color: rgb(170,170,170);
     font-size: 17px;
 }
 
-main .login-password {
+main .box-login .login-password {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -128,14 +120,14 @@ main .login-password {
     width: 225px;
 }
 
-main .login-password i {
+main .box-login .login-password i {
     width: 10%;
     margin-left: 1%;
     color: rgb(170,170,170);
     font-size: 17px;
 }
 
-main .not-register, .password-forgotten {
+main .box-login .not-register, .password-forgotten {
     padding-top: 20px;
     display: flex;
     justify-content: center;
@@ -144,7 +136,7 @@ main .not-register, .password-forgotten {
     padding-top: 4%;
 }
 
-main .login-button {
+main .box-login .login-button {
     padding: 1.4%;
     border-radius: 4px;
     border: 0;
@@ -154,12 +146,12 @@ main .login-button {
     margin-top: 2%;
 }
 
-main .login-button a {
+main .box-login .login-button a {
     text-decoration: none;
     color: #000;
 }
 
-main .login-button:hover {
+main .box-login .login-button:hover {
     background-color: #3587A4;
     color: white;
     font-weight: bold;
@@ -167,12 +159,12 @@ main .login-button:hover {
     box-shadow: 3px 3px 5px rgb(217,217,217);
   }
 
-main .references {
+main .box-login .references {
     display: block;
     justify-content: space-around;
 }
 
-main div.help {
+main .box-login div.help {
     padding-top: 15px;
     display: flex;
     justify-content: center;
@@ -180,53 +172,43 @@ main div.help {
     text-decoration: underline;
 }
 
-main a.terms {
+main .box-login a.terms {
     font-size: 8.5px;
     color: black;
 }
 
-main .politics {
+main .box-login .politics {
     margin-top: 5%;
     display: flex;
     justify-content: center;
 }
 
-main .end-img {
-    display: flex;
-    justify-content: center;
-}
-
-main .end-img img {
-    width: 50vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 4%;
-}
-
-main div.remember-me {
+main .box-login div.remember-me {
     font-size: 8.5px;
     align-items: center;
     display: flex;
 }
 
-main .remember-me label {
+main .box-login .remember-me label {
     margin-left: 5px;
 }
 
 /* Medias Queries */
 
 @media (min-width: 769px){
-    .banner{
+    
+    /* Login Page Main Media Queries (min-width: 769px)*/
+    
+    main .banner-login {
         justify-content: right;
     }
 
-    .caja-login{
+    main .box-login {
         width: 35%;
         margin: 0px 60px 0px 0px;
     } 
 
-    main p {
+    main .banner-login p {
         font-size: 17px;
         margin-top: 3%;
     }
@@ -235,57 +217,57 @@ main .remember-me label {
         width:29vw;
     }
 
-    main .box-password, .box-email {
+    main .box-login .box-password, .box-email {
         margin: 2% 0% 1% 0%;
         font-size: 12px;
     }
     
-    main .login-email {
+    main .box-login .login-email {
         padding: 1.5%;
         margin: 4% 0%;
     }
     
-    main .login-email i {
+    main .box-login .login-email i {
         font-size: 20px;
     }
     
-    main .login-password {
+    main .box-login .login-password {
         padding: 1.5%;
         margin: 4% 0%;
     }
     
-    main .login-password i {
+    main .box-login .login-password i {
         font-size: 20px;
     }
     
-    main .not-register, .password-forgotten {
+    main .box-login .not-register, .password-forgotten {
         padding-top: 4%;
         font-size: 12px;
     }
     
-    main .login-button {
+    main .box-login .login-button {
         font-size: 13.5px;
         padding: 1%;
     
     }
 
-    main div.help {
+    main .box-login div.help {
         font-size: 12px;
     }
     
-    main a.terms {
+    main .box-login a.terms {
         font-size: 9.5px;
     }
 
-    main .politics {
+    main .box-login .politics {
         margin-top: 3%;
     }
 
-    main div.remember-me {
+    main .box-login div.remember-me {
         font-size: 9.5px;
     }
     
-    main .remember-me label {
+    main .box-login .remember-me label {
         margin-left: 5px;
     }
 }
