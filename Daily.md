@@ -3,7 +3,7 @@
 
 <ul>
                                 
-<h2>Modificaciones:</h2>
+<h2>Modificaciones Sprint 2:</h2>
   
   <p>Estructura de carpetas de proyecto</p>
   <p>Prioridad por versión mobile</p>
@@ -28,5 +28,11 @@
   <p>Colocar las tareas en el Trello</p>
   <p>Hojas de estilo ordenadas</p>
   
-  </li></ul>
-  <br>
+</ul>
+
+<ul>                              
+<h2>Modificaciones Sprint 3:</h2>
+  
+  <p></p>
+  
+</ul>
