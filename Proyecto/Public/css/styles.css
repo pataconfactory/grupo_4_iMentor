@@ -7,8 +7,7 @@
     font-family: "Poppins", sans-serif;
 }
 
-/* Header */
-
+/*Header*/
 header .navegacion nav{
     height: 90px;
     width: 100%;
@@ -40,7 +39,7 @@ header .navegacion .buscar input{
     padding: 0px 5px;
     font-size: 18px;
     color: black;
-    outline: none;;
+    outline: none;
     border: solid 1px silver;
     border-radius: 30px;
     transition: all 0.5s ease;
@@ -53,12 +52,13 @@ header .navegacion .buscar .btn{
     position: absolute;
     top: 0px;
     right: 0px;
-    background: #C1DFF0;
+    background: #88CCF1;
     text-align: center;
     color: black;
     font-size: 20px;
     border-radius: 50%;
     cursor: pointer;
+    border: solid 1px white;
 }
 
 header .navegacion .buscar:hover input{
@@ -116,27 +116,26 @@ header .navegacion nav .enlace-pais i{
     color: black;
 }
 
-
 header .navegacion nav ul{
     position: fixed;
-    width: 100%;
-    height: calc(100vh - 90px);
+    width: 100vW;
+    height: calc(100vh - 180px);
     background-color: #C1DFF0;
     top: 90px;
-    left: -100%;
+    left: -100vw;
     text-align: center;
 }
 
 header .navegacion nav ul li{
     display: block;
-    line-height: 15px;
-    margin: 50px 0px;
+    line-height: 10px;
+    margin: 44px 0px;
 }
 
 header .navegacion nav ul li a{
     color: black;
     font-size: 20px;
-    padding: 7px 13px;
+    padding: 5px 13px;
     border-radius: 3px;
 }
 
@@ -163,18 +162,9 @@ header .navegacion nav #check:checked ~ ul{
     left:0%;
 }
 
-header .botones {  display:inline-block;
-  
-    position: absolute;
-    z-index: 1;
-    top: 0px;
-    right: 5px;
-}
-
 header .boton-header-crear-cuenta a, header .boton-header-ingresar a{
     color: white;
     font-size: 12px ;
-    display: none
 }
 
 header .boton-header-crear-cuenta, header .boton-header-ingresar{
@@ -182,25 +172,20 @@ header .boton-header-crear-cuenta, header .boton-header-ingresar{
     text-decoration: none;
     background-color: #88CCF1;
     padding: 2px 6px 2px 6px;
-    border-top: 0px solid white;
-    border-right: 0px solid white;
-    border-bottom: 0px solid white;
-    border-left: 0px solid white;
+    border: 0px solid white;
     border-radius: 8px;
 }
 
-header .boton-header-crear-cuenta:hover {
+header .boton-header-crear-cuenta:hover{
     background-color: #C1DFF0;
     color: black;
-    display: none;
 }
-
 
 header .boton-header-ingresar:hover{
     background-color: #C1DFF0;
     color: black;
-    display: none;
 }
+
 
 /* Register Page Main*/
 
@@ -312,6 +297,7 @@ main .box-register .already-register {
     margin-bottom: 15%;
 }
 
+
 /*Footer*/
 
 footer {
@@ -416,11 +402,14 @@ footer .socialmedia .icons a {
   color: #000;
 }
 
-
+/*##################################################*/
 
 /*Media Queries*/
 
 @media (min-width: 361px){
+
+    /* Header Media Queries (min-width: 361px)*/
+
     header .navegacion nav{
         height: 70px;
     }
@@ -463,69 +452,7 @@ footer .socialmedia .icons a {
     
     header .navegacion .buscar input:focus{
         width:33vw;
-    }    
-
-    .boton-header-crear-cuenta{
-        display: none;
-        position: fixed;
-        padding: 0px;
-        top: 10px;
-        right: 150px;
-        width: 120px;
-        text-align: center;
-        cursor: pointer;
-    }
-
-    .boton-header-ingresar{
-        display: none;
-        position: fixed;
-        padding: 0px;
-        top: 10px;
-        right: 76px;
-        width: 70px;
-        text-align: center;
-        cursor: pointer;
-    }
-
-    header .navegacion .buscar:hover input{
-        width:45vw;
-    }
-    
-    header .navegacion .buscar input:focus{
-        width:45vw;
     }  
-
-    header .boton-header-crear-cuenta, header .boton-header-ingresar{
-    text-decoration: none;
-    display: none;
-    background-color: #88CCF1;
-    padding: 2px 6px 2px 6px;
-    border-top: 0px solid white;
-    border-right: 0px solid white;
-    border-bottom: 0px solid white;
-    border-left: 0px solid white;
-    margin-left:300px;
-    z-index: 3;
-    border-radius: 8px;
-    }
-
-    header .boton-header-crear-cuenta:hover {
-        background-color: #C1DFF0;
-        color: black;
-        display: none;
-    }
-
-    header .boton-header-ingresar:hover{  
-        background-color: #C1DFF0;
-        color: black;
-        display: none;
-    }
-
-    header .boton-header-crear-cuenta a, header .boton-header-ingresar a{
-        color: white;
-        font-size: 12px ;
-        display: none
-    }
 
     /* Register Page Main Media Queries (min-width: 361px)*/
 
@@ -611,6 +538,8 @@ footer .socialmedia .icons a {
         padding-top: 10px;
     }
 
+    /* Footer Media Queries (min-width: 361px)*/
+
     footer h4 {
         font-size: 9px;
     }
@@ -656,6 +585,8 @@ footer .socialmedia .icons a {
 
 @media (min-width: 769px){
 
+    /* Header Media Queries (min-width: 769px)*/
+
     header .navegacion nav .checkbtn{
         display: none;
     }
@@ -672,8 +603,10 @@ footer .socialmedia .icons a {
         display: none;
     }
 
-    .boton-header-crear-cuenta{
-        display: none;
+    header .boton-header-crear-cuenta, header .boton-header-ingresar
+        
+    header .boton-header-crear-cuenta{
+        display: inline-block;
         position: fixed;
         padding: 0px;
         top: 10px;
@@ -683,8 +616,8 @@ footer .socialmedia .icons a {
         cursor: pointer;
     }
 
-    .boton-header-ingresar{
-        display: none;
+    header .boton-header-ingresar{
+        display: inline-block;
         position: fixed;
         padding: 0px;
         top: 10px;
@@ -700,41 +633,6 @@ footer .socialmedia .icons a {
     
     header .navegacion .buscar input:focus{
         width:45vw;
-    }  
-
-    main h1 {
-        font-size: 75px;
-    }
-
-    header .boton-header-crear-cuenta a, header .boton-header-ingresar a{
-        color: white;
-        font-size: 12px ;
-        display: none
-    }
-
-    header .boton-header-crear-cuenta, header .boton-header-ingresar{
-       display: none;
-        text-decoration: none;
-        background-color: #88CCF1;
-        padding: 2px 6px 2px 6px;
-        border-top: 0px solid white;
-        border-right: 0px solid white;
-        border-bottom: 0px solid white;
-        border-left: 0px solid white; 
-        border-radius: 8px;
-    }
-
-    header .boton-header-crear-cuenta:hover {
-        background-color: #C1DFF0;
-        color: black;
-        display: none
-    }
-
-
-    header .boton-header-ingresar:hover{
-        background-color: #C1DFF0;
-        color: black;
-        display: none
     }
 
     /* Register Page Main Media Queries (min-width: 769px)*/
@@ -797,6 +695,8 @@ footer .socialmedia .icons a {
         margin-right: 1%;
     }
 
+    /* Footer Media Queries (min-width: 769px)*/
+
     footer .links h4 {
         display: block;
         margin-bottom: 4%;
@@ -845,9 +745,9 @@ footer .socialmedia .icons a {
       width: 50%;
       margin-left: 0%;
       font-size: 30px;
-  }
+    }
   
-  footer .socialmedia h4 {
+    footer .socialmedia h4 {
     text-align: center;
   }
   
@@ -874,21 +774,4 @@ footer .socialmedia .icons a {
     margin: 0px;
   }
     
-    }
-
-
-@media only screen and (min-width: 380px) {
-    main .prev, main .next,main .text {font-size: 14px}
-
-
-@-webkit-keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-}
-
-@keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-}
-
 }
