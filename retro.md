@@ -1,4 +1,3 @@
-
 <h1>Retrospectiva Sprint 1</h1>
 
 <ul>
@@ -10,7 +9,7 @@ Seguirémos organizando las meetings de equipo los días de la semana antes de l
 Seguiremos buscando ejemplos y referencias de otros proyectos para identificar mejoras en nuestro desarrollo. 
   
 Seguiremos practicando pair-programming entre los miembros del equipo.   
-  </li>
+</li>
 
 
 <li>2. Menos de:
@@ -30,7 +29,7 @@ No cumplir con la asistencia de las reuniones pautadas.
 2- Proactividad por parte de todos los miembros del equipo. 
   
 3- Utilización del trello.   
-  </li>
+</li>
 
 <li>4. Dejar de hacer: 
   
@@ -40,10 +39,44 @@ No cumplir con la asistencia de las reuniones pautadas.
   
   Esperar la retro del "cliente" para seguir avanzando. 
  
-  </li><br>
+</li>
 
 <li>5. Empezar a hacer:
 
 Nos hemos propuesto a trabajar cada una con un backup, es decir, esta nueva metodogología interna del equipo nos permitirá además de tener asignadas las tarjetas de una tarea, también nos hemos asignado un par que será nuestro backup, con esto buscamos reducir los tiempos en las revisiones, trabajar de manera colaborativa, seguir el trabajo del otro en caso de alguna eventualidad.</li>
 
-  </ul> <br>
+ </ul><br>
+
+<h1>Retrospectiva Sprint 2</h1>
+
+<ul>
+                                
+<li>1. Seguir haciendo:
+
+Seguirémos haciendo las dailys para seguir el status de las tareas en progreso.
+
+</li>
+
+
+<li>2. Menos de:
+ 
+No cumplir con las tareas individuales asignadas, en el tiempo pautado durante las dailys.  
+    
+</li>
+
+<li>3. Más de: 
+
+1- Utilización del trello.
+  
+ </li>
+
+<li>4. Dejar de hacer: 
+  
+ 
+ </li><br>
+
+<li>5. Empezar a hacer:
+
+</li>
+
+ </ul> <br>
