@@ -86,6 +86,10 @@ main .login-email, .login-password  {
     width: 60%;
 }
 
+main .login-email input, .login-password input {
+    width: 85%;
+}
+
 main .box-password, .box-email {
     display: flex;
     flex-wrap: wrap;
