@@ -33,6 +33,13 @@
 <ul>                              
 <h2>Modificaciones Sprint 3:</h2>
   
-  <p></p>
+ <p>Lunes 21 de Febrero:</p>
+ <p>Nos reunimos y nos organizarmos las tareas</p>
+ <p>Actuaizamos el trello con las nuevas tarjetas del sprint 3 y nos asignamos las tarjetas</p>
   
+  <p>Lunes 24 de Febrero:</p>
+ <p>Comenzamos actualizar cada una las páginas: html de productDetail, Register, login para adaptarlo a los wireframes</p>
+ <p>Creamos las etiquetas de cada html para que no se repitan y se pisen los estilos en la unificación del CSS</p>
+ <p>Unificamos el css del register en un nuevo style.css donde vamos a unificar todas las páginas</p>
+ <p>Quiz comenzó a trabajar en el HTML del formulario de carga de productos</p>
 </ul>
