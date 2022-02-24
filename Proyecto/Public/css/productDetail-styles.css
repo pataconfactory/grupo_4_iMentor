@@ -459,19 +459,6 @@ main .membresias {
 
 }
 
-.contenido-textos h3 span {
-    background: #2D848A;
-    color: white;
-    border-radius: 60%;
-    display: inline-block;
-    text-align: center;
-    width: 30px;
-    height: 30px;
-    padding: 4px;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
-    margin-right: 5px;
-
-}
 
 .membresias .contenido-textos p {
     padding: 10px 0px 10px 0px;
@@ -480,6 +467,9 @@ main .membresias {
     font-size: 14px;
 }
 
+div.btn-cart {
+    font-weight: 300;
+}
 
 
 /*####Que dicen nuestros clientes####*/
@@ -1016,7 +1006,68 @@ footer .socialmedia .icons a {
         display: inline-block
     }
 
+    .sobre-servicios .contenido-textos {
+        font-size: 20px;
+    }
 
+    .contenido-textos h3 span {
+        width: 40px;
+    height: 40px;
+    }
+
+    .contenido-textos h3 {
+        font-size: 20px;
+    }
+    .contenedor {
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    div.btn-cart {
+        align-self: center;
+        margin-left: 35%;
+        width: 30%;
+    }
+
+    .membresias .contenido-textos p {
+        font-size: 20px;
+        margin-right: 20px;
+ }
+
+ main .panel-categoria .descripcion-categoria-asesoria {
+     font-size: 18px;
+ }
+
+ main .accordion-categoría {
+    font-size: 18px;
+ }
+
+ .contactar-cart p {
+    font-size: 18px;
+ }
+
+ .cada-mentor h5 {
+background-color: #ccc;
+font-size: 20px;
+
+ }
+
+ .contenedor-giftcard {
+     font-size: 18px;
+ }
+ .cada-mentor p {
+     font-size: 16px;
+ } 
+
+ .cards .card .contenido-texto-card p {
+     font-size: 18px;
+     padding: 0px;
+ }
+
+ .cards .card {
+     width: 70%;
+ }
+    
     footer .links h4 {
         display: block;
         margin-bottom: 4%;
@@ -1128,4 +1179,69 @@ footer .socialmedia .icons a {
     }
 
 
+}
+
+@media only screen and (min-width:1025px) {
+    .sobre-servicios .contenido-textos {
+        font-size: 20px;
+    }
+
+    .contenido-textos h3 span {
+        width: 40px;
+    height: 40px;
+    }
+
+    .contenido-textos h3 {
+        font-size: 24px;
+    }
+    .contenedor {
+        font-size: 20px;
+        font-weight: normal;
+    }
+
+    div.btn-cart {
+        align-self: center;
+        margin-left: 28%;
+        width: 45%;
+        font-size: 20px;
+    }
+
+    .membresias .contenido-textos p {
+        font-size: 24px;
+        margin-right: 20px;
+ }
+
+ main .panel-categoria .descripcion-categoria-asesoria {
+     font-size: 22px;
+ }
+
+ main .accordion-categoría {
+    font-size: 22px;
+ }
+
+ .contactar-cart p {
+    font-size: 22px;
+ }
+
+ .cada-mentor h5 {
+background-color: #ccc;
+font-size: 24px;
+
+ }
+
+ .contenedor-giftcard {
+     font-size: 22px;
+ }
+ .cada-mentor p {
+     font-size: 22px;
+ } 
+
+ .cards .card .contenido-texto-card p {
+     font-size: 22px;
+     padding: 0px;
+ }
+
+ .cards .card {
+     width: 70%;
+ }
 }
