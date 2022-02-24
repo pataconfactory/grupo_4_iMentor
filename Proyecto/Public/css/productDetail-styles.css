@@ -10,7 +10,7 @@
 }
 
 
-.contenedor {
+.contenedor-productdetail {
     max-width: 1000px;
     margin: auto;
     overflow: hidden;
@@ -1018,7 +1018,7 @@ footer .socialmedia .icons a {
     .contenido-textos h3 {
         font-size: 20px;
     }
-    .contenedor {
+    .contenedor-productdetail {
         font-size: 16px;
         font-weight: normal;
     }
@@ -1194,7 +1194,7 @@ font-size: 20px;
     .contenido-textos h3 {
         font-size: 24px;
     }
-    .contenedor {
+    .contenedor-productdetail {
         font-size: 20px;
         font-weight: normal;
     }
