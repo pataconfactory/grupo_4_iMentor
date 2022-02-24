@@ -1180,3 +1180,68 @@ font-size: 20px;
 
 
 }
+
+@media only screen and (min-width:1025px) {
+    .sobre-servicios .contenido-textos {
+        font-size: 20px;
+    }
+
+    .contenido-textos h3 span {
+        width: 40px;
+    height: 40px;
+    }
+
+    .contenido-textos h3 {
+        font-size: 24px;
+    }
+    .contenedor {
+        font-size: 20px;
+        font-weight: normal;
+    }
+
+    div.btn-cart {
+        align-self: center;
+        margin-left: 28%;
+        width: 45%;
+        font-size: 20px;
+    }
+
+    .membresias .contenido-textos p {
+        font-size: 24px;
+        margin-right: 20px;
+ }
+
+ main .panel-categoria .descripcion-categoria-asesoria {
+     font-size: 22px;
+ }
+
+ main .accordion-categoría {
+    font-size: 22px;
+ }
+
+ .contactar-cart p {
+    font-size: 22px;
+ }
+
+ .cada-mentor h5 {
+background-color: #ccc;
+font-size: 24px;
+
+ }
+
+ .contenedor-giftcard {
+     font-size: 22px;
+ }
+ .cada-mentor p {
+     font-size: 22px;
+ } 
+
+ .cards .card .contenido-texto-card p {
+     font-size: 22px;
+     padding: 0px;
+ }
+
+ .cards .card {
+     width: 70%;
+ }
+}
