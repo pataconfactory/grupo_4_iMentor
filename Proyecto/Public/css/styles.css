@@ -958,6 +958,324 @@ main .login .remember-me label {
 
 /*******************************/
 
+/*Main ProductCart*/
+main .contenedor-carrito {
+	margin: 0px 15px;
+    padding: 95px 0px 0px 0px;
+}
+
+main .contenedor-carrito h1 {
+	font-size: 25px;
+    padding: 5px 0px;
+    margin: 15px 0px;
+    background-color: #C1DFF0;
+    text-align: center;
+    color: black;
+}
+
+main .contenedor-carrito .shop {
+    flex-direction: row;
+}
+
+main .contenedor-carrito .seccion-productos {
+	display: flex;
+    width: 100%;
+}
+
+main .contenedor-carrito .seccion-productos .servicio {
+	display: flex;
+	width: 100%;
+	height: 150px;
+	overflow: hidden;
+	margin-bottom: 20px;
+	background: #fff;
+	transition: all .6s ease;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+main .contenedor-carrito .seccion-productos .servicio:hover {
+	border: none;
+	transform: scale(1.01);
+}
+
+main .contenedor-carrito .seccion-productos .servicio img {
+    height: 100px;
+    width: 130px;
+    margin: 5px 0px 5px 5px;
+}
+
+main .contenedor-carrito .seccion-productos .content {
+	padding: 5px;
+	width: 100%;
+	position: relative;
+    line-height: 10px;
+    display: flex;
+    flex-flow: wrap;
+}
+
+main .contenedor-carrito .seccion-productos .content h4 {
+    font-size: 10px;
+    align-self: center;
+    width: 96%;
+}
+
+main .contenedor-carrito .seccion-productos .content h3 {
+    width: 95%;
+}
+
+main .contenedor-carrito .seccion-productos .content h3 a{
+    color: #3587A4;
+    cursor: pointer;
+    font-size: 12px;
+}
+main .contenedor-carrito .seccion-productos .content .horas{
+    color: green;
+}
+
+main .contenedor-carrito .seccion-productos .content .unit{
+    font-size: 10px;
+    width: 70%;
+}
+
+main .contenedor-carrito .seccion-productos .content .btn-area {
+	position: absolute;
+	bottom: 5px;
+	left:-107px;
+	padding: 5px 10px;
+	background-color: #2D848A;
+	color: white;
+	cursor: pointer;
+	border-radius: 5px;
+    border: none;
+}
+
+main .contenedor-carrito .seccion-productos .content .btn-area a{
+    font-size: 12px;
+    display: flex;
+    align-self: center;
+}
+
+main .contenedor-carrito .seccion-productos .content .btn-area:hover {
+	background-color: #88CCF1;
+	font-weight: bold;
+}
+
+main .contenedor-carrito .seccion-productos .content .unit input {
+	width: 30px;
+    text-align: center;
+    font-size: 11px;
+    height: 15px;
+    margin: 0px 5px;
+    cursor:pointer;
+}
+
+main .contenedor-carrito .seccion-productos .content .btn-area i {
+	margin-right: 5px;
+    color: white;
+    margin-top: 2px;
+}
+
+main .contenedor-carrito .seccion-productos .content .btn2 {
+    display: flex;
+    color: white;
+}
+
+main .contenedor-carrito .right-bar {
+	flex: 25%;
+	margin-left: 0px;
+	padding: 20px;
+	height: 300px;
+	border-radius: 5px;
+	background: #fff;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-bottom: 100px;
+}
+
+main .contenedor-carrito .right-bar hr {
+	margin: 10px 0px;
+}
+
+main .contenedor-carrito .right-bar .promocion{
+    width: 100%;
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: solid 1px #2D848A;
+}
+main .contenedor-carrito .right-bar p {
+	display: flex;
+	justify-content: space-between;
+	font-size: 15px;
+}
+
+main .contenedor-carrito .right-bar a {
+    margin: 10px 0px 0px 0px;
+	background-color: #2D848A;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+main .contenedor-carrito .right-bar i {
+	margin-right: 15px;
+}
+
+main .contenedor-carrito .right-bar a:hover {
+	background-color: #88CCF1;
+	font-weight: bold;
+}
+
+main .contenedor-carrito .escala, main .slide-container .escala {
+    margin: 0 auto;
+}
+
+main .slide-container .escala input[type="radio"]{
+    display: none;
+}
+
+main .contenedor-carrito .escala input[type="radio"]{
+    display: none;
+}
+
+main .contenedor-carrito .clasificacion label, main .slide-container .clasificacion label{
+    color: grey;
+    font-size: 20px;
+    text-align: center;
+}
+  
+main .contenedor-carrito .clasificacion, main .slide-container .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+  
+main .contenedor-carrito .escala label:hover, main .contenedor-carrito .escala label:hover ~ label{
+    color: orange;
+}
+  
+main .slide-container .escala label:hover, main .slide-container .escala label:hover ~ label{
+    color: orange;
+}
+
+main .slide-container .escala input[type="radio"]:checked ~ label{
+    color: orange;
+}
+
+main .contenedor-carrito .escala input[type="radio"]:checked ~ label{
+    color: orange;
+}
+
+main .slide-container h2 {
+    font-size: 16px;
+    text-align: center;
+    color: black;
+    width: 100%;
+}
+
+main .slide-container {
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px 20px;
+    flex-wrap: wrap;
+    padding: 0px 0px 100px 0px;
+}
+
+main .slide-container .fasfa-arrow-circle-right, main .slide-container .fasfa-arrow-circle-left{
+    width: 2em;
+    margin: 0px;
+}
+
+main .slide-container .container {
+    width: 85%;
+    margin: 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+main .slide-container .container::-webkit-scrollbar {
+    height: 5px;
+    width: 2px;
+    border: 1px solid #d5d5d5;
+    background: #d5d5d5;
+}
+
+main .slide-container .container::-webkit-scrollbar-track {
+    --webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+main .slide-container .container::-webkit-scrollbar-thumb {
+    background-color: #88CCF1;
+    outline: 1px solid #eee;
+}
+
+main .slide-container .container .miniatura {
+    flex: 0 0 auto;
+	object-fit: cover;
+	cursor: pointer;
+	margin: 5px;
+    border: 1px solid #666;
+    overflow: hidden;
+    transform: scale(.95);
+    transition: all .3s;
+}
+
+main .slide-container .container .miniatura:hover {
+    transform: scale(1);
+}
+
+main .slide-container .miniatura img{
+    width: 100%;
+    height: 100px;
+}
+
+main .slide-container .miniatura .name-product{
+    color: #2D848A;
+}
+
+main .slide-container .miniatura .product-details {
+    text-align: center;
+    padding-bottom: 0.5em;
+    background-color: #fff;
+}
+
+main .slide-container .miniatura .product-details h3 {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+main .slide-container .miniatura .product-details p {
+    font-size: 1em;
+    color: green;
+    font-weight: 700;
+}
+
+main .slide-container .miniatura .product-details p span {
+    color: red;
+    font-weight: normal;
+}
+
+main .slide-container .miniatura .product-details a {
+    font-size: 1em;
+    text-decoration: none;
+    background-color: #2D848A;
+    color: #fff;
+    padding: 0em 1em;
+    border-radius: 3px;
+}
+
+main .slide-container .miniatura .product-details a:hover {
+    background-color: #88CCF1;
+}
+/*******/
+
 /*Footer*/
 
 footer {
@@ -1197,6 +1515,19 @@ footer .socialmedia .icons a {
         font-size: 9px;
         padding-top: 10px;
     }
+    /*Media Queries ProductCart*/
+
+    main .contenedor-carrito .seccion-productos .content h3 a{
+        font-size: 13px;
+    }
+
+    main .contenedor-carrito .seccion-productos .content h4 {
+        font-size: 12px;
+    }
+
+    main .contenedor-carrito {
+        padding: 75px 0px 0px 0px;
+    }
 
     /* Footer Media Queries (min-width: 361px)*/
 
@@ -1290,6 +1621,24 @@ footer .socialmedia .icons a {
     }
 
 
+}
+
+@media (min-width: 500px) {
+    main .contenedor-carrito .seccion-productos .content h3 a{
+        font-size: 16px;
+    }
+
+    main .contenedor-carrito .seccion-productos .content h4 {
+        font-size: 14px;
+    }
+
+     main .contenedor-carrito .seccion-productos .content .unit input {
+        font-size: 14px;
+    }
+
+    main .contenedor-carrito .seccion-productos .content .unit {
+        font-size: 14px;
+    }
 }
 
 @media (min-width: 769px){
@@ -1537,6 +1886,22 @@ footer .socialmedia .icons a {
         margin-left: 5px;
     }
     
+    /*Medias Queries Product Cart*/
+
+    main .contenedor-carrito .shop{
+		display: flex;
+	}
+
+    main .slide-container {
+        display: flex;
+    }
+
+	main .contenedor-carrito .shop .right-bar {
+		margin-left: 20px;
+		margin-bottom: 0px;
+        flex: 45%;
+	}
+
     /* Footer Media Queries (min-width: 769px)*/
 
     footer .links h4 {
