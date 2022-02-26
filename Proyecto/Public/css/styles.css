@@ -763,6 +763,201 @@ div.btn-cart {
 
 /**************************** Termina ProductDetail.html CSS**************************/
 
+/* Login Page Main*/
+
+main .banner-login {
+    width: 100vw;
+    height: 100vh;
+    animation: banner-login 10s infinite linear alternate;
+    background-size: 100% 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes banner-login {
+    0%, 20%{
+        background-image: url(../img/banner1.jpg);
+    }
+    25%, 45%{
+        background-image: url(../img/banner2.jpg);
+    }
+    50%, 70%{
+        background-image: url(../img/banner3.jpg);
+    }
+    75%, 100%{
+        background-image: url(../img/banner4.jpeg);
+    }
+}
+
+main .background-login {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+main .box-login{
+    z-index: 1;
+    width: 250px;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+}
+
+main .box-login .logo img {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1%;
+}
+
+main .box-login .logo {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(217,217,217);
+    margin: 5px 5px;
+}
+
+main .box-login p {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+main .box-login .login {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+main .login .login-email, main .login .login-password {
+    width: 60%;
+}
+
+main .login .login-email input, main .login .login-password input {
+    width: 85%;
+}
+
+main .login .box-password, main .login .box-email {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 11px;
+    border: none;
+}
+
+main .login .login-email {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px rgb(217,217,217) solid;
+    margin: 6% 0%;
+    padding: 2.5%;
+    border-radius: 4px;
+    width: 225px;
+}
+
+main .login .login-email i {
+    width: 10%;
+    margin-left: 1%;
+    color: rgb(170,170,170);
+    font-size: 17px;
+}
+
+main .login .login-password {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px rgb(217,217,217) solid;
+    margin: 5% 0% 2% 0%;
+    padding: 2.5%;
+    border-radius: 4px;
+    width: 225px;
+}
+
+main .login .login-password i {
+    width: 10%;
+    margin-left: 1%;
+    color: rgb(170,170,170);
+    font-size: 17px;
+}
+
+main .box-login .references .not-register, main .box-login .references .password-forgotten {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+    text-decoration: underline;
+    padding-top: 4%;
+}
+
+main .login .login-button {
+    padding: 1.4%;
+    border-radius: 4px;
+    border: 0;
+    background-color: rgb(217,217,217);
+    width: 100%;
+    font-size: 11px;
+    margin-top: 2%;
+}
+
+main .login .login-button a {
+    text-decoration: none;
+    color: #000;
+}
+
+main .login .login-button:hover {
+    background-color: #3587A4;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgb(217,217,217);
+  }
+
+main .box-login .references {
+    display: block;
+    justify-content: space-around;
+}
+
+main .box-login .help {
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    font-size: 9.5px;
+    text-decoration: underline;
+}
+
+main .box-login .politics .terms {
+    font-size: 8.5px;
+    color: black;
+}
+
+main .box-login .politics {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+main .login .remember-me {
+    font-size: 8.5px;
+    align-items: center;
+    display: flex;
+}
+
+main .login .remember-me label {
+    margin-left: 5px;
+}
+
+/*******************************/
+
 /*Footer*/
 
 footer {
@@ -1208,6 +1403,140 @@ footer .socialmedia .icons a {
         margin-right: 1%;
     }
 
+    /* Product Detail Media Queeries (min-width: 769px)*/
+
+    .titulo {
+        font-size: 40px;
+    }
+
+    .sobre-servicios .contenido-textos {
+        font-size: 20px;
+    }
+
+    .contenido-textos h3 span {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contenido-textos h3 {
+        font-size: 20px;
+    }
+
+    .contenedor-productdetail {
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    div.btn-cart {
+        align-self: center;
+        margin-left: 35%;
+        width: 30%;
+    }
+
+    .membresias .contenido-textos p {
+        font-size: 20px;
+        margin-right: 20px;
+    }
+
+    main .panel-categoria .descripcion-categoria-asesoria {
+        font-size: 18px;
+    }
+
+    main .accordion-categoría {
+        font-size: 18px;
+    }
+
+    .contactar-cart p {
+        font-size: 18px;
+    }
+
+    .cada-mentor h5 {
+        background-color: #ccc;
+        font-size: 20px;
+    }
+
+    .contenedor-giftcard {
+        font-size: 18px;
+    }
+
+    .cada-mentor p {
+        font-size: 16px;
+    } 
+
+    .cards .card .contenido-texto-card p {
+        font-size: 18px;
+        padding: 0px;
+    }
+
+    .cards .card {
+        width: 70%;
+    }
+
+    /* Login Page Main Media Queries (min-width: 769px)*/
+    
+    main .banner-login {
+        justify-content: right;
+    }
+
+    main .box-login {
+        width: 35%;
+        margin: 0px 60px 0px 0px;
+    } 
+
+    main .box-login p {
+        font-size: 17px;
+        margin-top: 3%;
+    }
+
+    main .login .login-email, main .login .login-password {
+        width:29vw;
+    }
+
+    main .login .box-password, main .login .box-email {
+        margin: 2% 0% 1% 0%;
+        font-size: 12px;
+    }
+    
+    main .login .login-email, main .login .login-password {
+        padding: 1.5%;
+        margin: 4% 0%;
+    }
+    
+    main .login .login-email i, main .login .login-password i {
+        font-size: 20px;
+    }
+    
+    main .box-login .references .not-register, main .box-login .references .password-forgotten {
+        padding-top: 4%;
+        font-size: 12px;
+    }
+    
+    main .login .login-button {
+        font-size: 13.5px;
+        padding: 1%;
+    
+    }
+
+    main .box-login .help {
+        font-size: 12px;
+    }
+    
+    main .box-login .politics .terms {
+        font-size: 9.5px;
+    }
+
+    main .box-login .politics {
+        margin-top: 3%;
+    }
+
+    main .login .remember-me {
+        font-size: 9.5px;
+    }
+    
+    main .login .remember-me label {
+        margin-left: 5px;
+    }
+    
     /* Footer Media Queries (min-width: 769px)*/
 
     footer .links h4 {
@@ -1287,72 +1616,7 @@ footer .socialmedia .icons a {
         margin: 0px;
     }
     
-/* Product Detail Media Queeries (min-width: 769px)*/
 
-.titulo {
-    font-size: 40px;
-}
-.sobre-servicios .contenido-textos {
-        font-size: 20px;
-    }
-
-    .contenido-textos h3 span {
-        width: 40px;
-    height: 40px;
-    }
-
-    .contenido-textos h3 {
-        font-size: 20px;
-    }
-    .contenedor-productdetail {
-        font-size: 16px;
-        font-weight: normal;
-    }
-
-    div.btn-cart {
-        align-self: center;
-        margin-left: 35%;
-        width: 30%;
-    }
-
-    .membresias .contenido-textos p {
-        font-size: 20px;
-        margin-right: 20px;
- }
-
- main .panel-categoria .descripcion-categoria-asesoria {
-     font-size: 18px;
- }
-
- main .accordion-categoría {
-    font-size: 18px;
- }
-
- .contactar-cart p {
-    font-size: 18px;
- }
-
- .cada-mentor h5 {
-background-color: #ccc;
-font-size: 20px;
-
- }
-
- .contenedor-giftcard {
-     font-size: 18px;
- }
- .cada-mentor p {
-     font-size: 16px;
- } 
-
- .cards .card .contenido-texto-card p {
-     font-size: 18px;
-     padding: 0px;
- }
-
- .cards .card {
-     width: 70%;
- }
 }
 
 
