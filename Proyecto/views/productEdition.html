@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iMentor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <section class="navegacion">
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <a href="/" class="enlace-logo">
+                    <img src="img/Logo-iMentor1.png" alt="Logo iMentor" class="logo">
+                </a>
+                <div class="buscar">
+                    <input type="text" placeholder="Buscar" required>
+                    <div class="btn">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <a href="/login" class="enlace-cuenta">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                <a href="/productCart" class="enlace-cesta">
+                    <i class="fas fa-shopping-basket"></i>
+                </a>
+                <a href="#" class="enlace-pais">
+                    <i class="fas fa-globe"></i>
+                </a>
+                <button class="boton-header-crear-cuenta" type="submit"><a href= "/register">¡Crea tu cuenta!</a></button>
+                <button class="boton-header-ingresar" type="submit"><a href= "/login">Ingresar</a></button>
+                <ul>
+                    <li><a class="active" href = "/">Home</a></li>
+                    <li><a href = "/productDetail">Servicios</a></li>
+                    <li><a href = "#">Nosotros</a></li>
+                    <li><a href = "#">Plataforma</a></li>
+                    <li class="cesta"><a href = "/productCart"><i class="fas fa-shopping-basket"></i></a></li>
+                    <li class="crea-cuenta"><a href = "/register">¡Crea tu cuenta!</a></li>
+                    <li class="ingresar"><a href = "/login">Ingresar</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+    <main>
+        <div class="contenedor-edicion-productos">
+            <h2>Categorías de productos:</h2>
+            <p class="categoria-producto">
+                <select name="categoria-producto" id="">
+                    <option selected="true" disabled="disabled">seleccione la categoría</option>
+                    <option value="value1">Asesorias</option>
+                    <option value="value2">Membresias</option>
+                    <option value="value3">Gif Cards</option>
+                </select>
+            </p>
+            <p class="subcategoria-producto">
+                <select name="subcategoria-producto" id="">
+                    <option selected="true" disabled="disabled">seleccione la subcategoría</option>
+                    <option value="value1">Desarrollo Web Full Stack</option>
+                    <option value="value2">UI/UX</option>
+                    <option value="value3">Marketing Digital</option>
+                </select>
+            </p>
+            <div class="container-productos-existentes">
+                <h2>Productos:</h2>
+                <section class="container" id="slider">           
+                    <div class="miniatura">
+                        <img src="img/mentor3.jpg" alt="Imagen de la mentora Patricia Garza">
+                        <div class="product-details">
+                            <h3>Asesoría</h3>
+                            <h3 class="name-product">Desarrollo Web</h3>
+                            <h3>Patricia Garza</h3>
+                            <p><span>40USD$</span>03 horas</p>
+                            <a href="/productEdition">Editar</a>
+                        </div>
+                    </div>
+                    <div class="miniatura">
+                        <img src="img/mentor4.jpg" alt="Imagen de la mentora Quizaira Rodriguez">
+                        <div class="product-details">
+                            <h3>Asesoría</h3>
+                            <h3 class="name-product">Desarrollo Web</h3>
+                            <h3>Quizaira Rodriguez</h3>
+                            <p><span>40USD$</span>03 horas</p>
+                            <a href="/productDetail">Editar</a>
+                        </div>
+                    </div>
+                    <div class="miniatura">
+                        <img src="img/mentor5.jpg" alt="Imagen del mentor Pedro Gonzalez">
+                        <div class="product-details">
+                            <h3>Asesoría</h3>
+                            <h3 class="name-product">Desarrollo Web</h3>
+                            <h3>Pedro Gonzalez</h3>
+                            <p><span>40USD$</span>03 horas</p>
+                            <a href="/productDetail">Editar</a>
+                        </div>
+                    </div>
+                    <div class="miniatura">
+                        <img src="img/mentor6.png" alt="Imagen del mentor Lucas Sequeira">
+                        <div class="product-details">
+                            <h3>Asesoría</h3>
+                            <h3 class="name-product">Desarrollo Web</h3>
+                            <h3>Lucas Sequeira</h3>
+                            <p><span>40USD$</span>03 horas</p>
+                            <a href="/productDetail">Editar</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <button class="enviar" type="submit">Crear producto</button>
+            <form class="formulario-edicion-productos" action="/productDetail" method="GET">
+                <h3> Editar información del producto</h3>
+                    <p><input type="text" name="nombre" id="nombre" placeholder="Nombre del producto" required></p>
+                    <p><input type="text" name="descripcion" id="descripcion" placeholder="Descripción" required></p>
+                    <p><input type="text" name="categoria" id="categoria" placeholder="Categoría" required></p>
+                    <p><input type="text" name="subcategoria" id="subcategoria" placeholder="Subcategoría" required></p>
+                    <p><input type="text" name="mentor" id="mentor" placeholder="Mentor" required></p>
+                    <p><input type="text" name="paisMentor" id="paisMentor" placeholder="País del mentor" required></p>
+                    <p><input type="number" name="horas" id="horas" placeholder="Horas" min="0" required></p>
+                    <p><input type="number" name="precio" id="precio" placeholder="Precio $" min="0" required></p>
+                    <p><label>Subir imagen del producto</label></p>
+                    <p><input type="file" name="fotoProducto" accept=".jpg" multiple></p>    
+                <div class="botones">
+                    <button class="enviar" type="submit">Crear</button>
+                    <button class="borrar" type="reset">Borrar</button>   
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+            <div class="links">
+                <ul class="links-utiles">
+                    <h4>LINKS ÚTILES</h4>
+                    <li><a href="/beneficios">Beneficios</a></li>
+                    <li><a href="/formulario-trabajo">Trabajá con nosotros</a></li>
+                    <li><a href="/contacto">Contacto</a></li>
+                </ul>
+                <ul class="comunidad">
+                    <h4>NOSOTROS</h4>
+                    <li><a href="/webinars">Webinars</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/iMentor-historia">Sobre iMentor</a></li>
+                </ul>
+            </div>
+            <div class="socialmedia">
+              <h4>Síguenos en</h4>
+              <div class="icons">
+                  <a href="/facebook"><i class="fab fa-facebook-square"></i></a>
+                  <a href="/twitter"><i class="fab fa-twitter-square"></i></a>
+                  <a href="/instagram"><i class="fab fa-instagram-square"></i></a>
+                  <a href="/linkedin"><i class="fab fa-linkedin"></i></a>
+                  <a href="/youtube"><i class="fab fa-youtube-square"></i></a>
+              </div>
+            </div>
+            <div class="newsletter">
+              <h4>Súmate al Newsletter</h4>
+              <div class="terminos">
+                  <input type="checkbox" name="terminos" id="terminos">
+                  <label for="terminos">Acepto los términos y condiciones</label>
+              </div>
+              <div class="mail-button">
+                  <form action="/newsletter" method="POST">
+                    <input class="newsletterJoin" type="email" name="email" placeholder="tuemail@ejemplo.com">
+                  </form>
+                  <div class="suscription">
+                    <button class="suscriptionbutton">Suscribirme</button>
+                </div>
+              </div>
+            </div>
+    </footer>
+</body>
+</html>
