@@ -300,15 +300,13 @@ main .box-register .already-register {
 
 /**********************************BANNER*************************************/
 main .banner {
-    /* The image used */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url(https://cdn.shrm.org/image/upload/c_crop%2ch_705%2cw_1254%2cx_0%2cy_15/c_fit%2cf_auto%2cq_auto%2cw_767/v1/Employee%20Relations/iStock-1266809682_lflvjj?databtoa=eyIxNng5Ijp7IngiOjAsInkiOjE1LCJ4MiI6MTI1NCwieTIiOjcyMCwidyI6MTI1NCwiaCI6NzA1fX0%3d);
-    height: 100%;
+    url(https://cdn.shrm.org/image/upload/c_crop%2ch_705%2cw_1254%2cx_0%2cy_15/c_fit%2cf_auto%2cq_auto%2cw_767/v1/Employee%20Relations/iStock-1266809682_lflvjj?databtoa=eyIxNng5Ijp7IngiOjAsInkiOjE1LCJ4MiI6MTI1NCwieTIiOjcyMCwidyI6MTI1NCwiaCI6NzA1fX0%3d);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-}
+    padding: 100px}
 
 main img.banner {
     min-height: 100%;
@@ -334,7 +332,172 @@ main h1 {
     bottom: 0;
     width: 100%;
 }
-/**********************************BANNER*************************************/
+
+
+/**********************************Home*************************************/
+
+/*toggle clic para contenido de materias */
+main .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 70%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    position:relative;
+    display: block;
+    margin: 0 auto}
+  
+  main .active, main .accordion:hover {
+    background-color: #ccc; 
+  }
+  
+  main .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+    width:70%;
+    display:block;
+    margin:0 auto;
+    
+  }
+  
+/*slide-show -container */
+
+  main .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    align-content: center;
+    padding: 2%;
+  }
+  
+  main .responsive {
+    width: 50%;
+    max-width: 400px;
+    height: auto;
+  }
+
+
+  main .slideshow-container img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  } 
+  
+  main .prev, main .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+      margin-left: 40px;
+    margin-right: 40px;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+
+  main .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  
+  main .prev:hover, main .next:hover {
+    background-color:lightgray
+  }
+  
+
+  main .texto-carrusel {
+    color: black;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: relative;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  main .text-descripcion {
+    color: black;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: relative;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+
+
+  
+ 
+  main .numbertext {
+    color: #f2f2f2;
+    font-size: 11px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+
+  main .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    margin-bottom: 50px;
+  }
+  
+  main .active, main .dot:hover {
+    background-color: #717171;
+  }
+  
+  
+  main .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  /*botones*/
+  main .button {
+    background-color: #3587A4; /* Azul Patacon */
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+    margin: 0 auto;
+    border-radius: 4px;
+    z-index: 2;
+    margin: 15px;
+
+  }
+  
+  main .button:hover {
+    background-color: #C1DFF0;
+    color: black;
+  }
+  
+
 
 /**********************************ProductDetail.html CSS*************************************/
 
@@ -1675,9 +1838,16 @@ footer .socialmedia .icons a {
         margin: 3% 1% 0% 0%;
     }
 
+/*home Media queries*/
+
+main .banner {
+    padding: 15%;
+
+}
+
      /* Product Detail Media Queries (min-width: 769px)*/
      main .banner {
-        height: 100%;
+       height: 100%;
 
     }
 
@@ -1854,7 +2024,12 @@ footer .socialmedia .icons a {
         font-size: 14px;
         margin-right: 1%;
     }
+/*home Media queries*/
 
+main .banner {
+    padding: 10%;
+
+}
     /* Product Detail Media Queeries (min-width: 769px)*/
 
     .titulo {
