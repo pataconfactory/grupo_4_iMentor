@@ -42,4 +42,7 @@
  <p>Creamos las etiquetas de cada html para que no se repitan y se pisen los estilos en la unificación del CSS</p>
  <p>Unificamos el css del register en un nuevo style.css donde vamos a unificar todas las páginas</p>
  <p>Quiz comenzó a trabajar en el HTML del formulario de carga de productos</p>
+ <p>Victoria genera la nueva estructura de carpetas, y crea las rutas y controllers para main y products</p>
+ <p>Victoria implementa el motor de templates EJS y utiliza el método render() en todos los archivos .ejs</p>
+ <p>Vistas separadas en carpetas: users y products</p>
 </ul>
