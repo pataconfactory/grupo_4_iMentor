@@ -15,10 +15,4 @@ app.listen(3000, ()  => {
 
 app.use(mainRoutes);
 
-app.use(mainRoutes);
-
-app.use(mainRoutes);
-
-app.use(productRoutes);
-
 app.use(productRoutes);
