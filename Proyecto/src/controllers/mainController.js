@@ -7,11 +7,11 @@ const mainController = {
     },
 
     register: function (req, res) {
-        res.render('register')
+        res.render(path.join(__dirname, '../views/users/register'))
     },
 
     login: function (req, res) {
-        res.render('login')
+        res.render(path.join(__dirname, '../views/users/login'))
     },
 };
 
