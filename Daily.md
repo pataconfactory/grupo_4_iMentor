@@ -45,4 +45,5 @@
  <p>Victoria genera la nueva estructura de carpetas, y crea las rutas y controllers para main y products</p>
  <p>Victoria implementa el motor de templates EJS y utiliza el método render() en todos los archivos .ejs</p>
  <p>Vistas separadas en carpetas: users y products</p>
+ <p>Carpeta partials creada y archivos head.ejs, header.ejs y footer.ejs implementados con include en las vistas principales</p>
 </ul>
