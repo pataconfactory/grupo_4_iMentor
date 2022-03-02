@@ -73,7 +73,9 @@ Toma de decisiones individual en aspectos vitales del proyecto.
 <li>3. Más de: 
 
 1- Utilización del Trello.
+  
 2- Pair programming.
+  
 3- Apoyo entre los miembros cuando uno está indivualmente realizando sus tareas.
   
  </li>
@@ -83,7 +85,7 @@ Toma de decisiones individual en aspectos vitales del proyecto.
 No actualizar la daily.
 No sincronizar las tareas del Trello con la realización de las actividades.
  
- </li><br>
+ </li>
 
 <li>5. Empezar a hacer:
   
