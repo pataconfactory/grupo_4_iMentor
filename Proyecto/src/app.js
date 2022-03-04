@@ -13,10 +13,10 @@ const viewsPath = path.join(__dirname, './views');
 app.set('view engine', 'ejs');
 app.set('views', viewsPath);
 
-app.listen(3000, ()  => {
-    console.log('IMentor está corriendo');
-});
-
 app.use(mainRoutes);
 
 app.use(productRoutes);
+
+app.listen(3000, ()  => {
+    console.log('IMentor está corriendo');
+});

@@ -1701,40 +1701,37 @@ footer .socialmedia .icons a {
     /* Register Page Main Media Queries (min-width: 361px)*/
 
     main .banner-register {
-        top: 70px;
-    }
-
-    main .banner-register {
-        position: relative;
         display: flex;
-        width: 100vw;
-        height: 100vw;
+        top: 70px;
+        flex-wrap: nowrap;
     }
     
-    main .background-register {
+    /*main .background-register {
         width: 100%;
         height: 100%;
         position: absolute;
-        top: 0px;
-        left: 0px;
         background-color: rgba(0, 0, 0, 0.2);
-    }
+    }*/
 
     main .box-register {
-        position: absolute;
-        width: 300px;
+        width: 35vw;
         justify-content: center;
         background-color: white;
-        border-radius: 5px;
-        margin-left: 3%;
-        margin-top: 3%;
+        margin: 0px 15px;
+        align-self: center;
+        height: 500px;
     }
 
-    main .banner-register img {
+    main .banner-register .box-img-register {
+        display: flex;
+        width: 65vw;
+        order: 1;
+    }
+
+    main .banner-register .box-img-register img{
         display: block;
-        width: 100vw;
-        top: 70px;
-        bottom: 90px;
+        width: 100%;
+        height: 500px;
     }
    
     main .banner-register h3 {
@@ -1744,10 +1741,11 @@ footer .socialmedia .icons a {
 
     main .banner-register p {
         font-size: 9px;
+        text-align: center;
     }
 
     main form.register-form {
-        padding: 0% 0% 0% 10%;
+        padding: 0% 0% 0% 0%;
     }
 
     main .register-username, .register-email, 
@@ -1761,7 +1759,8 @@ footer .socialmedia .icons a {
         font-size: 8px;
         padding: 1%;
         margin-top: 1%;
-        width: 60%;
+        width: 100%;
+        flex-direction: row;
     }
 
     main .box-register .terminos {
@@ -1774,7 +1773,7 @@ footer .socialmedia .icons a {
 
     main .box-register .register-button {
         font-size: 11px;
-        width: 60%;
+        width: 100%;
     }
 
     main .box-register .already-register {
@@ -1969,29 +1968,22 @@ main .banner {
     /* Register Page Main Media Queries (min-width: 769px)*/
 
     main .banner-register h3 {
-        font-size: 27px;
-        padding-top: 7px;
+        font-size: 22px;
+        /*padding-top: 7px;*/
     }
 
     main .banner-register p {
-        font-size: 14px;
-    }
-
-    main form.register-form {
-        padding: 0% 0% 0% 10%;
+        font-size: 12px;
     }
 
     main .register-username, .register-email, .register-password, .register-birth {
-        font-size: 13px;
-        margin: 3% 0%;
+        font-size: 11px;
     }
 
     main .register-form .boxes {
-        font-size: 11.5px;
+        font-size: 11px;
         padding: 1%;
-        margin-top: 1%;
-        margin-right: 2%;
-        width: 50%;
+        width: 100%;
     }
 
     main .box-register .terminos {
@@ -2003,16 +1995,10 @@ main .banner {
         font-size: 10px;
     }
 
-    main .box-register .box-showpassword {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-
     main .box-register .register-button {
         font-size: 13px;
         padding: 0.5% 2%;
-        width: 50%;
+        width: 100%;
     }
 
     main .box-register .already-register {
@@ -2022,7 +2008,6 @@ main .banner {
 
     main .box-register form i {
         font-size: 14px;
-        margin-right: 1%;
     }
 /*home Media queries*/
 
