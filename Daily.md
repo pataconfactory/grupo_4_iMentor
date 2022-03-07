@@ -46,4 +46,8 @@
  <p>Victoria implementa el motor de templates EJS y utiliza el método render() en todos los archivos .ejs</p>
  <p>Vistas separadas en carpetas: users y products</p>
  <p>Carpeta partials creada y archivos head.ejs, header.ejs y footer.ejs implementados con include en las vistas principales</p>
+ <br>
+ <p>Miércoles 2 de marzo:</p>
+ <p>Se decidió agregar nuevas categorías de productos</p>
+ <p>Decidimos sincronizar de carrito de productos y product detail</p>
 </ul>

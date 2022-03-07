@@ -54,28 +54,44 @@ Nos hemos propuesto a trabajar cada una con un backup, es decir, esta nueva meto
 <li>1. Seguir haciendo:
 
 Seguirémos haciendo las dailys para seguir el status de las tareas en progreso.
+Continuaremos con la división de tareas entre los miembros del equipo.
+Proactividad por parte de todos los miembros del equipo.
+Esperar la retro del "cliente" para seguir avanzando.
+Comunicación continua entre los miembros por redes sociales.
 
 </li>
 
 
 <li>2. Menos de:
  
-No cumplir con las tareas individuales asignadas, en el tiempo pautado durante las dailys.  
-    
+No cumplir con las tareas individuales asignadas, en el tiempo pautado durante las dailys.
+Dejar de realizar las tareas en el tiempo límite de entrega.
+Toma de decisiones individual en aspectos vitales del proyecto.
+ 
 </li>
 
 <li>3. Más de: 
 
-1- Utilización del trello.
+1- Utilización del Trello.
+  
+2- Pair programming.
+  
+3- Apoyo entre los miembros cuando uno está indivualmente realizando sus tareas.
   
  </li>
 
 <li>4. Dejar de hacer: 
-  
+
+No actualizar la daily.
+No sincronizar las tareas del Trello con la realización de las actividades.
  
- </li><br>
+ </li>
 
 <li>5. Empezar a hacer:
+  
+Distribución más eficiente de las tareas entre los miembros actuales del equipo.
+Ser más conciente de los tiempos entre sprints.
+Aplicar mejora continua en el proyecto, revisar cuestiones de estética y uniformidad.
 
 </li>
 

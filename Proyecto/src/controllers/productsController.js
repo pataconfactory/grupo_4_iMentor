@@ -9,6 +9,10 @@ const productsController = {
     productDetail: function(req, res) {
         res.render(path.join(__dirname, '../views/products/productDetail'))
     },
+
+    productEdition: function(req, res) {
+        res.render(path.join(__dirname, '../views/products/productEdition'))
+    },
 };
 
 module.exports = productsController;

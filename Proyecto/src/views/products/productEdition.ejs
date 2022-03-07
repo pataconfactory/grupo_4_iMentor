@@ -9,25 +9,32 @@
 
     <main>
         <div class="contenedor-edicion-productos">
-            <h2>Categorías de productos:</h2>
-            <p class="categoria-producto">
-                <select name="categoria-producto" id="">
-                    <option selected="true" disabled="disabled">seleccione la categoría</option>
-                    <option value="value1">Asesorias</option>
-                    <option value="value2">Membresias</option>
-                    <option value="value3">Gif Cards</option>
-                </select>
-            </p>
-            <p class="subcategoria-producto">
-                <select name="subcategoria-producto" id="">
-                    <option selected="true" disabled="disabled">seleccione la subcategoría</option>
-                    <option value="value1">Desarrollo Web Full Stack</option>
-                    <option value="value2">UI/UX</option>
-                    <option value="value3">Marketing Digital</option>
-                </select>
-            </p>
+            <h2>Servicios</h2>
+            <div class="opciones-desplegables">
+                <p class="servicio-producto">
+                    <select name="servicio-producto" id="">
+                        <option selected="true" disabled="disabled">seleccione el servicio</option>
+                        <option value="value1">Asesorias</option>
+                        <option value="value2">Membresias</option>
+                        <option value="value3">Gif Cards</option>
+                    </select>
+                </p>
+                <p class="categoria-producto">
+                    <select name="categoria-producto" id="">
+                        <option selected="true" disabled="disabled">seleccione la categoría</option>
+                        <option value="value1">Front-End</option>
+                        <option value="value2">Back-End</option>
+                        <option value="value2">UI/UX</option>
+                        <option value="value2">Base de Datos</option>
+                        <option value="value3">Marketing Digital</option>
+                        <option value="value3">Mensual</option>
+                        <option value="value3">Anual</option>
+                    </select>
+                </p>
+            </div>
             <div class="container-productos-existentes">
                 <h2>Productos:</h2>
+                <a href="">Crear producto</a>
                 <section class="container" id="slider">           
                     <div class="miniatura">
                         <img src="img/mentor3.jpg" alt="Imagen de la mentora Patricia Garza">
@@ -46,7 +53,7 @@
                             <h3 class="name-product">Desarrollo Web</h3>
                             <h3>Quizaira Rodriguez</h3>
                             <p><span>40USD$</span>03 horas</p>
-                            <a href="/productDetail">Editar</a>
+                            <a href="/productEdition">Editar</a>
                         </div>
                     </div>
                     <div class="miniatura">
@@ -56,7 +63,7 @@
                             <h3 class="name-product">Desarrollo Web</h3>
                             <h3>Pedro Gonzalez</h3>
                             <p><span>40USD$</span>03 horas</p>
-                            <a href="/productDetail">Editar</a>
+                            <a href="/productEdition">Editar</a>
                         </div>
                     </div>
                     <div class="miniatura">
@@ -66,24 +73,54 @@
                             <h3 class="name-product">Desarrollo Web</h3>
                             <h3>Lucas Sequeira</h3>
                             <p><span>40USD$</span>03 horas</p>
-                            <a href="/productDetail">Editar</a>
+                            <a href="/productEdition">Editar</a>
                         </div>
                     </div>
                 </section>
             </div>
-            <button class="enviar" type="submit">Crear producto</button>
             <form class="formulario-edicion-productos" action="/productDetail" method="GET">
                 <h3> Editar información del producto</h3>
-                    <p><input type="text" name="nombre" id="nombre" placeholder="Nombre del producto" required></p>
-                    <p><input type="text" name="descripcion" id="descripcion" placeholder="Descripción" required></p>
-                    <p><input type="text" name="categoria" id="categoria" placeholder="Categoría" required></p>
-                    <p><input type="text" name="subcategoria" id="subcategoria" placeholder="Subcategoría" required></p>
-                    <p><input type="text" name="mentor" id="mentor" placeholder="Mentor" required></p>
-                    <p><input type="text" name="paisMentor" id="paisMentor" placeholder="País del mentor" required></p>
-                    <p><input type="number" name="horas" id="horas" placeholder="Horas" min="0" required></p>
-                    <p><input type="number" name="precio" id="precio" placeholder="Precio $" min="0" required></p>
-                    <p><label>Subir imagen del producto</label></p>
-                    <p><input type="file" name="fotoProducto" accept=".jpg" multiple></p>    
+                    <p><input  class="box" type="text" name="nombre" id="nombre" placeholder="Nombre del producto" required></p>
+                    <p ><input  class="box" type="text" name="descripcion" id="descripcion" placeholder="Descripción" required></p>
+                    <p>
+                        <label>Servicio:
+                        <br>
+                        <label class="opciones"><input type="radio" name="servicio" value="Asesoría">Asesoría</label>
+                        <br>
+                        <label class="opciones"><input type="radio" name="servicio" value="Membresía">Membresía</label>
+                        <br>
+                        <label class="opciones"><input type="radio" name="servicio" value="GifCards">Gif Cards</label>
+                        </label>
+                    </p>
+                    <p>
+                        <select class="box" name="categoria-producto" id="">
+                            <option selected="true" disabled="disabled">seleccione la categoría</option>
+                            <option value="value1">Front-End</option>
+                            <option value="value2">Back-End</option>
+                            <option value="value2">UI/UX</option>
+                            <option value="value2">Base de Datos</option>
+                            <option value="value3">Marketing Digital</option>
+                            <option value="value3">Mensual</option>
+                            <option value="value3">Anual</option>
+                            <option value="value3">No Aplica </option>
+                        </select>
+                    </p>
+                    <p><input class="box" type="text" name="mentor" id="mentor" placeholder="Mentor" required></p>
+                    <p><input class="box" type="text" name="paisMentor" id="paisMentor" placeholder="País del mentor" required></p>
+                    <p><input class="box"type="number" name="horas" id="horas" placeholder="Horas" min="0" required></p>
+                    <p>
+                        <label>Horario:
+                        <br>
+                        <label class="opciones"><input type="checkbox" name="horario" value="14:00">14:00hs</label>
+                        <br>
+                        <label class="opciones"><input type="checkbox" name="horario" value="16:00">16:00hs</label>
+                        <br>
+                        <label class="opciones"><input type="checkbox" name="horario" value="20:00">20:00hs</label>
+                        </label>
+                    </p>
+                    <p><input class="box" type="number" name="precio" id="precio" placeholder="Precio $" min="0" required></p>
+                    <p><label>Subir imagen del producto:</label></p>
+                    <p><input class="box" type="file" name="fotoProducto" accept=".jpg" multiple></p>    
                 <div class="botones">
                     <button class="enviar" type="submit">Crear</button>
                     <button class="borrar" type="reset">Borrar</button>   
