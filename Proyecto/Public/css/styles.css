@@ -301,6 +301,7 @@ main .box-register .already-register {
 main .contenedor-home {
     position: absolute;
     top: 90px;
+    width: 100vw;
 }
 
 main .contenedor-home .banner {
@@ -326,7 +327,8 @@ main .contenedor-home .banner h1 {
 
 /**********************************Home*************************************/
 main .contenedor-home h2 {
-    font-size: 16px;
+    color: #3587A4;
+    font-size: 35px;
     text-align: center;
     margin: 5px 0px;
 }
@@ -375,6 +377,7 @@ main .contenedor-home .panel {
     position: relative;
     align-content: center;
     padding: 2%;
+    background-color: #f2f2f2;
   }
   
   main .responsive {
@@ -540,9 +543,9 @@ main .contenedor-product-detail .banner h1 {
     /* esto hace que se centre todo el contenido y si algo se sale lo esconde*/
 }
 
-.titulo {
+.titulo-servicios {
     color: #3587A4;
-    font-size: 40px;
+    font-size: 35px;
     text-align: center;
 }
 
@@ -555,7 +558,6 @@ main .contenedor-sobre-servicios {
     align-items: center;
 }
 
-
 .sobre-servicios .contenido-textos {
     padding: 10px 10px 10px 10px;
     font-weight: 300;
@@ -563,11 +565,11 @@ main .contenedor-sobre-servicios {
     font-size: 14px;
 }
 
-
-.titulo {
+.titulo-asesorias, .titulo-membresias, .titulo-gif-cards, .titulo-clientes {
     font-size: 28px;
+    text-align: center;
+    color: #3587A4;
 }
-
 
 .ilustracion-sobre-servicios {
     width: 60%;
@@ -577,8 +579,7 @@ main .contenedor-sobre-servicios {
 .contenido-textos h3 {
     margin-bottom: 15px;
     cursor: pointer;
-
-
+    color: #2D848A;
 }
 
 .contenido-textos h3 span {
@@ -664,21 +665,20 @@ article .comprar-asesoria {
 }
 
 div.btn-cart {
-    margin: 10px 0px 0px 0px;
-    background-color: #2D848A;
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 5px;
-    cursor: pointer;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
 div.btn-cart a {
     color: #fff;
     cursor: pointer;
+    background-color: #3587A4;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    width: 48%;
+    padding: 5px 5px; 
 }
 
 /* Dropdown Button */
@@ -837,10 +837,7 @@ div.btn-cart {
     justify-content: space-evenly;
     border-radius: 5px;
     box-shadow: 0 0 6px 0 rgb(0, 0, 0, .5);
-
 }
-
-
 
 .cards .card img {
     width: 100px;
@@ -870,8 +867,6 @@ div.btn-cart {
     display: flex;
     position: relative;
     justify-content: space-between;
-
-
 }
 
 .cada-mentor {
@@ -880,22 +875,16 @@ div.btn-cart {
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
-
-
-
 }
 
 .cada-mentor img {
-    width: 100%;
-    height: 10%;
+    width: 55%;
     justify-content: center;
     align-items: center;
 
 }
 
-
-
-.cada-mentor h5 {
+.cada-mentor .nombre-mentor {
     font-size: 14px;
     color: #2D848A;
 
@@ -1199,12 +1188,10 @@ main .contenedor-carrito {
 }
 
 main .contenedor-carrito h1 {
-	font-size: 25px;
-    padding: 5px 0px;
     margin: 15px 0px;
-    background-color: #C1DFF0;
     text-align: center;
-    color: black;
+    color: #3587A4;
+    font-size: 35px;
 }
 
 main .contenedor-carrito .shop {
@@ -1517,12 +1504,10 @@ main .contenedor-edicion-productos {
 }
 
 main .contenedor-edicion-productos h2 {
-	font-size: 25px;
-    padding: 5px 0px;
     margin: 15px 0px;
-    background-color: #C1DFF0;
     text-align: center;
-    color: black;
+    color: #3587A4;
+    font-size: 35px;
 }
 
 main .contenedor-edicion-productos .opciones-desplegables {
