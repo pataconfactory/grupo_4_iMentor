@@ -196,12 +196,13 @@ main .banner-register {
     width: 100%;
 }
 
-main .banner-register h3 {
+main .banner-register h1 {
     display: flex;
     justify-content: center;
     padding-top: 20px;
-    font-size: 19px;
+    font-size: 24px;
     color: #3587A4;
+    text-align: center;
 }
 
 main .banner-register p {
@@ -221,6 +222,7 @@ main  form.register-form {
     font-size: 9px;
     flex-direction: column;
     padding: 1% 0% 0% 10%;
+    margin: 0px auto;
 }
 
 main .register-username, .register-email, .register-password, .register-birth {
@@ -231,7 +233,7 @@ main .register-form .boxes {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    width: 70%;
+    width: 90%;
     border-color: rgb(217,217,217);
     border-width: 1px;
     font-size: 8.5px;
@@ -246,6 +248,17 @@ main .banner-register form i {
     margin-right: 2%;
 }
 
+main .register-form .register-birth .boxes {
+    display: flex;
+    font-size: 8px;
+    padding: 1%;
+    margin-top: 1%;
+    flex-direction: row;
+}
+
+main .box-register {
+    padding: 0px 0px 50px 0px;
+}
 main .box-register .terminos {
     display: flex;
     flex-direction: row;
@@ -272,7 +285,7 @@ main .box-register .register-button {
     border-radius: 4px;
     padding: 1% 3%;
     border: 0;
-    width: 70%;
+    width: 90%;
 }
 
 main .box-register .register-button a {
@@ -1863,6 +1876,7 @@ footer .socialmedia .icons a {
         margin: 0px 15px;
         align-self: center;
         height: 500px;
+        padding: 0px 0px 0px 0px;
     }
 
     main .banner-register .box-img-register {
