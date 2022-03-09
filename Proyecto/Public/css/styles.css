@@ -201,6 +201,7 @@ main .banner-register h3 {
     justify-content: center;
     padding-top: 20px;
     font-size: 19px;
+    color: #3587A4;
 }
 
 main .banner-register p {
@@ -267,7 +268,7 @@ main .box-register .register-button {
     margin-top: 3%;
     margin-bottom: 1.5%;
     font-size: 10px;
-    background-color: rgb(217,217,217);
+    background-color: #3587A4;
     border-radius: 4px;
     padding: 1% 3%;
     border: 0;
@@ -280,7 +281,7 @@ main .box-register .register-button a {
 }
 
 main .box-register .register-button:hover {
-    background-color: #3587A4;
+    background-color: #88CCF1;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -1249,9 +1250,6 @@ main .contenedor-carrito .seccion-productos .content h3 a{
     cursor: pointer;
     font-size: 12px;
 }
-main .contenedor-carrito .seccion-productos .content .horas{
-    color: green;
-}
 
 main .contenedor-carrito .seccion-productos .content .unit{
     font-size: 10px;
@@ -1263,7 +1261,7 @@ main .contenedor-carrito .seccion-productos .content .btn-area {
 	bottom: 5px;
 	left:-107px;
 	padding: 5px 10px;
-	background-color: #2D848A;
+	background-color: #3587A4;
 	color: white;
 	cursor: pointer;
 	border-radius: 5px;
@@ -1320,7 +1318,7 @@ main .contenedor-carrito .right-bar .promocion{
     width: 100%;
     padding: 5px 5px;
     border-radius: 5px;
-    border: solid 1px #2D848A;
+    border: solid 1px #3587A4;
 }
 main .contenedor-carrito .right-bar p {
 	display: flex;
@@ -1330,7 +1328,7 @@ main .contenedor-carrito .right-bar p {
 
 main .contenedor-carrito .right-bar a {
     margin: 10px 0px 0px 0px;
-	background-color: #2D848A;
+	background-color: #3587A4;
 	color: #fff;
 	text-decoration: none;
 	display: block;
@@ -1390,7 +1388,7 @@ main .contenedor-carrito .escala input[type="radio"]:checked ~ label{
 }
 
 main .slide-container h2 {
-    font-size: 16px;
+    font-size: 28px;
     text-align: center;
     color: black;
     width: 100%;
@@ -1400,9 +1398,10 @@ main .slide-container {
     display: none;
     justify-content: space-around;
     align-items: center;
-    margin: 0px 20px;
+    margin: 20px 0px 10px 0px;
     flex-wrap: wrap;
     padding: 0px 0px 100px 0px;
+    background-color: #f2f2f2;
 }
 
 main .slide-container .fasfa-arrow-circle-right, main .slide-container .fasfa-arrow-circle-left{
@@ -1469,13 +1468,11 @@ main .slide-container .miniatura .product-details {
 
 main .slide-container .miniatura .product-details h3 {
     font-size: 1em;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 main .slide-container .miniatura .product-details p {
     font-size: 1em;
-    color: green;
-    font-weight: 700;
 }
 
 main .slide-container .miniatura .product-details p span {
@@ -1486,10 +1483,10 @@ main .slide-container .miniatura .product-details p span {
 main .slide-container .miniatura .product-details a {
     font-size: 1em;
     text-decoration: none;
-    background-color: #2D848A;
-    color: #fff;
-    padding: 0em 1em;
-    border-radius: 3px;
+    background-color: rgb(235, 236, 164);
+    color: black;
+    padding: 3px 20px;
+
 }
 
 main .slide-container .miniatura .product-details a:hover {
@@ -1500,11 +1497,11 @@ main .slide-container .miniatura .product-details a:hover {
 /**Main productEdition*/
 
 main .contenedor-edicion-productos {
-    padding: 95px 15px 100px 15px;
+    padding: 95px 0px 100px 0px;
 }
 
 main .contenedor-edicion-productos h2 {
-    margin: 15px 0px;
+    margin: 0px;
     text-align: center;
     color: #3587A4;
     font-size: 35px;
@@ -1514,10 +1511,11 @@ main .contenedor-edicion-productos .opciones-desplegables {
 	display: flex;
     justify-content: end;
     flex-wrap: wrap;
+    margin: 0px 0px 10px 0px;
 }
 
 main .opciones-desplegables .servicio-producto, main .opciones-desplegables .categoria-producto {
-    margin: 0px 0px 0px 10px;
+    margin: 0px 15px 0px 15px;
 }
 
 main .contenedor-edicion-productos .container-productos-existentes {
@@ -1525,24 +1523,25 @@ main .contenedor-edicion-productos .container-productos-existentes {
     justify-content: space-around;
     flex-wrap: wrap;
     flex-direction: column;
+    background-color: #f2f2f2;
 }
 
 main .contenedor-edicion-productos .container-productos-existentes h2 {
-    font-size: 26px;
-    text-align: left;
-    color: black;
+    font-size: 28px;
+    text-align: center;
+    color: #3587A4;
     width: 100%;
-    background-color: #f2f2f2;
 }
 
 main .contenedor-edicion-productos .container-productos-existentes a {
     font-size: 14px;
     text-decoration: none;
-    background-color: #2D848A;
+    background-color: #3587A4;
     color: #fff;
-    padding: 0em 1em;
+    padding: 5px 5px;
     border-radius: 3px;
     align-self: end;
+    margin: 0px 15px;
 }
 
 main .contenedor-edicion-productos .container-productos-existentes a:hover {
@@ -1557,6 +1556,7 @@ main .container-productos-existentes .container {
     flex-wrap: wrap;
     -webkit-overflow-scrolling: touch;
     justify-content: space-between;
+    padding: 10px 15px;
 }
 
 main .container-productos-existentes .container::-webkit-scrollbar {
@@ -1576,11 +1576,11 @@ main .container-productos-existentes .container .miniatura {
 	object-fit: cover;
 	cursor: pointer;
 	margin: 5px;
-    border: 1px solid #666;
     overflow: hidden;
     transform: scale(.95);
     transition: all .3s;
     width: 45%;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
 }
 
 main .container-productos-existentes .container .miniatura:hover {
@@ -1604,13 +1604,11 @@ main .container-productos-existentes .miniatura .product-details {
 
 main .container-productos-existentes .miniatura .product-details h3 {
     font-size: 12px;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 main .container-productos-existentes .miniatura .product-details p {
     font-size: 12px;
-    color: green;
-    font-weight: 500;
 }
 
 main .container-productos-existentes .miniatura .product-details p span {
@@ -1621,10 +1619,10 @@ main .container-productos-existentes .miniatura .product-details p span {
 main .container-productos-existentes .miniatura .product-details a {
     font-size: 14px;
     text-decoration: none;
-    background-color: #2D848A;
-    color: #fff;
-    padding: 0em 1em;
-    border-radius: 3px;
+    background-color: rgb(235, 236, 164);
+    color: black;
+    padding: 5px 5px;
+    font-weight: bold;
 }
 
 main .container-productos-existentes .miniatura .product-details a:hover {
@@ -1641,13 +1639,12 @@ main .contenedor-edicion-productos .formulario-edicion-productos h3{
 
 main .contenedor-edicion-productos .formulario-edicion-productos {
     background-color: #f2f2f2;
-    border-radius: 15px;
-    border: solid 1px #666;
     text-align: left;
     box-shadow: 0px 0px 10px rgb(100 100 100);
     line-height: 25px;
     padding: 10px 10px;
-    width: 100%;
+    width: 90%;
+    margin: 15px auto;
 }
 
 main .contenedor-edicion-productos .formulario-edicion-productos .box {
@@ -1679,7 +1676,7 @@ main .contenedor-edicion-productos .formulario-edicion-productos .botones .envia
 }
 
 main .contenedor-edicion-productos .formulario-edicion-productos .botones .enviar{
-    background-color: #2D848A;
+    background-color: #3587A4;
 }
 
 main .contenedor-edicion-productos .formulario-edicion-productos .botones .enviar:hover{
@@ -1688,7 +1685,7 @@ main .contenedor-edicion-productos .formulario-edicion-productos .botones .envia
 }
 
 main .contenedor-edicion-productos .formulario-edicion-productos .botones .borrar{
-    background-color: #2D848A;
+    background-color: #3587A4;
 }
 
 main .contenedor-edicion-productos .formulario-edicion-productos .botones .borrar:hover{
@@ -1858,13 +1855,6 @@ footer .socialmedia .icons a {
         top: 70px;
         flex-wrap: nowrap;
     }
-    
-    /*main .background-register {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background-color: rgba(0, 0, 0, 0.2);
-    }*/
 
     main .box-register {
         width: 35vw;
@@ -1949,7 +1939,7 @@ footer .socialmedia .icons a {
     /*Media Queries ProductEdition*/
 
     main .contenedor-edicion-productos {
-        padding: 75px 15px 100px 15px;
+        padding: 75px 0px 100px 0px;
     }
 
     /* Footer Media Queries (min-width: 361px)*/
