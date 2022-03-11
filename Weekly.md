@@ -1,5 +1,5 @@
 
-<h1>Daily</h1>
+<h1>Weekly</h1>
 
 <ul>
                                 
