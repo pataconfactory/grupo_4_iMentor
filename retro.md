@@ -95,4 +95,62 @@ Aplicar mejora continua en el proyecto, revisar cuestiones de estética y unifor
 
 </li>
 
- </ul> <br>
+</ul> <br>
+ 
+<h1>Retrospectiva Sprint 3</h1>
+
+<ul>
+                                
+<li>1. Seguir haciendo:  
+</li>
+
+
+<li>2. Menos de:    
+</li>
+
+<li>3. Más de: 
+
+1- 
+  
+2- 
+  
+3-  
+</li>
+
+<li>4. Dejar de hacer: 
+</li>
+
+<li>5. Empezar a hacer:
+
+</li>
+
+</ul><br>
+
+<h1>Retrospectiva Sprint 4</h1>
+
+<ul>
+                                
+<li>1. Seguir haciendo:  
+</li>
+
+
+<li>2. Menos de:    
+</li>
+
+<li>3. Más de: 
+
+1- 
+  
+2- 
+  
+3-  
+</li>
+
+<li>4. Dejar de hacer: 
+</li>
+
+<li>5. Empezar a hacer:
+
+</li>
+
+</ul><br>
