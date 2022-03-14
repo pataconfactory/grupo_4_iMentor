@@ -1,0 +1,30 @@
+[
+    {
+     "id": 1,
+     "name": "CSS: Diseño Web desde cero a avanzado",
+     "price": 20,
+     "discount": null,
+     "service": "Asesoría",
+     "category": "Front-End",
+     "description": "Asesorate sobre CSS desde los fundamentos hasta temas intermedios y avanzados para crear sitios y aplicaciones Web increíbles!. Crea aplicaciones Web utilizando CSS (Cascading Style Sheets) con las últimas versiones al día de hoy.",
+     "mentor": null,
+     "mentor_country": null,
+     "duration": 2,
+     "horario": "14:00hs",
+     "image": null
+    },
+    {
+        "id": 2,
+        "name": "HTML5: Diseño Web desde cero a avanzado",
+        "price": 20,
+        "discount": null,
+        "service": "Asesoría",
+        "category": "Front-End",
+        "description": "Asesorate sobre HTML5 desde los fundamentos hasta temas intermedios y avanzados para crear sitios y aplicaciones Web increíbles!. Crea páginas basadas en las mejores prácticas con HTML.",
+        "mentor": null,
+        "mentor_country": null,
+        "duration": 2,
+        "horario": "10:00hs",
+        "image": null
+    }
+]

@@ -6,13 +6,15 @@ const productsController = {
         res.render(path.join(__dirname, '../views/products/productCart'))
     },
 
-    productDetail: function(req, res) {
-        res.render(path.join(__dirname, '../views/products/productDetail'))
+    products: function(req, res) {
+       res.render(path.join(__dirname, '../views/products/products'))
     },
 
-    productEdition: function(req, res) {
+    create: function(req, res) {
         res.render(path.join(__dirname, '../views/products/productEdition'))
     },
+
+    /*search:*/
 };
 
 module.exports = productsController;
