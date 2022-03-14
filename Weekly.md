@@ -1,5 +1,5 @@
 
-<h1>Daily</h1>
+<h1>Weekly</h1>
 
 <ul>
                                 
@@ -51,3 +51,9 @@
  <p>Se decidió agregar nuevas categorías de productos</p>
  <p>Decidimos sincronizar de carrito de productos y product detail</p>
 </ul>
+
+<ul>                              
+<h2>Modificaciones Sprint 4:</h2>
+  
+ <p>Sábado 11 de Marzo:</p>
+ <p>Actuaizamos el trello con las nuevas tarjetas del sprint 4.</p>
