@@ -9,22 +9,22 @@
 
     <main>
         <div class="contenedor-edicion-productos">
-            <h2 class="">Formulario de edición de productos</h2>
-            <form class="formulario-edicion-productos" action="/products/edit/<%= productoEditar.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                <h3> Modificar la información del producto <%= productoEditar.name %></h3>
+            <h2 class="">Formulario de creación de productos</h2>
+            <form class="formulario-edicion-productos" action="/products/" method="POST" enctype="multipart/form-data">
+                <h3> Completar la información del producto</h3>
                     <div>
                         <label>Nombre del producto:</label>
-                        <input  class="box" type="text" name="name" id="name" value="<%= productoEditar.name %>" required>
+                        <input  class="box" type="text" name="name" id="name" placeholder="Nombre del producto" required>
                     </div>
                     <div>
                         <label>Descripción:</label>
                         <br>
-                        <textarea name="description" id="description" class="box" required><%= productoEditar.description %></textarea>
-                    </div>
+                        <textarea name="description" id="description" placeholder="Descripción" class="box" required></textarea>
+                    </div> 
                     <div>
                         <label>Servicio:</label>
-                        <select class="box" name="service" id="service" value="<%= productoEditar.service %>">
-                            <option disabled="disabled" >seleccione el servicio</option>
+                        <select class="box" name="service" id="service">
+                            <option selected="true" disabled="disabled">seleccione el servicio</option>
                             <option value="Asesoría">Asesoría</option>
                             <option value="Membresía">Membresía</option>
                             <option value="Gif Cards">Gif Cards/option>
@@ -32,8 +32,8 @@
                     </div>
                     <div>
                         <label>Categoría:</label>
-                        <select class="box" name="category" id="category" value="<%= productoEditar.category %>">
-                            <option disabled="disabled">seleccione la categoría</option>
+                        <select class="box" name="category" id="category">
+                            <option selected="true" disabled="disabled">seleccione la categoría</option>
                             <option value="Front-End">Front-End</option>
                             <option value="Back-End">Back-End</option>
                             <option value="UI/UX">UI/UX</option>
@@ -46,24 +46,24 @@
                     </div>
                     <div>
                         <label>Mentor:</label>
-                        <input class="box" type="text" name="mentor" id="mentor" value="<%= productoEditar.mentor %>" required>
+                        <input class="box" type="text" name="mentor" id="mentor" placeholder="Mentor" required>
                     </div>
                     <div>
                         <label>País del Mentor:</label>
-                        <input class="box" type="text" name="mentor_country" id="mentor_country" value="<%= productoEditar.mentor_country %>" required>
+                        <input class="box" type="text" name="mentor_country" id="mentor_country" placeholder="País del mentor" required>
                     </div>
                     <div>
                         <label>Título del Mentor:</label>
-                        <input class="box" type="text" name="mentor_titulo" id="mentor_titulo" value="<%= productoEditar.mentor_titulo %>" required>
+                        <input class="box" type="text" name="mentor_titulo" id="mentor_titulo" placeholder="Título del mentor" required>
                     </div>
                     <div>
                         <label>Cantidad de horas por Mentoría:</label>
-                        <p><input class="box"type="number" name="duration" id="duration" value="<%= productoEditar.duration %>" min="0" required>
+                        <p><input class="box"type="number" name="duration" id="duration" placeholder="Horas" min="0" required>
                     </div> 
                     <div>
                         <label>Horario:</label>
-                        <select class="box" name="horario" id="horario" value="<%= productoEditar.horario %>">
-                            <option disabled="disabled">seleccione el horario</option>
+                        <select class="box" name="horario" id="horario">
+                            <option selected="true" disabled="disabled">seleccione el horario</option>
                             <option value="10:00hs">10:00hs</option>
                             <option value="14:00hs">14:00hs</option>
                             <option value="18:00hs">18:00hs</option>
@@ -71,23 +71,18 @@
                     </div>
                     <div>
                         <label>Precio:</label>
-                        <input class="box" type="number" name="price" id="price" value="<%= productoEditar.price %>" min="0" required>
+                        <input class="box" type="number" name="price" id="price" placeholder="Precio $" min="0" required>
                     </div>
                     <div>
                         <label>Descuento:</label>
-                        <input class="box" type="number" name="discount" id="discount" value="<%= productoEditar.discount %>" min="0" required>
-                    </div>
+                        <input class="box" type="number" name="discount" id="discount" placeholder="Descuento %" min="0" required>
+                    </div> 
                     <div>
-                        <label>Imagen del producto:</label>
-                        <br>
-                        <img src="/img/products/<%= `${productoEditar.image}` %>" alt="Imagen del producto">
-                    </div>  
-                    <div>
-                        <label>Subir otra imagen del producto:</label>
-                        <input class="box" type="file" name="image" id="image" accept=".jpg,.png" value="" multiple> 
+                        <label>Subir imagen del producto:</label>
+                        <input class="box" type="file" name="image" id="image" accept=".jpg,.png" multiple> 
                     </div>   
                 <div class="botones">
-                    <button class="enviar" type="submit"><i class="fas fa-plus-circle"></i> Guardar</button>
+                    <button class="enviar" type="submit"><i class="fas fa-plus-circle"></i> Guardar producto</button>
                     <button class="borrar" type="reset"><i class="fas fa-eraser"></i> Borrar</button>   
                 </div>
             </form>

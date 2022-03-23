@@ -1,343 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <%- include('../partials/head') %>
-<body>  
+
+<body>
+    
     <%- include('../partials/header') %>
+
     <main>
-        <div class="contenedor-product-detail">   
-            <div class="banner">
-                <h1>¡Saber es poder!</h1>
+        <div class="contenedor-edicion-productos">
+            <h2>Selecciona tu categoría favorita y empieza a aprender</h2>
+            <div class="opciones-desplegables">
+                <p class="servicio-producto">
+                    <select name="servicio-producto" id="">
+                        <option selected="true" disabled="disabled">seleccione el servicio</option>
+                        <option value="Mentorías">Mentorías</option>
+                        <option value="Membresías">Membresías</option>
+                        <option value="Gif Cards">Gif Cards</option>
+                    </select>
+                </p>
+                <p class="categoria-producto">
+                    <select name="categoria-producto" i
+                    d="">
+                        <option selected="true" disabled="disabled">seleccione la categoría</option>
+                        <option value="Front-End">Front-End</option>
+                        <option value="Back-End">Back-End</option>
+                        <option value="UX/UI">UX/UI</option>
+                        <option value="Base de Datos">Base de Datos</option>
+                        <option value="Análisis de Datos">Análisis de Datos</option>
+                        <option value="Marketing Digital">Marketing Digital</option>
+                        <option value="Mensual">Mensual</option>
+                        <option value="Anual">Anual</option>
+                    </select>
+                </p>
             </div>
-            <section class="contenedor sobre-servicios">
-                <h2 class="titulo-servicios">Nuestros servicios</h2>
-                <div class="contenedor-sobre-servicios">
-                    <img src="img/ilustracion1.svg" alt="Acá va una ilustracion .svg" class="ilustracion-sobre-servicios">
-                    <div class="contenido-textos">
-                        <a href="#ir-asesoria-categoria">
-                            <h3><span>1</span>Asesoría por categoría</h3>
-                        </a>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil asperiores minus eaque quae id
-                            illo rerum modi quos iste recusandae.</p>
-                        <a href="#ir-membresia-categoria">
-                            <h3><span>2</span>Membresias</h3>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil numquam nostrum molestias nisi?
-                            Temporibus enim possimus velit at ipsum sunt.</p>
-                        <a href="#ir-gift-card-categoria">
-                            <h3><span>3</span>Gif Cards</h3>
-                        </a>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel excepturi iusto nesciunt optio
-                            reprehenderit. Cum unde nostrum iste nesciunt quaerat!</p>
-                    </div>
+            <div class="container-productos-existentes">
+                <div class="boton-crear-producto">
+                    <a href="/products/create" class="crear-producto"><i class="fas fa-plus-circle"></i> Crear producto</a>
                 </div>
-            </section>
-            <section class="portafolio-mentorias">
-                <a name="ir-asesoria-categoria"></a>
-                <div class="contenedor-productdetail">
-                    <h2 class="titulo-asesorias">Asesorías</h2>
-
-                    <button class="accordion-categoría">Front-End <i
-                            class="fas fa-solid fas fa-chevron-down"></i></button>
-
-                    <div class="panel-categoria">
-                        <p class="descripcion-categoria-asesoria">Asesoría de 8 horas, virtual o presencial. Esta asesoría
-                            de aclarará dudas generales sobre como orgnaziarte, conocer sobre las ofertas laborales, dudas
-                            tecnológicas o lenguaje. Análisis personalidado sobre tus proyectos, costos, tiempos,
-                            entregables. </p>
-                        <div class="contenedor-productdetail">
-                            <div class="mentores-cont">
-                                <div class="cada-mentor">
-                                    <img src="img/mentor6.png" alt="Fotografía del asesor Lucas Sequeira, Desarrollador Web">
-                                    <h5 class="nombre-mentor">Lucas Sequeira</h5>
-                                    <h5>Desarrollador Web</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
-                                    <section class="contactar-cart">
-                                        <p class="reseña"><i class="fas fa-star"></i> <select name="Horario" id="horas">
-                                                <option value="value1">10:00</option>
-                                                <option value="value2" selected>14:00</option>
-                                                <option value="value3">18:00</option>
-                                            </select></p>
-                                        <p class="reseña"><i class="fas fa-star"></i> Calificación</p>
-                                        <p class="reseña"><i class="fas fa-medal"></i> Reseña</p>
-                                        <p class="reseña"><i class="fas fa-solid fa-graduation-cap"></i> Estudiantes</p>
-                                        <p class="reseña"><i class="fas fa-light fas fa-chalkboard"></i> Asesorías</p>
-                                        <p class="reseña"><i class="fas fa-light fas fa-globe"></i> País</p>
-                                        <article class="comprar-asesoria">
-                                            <div class="btn-cart">
-                                                <a href="/productCart"><i class="fa fa-shopping-cart"></i>Adquirir</a>
-                                                <a href="/productEdition"><i class="fas fa-pen"></i></i>Editar</a>
-                                            </div>
-                                        </article>
-                                    </section>
-                                </div>
+                <section class="container" id="slider">
+                    <% for(let i=0; i< products.length; i++) { %>           
+                        <div class="miniatura">
+                            <img src="/img/products/<%= `${products[i].image}` %>" alt="Imagen del producto">
+                            <div class="product-details">
+                                <h3><%= products[i].service %></h3>
+                                <h3 class="name-product"><%= products[i].name %></h3>
+                                <h3><%= products[i].mentor %></h3>
+                                <p><span><%= products[i].price %>$</span></p>
+                                <p>0<%= products[i].duration %> horas</p>
+                                <p><%= products[i].horario %></p>
+                                <a href="/products/edit/<%= products[i].id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>
+                                <a href="/products/detail/<%= products[i].id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
+                                <form class="eliminar" action="/products/delete/<%= products[i].id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="boton-final"><i class="fas fa-trash"></i>Eliminar</button>
+                                </form>
                             </div>
                         </div>
-                    </div>
-
-                    <button class="accordion-categoría">Back-End<i class="fas fa-solid fas fa-chevron-down"></i></button>
-
-                    <div class="panel-categoria">
-                        <p class="descripcion-categoria-asesoria">Asesoría pensada para 16 horas de encuentros. Analiza y
-                            comprende las necesidades de los usuarios para diseñar soluciones de backend para desarrollar aplicaciones funcionales y escalables.</p>
-                        <div class="contenedor-productdetail">
-                            <div class="mentores-cont">
-                                <div class="cada-mentor">
-                                    <img src="img/mentor4.jpg" alt="">
-                                    <h5 class="nombre-mentor">Quizaira Rodríguez</h5>
-                                    <h5>Licenciada en programación</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
-                                    <section class="contactar-cart">
-                                        <p class="reseña"><i class="fas fa-star"></i> <select name="Horario" id="horas">
-                                                <option value="value1">10:00</option>
-                                                <option value="value2" selected>14:00</option>
-                                                <option value="value3">18:00</option>
-                                            </select></p>
-                                        <p class="reseña"><i class="fas fa-star"></i> Calificación</p>
-                                        <p class="reseña"><i class="fas fa-medal"></i> Reseña</p>
-                                        <p class="reseña"><i class="fas fa-solid fa-graduation-cap"></i> Estudiantes</p>
-                                        <p class="reseña"><i class="fas fa-light fas fa-chalkboard"></i> Asesorías</p>
-                                        <p class="reseña"><i class="fas fa-light fas fa-globe"></i> País</p>
-                                        <article class="comprar-asesoria">
-                                            <div class="btn-cart">
-                                                <a href="/productCart"><i class="fa fa-shopping-cart"></i>Adquirir</a>
-                                                <a href="/productEdition"><i class="fas fa-pen"></i></i>Editar</a>
-                                            </div>
-                                        </article>
-                                    </section>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-                    <button class="accordion-categoría">Base de Datos<i class="fas fa-solid fas fa-chevron-down"></i></button>
-
-                    <div class="panel-categoria">
-                        <p class="descripcion-categoria-asesoria">Asesoría pensada para 16 horas de encuentros. Análisis de datos, manejo de diferentes motores de base de datos, SQL administrator, diseño de base de datos.</p>
-                        <div class="contenedor-productdetail">
-                            <div class="mentores-cont">
-                                <div class="cada-mentor">
-                                    <img src="img/mentor5.jpg" alt="Foto del asesor Pedro Gonzalez, Ingeniero en sistemas">
-                                    <h5 class="nombre-mentor">Pedro Gonzalez</h5>
-                                    <h5>Ingeniero en Sistemas</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
-                                    <section class="contactar-cart">
-                                        <p class="reseña"><i class="fas fa-star"></i> <select name="Horario" id="horas">
-                                                <option value="value1">10:00</option>
-                                                <option value="value2" selected>14:00</option>
-                                                <option value="value3">18:00</option>
-                                            </select></p>
-                                        <p class="reseña"><i class="fas fa-star"></i> Calificación</p>
-                                        <p class="reseña"><i class="fas fa-medal"></i> Reseña</p>
-                                        <p class="reseña"><i class="fas fa-solid fa-graduation-cap"></i> Estudiantes</p>
-                                        <p class="reseña"><i class="fas fa-light fas fa-chalkboard"></i> Asesorías</p>
-                                        <p class="reseña"><i class="fas fa-light fas fa-globe"></i> País</p>
-                                        <article class="comprar-asesoria">
-                                            <div class="btn-cart">
-                                                <a href="/productCart"><i class="fa fa-shopping-cart"></i>Adquirir</a>
-                                                <a href="/productEdition"><i class="fas fa-pen"></i></i>Editar</a>
-                                            </div>
-                                        </article>
-                                    </section>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <button class="accordion-categoría">UX/UI<i class="fas fa-solid fas fa-chevron-down"></i></button>
-
-                    <div class="panel-categoria">
-                        <p class="descripcion-categoria-asesoria">Asesoría pensada para 16 horas de encuentros. Analiza y
-                            comprende las necesidades de los usuarios para diseñar soluciones que agregan valor al cliente,
-                            mientras son viables y rentables para la empresa.</p>
-                        <div class="contenedor-productdetail">
-                            <div class="mentores-cont">
-                                <div class="cada-mentor">
-                                    <img src="img/mentor7.jpg" alt="Foto la asesora Victoria Defagot, Diseñadora Grfáfica">
-                                    <h5 class="nombre-mentor">Victoria Defagot</h5>
-                                    <h5>Disañadora Gráfica</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
-                                    <section class="contactar-cart">
-                                        <p class="reseña"><i class="fas fa-star"></i> <select name="Horario" id="horas">
-                                                <option value="value1">10:00</option>
-                                                <option value="value2" selected>14:00</option>
-                                                <option value="value3">18:00</option>
-                                            </select></p>
-                                        <p class="reseña"><i class="fas fa-star"></i> Calificación</p>
-                                        <p class="reseña"><i class="fas fa-medal"></i> Reseña</p>
-                                        <p class="reseña"><i class="fas fa-solid fa-graduation-cap"></i> Estudiantes</p>
-                                        <p class="reseña"><i class="fas fa-light fas fa-chalkboard"></i> Asesorías</p>
-                                        <p class="reseña"><i class="fas fa-light fas fa-globe"></i> País</p>
-                                        <article class="comprar-asesoria">
-                                            <div class="btn-cart">
-                                                <a href="/productCart"><i class="fa fa-shopping-cart"></i>Adquirir</a>
-                                                <a href="/productEdition"><i class="fas fa-pen"></i></i>Editar</a>
-                                            </div>
-                                        </article>
-                                    </section>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <button class="accordion-categoría">Análisis de Datos<i class="fas fa-solid fas fa-chevron-down"></i></button>
-
-                    <div class="panel-categoria">
-                        <p class="descripcion-categoria-asesoria">Asesoría de 16 horas de encuentro con un asesor profesional, especialista en Análisis de datos, estádisticas, Big Data</p>
-                        <div class="contenedor-productdetail">
-                            <div class="mentores-cont">
-                                <div class="cada-mentor">
-                                    <img src="img/mentor3.jpg" alt="Foto la asesora Patricia Garza, Análista de sistemas">
-                                    <h5 class="nombre-mentor">Patricia Garza</h5>
-                                    <h5>Licenciada en Ingeniería de datos</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
-                                    <section class="contactar-cart">
-                                        <p class="reseña"><i class="fas fa-star"></i> <select name="Horario" id="horas">
-                                                <option value="value1">10:00</option>
-                                                <option value="value2" selected>14:00</option>
-                                                <option value="value3">18:00</option>
-                                            </select></p>
-                                        <p class="reseña"><i class="fas fa-star"></i> Calificación</p>
-                                        <p class="reseña"><i class="fas fa-medal"></i> Reseña</p>
-                                        <p class="reseña"><i class="fas fa-solid fa-graduation-cap"></i> Estudiantes</p>
-                                        <p class="reseña"><i class="fas fa-light fas fa-chalkboard"></i> Asesorías</p>
-                                        <p class="reseña"><i class="fas fa-light fas fa-globe"></i> País</p>
-                                        <article class="comprar-asesoria">
-                                            <div class="btn-cart">
-                                                <a href="/productCart"><i class="fa fa-shopping-cart"></i>Adquirir</a>
-                                                <a href="/productEdition"><i class="fas fa-pen"></i>Editar</a>
-                                            </div>
-                                        </article>
-                                    </section>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button class="accordion-categoría">Marketing Digital<i class="fas fa-solid fas fa-chevron-down"></i></button>
-                    <div class="panel-categoria">
-                        <p class="descripcion-categoria-asesoria">Hecha para guídarte en diseño e implementación de
-                            estrategias digitales para acercar a las marcas con sus audiencias y consumidores potenciales.
-                        </p>
-                        <div class="contenedor-productdetail">
-                            <div class="mentores-cont">
-                                <div class="cada-mentor">
-                                    <img src="img/profe-tutora.jpg" alt="Foto de la asesora Patricia Williams, Community Manager">
-                                    <h5 class="nombre-mentor">Patricia Williams</h5>
-                                    <h5>Community Manager</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, tenetur?</p>
-                                    <section class="contactar-cart">
-                                        <p class="reseña"><i class="fas fa-star"></i> <select name="Horario" id="horas">
-                                                <option value="value1">10:00</option>
-                                                <option value="value2" selected>14:00</option>
-                                                <option value="value3">18:00</option>
-                                            </select></p>
-                                        <p class="reseña"><i class="fas fa-star"></i> Calificación</p>
-                                        <p class="reseña"><i class="fas fa-medal"></i> Reseña</p>
-                                        <p class="reseña"><i class="fas fa-solid fa-graduation-cap"></i> Estudiantes</p>
-                                        <p class="reseña"><i class="fas fa-light fas fa-chalkboard"></i> Asesorías</p>
-                                        <p class="reseña"><i class="fas fa-light fas fa-globe"></i> País</p>
-                                        <article class="comprar-asesoria">
-                                            <div class="btn-cart">
-                                                <a href="/productCart"><i class="fa fa-shopping-cart"></i>Adquirir</a>
-                                                <a href="/productEdition"><i class="fas fa-pen"></i>Editar</a>
-                                            </div>
-                                        </article>
-                                    </section>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <script>
-                        var acc = document.getElementsByClassName("accordion-categoría");
-                        var i;
-
-                        for (i = 0; i < acc.length; i++) {
-                            acc[i].addEventListener("click", function () {
-                                this.classList.toggle("active");
-                                var panel = this.nextElementSibling;
-                                if (panel.style.display === "block") {
-                                    panel.style.display = "none";
-                                } else {
-                                    panel.style.display = "block";
-                                }
-                            });
-                        }
-                    </script>
-                </div>
-            </section>
-
-            <section class="membresias">
-                <a name="ir-membresia-categoria"></a>
-                <h2 class="titulo-membresias">Membresías</h2>
-                <div class="contenedor-sobre-membresias">
-                    <img src="img/membresia.svg" alt="Acá va una ilustracion .svg" class="ilustracion-sobre-membresias">
-                    <div class="contenido-textos">
-
-                        <h3><span>1</span>Mensual</h3>
-                        </a>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil asperiores minus eaque quae id
-                            illo rerum modi quos iste recusandae.</p>
-                        <section class="buy-cart">
-                            <article class="comprar-asesoria">
-                                <div class="btn-cart">
-                                    <a href="/productCart"><i class="fa fa-shopping-cart"></i>Adquirir</a>
-                                    <a href="/productEdition"><i class="fas fa-pen"></i>Editar</a>
-                                </div>
-                            </article>
-                        </section>
-
-                        <h3><span>2</span>Anual</h3>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil numquam nostrum molestias nisi?
-                            Temporibus enim possimus velit at ipsum sunt.</p>
-                        <section class="buy-cart">
-                            <article class="comprar-asesoria">
-                                <div class="btn-cart">
-                                    <a href="/productCart"><i class="fa fa-shopping-cart"></i>Adquirir</a>
-                                    <a href="/productEdition"><i class="fas fa-pen"></i>Editar</a>
-                                </div>
-                            </article>
-                        </section>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="gift-cards">
-                <div class="contenedor-giftcard">
-                    <a name="ir-gift-card-categoria"></a>
-                    <h3 class="titulo-gif-cards">Regala una tarjeta</h3>
-                    <img src="img/tarjetaRegalo.jfif" alt="Tarjeta de regalo" style="width:100%">
-                    <p class="price"><select name="precio" id="precio">
-                            <option selected="true" disabled="disabled">seleccione el monto</option>
-                            <option value="value1">100$</option>
-                            <option value="value2">500$</option>
-                            <option value="value3">1000$</option>
-                        </select>
-                        </select></p>
-                    <p>Adquiere una tarjeta y regala una asesoría en cualquier momento</p>
-                    <p><button><i class="fa fa-shopping-cart"></i>Agregar al carrito</button></p>
-                </div>
-            </section>
-            <section class="clientes">
-                <div class="contenedor-clientes">
-                    <h2 class="titulo-clientes">Nuestros clientes</h2>
-                    <div class="cards">
-                        <div class="card">
-                            <img src="img/cliente1.jpg" alt="Foto del primer cliente">
-                            <div class="contenido-texto-card">
-                                <h4>Lorena Sacarías</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, facere.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>  
+                    <% } %>
+                </section>
+            </div>
         </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
     <%- include('../partials/footer') %>
 </body>
 </html>

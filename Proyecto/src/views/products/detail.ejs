@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+
+<body>
+    
+    <%- include('../partials/header') %>
+
+    <main>
+        <div class="contenedor-detail">
+            <h1>Detalle del Servicio</h1>
+            <div class="detalle">
+                <div class="caja-img-product">
+                    <h3 class="servicio"><%= productoRequerido.service %></h3>
+                    <img src="/img/products/<%= `${productoRequerido.image}` %>" alt="Imagen del producto"> 
+                </div>
+                <div class="name-category">
+                    <h3 class="categoria"><%= productoRequerido.category %></h3>
+                    <h2 class="nombre"><%= productoRequerido.name %></h2>
+                </div>
+                <p class="descripcion"><%= productoRequerido.description %></p>
+                <p class="datos"><span>Duración:</span>  <%= productoRequerido.duration %> horas</p>
+                <p class="datos"><span>Precio:</span> <%= productoRequerido.price %>$</p>
+                <p class="datos"><span>Descuento:</span> <%= productoRequerido.discount %>%</p>
+                <section class="mentor">
+                    <h3>Mentor</h3>
+                    <div class="informacion-mentor">
+                        <img src="/img/mentors/<%= `${productoRequerido.mentor_avatar}` %>" alt="Imagen del mentor">
+                        <div class="info">
+                            <p class="reseña"><i class="fas fa-user"></i> <%= productoRequerido.mentor %></p>
+                            <p class="reseña"><i class="fas fa-light fas fa-globe"></i> <%= productoRequerido.mentor_country %></p>
+                            <p class="reseña"><i class="fas fa-chalkboard-teacher"></i> <%= productoRequerido.mentor_titulo %></p>
+                            <p class="reseña"><i class="fas fa-clock"></i> <%= productoRequerido.horario %></p>
+                            <p class="reseña"><i class="fas fa-medal"></i> Reseña del Mentor</p>
+                            <p class="reseña"><i class="fas fa-light fas fa-chalkboard"></i> Asesorías</p>
+                            <p class="reseña"><i class="fas fa-star"></i> Calificación</p>
+                        </div>
+                    </div>
+                </section>
+                <div class="boton-adquirir">
+                    <a href="/products/productCart"><i class="fa fa-shopping-cart"></i> Adquirir</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <%- include('../partials/footer') %>
+
+</body>
+</html>

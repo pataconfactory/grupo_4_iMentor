@@ -10,7 +10,7 @@
 /*Header*/
 
 header .navegacion nav {
-    height: 90px;
+    height: 100px;
     width: 100%;
     background-color: #3587A4;
     position: fixed;
@@ -19,19 +19,17 @@ header .navegacion nav {
 
 header .navegacion .enlace-logo {
     position: absolute;
-    padding: 10px 0px;
 }
 
 header .navegacion .logo {
-    height: 40px;
-    margin-left: 10px;
+    height: 70px;
 }
 
 header .navegacion .buscar {
     position: fixed;
     padding: 5px;
-    top: 10px;
-    left: 120px;
+    top: 61px;
+    left: 25px;
 }
 
 header .navegacion .buscar input {
@@ -53,7 +51,7 @@ header .navegacion .buscar .btn {
     position: absolute;
     top: 0px;
     right: 0px;
-    background: rgb(235, 236, 164); /*#88CCF1*/
+    background: #ffc600; 
     text-align: center;
     color: black;
     font-size: 20px;
@@ -63,7 +61,7 @@ header .navegacion .buscar .btn {
 }
 
 header .navegacion .buscar:hover input {
-    width:115px;
+    width:280px;
 }
 
 header .navegacion .buscar input:focus {
@@ -72,15 +70,15 @@ header .navegacion .buscar input:focus {
 
 header .navegacion .enlace-cesta {
     position: fixed;
-    padding: 10px 0px;
+    padding: 15px 0px;
     right: 75px;
     width: 35px;
     text-align: center;
 }
 
 header .navegacion nav .enlace-cesta i {
-    font-size: 30px;
-    color: black;
+    font-size: 20px;
+    color: white;
 }
 
 header .navegacion nav ul .cesta {
@@ -93,7 +91,7 @@ header .navegacion nav ul .crea-cuenta, header .navegacion nav ul .ingresar {
 
 header .navegacion .enlace-cuenta {
     position: fixed;
-    padding: 10px 0px;
+    padding: 15px 0px;
     right: 38px;
     width: 35px;
     text-align: center;
@@ -106,7 +104,7 @@ header .navegacion nav .enlace-cuenta i {
 
 header .navegacion .enlace-pais {
     position: fixed;
-    padding: 10px 0px;
+    padding: 15px 0px;
     right: 5px;
     width: 35px;
     text-align: center;
@@ -120,9 +118,9 @@ header .navegacion nav .enlace-pais i {
 header .navegacion nav ul {
     position: fixed;
     width: 100vW;
-    height: calc(100vh - 180px);
+    height: 100vh;
     background-color: #C1DFF0;
-    top: 90px;
+    top: 100px;
     left: -100vw;
     text-align: center;
 }
@@ -146,13 +144,13 @@ header .navegacion nav ul li a:hover {
 
 header .navegacion nav .checkbtn {
     font-size: 25px;
-    color: black;
+    color: white;
     position: fixed;
-    right: 8px;
+    right: 11px;
     line-height: 80px;
     cursor: pointer;
     display: block;
-    top: 33px;
+    top: 40px;
 } 
 
 header .navegacion nav #check {
@@ -171,7 +169,7 @@ header .boton-header-crear-cuenta a, header .boton-header-ingresar a {
 header .boton-header-crear-cuenta, header .boton-header-ingresar {
     display: none;
     text-decoration: none;
-    background-color: rgb(235, 236, 164);/*#88CCF1*/
+    background-color: #ffc600;
     padding: 2px 6px 2px 6px;
     border: 0px solid white;
     border-radius: 8px;
@@ -190,10 +188,9 @@ header .boton-header-ingresar:hover {
 /* Register Page Main*/
 
 main .banner-register {
-    position: relative;
-    top: 90px;
-    bottom: 90px;
-    width: 100%;
+    padding-top: 90px;
+    width: 100vw;
+    height: 100vh;
 }
 
 main .banner-register h1 {
@@ -234,7 +231,7 @@ main .register-form .boxes {
     flex-wrap: wrap;
     flex-direction: column;
     width: 90%;
-    border-color: rgb(217,217,217);
+    border-color: #ffc600;
     border-width: 1px;
     font-size: 8.5px;
     padding: 1.5%;
@@ -259,6 +256,7 @@ main .register-form .register-birth .boxes {
 main .box-register {
     padding: 0px 0px 50px 0px;
 }
+
 main .box-register .terminos {
     display: flex;
     flex-direction: row;
@@ -313,30 +311,29 @@ main .box-register .already-register {
 /*Home Page Main*/
 /**********************************BANNER*************************************/
 main .contenedor-home {
-    position: absolute;
-    top: 90px;
+    padding-top: 90px;
     width: 100vw;
 }
 
 main .contenedor-home .banner {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(https://cdn.shrm.org/image/upload/c_crop%2ch_705%2cw_1254%2cx_0%2cy_15/c_fit%2cf_auto%2cq_auto%2cw_767/v1/Employee%20Relations/iStock-1266809682_lflvjj?databtoa=eyIxNng5Ijp7IngiOjAsInkiOjE1LCJ4MiI6MTI1NCwieTIiOjcyMCwidyI6MTI1NCwiaCI6NzA1fX0%3d);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 200px;
     display: flex;
+    height: 600px;
+    
 }
 
 main .contenedor-home .banner img{
     width: 100%;
+    object-fit: cover;
+    height: 100%;
+    
 }
 
-main .contenedor-home .banner h1 {
-    color: white;
-    text-align: center;
-    align-self: end;
-    width: 100%;
+main .contenedor-home h1 {
+    color: black;
+    position: absolute;
+    top: 115px;
+    right: 15px;
+    font-size: 32px;
 }
 
 /**********************************Home*************************************/
@@ -515,15 +512,9 @@ main .contenedor-home .panel {
     color: black;
   }
   
-  main .area-boton-final-home {
-    margin-bottom: 100px;
-  }
-
-
 /**********************************ProductDetail.html CSS*************************************/
 main .contenedor-product-detail {
-    position: absolute;
-    top: 90px;
+    padding-top: 90px;
 }
 
 main .contenedor-product-detail .banner {
@@ -1005,8 +996,8 @@ div.btn-cart {
 main .banner-login {
     width: 100vw;
     height: 100vh;
-    animation: banner-login 10s infinite linear alternate;
-    background-size: 100% 100%;
+    animation: banner-login 20s infinite alternate;
+    background-size: cover;
     position: relative;
     display: flex;
     justify-content: center;
@@ -1021,10 +1012,10 @@ main .banner-login {
         background-image: url(../img/banner2.jpg);
     }
     50%, 70%{
-        background-image: url(../img/banner3.jpg);
+        background-image: url(../img/banner4.jpeg);
     }
     75%, 100%{
-        background-image: url(../img/banner4.jpeg);
+        background-image: url(../img/banner5.jpg);
     }
 }
 
@@ -1510,13 +1501,13 @@ main .slide-container .miniatura .product-details a:hover {
 /**Main productEdition*/
 
 main .contenedor-edicion-productos {
-    padding: 95px 0px 100px 0px;
+    padding: 120px 0px 0px 0px;
 }
 
 main .contenedor-edicion-productos h2 {
-    margin: 0px;
+    margin: 0px 10px 10px 10px;
     text-align: center;
-    color: #3587A4;
+    color: black;
     font-size: 35px;
 }
 
@@ -1546,7 +1537,7 @@ main .contenedor-edicion-productos .container-productos-existentes h2 {
     width: 100%;
 }
 
-main .contenedor-edicion-productos .container-productos-existentes a {
+main .contenedor-edicion-productos .container-productos-existentes .crear-producto {
     font-size: 14px;
     text-decoration: none;
     background-color: #3587A4;
@@ -1554,7 +1545,14 @@ main .contenedor-edicion-productos .container-productos-existentes a {
     padding: 5px 5px;
     border-radius: 3px;
     align-self: end;
-    margin: 0px 15px;
+}
+
+main .contenedor-edicion-productos .container-productos-existentes .boton-crear-producto{
+    margin: 20px 0px 0px 20px;
+}
+
+main .contenedor-edicion-productos .container-productos-existentes .miniatura .enlace {
+    background-color: white;
 }
 
 main .contenedor-edicion-productos .container-productos-existentes a:hover {
@@ -1568,8 +1566,8 @@ main .container-productos-existentes .container {
     align-items: center;
     flex-wrap: wrap;
     -webkit-overflow-scrolling: touch;
-    justify-content: space-between;
     padding: 10px 15px;
+    justify-content: center;
 }
 
 main .container-productos-existentes .container::-webkit-scrollbar {
@@ -1583,7 +1581,6 @@ main .container-productos-existentes .container::-webkit-scrollbar-track {
     --webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
 
-
 main .container-productos-existentes .container .miniatura {
     flex: 0 0 auto;
 	object-fit: cover;
@@ -1592,7 +1589,7 @@ main .container-productos-existentes .container .miniatura {
     overflow: hidden;
     transform: scale(.95);
     transition: all .3s;
-    width: 45%;
+    width: 80%;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
 }
 
@@ -1602,7 +1599,7 @@ main .container-productos-existentes .container .miniatura:hover {
 
 main .container-productos-existentes .miniatura img{
     width: 100%;
-    height: 100px;
+    height: 200px;
 }
 
 main .container-productos-existentes .miniatura .name-product{
@@ -1616,7 +1613,7 @@ main .container-productos-existentes .miniatura .product-details {
 }
 
 main .container-productos-existentes .miniatura .product-details h3 {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
 }
 
@@ -1629,13 +1626,22 @@ main .container-productos-existentes .miniatura .product-details p span {
     font-weight: normal;
 }
 
-main .container-productos-existentes .miniatura .product-details a {
+main .container-productos-existentes .miniatura .product-details .eliminar{
+    margin: 10px 0px;
+}
+
+main .container-productos-existentes .miniatura .product-details .boton-final{
     font-size: 14px;
     text-decoration: none;
-    background-color: rgb(235, 236, 164);
+    background-color: #ffc600;
     color: black;
     padding: 5px 5px;
     font-weight: bold;
+}
+
+main .container-productos-existentes .miniatura .product-details button{
+    border: none;
+    cursor: pointer;
 }
 
 main .container-productos-existentes .miniatura .product-details a:hover {
@@ -1645,7 +1651,7 @@ main .container-productos-existentes .miniatura .product-details a:hover {
 main .contenedor-edicion-productos .formulario-edicion-productos h3{
     font-size: 25px;
     text-align: center;
-    color: black;
+    color: #2D848A;
     border-bottom: solid 1px #666;
     margin-bottom: 10px;
 }
@@ -1689,7 +1695,7 @@ main .contenedor-edicion-productos .formulario-edicion-productos .botones .envia
 }
 
 main .contenedor-edicion-productos .formulario-edicion-productos .botones .enviar{
-    background-color: #3587A4;
+    background-color:  #3587A4;
 }
 
 main .contenedor-edicion-productos .formulario-edicion-productos .botones .enviar:hover{
@@ -1698,13 +1704,167 @@ main .contenedor-edicion-productos .formulario-edicion-productos .botones .envia
 }
 
 main .contenedor-edicion-productos .formulario-edicion-productos .botones .borrar{
-    background-color: #3587A4;
+    background-color:  #3587A4;
 }
 
 main .contenedor-edicion-productos .formulario-edicion-productos .botones .borrar:hover{
     background-color: #88CCF1;
     cursor: pointer;
 }
+
+main .contenedor-edicion-productos .boton-cancelar {
+    margin: 10px 0px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    width: 42%;
+    border: none;
+    background-color: #ab0d2f;
+    text-decoration: none;
+    margin: 25px auto;
+    text-align: center;
+}
+
+main .contenedor-edicion-productos .boton-cancelar:hover{
+    background-color: #88CCF1;    
+    cursor: pointer;
+    
+}
+
+main .contenedor-edicion-productos .boton-cancelar a{
+    color:white;
+}
+
+/*Detail*/
+
+main .contenedor-detail {
+    padding: 120px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+main .contenedor-detail h1 {
+    text-align: center;
+    color: black;
+    font-size: 35px;
+}
+
+main .contenedor-detail .detalle{
+    justify-content: center;
+    margin: 20px auto 40px auto;
+    width: 100%;
+}
+
+main .contenedor-detail .detalle img{
+    width:90%;
+    height: 300px;  
+}
+
+main .contenedor-detail .detalle .servicio{
+    color: white;
+    font-size: 30px;
+}
+
+main .contenedor-detail .detalle .caja-img-product{
+    background-color: rgb(38, 52, 68);
+    padding: 0px 0px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 85%;
+    margin: 0px auto 40px auto;
+    align-items: center;
+}
+
+main .contenedor-detail .detalle .name-category{
+    background-color: #3587A4;
+    width: 90%;
+    border: solid 3px #ffc600;
+    border-radius: 40px;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    margin: 0px auto; 
+}
+
+main .contenedor-detail .detalle .nombre{
+    color: white;
+    text-align: center;
+}
+
+main .contenedor-detail .detalle .categoria{
+    text-align: center;
+}
+
+main .contenedor-detail .detalle p span{
+    font-weight: bold;
+}
+
+main .contenedor-detail .detalle .datos{
+    font-size: 20px;
+    padding: 0px 0px 0px 10%;
+}
+
+main .contenedor-detail .detalle .descripcion{
+    text-align: justify;
+    padding: 40px 10%;
+    font-size: 20px;
+}
+
+main .contenedor-detail .detalle .mentor{
+    margin-top: 30px;
+    background-color: #f2f2f2;
+    padding: 10px 0px 30px 0px;
+}
+
+main .contenedor-detail .detalle .mentor h3{
+    padding-left: 9%;
+    font-size: 40px;
+    
+}
+
+main .contenedor-detail .detalle .mentor .informacion-mentor{
+    padding: 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main .contenedor-detail .detalle .mentor .informacion-mentor img{
+    width: 80%;
+    height: 300px;
+}
+
+main .contenedor-detail .detalle .mentor .informacion-mentor .info{
+    width: 80%;
+    height: 300px;
+    border-top: solid 2px #666;
+    padding: 30px 0px 0px 0px;
+}
+
+main .contenedor-detail .detalle .mentor .informacion-mentor .info .reseña{
+    font-size: 20px;
+}
+
+main .contenedor-detail .detalle .mentor .informacion-mentor .info .reseña i:hover{
+    cursor: pointer;
+    color: #3587A4;
+}
+
+main .contenedor-detail .detalle .boton-adquirir{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+main .contenedor-detail .detalle .boton-adquirir a{
+    font-size: 14px;
+    text-decoration: none;
+    background-color: #ffc600;
+    color: black;
+    padding: 5px 15%;
+    font-weight: bold;
+}
+
 /*Footer*/
 
 footer {
@@ -1714,11 +1874,8 @@ footer {
     font-size: 8px;
     background-color: rgb(217,217,217);
     width: 100%;
-    height: 90px;
-    position: fixed;
-    bottom: 0px;
+    height: 100px;
     padding: 10px 0px;
-    z-index: 1;
 }
 
 footer .links h4 {
@@ -1825,19 +1982,19 @@ footer .socialmedia .icons a {
         position: fixed;
         width: 100%;
         height: 25px;
-        top: 45px;
-        float: right;
+        top: 55px;
         background-color: #3587A4;
         left: 0%;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         padding: 0px 10px;
         align-items: center;
+        border-top: solid 2px #ffc600;
     }
 
     header .navegacion nav ul li {
         display: inline-flex;
-        margin: 0px 5px;
+        margin: 0px 10px;
     }
 
     header .navegacion nav ul .cesta, header .navegacion nav ul .crea-cuenta, header .navegacion nav ul .ingresar{
@@ -1847,25 +2004,58 @@ footer .socialmedia .icons a {
     header .navegacion nav ul li a {
         font-size: 16px;
         padding: 0px;
+        color: white;
+    }
+
+    header .navegacion nav ul li a:hover {
+        color: black;
     }
 
     header .navegacion nav .checkbtn {
         display: none;
     }
-    
+
+    header .navegacion .buscar {
+        top: 10px;
+        left: 190px;
+    }
+
     header .navegacion .buscar:hover input {
         width:33vw;
     }
     
     header .navegacion .buscar input:focus {
         width:33vw;
-    }  
+    }
+    
+    /*Detail*/
+    main .contenedor-detail .detalle .caja-img-product{
+        width: 50%;
+    }
 
+    main .contenedor-detail .detalle img{
+        height: 400px;  
+    }
+
+    main .contenedor-detail .detalle .mentor .informacion-mentor{
+        flex-wrap: wrap;
+    }
+
+    main .contenedor-detail .detalle .mentor .informacion-mentor img{
+        width: 30%;
+    }
+
+    main .contenedor-detail .detalle .mentor .informacion-mentor .info{
+        width: 50%;
+        border-top: none;
+        border-left: solid 2px #666;
+        padding: 0px 0px 0px 30px;
+    }
     /* Register Page Main Media Queries (min-width: 361px)*/
 
     main .banner-register {
         display: flex;
-        top: 70px;
+        padding-top: 70px;
         flex-wrap: nowrap;
     }
 
@@ -1888,7 +2078,7 @@ footer .socialmedia .icons a {
     main .banner-register .box-img-register img{
         display: block;
         width: 100%;
-        height: 500px;
+        object-fit: cover;
     }
    
     main .banner-register h3 {
@@ -1950,11 +2140,6 @@ footer .socialmedia .icons a {
     main .contenedor-carrito {
         padding: 75px 0px 0px 0px;
     }
-    /*Media Queries ProductEdition*/
-
-    main .contenedor-edicion-productos {
-        padding: 75px 0px 100px 0px;
-    }
 
     /* Footer Media Queries (min-width: 361px)*/
 
@@ -2002,12 +2187,12 @@ footer .socialmedia .icons a {
     /*home Media queries*/
 
     main .contenedor-home {
-        top: 70px;
+        padding-top: 70px;
     }
 
      /* Product Detail Media Queries (min-width: 769px)*/
     main .contenedor-product-detail {
-        top:70px;
+        padding-top: 70px;
     }
 
     main .contenedor-sobre-servicios {
@@ -2068,12 +2253,8 @@ footer .socialmedia .icons a {
     }
 
     /*Medias Queries Product Edition*/
-    main .container-productos-existentes .container {
-        flex-wrap: nowrap;
-    }
-
     main .container-productos-existentes .container .miniatura {
-        width: 25%;
+        width: 45%;
     }
 
     main .container-productos-existentes .container .miniatura {
@@ -2089,10 +2270,6 @@ footer .socialmedia .icons a {
         display: none;
     }
 
-    header .navegacion nav ul li a{
-        font-size: 22px;
-    }
-
     header .navegacion nav ul .cesta{
         display: block;
     }
@@ -2100,14 +2277,12 @@ footer .socialmedia .icons a {
     header .navegacion nav .enlace-cesta {
         display: none;
     }
-
-    header .boton-header-crear-cuenta, header .boton-header-ingresar
         
     header .boton-header-crear-cuenta{
         display: inline-block;
         position: fixed;
         padding: 0px;
-        top: 10px;
+        top: 15px;
         right: 150px;
         width: 120px;
         text-align: center;
@@ -2118,7 +2293,7 @@ footer .socialmedia .icons a {
         display: inline-block;
         position: fixed;
         padding: 0px;
-        top: 10px;
+        top: 15px;
         right: 76px;
         width: 70px;
         text-align: center;
@@ -2126,7 +2301,7 @@ footer .socialmedia .icons a {
     }
 
     header .navegacion .buscar:hover input{
-        width:45vw;
+        width:38vw;
     }
     
     header .navegacion .buscar input:focus{
@@ -2179,9 +2354,6 @@ footer .socialmedia .icons a {
     }
 
     /*home Media queries*/
-
-    /*main .banner {
-    }*/
 
     /* Product Detail Media Queeries (min-width: 769px)*/
 
@@ -2334,12 +2506,8 @@ footer .socialmedia .icons a {
 	}
 
     /*Medias Queries Product Edition*/
-    main .container-productos-existentes .container {
-        flex-wrap: nowrap;
-    }
-
     main .container-productos-existentes .container .miniatura {
-        width: 20%;
+        width: 25%;
     }
 
     /* Footer Media Queries (min-width: 769px)*/
