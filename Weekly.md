@@ -56,4 +56,10 @@
 <h2>Modificaciones Sprint 4:</h2>
   
  <p>Sábado 11 de Marzo:</p>
- <p>Actuaizamos el trello con las nuevas tarjetas del sprint 4.</p>
+ <p>Actualizamos el trello con las nuevas tarjetas del sprint 4.</p>
+ <p>Implemtación de CRUD</p>
+ <p>Desarrollo de nuevas rutas - GET - POST - PUT - DELETE</p>
+ <p>Actualización de controladores, creación de nuevos métodos para eliminar, guardar y editar información de productos.</p>
+ <p>Creación de archivos JSON para productos y mentores</p>
+ <p>Revisión de vistas faltantes</p>
+ <p>Mejoras estéticas y de css en las vistas existentes.</p>
