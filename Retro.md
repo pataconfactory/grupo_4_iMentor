@@ -99,28 +99,45 @@ Aplicar mejora continua en el proyecto, revisar cuestiones de estética y unifor
  
 <h1>Retrospectiva Sprint 3</h1>
 
-<ul>
-                                
+<ul>                             
 <li>1. Seguir haciendo:  
+  
+Reuniones periódicas para seguir el status de las tareas en progreso.
+División de tareas entre los miembros del equipo.
+Proactividad por parte de todos los miembros del equipo.
+Comunicación continua entre los miembros por redes sociales.
+  
 </li>
 
-
 <li>2. Menos de:    
+  
+No dejaremos las tareas sin plantearnos un día concreto de entrega y revisión de las mismas en equipo. 
+No cumplir con la asistencia de las reuniones pautadas.  
+  
 </li>
 
 <li>3. Más de: 
 
-1- 
+1- Pair developing o shadowing: Creemos que es una buena práctica para estar todas alineadas.
   
-2- 
+2- Proactividad por parte de los miembros del equipo. 
   
-3-  
+3- Utilización del trello.  
+  
 </li>
 
 <li>4. Dejar de hacer: 
+ 
+Esperar las correciones para seguir avanzando. Debemos ser más proactivas.
+No sincronizar las tareas del Trello con la realización de las actividades.
+  
 </li>
 
 <li>5. Empezar a hacer:
+
+Revisiones periódicas de estética y visuales de nuestro sitio web.
+Desarrollo y armado de contenido teórico-escrito de nuestro sitio web.
+Ser más conciente de los tiempos entre sprints.
 
 </li>
 
