@@ -60,7 +60,7 @@
  <p>Implementación de CRUD.</p>
  <p>Desarrollo de nuevas rutas - GET - POST - PUT - DELETE</p>
  <p>Actualización de controladores, creación de nuevos métodos para eliminar, guardar y editar información de productos.</p>
- <p>Creación de archivos JSON para productos y mentores.</p>
+ <p>Creación de archivos JSON para productos, usuarios y mentores.</p>
  <p>Carpeta Data en la estructura del proyecto.</p>
  <p>Revisión de vistas faltantes</p>
  <p>Mejoras estéticas y de css en las vistas existentes.</p>
