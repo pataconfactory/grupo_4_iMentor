@@ -317,8 +317,7 @@ main .contenedor-home {
 
 main .contenedor-home .banner {
     display: flex;
-    height: 600px;
-    
+    height: 400px;   
 }
 
 main .contenedor-home .banner img{
@@ -331,9 +330,9 @@ main .contenedor-home .banner img{
 main .contenedor-home h1 {
     color: black;
     position: absolute;
-    top: 115px;
+    top: 290px;
     right: 15px;
-    font-size: 32px;
+    font-size: 26px;
 }
 
 /**********************************Home*************************************/
@@ -498,13 +497,11 @@ main .contenedor-home .panel {
     text-align: center;
     text-decoration: none;
     display: block;
-    font-size: 13px;
-    margin: 0 auto;
+    font-size: 14px;
+    margin: 10px auto;
     border-radius: 4px;
     z-index: 2;
-    margin: 20px;
-    cursor: pointer;
-
+    width: 200px;
   }
   
   main .button:hover {
@@ -514,44 +511,15 @@ main .contenedor-home .panel {
   
 /**********************************ProductDetail.html CSS*************************************/
 main .contenedor-product-detail {
-    padding-top: 90px;
+    padding: 120px 0px 0px 0px;
 }
 
-main .contenedor-product-detail .banner {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(https://cdn.shrm.org/image/upload/c_crop%2ch_705%2cw_1254%2cx_0%2cy_15/c_fit%2cf_auto%2cq_auto%2cw_767/v1/Employee%20Relations/iStock-1266809682_lflvjj?databtoa=eyIxNng5Ijp7IngiOjAsInkiOjE1LCJ4MiI6MTI1NCwieTIiOjcyMCwidyI6MTI1NCwiaCI6NzA1fX0%3d);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 200px;
-    display: flex;
-}
-
-main .contenedor-product-detail .banner img{
-    width: 100%;
-}
-
-main .contenedor-product-detail .banner h1 {
-    color: white;
-    text-align: center;
-    align-self: end;
-    width: 100%;
-}
-
-.contenedor-productdetail {
-    max-width: 1000px;
-    margin: auto;
-    overflow: hidden;
-    font-weight: 300;
-    font-size: 14px;
-    padding-bottom: 5px;
-    /* esto hace que se centre todo el contenido y si algo se sale lo esconde*/
-}
-
-.titulo-servicios {
+main .contenedor-product-detail  .titulo-servicios {
+    margin: 0px 10px 10px 10px;
     color: #3587A4;
     font-size: 35px;
     text-align: center;
+    color: black;
 }
 
 /*####Section sobre servicios#####*/
@@ -802,7 +770,6 @@ main .membresias {
 
 }
 
-
 .membresias .contenido-textos p {
     padding: 10px 0px 10px 0px;
     font-weight: 300;
@@ -817,23 +784,21 @@ div.btn-cart {
 
 /*####Que dicen nuestros clientes####*/
 
-.contenedor-clientes {
-    padding-bottom: 80px;
+main .contenedor-home .contenedor-clientes {
     width: 100%;
-
 }
 
-.contenedor-clientes h2 {
+main .contenedor-home .contenedor-clientes h2 {
     padding-top: 10px;
 }
 
-.cards {
+main .contenedor-home .cards {
     display: flex;
     justify-content: space-evenly;
     padding-bottom: 20px;
 }
 
-.cards .card {
+main .contenedor-home .cards .card {
     background: #3587A4;
     display: flex;
     width: 90%;
@@ -844,7 +809,7 @@ div.btn-cart {
     box-shadow: 0 0 6px 0 rgb(0, 0, 0, .5);
 }
 
-.cards .card img {
+main .contenedor-home .cards .card img {
     width: 100px;
     height: 100px;
     object-fit: cover;
@@ -854,13 +819,13 @@ div.btn-cart {
     display: block;
 }
 
-.cards .card .contenido-texto-card {
+main .contenedor-home .cards .card .contenido-texto-card {
     width: 50%;
     color: white;
 }
 
 
-.cards .card .contenido-texto-card p {
+main .contenedor-home .cards .card .contenido-texto-card p {
     font-weight: 300;
     padding: 5px;
     font-size: 12px;
@@ -1541,9 +1506,9 @@ main .contenedor-edicion-productos .container-productos-existentes .crear-produc
     font-size: 14px;
     text-decoration: none;
     background-color: #3587A4;
-    color: #fff;
-    padding: 5px 5px;
-    border-radius: 3px;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 4px;
     align-self: end;
 }
 
@@ -1551,12 +1516,10 @@ main .contenedor-edicion-productos .container-productos-existentes .boton-crear-
     margin: 20px 0px 0px 20px;
 }
 
-main .contenedor-edicion-productos .container-productos-existentes .miniatura .enlace {
-    background-color: white;
-}
-
 main .contenedor-edicion-productos .container-productos-existentes a:hover {
-    background-color: #88CCF1;
+    background-color: #C1DFF0;
+    color: black;
+    
 }
 
 main .container-productos-existentes .container {
@@ -2194,11 +2157,20 @@ footer .socialmedia .icons a {
         padding-top: 70px;
     }
 
-     /* Product Detail Media Queries (min-width: 769px)*/
-    main .contenedor-product-detail {
-        padding-top: 70px;
+    main .contenedor-home .banner {
+        height: 800px;
     }
 
+    main .contenedor-home h1 {
+        top: 115px;
+        font-size: 42px;
+    }
+
+    main .button {
+        width: 300px;
+      }
+
+     /* Product Detail Media Queries (min-width: 769px)*/
     main .contenedor-sobre-servicios {
         display: flex;
         /* flex-direction: column; */
