@@ -760,7 +760,6 @@ main .accordion-categoría {
     border: none;
     outline: none;
     font-size: 15px;
-    transition: 0.4s;
     position: relative;
     display: block;
     margin: 0 auto;
@@ -769,11 +768,6 @@ main .accordion-categoría {
 main .accordion-categoría .fa-chevron-down:before {
     padding-left: 5px;
     color: #3587A4;
-}
-
-main .active,
-main .accordion-categoría:hover {
-    background-color: #ccc;
 }
 
 main .panel-categoria {
@@ -896,24 +890,32 @@ main .contenedor-home .cards .card .contenido-texto-card p {
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .cada-mentor img {
-    width: 55%;
+    width: 65%;
     justify-content: center;
     align-items: center;
 
 }
 
-.cada-mentor .nombre-mentor {
-    font-size: 14px;
-    color: #2D848A;
-}
 
 .cada-mentor p {
     font-weight: 300;
     font-size: 14px;
     text-align: justify;
+}
+
+.cada-mentor a {
+    font-weight: 300;
+    font-size: 14px;
+    text-align: justify;
+    color: #ffc600;
+    text-decoration: underline;
+    margin-top: 10px;
 }
 
 /*gift card*/
