@@ -64,3 +64,15 @@
  <p>Carpeta Data en la estructura del proyecto.</p>
  <p>Revisión de vistas faltantes</p>
  <p>Mejoras estéticas y de css en las vistas existentes.</p>
+  
+  
+  <h2>Modificaciones Sprint 5:</h2>
+  
+ <p>Martes 29 de marzo</p>
+ <p>Tuvimos meeting y revisamos el documento de las consignas del sprint 5</p>
+ <p>Creamos las tarjetas en Trello con las tareas principales de los entregables de la sprint 5</p>
+ <p>Sábado 1 de abril</p>
+ <p>Nos reunimos en una call en discord para seguir las tareas</p>
+ <p>Se hizo push con modificaciones en la home de correcciones de la sprint 4</p>
+ <p>Se hizo push de la página 404</p>
+
