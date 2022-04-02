@@ -1972,80 +1972,27 @@ footer .socialmedia .icons a i{
 
 /*Página 404 NOT FOUND*/
 
-.contenedor_not_found {
-    background-color: #95c2de;
+.logo_404_error_content {
+    background-color: #93dcf7;
+    box-sizing: content-box; 
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    font-size: 20px;
     width: 100vw;
     height: 100vh;
-    padding-top: 10px;
-}
-
-.mainbox_404_page {
-    background-color: #95c2de;
-    margin: auto;
-    height: 1000px;
-    width: 1000px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
   }
   
-    .err {
-      color: #ffffff;
-      font-family: 'Nunito Sans', sans-serif;
-      font-size: 11rem;
-      position:absolute;
-      left: 5%;
-      top: 10%;
-    }
-  
-  .far {
-    position: absolute;
-    font-size: 8rem;
-    left: 32%;
-    top: 15%;
-    color: #ffffff;
+  .logo_404_error_content img {
+      width: 70%;
   }
-  
-   .err2 {
-      color: #ffffff;
-      font-family: 'Nunito Sans', sans-serif;
-      font-size: 11rem;
-      position:absolute;
-      left: 65%;
-      top: 10%;
-    }
-  
-  .msg_404_1 {
-      text-align: center;
-      position:absolute;
-      left: 16%;
-      top: 45%;
-      width: 75%;
-      color: white;
-    }
-  
-    .msg_404_2 {
-        text-align: center;
-        position:absolute;
-        left: 14%;
-        top: 55%;
-        width:75%;
-        color: rgb(1, 26, 59);
-        font-size: 16px;
-      }
 
-.btn-volver-home {
-      
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        text-align: center;
-        position:absolute;
-        left: 21%;
-        top: 61%;
-    }
+  .logo_404_error_content h1 {
+      color: rgb(243, 243, 243);
+      font-size: 14px;
+  }
     
     .btn-volver-home  a {
         color: rgb(0, 0, 0);
@@ -2055,7 +2002,7 @@ footer .socialmedia .icons a i{
         text-align: center;
         border-radius: 15px;
         padding: 5px 5px;
-        font-size: 16px;
+        font-size: 12px;
     }
 /*###############################################################*/
 
@@ -2725,7 +2672,32 @@ footer .socialmedia .icons a i{
     }
     
 
+    
+/*Página 404 NOT FOUND*/
+
+  
+  .logo_404_error_content img {
+      width: 38%;
+  }
+
+  .logo_404_error_content h1 {
+      color: rgb(243, 243, 243);
+      font-size: 28px;
+  }
+    
+    .btn-volver-home  a {
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        background-color: #ffc600;
+        text-decoration: none;
+        text-align: center;
+        border-radius: 15px;
+        padding: 5px 5px;
+        font-size: 20px;
+    }
 }
+
+
 
 
 @media only screen and (min-width:1025px) {
