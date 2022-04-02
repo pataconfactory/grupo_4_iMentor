@@ -190,15 +190,14 @@ header .boton-header-ingresar:hover {
 main .banner-register {
     padding-top: 90px;
     width: 100vw;
-    height: 100vh;
 }
 
 main .banner-register h1 {
     display: flex;
     justify-content: center;
     padding-top: 20px;
-    font-size: 24px;
-    color: #3587A4;
+    font-size: 35px;
+    color: black;
     text-align: center;
 }
 
@@ -226,16 +225,20 @@ main .register-username, .register-email, .register-password, .register-birth {
     margin: 4.5% 0%;
 }
 
+main .register-age{
+    margin: 0% 0% 4.5% 0%;
+}
+
 main .register-form .boxes {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     width: 90%;
-    border-color: #ffc600;
+    border-color: #666;
     border-width: 1px;
     font-size: 8.5px;
     padding: 1.5%;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 1.5%;
 }
 
@@ -254,7 +257,11 @@ main .register-form .register-birth .boxes {
 }
 
 main .box-register {
-    padding: 0px 0px 50px 0px;
+    width: 100%;
+}
+
+main .box-register label{
+    font-weight: bold;
 }
 
 main .box-register .terminos {
@@ -284,11 +291,9 @@ main .box-register .register-button {
     padding: 1% 3%;
     border: 0;
     width: 90%;
-}
-
-main .box-register .register-button a {
     text-decoration: none;
-    color: #000;
+    color: white;
+    align-items: center;
 }
 
 main .box-register .register-button:hover {
@@ -305,7 +310,12 @@ main .box-register .already-register {
     justify-content: center;
     font-size: 8.5px;
     text-decoration: underline;
-    margin-bottom: 15%;
+    margin: 5%;
+}
+
+main .box-register .register-button i{
+    color:white;
+    align-items: center;
 }
 
 /*Home Page Main*/
@@ -2142,82 +2152,7 @@ footer .socialmedia .icons a i{
         border-left: solid 2px #666;
         padding: 0px 0px 0px 30px;
     }
-    /* Register Page Main Media Queries (min-width: 361px)*/
-
-    main .banner-register {
-        display: flex;
-        padding-top: 70px;
-        flex-wrap: nowrap;
-    }
-
-    main .box-register {
-        width: 35vw;
-        justify-content: center;
-        background-color: white;
-        margin: 0px 15px;
-        align-self: center;
-        height: 500px;
-        padding: 0px 0px 0px 0px;
-    }
-
-    main .banner-register .box-img-register {
-        display: flex;
-        width: 65vw;
-        order: 1;
-    }
-
-    main .banner-register .box-img-register img{
-        display: block;
-        width: 100%;
-        object-fit: cover;
-    }
-   
-    main .banner-register h3 {
-        font-size: 15px;
-        padding-top: 10px;
-    }
-
-    main .banner-register p {
-        font-size: 9px;
-        text-align: center;
-    }
-
-    main form.register-form {
-        padding: 0% 0% 0% 0%;
-    }
-
-    main .register-username, .register-email, 
-    .register-password, .register-birth {
-        font-size: 9px;
-        margin: 2.5% 0%;
-    }
-
-    main .register-form .boxes {
-        display: flex;
-        font-size: 8px;
-        padding: 1%;
-        margin-top: 1%;
-        width: 100%;
-        flex-direction: row;
-    }
-
-    main .box-register .terminos {
-        font-size: 9px;
-    }
-
-    main .box-register .show-password {
-        font-size: 8px;
-    }
-
-    main .box-register .register-button {
-        font-size: 11px;
-        width: 100%;
-    }
-
-    main .box-register .already-register {
-        font-size: 9px;
-        padding-top: 10px;
-    }
+    
     /*Media Queries ProductCart*/
 
     main .contenedor-carrito .seccion-productos .content h3 a{
@@ -2351,6 +2286,87 @@ footer .socialmedia .icons a i{
     main .container-productos-existentes .container .miniatura {
         margin: 5px 0px;
     }
+
+    /* Register Page Main Media Queries*/
+
+    main .banner-register {
+        display: flex;
+        padding-top: 80px;
+        flex-wrap: nowrap;
+    }
+
+    main .box-register {
+        width: 40vw;
+        justify-content: center;
+        background-color: white;
+        align-self: center;
+        padding: 0px 20px;
+        background-color: #f2f2f2;
+    }
+
+    main .banner-register .box-img-register {
+        display: flex;
+        width: 60vw;
+        order: 1;
+    }
+
+    main .banner-register .box-img-register img{
+        display: block;
+        width: 100%;
+        object-fit: cover;
+    }
+   
+    main .banner-register h3 {
+        font-size: 15px;
+        padding-top: 10px;
+    }
+
+    main .banner-register p {
+        font-size: 9px;
+        text-align: center;
+    }
+
+    main form.register-form {
+        padding: 0% 0% 0% 0%;
+    }
+
+    main .register-username, .register-email, 
+    .register-password, .register-birth{
+        font-size: 9px;
+        margin: 2.5% 0%;
+    }
+
+    main .register-age{
+        font-size: 11px;
+        margin: 0% 0% 2.5% 0%;
+    }
+
+    main .register-form .boxes {
+        display: flex;
+        font-size: 8px;
+        padding: 1%;
+        margin-top: 1%;
+        width: 100%;
+        flex-direction: row;
+    }
+
+    main .box-register .terminos {
+        font-size: 9px;
+    }
+
+    main .box-register .show-password {
+        font-size: 8px;
+    }
+
+    main .box-register .register-button {
+        font-size: 11px;
+        width: 100%;
+    }
+
+    main .box-register .already-register {
+        font-size: 9px;
+        padding-top: 10px;
+    }
 }
 
 @media (min-width: 769px){
@@ -2437,7 +2453,7 @@ footer .socialmedia .icons a i{
 
     main .box-register .already-register {
         font-size: 11px;
-        padding-top: 6px;
+        padding-top: 8%;
     }
 
     main .box-register form i {

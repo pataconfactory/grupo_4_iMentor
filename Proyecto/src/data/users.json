@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "first_name": "Gisella",
     "last_name": "Trotman",
     "user_name": "gtrotman0",
@@ -11,9 +10,9 @@
     "country": "Argentina",
     "password": "qMsqtoYkJ",
     "category": "user",
-    "avatar": "user_1.jpg"
+    "avatar": "user_1.jpg",
+    "id": 1
   }, {
-    "id": 2,
     "first_name": "Forrest",
     "last_name": "Trickey",
     "user_name": "ftrickey1",
@@ -24,9 +23,9 @@
     "country": "Argentina",
     "password": "bGfnUtCUc",
     "category": "user",
-    "avatar": "user_2.jpg"
+    "avatar": "user_2.jpg",
+    "id": 2
   }, {
-    "id": 3,
     "first_name": "Brenn",
     "last_name": "Cordner",
     "user_name": "bcordner2",
@@ -37,9 +36,9 @@
     "country": "Colombia",
     "password": "VTJhkLLdDZ",
     "category": "user",
-    "avatar": "user_3.jpg"
+    "avatar": "user_3.jpg",
+    "id": 3
   }, {
-    "id": 4,
     "first_name": "Rivalee",
     "last_name": "Esilmon",
     "user_name": "resilmon3",
@@ -50,9 +49,9 @@
     "country": "Colombia",
     "password": "Rxqf088",
     "category": "user",
-    "avatar": "user_4.jpg"
+    "avatar": "user_4.jpg",
+    "id": 4
   }, {
-    "id": 5,
     "first_name": "Hugh",
     "last_name": "Dudhill",
     "user_name": "hdudhill4",
@@ -63,9 +62,9 @@
     "country": "Venezuela",
     "password": "M5MpdOxr4",
     "category": "user",
-    "avatar": "user_5.jpg"
+    "avatar": "user_5.jpg",
+    "id": 5
   }, {
-    "id": 6,
     "first_name": "Leena",
     "last_name": "Feaviour",
     "user_name": "lfeaviour5",
@@ -76,9 +75,9 @@
     "country": "Venezuela",
     "password": "I30lDIBE",
     "category": "user",
-    "avatar": "user_6.jpg"
+    "avatar": "user_6.jpg",
+    "id": 6
   }, {
-    "id": 7,
     "first_name": "Sherry",
     "last_name": "Mandrier",
     "user_name": "smandrier6",
@@ -89,9 +88,9 @@
     "country": "Argentina",
     "password": "Gb06ZUkHKX",
     "category": "user",
-    "avatar": "user_7.jpg"
+    "avatar": "user_7.jpg",
+    "id": 7
   }, {
-    "id": 8,
     "first_name": "Abbey",
     "last_name": "Arnecke",
     "user_name": "aarnecke7",
@@ -102,9 +101,9 @@
     "country": "Colombia",
     "password": "QVjuNpmVfE",
     "category": "user",
-    "avatar": "user_8.jpg"
+    "avatar": "user_8.jpg",
+    "id": 8
   }, {
-    "id": 9,
     "first_name": "Maudie",
     "last_name": "Noonan",
     "user_name": "mnoonan8",
@@ -115,9 +114,9 @@
     "country": "Mexico",
     "password": "xPCRZLl",
     "category": "user",
-    "avatar": "user_9.jpg"
+    "avatar": "user_9.jpg",
+    "id": 9
   }, {
-    "id": 10,
     "first_name": "Jeana",
     "last_name": "Tarbert",
     "user_name": "jtarbert9",
@@ -128,7 +127,8 @@
     "country": "Argentina",
     "password": "Joarhuw8A",
     "category": "user",
-    "avatar": "user_10.jpg"
+    "avatar": "user_10.jpg",
+    "id": 10
   }
 ]
   
