@@ -312,62 +312,110 @@ main .box-register .already-register {
 /**********************************BANNER*************************************/
 main .contenedor-home {
     padding-top: 90px;
-    width: 100vw;
 }
 
 main .contenedor-home .banner {
     display: flex;
-    height: 400px;   
+    height: 400px; 
+    width: 100%;  
 }
 
 main .contenedor-home .banner img{
     width: 100%;
     object-fit: cover;
-    height: 100%;
-    
 }
 
 main .contenedor-home h1 {
     color: black;
     position: absolute;
-    top: 290px;
+    top: 340px;
     right: 15px;
-    font-size: 26px;
+    font-size: 22px;
+    background-color: white;
+    box-shadow: rgb(100 100 111) 0px 5px 5px 0px;
+    padding: 5px;
+    text-align: center;
+}
+
+main .contenedor-home h1 p{
+    font-size: 12px;
+    font-weight: 400;
 }
 
 /**********************************Home*************************************/
+main .contenedor-home .ventajas{
+    background-color: #f2f2f2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+main .contenedor-home .ventajas img{
+    width: 80%;
+    padding-bottom: 20px;
+}
+
+main .contenedor-home .ventajas .contenido{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    text-align: justify;
+    align-self: center;
+    border-top: solid 1px black ;
+}
+
+main .contenedor-home .ventajas .contenido h4{
+    font-size: 28px;
+    text-align: center;
+    padding: 10px 0px;
+}
+
 main .contenedor-home h2 {
-    color: #3587A4;
+    color: black;
     font-size: 35px;
     text-align: center;
-    margin: 5px 0px;
+    margin: 20px 0px;
 }
 
 /*toggle clic para contenido de materias */
-main .accordion {
-    background-color: rgb(38, 52, 68);
-    color: rgb(227, 236, 238);
-    cursor: pointer;
-    padding: 8px;
-    width: 85%;
-    border: solid 1px white;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-    position: relative;
-    display: block;
-    margin: 0 auto;
-}
-  
-main .accordion .fa-chevron-down:before {
-    padding-left: 5px;
-    color: #3587A4;
+main .contenedor-home .botones-asesorias{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-main .active, main .accordion:hover {
-    background-color: #ccc; 
+main .contenedor-home .accordion {
+    background-color: rgb(38, 52, 68);
+    cursor: pointer;
+    width: 60%;
+    outline: none;
+    font-size: 25px;
+    transition: 0.4s;
+    height: 300px;
+    margin: 15px 15px;
 }
-  
+
+main .contenedor-home .accordion:hover{
+    background-color: #ccc; 
+    box-shadow: rgb(100 100 111) 10px 15px 15px 0px;
+    transform: scale(.95);
+    transition: all .3s;
+    overflow: hidden;
+}
+
+main .contenedor-home .accordion a img{
+    width: 100%;
+    height: 270px;
+    border-top: solid 1px #ffc600;
+}
+
+main .contenedor-home .accordion a h3{
+    font-size: 24px;
+    text-align: center;
+    color: white;
+}
+
 main .contenedor-home .panel {
     padding: 0px;
     display: none;
@@ -569,8 +617,6 @@ main .contenedor-sobre-servicios {
 
 }
 
-
-
 /*####Galería de mentores#####*/
 
 .portafolio-mentorias {
@@ -627,7 +673,6 @@ main .contenedor-sobre-servicios {
     color: #2D848A;
     transition: all 100ms;
 }
-
 
 /*##################################################*/
 /*Boton comprar asesoria por tema*/
@@ -709,7 +754,6 @@ main .accordion-categoría {
     position: relative;
     display: block;
     margin: 0 auto;
-
 }
 
 main .accordion-categoría .fa-chevron-down:before {
@@ -730,7 +774,6 @@ main .panel-categoria {
     width: 85%;
     display: block;
     margin: 0 auto;
-
 }
 
 main .panel-categoria .descripcion-categoria-asesoria {
@@ -766,8 +809,6 @@ main .membresias {
     margin-bottom: 5px;
     margin-top: 10px;
     cursor: pointer;
-
-
 }
 
 .membresias .contenido-textos p {
@@ -857,20 +898,15 @@ main .contenedor-home .cards .card .contenido-texto-card p {
 .cada-mentor .nombre-mentor {
     font-size: 14px;
     color: #2D848A;
-
-
 }
 
 .cada-mentor p {
     font-weight: 300;
     font-size: 14px;
     text-align: justify;
-
 }
 
-
 /*gift card*/
-
 
 .contenedor-giftcard {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -886,11 +922,9 @@ main .contenedor-home .cards .card .contenido-texto-card p {
     overflow: hidden;
     font-weight: 300;
     font-size: 14px;
-
 }
 
 .gift-cards {
-
     background-color: #f2f2f2;
     padding: 15px 0;
 }
@@ -899,7 +933,6 @@ main .contenedor-home .cards .card .contenido-texto-card p {
     color: grey;
     font-size: 22px;
 }
-
 
 .gift-cards button {
     border: none;
@@ -916,7 +949,6 @@ main .contenedor-home .cards .card .contenido-texto-card p {
     opacity: 0.7;
 }
 
-
 /*Boton contactar mentor*/
 .cada-mentor .contactar-cart .comprar-asesoria button {
     margin: 5px 5px;
@@ -925,7 +957,6 @@ main .contenedor-home .cards .card .contenido-texto-card p {
     color: #f2f2f2;
     background-color: #2D848A;
     cursor: pointer;
-
 }
 
 .cada-mentor .contactar-cart .p {
@@ -952,8 +983,6 @@ main .contenedor-home .cards .card .contenido-texto-card p {
     align-items: center;
     display: content;
 }
-
-
 /**************************** Termina ProductDetail.html CSS**************************/
 
 /* Login Page Main*/
@@ -1903,12 +1932,12 @@ footer .suscriptionbutton {
     border-radius: 4px;
     border: 0;
     font-size: 8px;
-    background-color: grey;
+    background-color: #ffc600
 }
 
 footer .suscriptionbutton:hover {
-    background-color: #3587A4;
-    color: white;
+    background-color: #C1DFF0;
+    color: black;
     font-weight: bold;
     cursor: pointer;
     box-shadow: 3px 3px 5px rgb(217,217,217);
@@ -1920,7 +1949,7 @@ footer .socialmedia h4 {
 
 footer .socialmedia .icons {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-around;
     padding-top: 2%;
     width: 60%;
@@ -1930,7 +1959,15 @@ footer .socialmedia .icons {
 
 footer .socialmedia .icons a {
     text-decoration: none;
-    color: #000;
+    color: #ffc600;
+    background-color: white;
+    border-radius: 3px;
+    padding: 0px 1px;
+    font-size: 8px;
+}
+
+footer .socialmedia .icons a i{
+    font-size: 25px;
 }
 
 /*Página 404 NOT FOUND*/
@@ -2020,8 +2057,6 @@ footer .socialmedia .icons a {
         padding: 5px 5px;
         font-size: 16px;
     }
-    
-  }
 /*###############################################################*/
 
 /*Media Queries*/
@@ -2243,16 +2278,7 @@ footer .socialmedia .icons a {
     /*home Media queries*/
 
     main .contenedor-home {
-        padding-top: 70px;
-    }
-
-    main .contenedor-home .banner {
-        height: 800px;
-    }
-
-    main .contenedor-home h1 {
-        top: 115px;
-        font-size: 42px;
+        padding-top: 80px;
     }
 
     main .button {
@@ -2419,6 +2445,50 @@ footer .socialmedia .icons a {
     }
 
     /*home Media queries*/
+    main .contenedor-home .accordion {
+        width: 30%;
+    } 
+
+    main .contenedor-home .accordion a h3{
+        font-size: 26px;
+    }
+
+    main .contenedor-home .banner {
+        height: 700px;
+    }
+
+    main .contenedor-home h1 {
+        top: 150px;
+        font-size: 42px;
+        right: 40px;
+    }
+
+    main .contenedor-home h1 {
+        top: 170px;
+        font-size: 26px;
+        padding: 15px;
+    }
+
+    main .contenedor-home h1 p{
+        font-size: 18px;
+    }
+
+    main .contenedor-home .ventajas{
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+
+    main .contenedor-home .ventajas img{
+        width: 40%;
+        padding-bottom: 0px;
+    }
+
+    main .contenedor-home .ventajas .contenido{
+        width: 55%;
+        border-left: solid 1px black ;
+        border-top: none;
+        padding-left: 10px;
+    }
 
     /* Product Detail Media Queeries (min-width: 769px)*/
 

@@ -5,37 +5,58 @@
     <%- include('./partials/header') %>
       <main>
         <div class="contenedor-home">
-          <h1>¡Saber es poder!</h1>
+          <h1>¡Saber es poder!<p> Crearás habilidades para tu presente y tu futuro.</p></h1>
           <div class = "banner">
             <img src="img/banner_iMentor.jpg" alt="Student">
           </div>
           <a class="button" href="/register"><i class="fas fa-edit"></i> Registrate Aqui</a>
+          <section class="ventajas">
+            <img src="img/ventajas.jpg" alt="Mentorias">
+            <div class="contenido">
+              <h4>Aprendé de forma dinámica!!</h4>
+              <p>Pasalo bien mientras te preparas para el mundo laboral. En comunidad sale todo mejor. Nuestro staff está preparado para asistirte en las diferentes áreas del mundo de las IT. Mentores especialistas en cada área, te acompañan y guían en tu camino, resolviendo tus dudas. En las asesorías, pondrás todo en práctica e intercambiarás ideas y experiencias con tu mentor.</p>
+            </div>
+          </section>
           <h2>Conoce nuestras Asesorías</h2>
-          <button class="accordion">Front-End<i class="fas fa-solid fas fa-chevron-down"></i></button>
-          <div class="panel">
-            <p>Un desarrollador frontend se encarga de la parte visual de la web. Diseña la estructura colorimetría, banners, imágenes, tipografía, entre otras. Trabaja del lado del cliente, en el navegador, en el lado que se ve. Mientras que un desarrollador backend, trabaja en la parte del servidor y procesa la información recibida a través del frontend.</p>
+          <div class="botones-asesorias">
+            <div class="accordion">
+              <a href="">
+              <h3>Front-End</h3>
+              <img src="img/Front-end-Development.jpeg" alt="Front-End">
+              </a>
+            </div>
+            <div class="accordion">
+              <a href="">
+              <h3>Back-End</h3>
+              <img src="img/back-end-developer.jpg" alt="Back-End">
+              </a>
+            </div>
+            <div class="accordion">
+              <a href="">
+              <h3>Base de Datos</h3>
+              <img src="img/base-de-datos.jpg" alt="Base de Datos">
+              </a>
+            </div>
+            <div class="accordion">
+              <a href="">
+                <h3>UX/UI</h3>
+                <img src="img/ui-ux.jpg" alt="UX/UI">
+              </a>
+            </div>
+            <div class="accordion">
+              <a href="">
+                <h3>Análisis de Datos</h3>
+                <img src="img/analisis-datos.jpg" alt="Análisis de Datos">
+              </a>
+            </div>
+            <div class="accordion">
+              <a href="">
+                <h3>Marketing Digital</h3>
+                <img src="img/m-digital.png" alt="Marketing Digital">
+              </a>
+            </div>
           </div>
-          <button class="accordion">Back-End<i class="fas fa-solid fas fa-chevron-down"></i></button>
-          <div class="panel">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil asperiores minus eaque quae idillo rerum modi quos iste recusandae.</p>
-          </div>
-          <button class="accordion">Base de Datos<i class="fas fa-solid fas fa-chevron-down"></i></button>
-          <div class="panel">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil asperiores minus eaque quae idillo rerum modi quos iste recusandae.</p>
-          </div>
-          <button class="accordion">UX/UI<i class="fas fa-solid fas fa-chevron-down"></i></button>
-          <div class="panel">
-            <p>Un diseñador UX o de experiencia de usuario investiga, analiza y comprende las necesidades de los usuarios para diseñar soluciones que agregan valor al cliente, mientras son viables y rentables para la empresa.</p>
-          </div>
-          <button class="accordion">Análisis de Datos<i class="fas fa-solid fas fa-chevron-down"></i></button>
-          <div class="panel">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil asperiores minus eaque quae idillo rerum modi quos iste recusandae.</p>
-          </div>
-          <button class="accordion">Marketing Digital<i class="fas fa-solid fas fa-chevron-down"></i></button>
-          <div class="panel">
-            <p>Un experto en Marketing Digital es un profesional imprescindible en un mundo que gira entorno al diseño e implementación de estrategias digitales para acercar a las marcas con sus audiencias y consumidores potenciales.</p>
-          </div>
-          <a class="button" href="/productServices">Quiero una asesoría</a>
+          <a class="button" href="/products/productServices">Quiero una asesoría</a>
           <h2 style ="text-align: center">Conoce nuestros Mentores</h2>
           <div class="slideshow-container">
             <div class="mySlides fade">
@@ -109,7 +130,7 @@
           }
           </script>
           <div class="area-boton-final-home">
-            <a class="button" href="/products" ><i class="fas fa-search"></i> Busca a tu mentor</a>
+            <a class="button" href="/products/" ><i class="fas fa-search"></i> Busca a tu mentor</a>
           </div>
           <section class="clientes">
             <div class="contenedor-clientes">
