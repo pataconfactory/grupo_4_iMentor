@@ -39,6 +39,7 @@ createUser: function(userData) {
     }
     allUsers.push(newUser);
     fs.writeFileSync(this.fileName, JSON.stringify(allUsers), null, ' ');
+    return newUser;
 },
 
 deleteUser: function(id) {
@@ -50,7 +51,7 @@ deleteUser: function(id) {
 editUser: function(id) {
     let allUsers = this.findAll();
 
-    
+
 }
 
 }
