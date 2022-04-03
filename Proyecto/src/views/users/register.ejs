@@ -11,12 +11,12 @@
         <div class="banner-register">
             <div class="background-register"></div>
             <div class="box-img-register">
-                <img src="img/student-laptop.jpg" alt="Student registering">
+                <img src="/img/student-laptop.jpg" alt="Student registering">
             </div>
             <div class="box-register">
                 <h1>!Creá tu cuenta!</h1>
                 <p>Te invitamos a formar parte de nuestra comunidad</p>
-                <form action="/" method="GET" class="register-form">
+                <form action="/users/login" method="POST" class="register-form" enctype="multipart/form-data">
                     <div class="register-username">
                         <label for="firs_name"><i class="fas fa-user"></i>Nombre</label>
                         <input class="boxes" type="text" name="firs_name" placeholder="Nombre" id="firs_name" required>
