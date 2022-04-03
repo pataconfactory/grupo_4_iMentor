@@ -3,7 +3,7 @@ const router = express.Router();
 const path = require('path');
 
 const usersController  = require('../controllers/usersController');
-
+const upload = require('../middlewares/multerRegister');
 
 //Rutas
 
@@ -15,7 +15,7 @@ router.get('/login', usersController.login)
 
 
 //crear usuario proceso de registro
-router.post('/register', usersController.processRegister);
+router.post('/register', upload.single('avatar'), usersController.processRegister);
 
 
 module.exports = router;

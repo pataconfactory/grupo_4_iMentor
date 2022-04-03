@@ -16,7 +16,11 @@ const usersController = {
         res.render(path.join(__dirname, '../views/users/login'))
      },
 
+    processRegister: function (req, res) {
+        res.send(req.body)
+        }, 
 
-};
+
+    };
 
     module.exports = usersController;
