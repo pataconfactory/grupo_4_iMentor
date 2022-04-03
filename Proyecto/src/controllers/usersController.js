@@ -17,7 +17,11 @@ const usersController = {
      },
 
     processRegister: function (req, res) {
-        res.send(req.body)
+        res.send({
+            body: req.body,
+            file: req.file
+        
+        })
         }, 
 
 
