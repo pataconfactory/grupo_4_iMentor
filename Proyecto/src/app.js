@@ -15,7 +15,6 @@ app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.use(express.urlencoded({ extended : false}));
 
 //************ Template Engine************
 const viewsPath = path.join(__dirname, './views');
@@ -26,10 +25,10 @@ app.use('/', mainRoutes);
 app.use('/products', productRoutes);
 app.use('/users', userRoutes);
 
-
 app.use( (req, res, next) => {
     res.status(404).render('not-found');
-})
+});
+
 app.listen(3000, ()  => {
     console.log('IMentor está corriendo');
 });
