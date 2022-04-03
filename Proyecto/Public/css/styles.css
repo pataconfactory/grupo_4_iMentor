@@ -821,6 +821,16 @@ main .membresias {
     font-size: 14px;
 }
 
+.membresias .link_ver_membresias {
+    font-weight: 300;
+    font-size: 14px;
+    text-align: center;
+    color: #ffc600;
+    text-decoration: underline;
+    margin-top: 10px;
+
+}
+
 div.btn-cart {
     font-weight: 300;
 }
@@ -940,26 +950,18 @@ main .contenedor-home .cards .card .contenido-texto-card p {
     padding: 15px 0;
 }
 
-.price {
-    color: grey;
-    font-size: 22px;
+.gift-cards p {
+    background-color: #ffbb00;
+    padding: 15px 15px;
+    
 }
 
-.gift-cards button {
-    border: none;
-    outline: 0;
-    padding: 12px;
-    background-color: rgb(235, 236, 164);
-    text-align: center;
+.gift-cards a {
+    color: #ffbb00;
+    padding: 15px 15px;
+    text-decoration: underline;
     cursor: pointer;
-    width: 100%;
-    font-size: 18px;
 }
-
-.gift-cards button:hover {
-    opacity: 0.7;
-}
-
 /*Boton contactar mentor*/
 .cada-mentor .contactar-cart .comprar-asesoria button {
     margin: 5px 5px;
@@ -2315,6 +2317,10 @@ footer .socialmedia .icons a i{
         font-size: 9px;
         padding-top: 10px;
     }
+
+    .cada-mentor a {
+        font-size: 18px;
+    }
 }
 
 @media (min-width: 769px){
@@ -2478,6 +2484,9 @@ footer .socialmedia .icons a i{
         font-weight: normal;
     }
 
+    .cada-mentor a {
+        font-size: 22px;
+    }
     div.btn-cart {
         align-self: center;
         margin-left: 35%;
