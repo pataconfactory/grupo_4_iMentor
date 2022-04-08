@@ -3,7 +3,7 @@ const router = express.Router();
 const path = require('path');
 
 const productsController = require('../controllers/productsController');
-const upload = require('../middlewares/multerMiddleware');
+const upload = require('../middlewares/multerProducts');
 
 //Rutas
 

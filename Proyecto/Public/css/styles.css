@@ -242,6 +242,30 @@ main .register-form .boxes {
     margin-top: 1.5%;
 }
 
+/*main .register-form .boxesis-invalid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 90%;
+    font-size: 8.5px;
+    padding: 1.5%;
+    border-radius: 10px;
+    margin-top: 1.5%;
+    border: solid #ab0d2f 2px;
+}*/
+
+main .register-form .text-danger {
+    display: flex;
+    justify-content: flex-start;   
+}
+
+main .register-form .text-danger .feedback{
+    color: #ab0d2f;
+    font-weight: bold;
+    padding: 0px;
+    font-size: 10px;
+}
+
 main .banner-register form i {
     font-size: 12px;
     color: #3587A4;
@@ -2252,6 +2276,7 @@ footer .socialmedia .icons a i{
         align-self: center;
         padding: 0px 20px;
         background-color: #f2f2f2;
+        border-right: #C1DFF0 solid 4px;
     }
 
     main .banner-register .box-img-register {
