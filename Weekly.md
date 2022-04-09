@@ -75,4 +75,8 @@
  <p>Nos reunimos en una call en discord para seguir las tareas</p>
  <p>Se hizo push con modificaciones en la home de correcciones de la sprint 4</p>
  <p>Se hizo push de la página 404</p>
-
+ <p>Se creó la vista de profile de usuario</p>
+ <p>Viernes 8 de Abril</p>
+ <p>Se trabajó y se hizo push de express validator para los formularios</p>
+ <p>Se agregó el middleware del multer de login para hacer el guardado de lña imágen del avatar de usuario</p>
+ <p>Se agregó los middleware de los usuarios logueados y de los usuarios invitados (guest)</p>
