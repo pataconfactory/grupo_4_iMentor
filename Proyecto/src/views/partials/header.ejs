@@ -28,6 +28,14 @@
             <button class="boton-header-crear-cuenta" type="submit"><a href= "/users/register">¡Crea tu cuenta!</a></button>
             <button class="boton-header-ingresar" type="submit"><a href= "/users/login">Ingresar</a></button>
             <ul>
+                <li class="nav-item-dropdown"><a class="nav-link-dropdown-toggle" href="#" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="">Hi User</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="/users/profile/:userId">Mi Perfil</a>
+                    <li><hr class="dropdown-divider"></li>
+                    <a class="dropdown-item" href="/users/logout">Cerrar sesión</a>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
                 <li><a class="active" href = "/">Home</a></li>
                 <li><a href = "/products/productServices">Servicios</a></li>
                 <li><a href = "/products">Mentorias</a></li>

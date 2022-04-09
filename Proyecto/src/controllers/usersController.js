@@ -26,7 +26,18 @@ const usersController = {
         if(errors.errors.length > 0){
             return res.render(path.join(__dirname, '../views/users/login'), {errors: errors.mapped(), old: req.body});
         }
-        return res.send(req.body);
+
+        let userToLogin = Users.findByField('email', req.body.email);
+        if(userToLogin){
+            let isOkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+            if(isOkPassword){
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+                return res.redirect('/users/profile/:userId');
+            }
+            return res.render(path.join(__dirname, '../views/users/login'), {errors: {email: {msg: 'Las credenciales son inválidas'}}, old: req.body});
+        }
+        return res.render(path.join(__dirname, '../views/users/login'), {errors: {email: {msg: 'No se encuentra este email en nuestra base de datos'}}, old: req.body});
     },
 
     processRegister: function (req, res) {
@@ -52,7 +63,12 @@ const usersController = {
     }, 
 
     profile: function(req, res) {
-        res.render(path.join(__dirname, '../views/users/profile'))
+        res.render(path.join(__dirname, '../views/users/profile/:userId'), {user: req.session.userLogged});
+    },
+
+    logout: function(req, res) {
+        req.session.destroy();
+        return res.redirect('/');
     }
 };
 

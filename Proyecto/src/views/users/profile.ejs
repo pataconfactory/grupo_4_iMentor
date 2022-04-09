@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile de usuario</title>
-</head>
-<body>
-    <h1>Profile de user</h1>
-</body>
+    <%- include('../partials/head') %>
+        <body>
+            <%- include('../partials/header') %>
+                <main>
+                    <div class="contenedor-profile">
+                        <h1>Perfil de usuario</h1>
+                        <h2>Hola <%= user.firs_name%></h2>
+                        <img src="/img/avatars/<%= user.avatar%>" alt="">
+                        <h3><%= user.email%></h3>
+                    </div>
+                </main>
+            <%- include('../partials/footer') %>
+        </body>
 </html>

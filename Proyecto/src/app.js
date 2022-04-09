@@ -1,16 +1,19 @@
 // ************ Require's************
 const express = require('express');
+const session = require('express-session');
 const path = require('path');
 const productRoutes = require('./routes/products');
 const mainRoutes = require('./routes/main');
 const userRoutes = require('./routes/users');
 const methodOverride =  require('method-override');
-
+const userLoggedMidleware = require('./middlewares/userLoggedMiddleware');
 
 // ************ express()************
 const app = express();
 
 const publicPath = path.join(__dirname, '../public');
+app.use(session({secret:"Mensaje secreto", resave: false, saveUninitialized: false}));
+app.use(userLoggedMidleware);
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

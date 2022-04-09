@@ -1542,6 +1542,15 @@ main .slide-container .miniatura .product-details a:hover {
 }
 /*******/
 
+/*Main Profile*/
+main .contenedor-profile {
+    padding: 120px 0px 0px 0px;
+}
+
+main .contenedor-profile img {
+    width: 40%;
+}
+
 /**Main productEdition*/
 
 main .contenedor-edicion-productos {
@@ -2734,9 +2743,7 @@ footer .socialmedia .icons a i{
         font-size: 9px;
         margin: 0px;
     }
-    
-
-    
+        
 /*Página 404 NOT FOUND*/
 
   
