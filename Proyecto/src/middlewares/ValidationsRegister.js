@@ -12,6 +12,7 @@ const validationsRegister = [
     check('country').notEmpty().withMessage('Debe completar el país'),
     check('password').notEmpty().withMessage('Debe completar la contraseña').bail().isLength({min:8, max:12}).withMessage('Debe introducir una contraseña que tenga como mínimo 8 caracteres y como máximo 12 caracteres').bail().isAlphanumeric().withMessage('Debe introducir una contraseña que contenga solo letras y números'),
     check('category').notEmpty().withMessage('Debe seleccionar la categoría del usuario'),
+    check('title').notEmpty().withMessage('Debe completar el título'),
     check('avatar').custom((value, {req}) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif'];

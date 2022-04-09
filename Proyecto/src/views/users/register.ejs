@@ -100,7 +100,7 @@
                     <div class="register-password">
                         <label for="password"><i class="fas fa-lock"></i>Contraseña</label>
                         <div class="box-showpassword">
-                            <input class="boxes" type="password" name="password" value="" id="password" > 
+                            <input class="boxes" type="password" name="password" value="" id="password" placeholder="Contraseña"> 
                             <div class="show-password">
                                 <input type="checkbox" name="show-password">
                                 <label>Mostrar contraseña</label>
@@ -126,6 +126,15 @@
                         <% if (locals.errors && errors.category) { %>
                             <div class="text-danger">
                                 <p class="feedback"><%= errors.category.msg %></p>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="register-username">
+                        <label for="title"><i class="fas fa-user-tie"></i>Título</label>
+                        <input class="boxes" type="text" name="title" placeholder="Titulo" id="title" value="<%= locals.old ? old.title : null %>">
+                        <% if (locals.errors && errors.title) { %>
+                            <div class= "text-danger">
+                                <p class="feedback"><%= errors.title.msg %></p>
                             </div>
                         <% } %>
                     </div>

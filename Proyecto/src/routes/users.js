@@ -6,7 +6,7 @@ const usersController  = require('../controllers/usersController');
 const upload = require('../middlewares/multerRegister');
 
 const validationsRegister = require('../middlewares/ValidationsRegister')
-
+const validationsLogin = require('../middlewares/ValidationsLogin')
 
 //Rutas
 
@@ -18,6 +18,9 @@ router.post('/register', upload.single('avatar'), validationsRegister, usersCont
 
 //formulario de login
 router.get('/login', usersController.login);
+
+//procesa el login
+router.post('/login', validationsLogin, usersController.loginProcess);
 
 //Perfil de Usuario
 router.get('/profile/:userId', usersController.profile);

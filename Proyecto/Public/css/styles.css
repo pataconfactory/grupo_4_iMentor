@@ -1096,6 +1096,19 @@ main .box-login .login {
     margin-top: 1%;
 }
 
+main .box-login .login .text-danger {
+    display: flex;
+    justify-content: flex-start;   
+}
+
+main .box-login .login .text-danger .feedback{
+    color: #ab0d2f;
+    font-weight: bold;
+    padding: 0px;
+    font-size: 10px;
+    margin: 0px;
+}
+
 main .login .login-email, main .login .login-password {
     width: 60%;
 }
