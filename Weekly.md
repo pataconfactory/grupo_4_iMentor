@@ -33,11 +33,11 @@
 <ul>                              
 <h2>Modificaciones Sprint 3:</h2>
   
- <p>Lunes 21 de Febrero:</p>
+ <strong>Lunes 21 de Febrero:</strong>
  <p>Nos reunimos y nos organizarmos las tareas</p>
  <p>Actuaizamos el trello con las nuevas tarjetas del sprint 3 y nos asignamos las tarjetas</p>
   
-  <p>Lunes 24 de Febrero:</p>
+ <strong>Lunes 24 de Febrero:</strong>
  <p>Comenzamos actualizar cada una las páginas: html de productDetail, Register, login para adaptarlo a los wireframes</p>
  <p>Creamos las etiquetas de cada html para que no se repitan y se pisen los estilos en la unificación del CSS</p>
  <p>Unificamos el css del register en un nuevo style.css donde vamos a unificar todas las páginas</p>
@@ -47,7 +47,7 @@
  <p>Vistas separadas en carpetas: users y products</p>
  <p>Carpeta partials creada y archivos head.ejs, header.ejs y footer.ejs implementados con include en las vistas principales</p>
  <br>
- <p>Miércoles 2 de marzo:</p>
+ <strong>Miércoles 2 de marzo:</strong>
  <p>Se decidió agregar nuevas categorías de productos</p>
  <p>Decidimos sincronizar de carrito de productos y product detail</p>
 </ul>
@@ -55,7 +55,7 @@
 <ul>                              
 <h2>Modificaciones Sprint 4:</h2>
   
- <p>Sábado 11 de Marzo:</p>
+ <strong>Sábado 11 de Marzo:</strong>
  <p>Actualizamos el trello con las nuevas tarjetas del sprint 4.</p>
  <p>Implementación de CRUD.</p>
  <p>Desarrollo de nuevas rutas - GET - POST - PUT - DELETE</p>
@@ -68,21 +68,21 @@
   
   <h2>Modificaciones Sprint 5:</h2>
   
- <p>Martes 29 de marzo</p>
+ <strong>Martes 29 de marzo</strong>
  <p>Tuvimos meeting y revisamos el documento de las consignas del sprint 5</p>
  <p>Creamos las tarjetas en Trello con las tareas principales de los entregables de la sprint 5</p>
- <p>Sábado 1 de abril</p>
+ <strong>Sábado 1 de abril</strong>
  <p>Nos reunimos en una call en discord para seguir las tareas</p>
  <p>Se hizo push con modificaciones en la home de correcciones de la sprint 4</p>
  <p>Se hizo push de la página 404</p>
  <p>Se creó la vista de profile de usuario</p>
  <p>Se creó la estructura de archivos y directorios de usuarios.</p>
- <p>Viernes 8 de Abril</p>
+ <strong>Viernes 8 de Abril</strong>
  <p>Se comenzó a trabajar el login de usuarios con la implementación de middlewares, sesiones</p>
  <p>Se trabajó y se hizo push de express validator para los formularios</p>
  <p>Se agregó el middleware del multer de login para hacer el guardado de lña imágen del avatar de usuario</p>
  <p>Se agregó los middleware de los usuarios logueados y de los usuarios invitados (guest)</p>
- <p>Viernes 9 de Abril</p>
+ <strong>Viernes 9 de Abril</strong>
  <p>Se hizo push de la primera parte de session</p>
   
  
