@@ -2063,6 +2063,68 @@ footer .socialmedia .icons a i{
         padding: 5px 5px;
         font-size: 12px;
     }
+
+/*PÁGINA EN CONSTRUCCIÓN*/
+
+
+
+main .contenedor-pagina-en-construccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 13;
+    overflow: hidden;
+    background-color: #f8f9ff;
+    opacity: 90%;
+    color: #324467;
+    width: 100vw;
+}
+
+main .contenedor-pagina-en-construccion p {
+    text-align: center;
+    font-weight: lighter;
+    margin: 10px;
+}
+
+main .contenedor-pagina-en-construccion .logo-pagina-en-construccion {
+    max-height: 40%;
+    max-width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5%;
+
+}
+
+main .contenedor-pagina-en-construccion .ilustracion-en-construccion {
+    max-height: 60%;
+    max-width: 80%;
+    margin-left: 15%;
+    margin-right: 10%;
+    margin-top: 5%;
+
+}
+
+
+main .botones-pagina-en-construccion {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    object-fit: cover;
+    cursor: pointer;
+    overflow: hidden;
+    transform: scale(.95);
+    transition: all .3s;
+    width: 100vw;
+    background-color: #fcff42;
+    border: none;
+    text-align: center;
+    
+}
+
+main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
+    color: #324467;
+
+}
 /*###############################################################*/
 
 /*Media Queries*/
@@ -2254,8 +2316,8 @@ footer .socialmedia .icons a i{
         width: 60%;
     }
 
-
 }
+
 
 @media (min-width: 500px) {
     main .contenedor-carrito .seccion-productos .content h3 a{
@@ -2766,10 +2828,24 @@ footer .socialmedia .icons a i{
         padding: 5px 5px;
         font-size: 20px;
     }
+
+        /*Página en construcción*/
+.contenedor-pagina-en-construccion h1 {
+    font-size: 45px;
+}
+
+.contenedor-pagina-en-construccion p {
+    font-size: 40px;
+}
+
+.contenedor-pagina-en-construccion .ilustracion-en-construccion {
+    width: 60%;
+    height: 50%;
 }
 
 
-
+}
+ 
 
 @media only screen and (min-width:1025px) {
     
@@ -2837,4 +2913,42 @@ font-size: 24px;
  .cards .card {
      width: 70%;
  }
+
+ .contenedor-pagina-en-construccion {
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     margin: 0%;
+ }
+
+ .contenedor-pagina-en-construccion h1 {
+    font-size: 90px;
+    width: 100%;
+    margin: 30px;
+}
+
+.contenedor-pagina-en-construccion p {
+    font-size: 40px;
+}
+
+.contenedor-pagina-en-construccion .logo-pagina-en-construccion {
+    width: 80%;
+    height: 40%;
+}
+
+.contenedor-pagina-en-construccion .ilustracion-en-construccion
+{
+    width: 70%;
+    height: 50%;
+}
+
+.main .botones-pagina-en-construccion .btn-pagina-construccion a, h3
+{
+    font-size: 30px;
+}
+
+.main .botones-pagina-en-construccion i
+{
+    color: #324467;
+}
 }
