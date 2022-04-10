@@ -7,12 +7,14 @@ const mainRoutes = require('./routes/main');
 const userRoutes = require('./routes/users');
 const methodOverride =  require('method-override');
 const userLoggedMidleware = require('./middlewares/userLoggedMiddleware');
+const cookieParser = require('cookie-parser');
 
 // ************ express()************
 const app = express();
 
 const publicPath = path.join(__dirname, '../public');
 app.use(session({secret:"Mensaje secreto", resave: false, saveUninitialized: false}));
+app.use(cookieParser());
 app.use(userLoggedMidleware);
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
@@ -27,7 +29,6 @@ app.set('views', viewsPath);
 app.use('/', mainRoutes);
 app.use('/products', productRoutes);
 app.use('/users', userRoutes);
-app.use('/teach-en-imentor', mainRoutes);
 
 app.use( (req, res, next) => {
     res.status(404).render('not-found');

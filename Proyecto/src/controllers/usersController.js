@@ -14,7 +14,8 @@ let users = JSON.parse (usersJSON);
 const usersController = {
 
     register: function(req, res) {
-       res.render(path.join(__dirname, '../views/users/register'))
+        res.cookie()
+        res.render(path.join(__dirname, '../views/users/register'))
     },
 
     login: function(req, res) {
@@ -33,7 +34,10 @@ const usersController = {
             if(isOkPassword){
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
-                return res.redirect('/users/profile/:userId');
+                if(req.body.remember) {
+                    res.cookie('userEmail', req.body.email, {maxAge: (1000 * 300)});
+                }
+                return res.redirect('/users/profile');
             }
             return res.render(path.join(__dirname, '../views/users/login'), {errors: {email: {msg: 'Las credenciales son inválidas'}}, old: req.body});
         }
@@ -63,10 +67,11 @@ const usersController = {
     }, 
 
     profile: function(req, res) {
-        res.render(path.join(__dirname, '../views/users/profile/:userId'), {user: req.session.userLogged});
+        res.render(path.join(__dirname, '../views/users/profile'), {user: req.session.userLogged});
     },
 
     logout: function(req, res) {
+        res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
     }
