@@ -84,6 +84,11 @@
  <p>Se agregó los middleware de los usuarios logueados y de los usuarios invitados (guest)</p>
  <strong>Viernes 9 de Abril</strong>
  <p>Se hizo push de la primera parte de session</p>
-  
+ <p>Se creó la página que redirecciona las páginas en construcción</p>
+ <strong>Domingo 17 de Abril</strong>
+ <p>Se creó el template enine de la vista profile y se agregó estilo CSS</p>
+ <p>Se agregaron las rutas de user edit y creó en el userController el método editUsers</p>
+ <p>Se completó la funcionalidad mostrar contraseña en el formulario de registro</p>
+ <p>Como parte de rutas accesible: solo por usuarios logueados pueden editar o eliminar productos. Los usuarios logueados no tendrán disponible la opción de crear cuenta o ingresar</p>
  
 
