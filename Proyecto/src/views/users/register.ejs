@@ -111,18 +111,15 @@
                         <div class="box-showpassword">
                             <input class="boxes" type="password" name="password" value="" id="password"
                                 placeholder="Contraseña">
-                            <div class="show-password">
-                                <div class="col">
-                                    <button class="btn btn-primary" type="button" onclick="mostrarContrasena()">Mostrar
-                                        Contraseña</button>
-                                </div>
+                            <div class="show-password"><br>
+                                <input type="checkbox" name="show-password" onclick="myFunction()">Mostrar Contraseña
                                 <script>
-                                    function mostrarContrasena() {
-                                        var tipo = document.getElementById("password");
-                                        if (tipo.type == "password") {
-                                            tipo.type = "text";
+                                    function myFunction() {
+                                        var x = document.getElementById("password");
+                                        if (x.type === "password") {
+                                            x.type = "text";
                                         } else {
-                                            tipo.type = "password";
+                                            x.type = "password";
                                         }
                                     }
                                 </script>
