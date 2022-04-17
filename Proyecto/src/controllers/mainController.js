@@ -7,7 +7,7 @@ const mainController = {
     },
 
     teach_en_imentor: function (req, res) {
-        res.render('teach-en-imentor')
+        res.render('paginaEnConstruccion')
     },
 };
 
