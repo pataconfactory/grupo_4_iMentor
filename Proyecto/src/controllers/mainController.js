@@ -6,7 +6,7 @@ const mainController = {
         res.render('index')
     },
 
-    teach_en_imentor: function (req, res) {
+    paginaConstruccion: function (req, res) {
         res.render('paginaEnConstruccion')
     },
 };

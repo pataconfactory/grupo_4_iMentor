@@ -5,6 +5,6 @@ const mainController = require('../controllers/mainController');
 
 router.get('/', mainController.index);
 
-router.get('/paginaEnConstruccion', mainController.teach_en_imentor);
+router.get('/paginaEnConstruccion', mainController.paginaConstruccion);
 
 module.exports = router;
