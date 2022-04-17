@@ -184,5 +184,21 @@
   "title": "Desarrollador",
   "terminos": "on",
   "avatar": "user-1649510591616.png"
+ },
+ {
+  "id": 12,
+  "firs_name": "Patricia",
+  "last_name": "Williams",
+  "user_name": "PatriWill",
+  "email": "pattywilliams20@gmail.com",
+  "date_birth": "1992-03-20",
+  "age": "30",
+  "genero": "Femenino",
+  "country": "Venezuela",
+  "password": "$2a$10$FaWw9UGapO6GZEQXfhA77uKO66VwsFca9c/nb8rHPA4QGtCEPRmVm",
+  "category": "Administrador",
+  "title": "Profesor",
+  "terminos": "on",
+  "avatar": "user-1650214401676.jpg"
  }
 ]
