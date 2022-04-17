@@ -193,3 +193,62 @@ Mejor organización del tiempo y de las tareas entre los miembros que restan del
 </li>
 
 </ul><br>
+
+<h1>Retrospectiva Sprint 5</h1>
+
+<ul>                             
+<li>1. Seguir haciendo:  
+  
+Reuniones periódicas para seguir el status de las tareas en progreso y de nuestros tiempos disponibles para avanzar en el proyecto.
+Comunicación continua entre los miembros por redes sociales, comunicarnos cada push o cambio en el repositorio.
+Debug conjunto del código cuando surgen trabas o inconvenientes en el desarrollo.
+  
+</li>
+
+<li>2. Menos de:    
+  
+Falta de revisión de las tareas entre los miembreos del equipo. 
+No cumplir con la asistencia de las reuniones pautadas.
+No pautar reuniones para revisar y discutir el proyecto.
+No cumplir con los tiempos de entrega confirmados para una actividad.
+No hablar sobre los tiempos disponibles de cada una para asignar las tareas correctamente según la prioridad y disponibilidad.
+  
+</li>
+
+<li>3. Más de: 
+
+1- Pair developing o shadowing: Creemos que es una buena práctica para estar todas alineadas.
+  
+2- Proactividad por parte de los miembros del equipo. 
+  
+3- Utilización del trello.  
+  
+4- Comunicación seguida vía whatsapp.
+
+5- Investigar soluciones para implementar las consignas.
+  
+6- Trabajo en equipo.
+  
+7- Revisión constante del código para estar todas al día y preguntar en caso de no entender algo.
+  
+</li>
+
+<li>4. Dejar de hacer: 
+ 
+Esperar las correciones para seguir avanzando. Debemos ser más proactivas.
+No sincronizar las tareas del Trello con la realización de las actividades.
+Realización de las actividades poco tiempo antes de la entrega del sprint.
+  
+</li>
+
+<li>5. Empezar a hacer:
+
+Revisiones periódicas de estética y visuales de nuestro sitio web.
+Desarrollo y armado de contenido teórico-escrito de nuestro sitio web.
+Ser más conciente de los tiempos entre sprints y de los tiempos que tiene cada una disponible para desarrollar. 
+Mejor organización del tiempo y de las tareas entre los miembros que restan del equipo.
+Revisión del código cuándo hay nuevos push para estar al día con el proyecto y las actualizaciones.
+
+</li>
+
+</ul><br>
