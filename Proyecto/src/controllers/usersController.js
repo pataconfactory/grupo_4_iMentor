@@ -74,6 +74,14 @@ const usersController = {
         res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
+    },
+
+    editUsers: function(req, res) {
+        res.render(path.join(__dirname, '../views/users/userEdit'), {user: req.session.userLogged});
+    },
+
+    updateUsers: function(req, res) {
+        
     }
 };
 

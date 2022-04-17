@@ -14,14 +14,14 @@ const authMiddleware = require('../middlewares/authMiddleware');
 
 //Formulario de registro
 router.get('/register', guestMiddleware, usersController.register);
-
-//crear usuario proceso de registro
 router.post('/register', upload.single('avatar'), validationsRegister, usersController.processRegister);
+
+//edición de usuario
+router.get('/edit/:id', usersController.editUsers);
+router.put('/edit/:id', upload.single('avatar'), validationsRegister, usersController.updateUsers);
 
 //formulario de login
 router.get('/login', guestMiddleware, usersController.login);
-
-//procesa el login
 router.post('/login', validationsLogin, usersController.loginProcess);
 
 //Perfil de Usuario

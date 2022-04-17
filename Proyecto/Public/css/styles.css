@@ -1667,7 +1667,8 @@ main .seccion-perfil-usuario .perfil-usuario-body .texto {
 }
 
 main .seccion-perfil-usuario .perfil-usuario-footer,
-main .seccion-perfil-usuario .perfil-usuario-bio {
+main .seccion-perfil-usuario .perfil-usuario-bio,
+main .seccion-perfil-usuario .perfil-usuario-body .register-form {
     display: flex;
     flex-wrap: wrap;
     padding: 1.5em 2em;
@@ -1675,6 +1676,44 @@ main .seccion-perfil-usuario .perfil-usuario-bio {
     background-color: #f2f2f2;
     border-radius: 15px;
     width: 100%;
+}
+
+main .seccion-perfil-usuario .perfil-usuario-body .register-form {
+    height: 1000px;
+}
+
+main .seccion-perfil-usuario .perfil-usuario-body .register-form .botones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+main .seccion-perfil-usuario .perfil-usuario-body .register-form .imagen-muestra img{
+    width:300px;
+}
+main .seccion-perfil-usuario .perfil-usuario-body .register-form .register-button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3%;
+    margin-bottom: 1.5%;
+    font-size: 10px;
+    background-color: #3587A4;
+    border-radius: 4px;
+    padding: 1% 3%;
+    border: 0;
+    width: 90%;
+    text-decoration: none;
+    color: white;
+    align-items: center;
+}
+
+main .seccion-perfil-usuario .perfil-usuario-body .register-form .register-button:hover {
+    background-color: #88CCF1;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgb(217,217,217);
 }
 
 main .seccion-perfil-usuario .perfil-usuario-footer{
@@ -1707,6 +1746,26 @@ main .seccion-perfil-usuario .opciones {
     top: 0;
     display: flex;
     flex-direction: column;
+}
+
+main .seccion-perfil-usuario .boton-rojo {
+    margin: 10px 0px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    background-color: #ab0d2f;
+    text-decoration: none;
+    margin: 25px auto;
+    text-align: center;
+}
+main .seccion-perfil-usuario .boton-rojo:hover{
+    background-color: #88CCF1;    
+    cursor: pointer;  
+}
+
+main .seccion-perfil-usuario .boton-rojo a{
+    color:white;
 }
 
 main .seccion-perfil-usuario .opciones .boton-opciones {
@@ -1823,8 +1882,7 @@ main .contenedor-edicion-productos .container-productos-existentes .boton-crear-
 
 main .contenedor-edicion-productos .container-productos-existentes a:hover {
     background-color: #C1DFF0;
-    color: black;
-    
+    color: black;  
 }
 
 main .container-productos-existentes .container {

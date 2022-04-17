@@ -53,6 +53,7 @@ const Users = {
 
     editUser: function(id) {
         let allUsers = this.findAll();
+        let finalUsers = allUsers.filter(oneUser => oneUser.id !== id);
     }
 }
 
