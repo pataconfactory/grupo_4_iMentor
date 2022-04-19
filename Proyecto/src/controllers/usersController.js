@@ -136,6 +136,12 @@ const usersController = {
         } else {
             return res.render(path.join(__dirname, '../views/users/userEditPassword'), {errors: {password_old: {msg: 'Las credenciales son inválidas'}}, old: req.body});
         }
+    },
+
+    destroyUsers: function(req, res) {
+        let idUserToDelete = parseInt(req.params.id);
+        let userRemoved = Users.deleteUser(idUserToDelete);
+        return res.redirect('/users/list');
     }
 };
 

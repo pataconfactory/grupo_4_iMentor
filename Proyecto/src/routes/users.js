@@ -14,9 +14,6 @@ const authMiddleware = require('../middlewares/authMiddleware');
 
 //Rutas
 
-//Listado de usuarios
-router.get ('/', guestMiddleware, usersController.listUsers);
-
 //Formulario de registro
 router.get('/register', guestMiddleware, usersController.register);
 router.post('/register', upload.single('avatar'), validationsRegister, usersController.processRegister);
@@ -35,6 +32,12 @@ router.post('/login', validationsLogin, usersController.loginProcess);
 
 //Perfil de Usuario
 router.get('/profile', authMiddleware, usersController.profile);
+
+//Listado de usuarios
+router.get ('/list', authMiddleware, guestMiddleware, usersController.listUsers);
+
+//Eliminar un usuario
+router.delete('/delete/:id', usersController.destroyUsers);
 
 //Logout
 router.get('/logout', usersController.logout);
