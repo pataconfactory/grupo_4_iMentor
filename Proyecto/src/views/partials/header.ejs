@@ -38,6 +38,7 @@
                     <li class="ingresar"><a href = "/users/login">Ingresar</a></li>
                 </ul>
             <% } else { %>
+                <% if(locals.userLogged.category !== 'Administrador') { %>
                 <div class="menu-para-logueados">
                     <img src="/img/avatars/<%= locals.userLogged.avatar %>">
                     <button class="dropdown-btn">Hola <%= locals.userLogged.first_name %> <i class="fa fa-caret-down"></i></button>
@@ -52,9 +53,26 @@
                     <li><a href = "/products/productServices">Servicios</a></li>
                     <li><a href = "/products">Mentorias</a></li>
                     <li><a href = "/paginaEnConstruccion">Enseña en iMentor</a></li>
-                    <li class="crea-cuenta"><a href = "/users/register">¡Crea tu cuenta!</a></li>
-                    <li class="ingresar"><a href = "/users/login">Ingresar</a></li>
                 </ul>
+                <% } else { %>
+                    <div class="menu-para-logueados">
+                        <img src="/img/avatars/<%= locals.userLogged.avatar %>">
+                        <button class="dropdown-btn">Hola <%= locals.userLogged.first_name %> <i class="fa fa-caret-down"></i></button>
+                        <div class="dropdown-container">
+                            <a href="/users/profile">Mi Perfil</a>
+                            <a href="/products/productCart">Mis Compras</i></a>
+                            <a href="/users/logout">Cerrar sesión</a>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><a class="active" href = "/">Home</a></li>
+                        <li><a href = "/products/productServices">Servicios</a></li>
+                        <li><a href = "/products">Mentorias</a></li>
+                        <li><a href = "/paginaEnConstruccion">Enseña en iMentor</a></li>
+                        <li><a href ="/users/">Usuarios</a></li>
+                    </ul>
+                    <h4 class="administrador"><i class="fas fa-shield-alt"></i> Administrador <i class="fas fa-shield-alt"></i></h4>
+                <% } %> 
             <% } %>
         </nav>
     </section>

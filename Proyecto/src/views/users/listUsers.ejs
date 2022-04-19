@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+
+<body>
+    
+    <%- include('../partials/header') %>
+
+    <main>
+        <div class="contenedor-edicion-productos">
+            <h2>Usuarios Existentes</h2>
+            <div class="opciones-desplegables">
+                <p class="servicio-producto">
+                    <select name="servicio-producto" id="">
+                        <option selected="true" disabled="disabled">seleccione la categoría</option>
+                        <option value="Mentorías">Usuarios</option>
+                        <option value="Membresías">Mentores</option>
+                        <option value="Gif Cards">Administradores</option>
+                    </select>
+                </p>
+            </div>
+            <div class="container-productos-existentes">
+                <div class="boton-crear-producto">
+                    <a href="/users/register" class="crear-producto"><i class="fas fa-plus-circle"></i> Crear usuario</a>
+                </div>
+                <section class="container" id="slider">
+                    <% console.log(locals) %>
+                    <% for(let i=0; i< mentors.length; i++) { %>           
+                        <div class="miniatura">
+                            <img src="/img/mentors/<%= `${mentors[i].avatar}` %>" alt="Imagen del usuario">
+                            <div class="product-details">
+                                <h3><%= mentors[i].first_name %> <%= mentors[i].last_name %></h3>
+                                <h3 class="name-product">Usuario: <%= mentors[i].user_name %></h3>
+                                <h3><%= mentors[i].email %></h3>
+                                <p><%= mentors[i].title %></p>
+                                <p><%= mentors[i].country %></p>
+                                <p><%= mentors[i].category %></p>
+                                <form class="eliminar" action="/users/delete/<%= mentors[i].id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="boton-final"><i class="fas fa-trash"></i>Eliminar</button>
+                                </form>
+                                <a href="" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
+                            </div>
+                        </div>
+                    <% } %>
+                    <% for(let i=0; i< users.length; i++) { %>           
+                        <div class="miniatura">
+                            <img src="/img/avatars/<%= `${users[i].avatar}` %>" alt="Imagen del usuario">
+                            <div class="product-details">
+                                <h3><%= users[i].first_name %> <%= users[i].last_name %></h3>
+                                <h3 class="name-product">Usuario: <%= users[i].user_name %></h3>
+                                <h3><%= users[i].email %></h3>
+                                <p><%= users[i].title %></p>
+                                <p><%= users[i].country %></p>
+                                <p><%= users[i].category %></p>
+                                <form class="eliminar" action="/users/delete/<%= users[i].id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="boton-final"><i class="fas fa-trash"></i>Eliminar</button>
+                                </form>
+                                <a href="" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
+                            </div>
+                        </div>
+                    <% } %>
+                </section>
+            </div>
+        </div>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

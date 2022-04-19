@@ -20,8 +20,7 @@
                     </select>
                 </p>
                 <p class="categoria-producto">
-                    <select name="categoria-producto" i
-                    d="">
+                    <select name="categoria-producto" id="">
                         <option selected="true" disabled="disabled">seleccione la categoría</option>
                         <option value="Front-End">Front-End</option>
                         <option value="Back-End">Back-End</option>
@@ -49,13 +48,13 @@
                                 <p><span><%= products[i].price %>$</span></p>
                                 <p>0<%= products[i].duration %> horas</p>
                                 <p><%= products[i].horario %></p>
-                                <% if(locals.isLogged) { %>
-                                <a href="/products/edit/<%= products[i].id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>
-                                <form class="eliminar" action="/products/delete/<%= products[i].id %>?_method=DELETE" method="POST">
-                                    <button type="submit" class="boton-final"><i class="fas fa-trash"></i>Eliminar</button>
-                                    <% } %>
+                                <% if(locals.isLogged && locals.userLogged.category == 'Administrador') { %>
+                                    <a href="/products/edit/<%= products[i].id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>
+                                    <form class="eliminar" action="/products/delete/<%= products[i].id %>?_method=DELETE" method="POST">
+                                        <button type="submit" class="boton-final"><i class="fas fa-trash"></i>Eliminar</button>  
+                                    </form>
+                                <% } %>
                                 <a href="/products/detail/<%= products[i].id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
-                                </form>
                             </div>
                         </div>
                     <% } %>

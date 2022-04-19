@@ -11,7 +11,13 @@ const bcryptjs = require('bcryptjs');
 let usersJSON = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf-8');
 let users = JSON.parse (usersJSON);
 
+let mentorsJSON = fs.readFileSync(path.join(__dirname, '../data/mentors.json'), 'utf-8');
+let mentors = JSON.parse (mentorsJSON);
+
 const usersController = {
+    listUsers: function(req, res) {
+        res.render(path.join(__dirname, '../views/users/listUsers'), {mentors, users})
+    },
 
     register: function(req, res) {
         res.cookie()

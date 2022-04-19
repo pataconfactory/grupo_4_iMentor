@@ -10,7 +10,7 @@
     "genero": "Masculino",
     "country": "Argentina",
     "password": "HzLB9T4O",
-    "category": "mentor",
+    "category": "Mentor",
     "titulo": "Desarrollador Web Full Stack",
     "avatar": "mentor-Lucas-Sequeira.png"
   }, {
@@ -24,7 +24,7 @@
     "genero": "Femenino",
     "country": "Mexico",
     "password": "KlbL5Jvee7",
-    "category": "mentor",
+    "category": "Mentor",
     "titulo": "Analista Funcional de Sistemas",
     "avatar": "mentor-Patricia-Garza.jpg"
   }, {
@@ -38,7 +38,7 @@
     "genero": "Femenina",
     "country": "Venezuela",
     "password": "WZirmgGrGlB",
-    "category": "mentor",
+    "category": "Mentor",
     "titulo": "Desarrolladora Full Stack Training",
     "avatar": "mentor-Quizaira-Rodriguez.jpg"
   }, {
@@ -52,7 +52,7 @@
     "genero": "Masculino",
     "country": "Colombia",
     "password": "iQMQ2Zvq8m",
-    "category": "mentor",
+    "category": "Mentor",
     "titulo": "Ingeniero en Sistemas",
     "avatar": "mentor-Pedro-Gonzalez.jpg"
   }, {
@@ -66,7 +66,7 @@
     "genero": "Femenino",
     "country": "Argentina",
     "password": "PL7b7TZj",
-    "category": "mentor",
+    "category": "Mentor",
     "titulo": "Diseñadora Gráfica",
     "avatar": "mentor-Victoria-Defagot.jpg"
   }, {
@@ -80,7 +80,7 @@
     "genero": "Femenino",
     "country": "Venezuela",
     "password": "ynFfOEf7",
-    "category": "mentor",
+    "category": "Mentor",
     "titulo": "Community Manager",
     "avatar": "mentor-Patricia-Williams.jpg"
   }, {
@@ -94,7 +94,7 @@
     "genero": "Masculino",
     "country": "Colombia",
     "password": "PVjAwI",
-    "category": "mentor",
+    "category": "Mentor",
     "titulo": "Digital Technology Teacher",
     "avatar": "mentor-Juan-Juanes.jpg"
   }

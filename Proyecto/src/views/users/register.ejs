@@ -86,8 +86,7 @@
                             %>
                             <% for (const oneGenero of generos) { %>
                             <option value="<%= oneGenero %>"
-                                <%= locals.old && (oneGenero == old.genero) ? 'selected' : null  %>><%= oneGenero %>
-                            </option>
+                                <%= locals.old && (oneGenero == old.genero) ? 'selected' : null  %>><%= oneGenero %></option>
                             <% } %>
                         </select>
                         <% if (locals.errors && errors.genero) { %>
@@ -136,13 +135,20 @@
                         <select class="boxes" name="category" id="category"
                             value="<%= locals.old ? old.category : null %>">
                             <option value="">seleccione categoría</option>
-                            <% 
-                            let categorias = ['Usuario','Mentor','Administrador'];
-                           %>
-                            <% for (const oneCategory of categorias) { %>
-                            <option value="<%= oneCategory %>"
-                                <%= locals.old && (oneCategory == old.category) ? 'selected' : null  %>>
-                                <%= oneCategory %></option>
+                            <% if(locals.isLogged && locals.userLogged.category == 'Administrador') { %>
+                                <% let categorias = ['Usuario','Mentor','Administrador']; %>
+                                <% for (const oneCategory of categorias) { %>
+                                    <option value="<%= oneCategory %>"
+                                        <%= locals.old && (oneCategory == old.category) ? 'selected' : null  %>>
+                                        <%= oneCategory %></option>
+                                <% } %>
+                            <% } else { %>
+                                <% let categorias = ['Usuario','Mentor']; %>
+                                <% for (const oneCategory of categorias) { %>
+                                    <option value="<%= oneCategory %>"
+                                        <%= locals.old && (oneCategory == old.category) ? 'selected' : null  %>>
+                                        <%= oneCategory %></option>
+                                <% } %>
                             <% } %>
                         </select>
                         <% if (locals.errors && errors.category) { %>

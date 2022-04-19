@@ -247,6 +247,15 @@ header .boton-header-ingresar:hover {
     color: black;
 }
 
+header .administrador {
+    position: fixed;
+    top: 100px;
+    text-align: center;
+    width: 100%;
+    background-color: #FFC600;
+    color: black;
+}
+
 /* Register Page Main*/
 main .banner-register {
     padding-top: 90px;
@@ -2456,6 +2465,10 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
         width: 200px;
     }
 
+    header .administrador {
+        top: 80px;
+    }
+
     header .navegacion .menu-para-logueados img{
         width: 45px;
         height: 45px;
@@ -2494,12 +2507,12 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
         margin: 0px 10px;
     }
 
-    header .navegacion nav ul .cesta, header .navegacion nav ul .crea-cuenta, header .navegacion nav ul .ingresar{
+    header .navegacion nav ul .cesta, header .navegacion nav ul .ingresar{
         display: none;
     }
 
     header .navegacion nav ul li a {
-        font-size: 16px;
+        font-size: 12px;
         padding: 0px;
         color: white;
     }
@@ -2782,7 +2795,11 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
     header .navegacion nav .enlace-cesta {
         display: none;
     }
-        
+
+    header .navegacion nav ul .crea-cuenta{
+        display: none;
+    }
+
     header .boton-header-crear-cuenta{
         display: inline-block;
         position: fixed;
@@ -2813,6 +2830,9 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
         width:45vw;
     }
 
+    header .navegacion nav ul li a {
+        font-size: 16px;
+    }
     /* Register Page Main Media Queries (min-width: 769px)*/
     main .banner-register h3 {
         font-size: 22px;
