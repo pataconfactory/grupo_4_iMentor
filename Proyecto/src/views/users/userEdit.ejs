@@ -13,13 +13,13 @@
                 <div class="perfil-usuario-portada">
                     <h1>Perfil de Usuario</h1>
                     <div class="perfil-usuario-avatar">
-                        <img src="/img/avatars/<%= user.avatar%>" alt="imagen de usuario">
+                        <img src="/img/avatars/<%= user.avatar %>" alt="imagen de usuario">
                     </div>
                 </div>
             </div>
             <div class="perfil-usuario-body">
                 <div class="perfil-usuario-bio">
-                    <h3 class="titulo"><%= user.firs_name%> <%= user.last_name%></h3>
+                    <h3 class="titulo"><%= user.first_name %> <%= user.last_name%></h3>
                     <p class="texto">Hola , ¡Bienvenido a i_MENTOR!. Es para nosotros un placer que te hayas unido a esta comunidad sin igual.</p>
                 </div>
                 <div class="perfil-usuario-footer">
@@ -33,50 +33,73 @@
                 <div class="opciones">
                     <a href="" class="boton-opciones editar"><i class="fas fa-pen"></i></a>
                     <a href="/products/productCart" class="boton-opciones cesta-compras"><i class="fas fa-shopping-basket"></i></a>
-                    <a href="" class="boton-opciones plataforma"><i class="fas fa-hand-pointer"></i></a>
+                    <a href="/paginaEnConstruccion" class="boton-opciones plataforma"><i class="fas fa-hand-pointer"></i></a>
                 </div>
-                <div class="boton-rojo">
-                    <a href="#"><i class="fas fa-unlock-alt"></i> Modificar Contraseña</a>
-                </div>
-                <form action="" method="POST" class="register-form" enctype="multipart/form-data">
-                    <div class="register-username">
-                        <label for="firs_name"><i class="fas fa-user"></i> Nombre</label>
-                        <input class="boxes" type="text" name="firs_name" placeholder="Nombre" id="firs_name" value="<%= locals.old ? old.firs_name : null %>">
-                        <% if (locals.errors && errors.firs_name) { %>
+                <form action="/users/edit/<%= user.id%>?_method=PUT" method="POST" class="register-form" enctype="multipart/form-data">
+                    <div class="registerbox">
+                        <label for="first_name"><i class="fas fa-user"></i> Nombre</label>
+                        <% if (!locals.old) { %>
+                        <input class="boxes" type="text" name="first_name" placeholder="Nombre" id="first_name" value="<%= user.first_name%>">
+                        <% } else { %>
+                        <input class="boxes" type="text" name="first_name" placeholder="Nombre" id="first_name" value="<%= locals.old ? old.first_name : null %>">
+                        <% } %>
+                        <% if (locals.errors && errors.first_name) { %>
                             <div class="text-danger">
-                                <p class="feedback"><%= errors.firs_name.msg %></p>
+                                <p class="feedback"><%= errors.first_name.msg %></p>
                             </div>
                         <% } %>
                     </div>
-                    <div class="register-username">
+                    <div class="registerbox">
                         <label for="last_name"><i class="fas fa-user"></i> Apellido</label>
+                        <% if (!locals.old) { %>
+                        <input class="boxes" type="text" name="last_name" placeholder="Apellido" id="last_name" value="<%= user.last_name%>">
+                        <% } else { %>
                         <input class="boxes" type="text" name="last_name" placeholder="Apellido" id="last_name" value="<%= locals.old ? old.last_name : null %>">
+                        <% } %>
                         <% if (locals.errors && errors.last_name) { %>
                             <div class="text-danger">
                                 <p class="feedback"><%= errors.last_name.msg %></p>
                             </div>
                         <% } %>
                     </div>
-                    <div class="register-birth">
+                    <div class="registerbox">
                         <label for="date_birth"><i class="fas fa-calendar-alt"></i> Fecha de nacimiento</label>
+                        <% if (!locals.old) { %>
+                        <input class="boxes" type="date" name="date_birth" id="date_birth" value="<%= user.date_birth%>">
+                        <% } else { %>
                         <input class="boxes" type="date" name="date_birth" id="date_birth" value="<%= locals.old ? old.date_birth : null %>">
+                        <% } %>
                         <% if (locals.errors && errors.date_birth) { %>
                             <div class="text-danger">
                                 <p class="feedback"><%= errors.date_birth.msg %></p>
                             </div>
                         <% } %>
                     </div>
-                    <div class="register-age">
+                    <div class="registerbox">
                         <label for="age"><i class="fas fa-universal-access"></i> Edad</label>
+                        <% if (!locals.old) { %>
+                        <input class="boxes" type="number" name="age" id="age" placeholder="Edad" min="0" value="<%= user.age%>">
+                        <% } else { %>
                         <input class="boxes" type="number" name="age" id="age" placeholder="Edad" min="0" value="<%= locals.old ? old.age : null %>">
+                        <% } %>
                         <% if (locals.errors && errors.age) { %>
                             <div class="text-danger">
                                 <p class="feedback"><%= errors.age.msg %></p>
                             </div>
                         <% } %>
                     </div>
-                    <div class="register-username">
+                    <div class="registerbox">
                         <label><i class="fas fa-universal-access"></i> Género</label>
+                        <% if (!locals.old) { %>
+                        <select class="boxes" name="genero" id="genero" value="<%= user.genero %>">
+                            <option value="">seleccione género</option>
+                            <% 
+                             let generos = ['Femenino','Masculino','Binario'];
+                            %> 
+                            <% for (const oneGenero of generos) { %>
+                                <option value="<%= oneGenero %>" <%= oneGenero == user.genero ? 'selected' : null  %> ><%= oneGenero %></option>
+                            <% } %>
+                        <% } else { %>
                         <select class="boxes" name="genero" id="genero" value="<%= locals.old ? old.genero : null %>">
                             <option value="">seleccione género</option>
                             <% 
@@ -85,6 +108,7 @@
                             <% for (const oneGenero of generos) { %>
                                 <option value="<%= oneGenero %>" <%= locals.old && (oneGenero == old.genero) ? 'selected' : null  %> ><%= oneGenero %></option>
                             <% } %>
+                        <% } %>
                         </select>
                         <% if (locals.errors && errors.genero) { %>
                             <div class="text-danger">
@@ -92,17 +116,31 @@
                             </div>
                         <% } %>
                     </div>
-                    <div class="register-username">
+                    <div class="registerbox">
                         <label for="country"><i class="fas fa-flag"></i> País</label>
+                        <% if (!locals.old) { %>
+                        <input class="boxes" type="text" name="country" placeholder="País" id="country" value="<%= user.country %>">
+                        <% } else { %>
                         <input class="boxes" type="text" name="country" placeholder="País" id="country" value="<%= locals.old ? old.country : null %>">
+                        <% } %>
                         <% if (locals.errors && errors.country) { %>
                             <div class="text-danger">
                                 <p class="feedback"><%= errors.country.msg %></p>
                             </div>
                         <% } %>
                     </div>
-                    <div class="register-username">
+                    <div class="registerbox">
                         <label><i class="fas fa-clipboard-list"></i> Categoría</label>
+                        <% if (!locals.old) { %>
+                            <select class="boxes" name="category" id="category" value="<%= user.category %>">
+                                <option value="">seleccione categoría</option>
+                                <% 
+                                let categorias = ['Usuario','Mentor','Administrador'];
+                               %> 
+                               <% for (const oneCategory of categorias) { %>
+                                   <option value="<%= oneCategory %>" <%= oneCategory == user.category ? 'selected' : null  %> ><%= oneCategory %></option>
+                               <% } %>
+                        <% } else { %>
                         <select class="boxes" name="category" id="category" value="<%= locals.old ? old.category : null %>">
                             <option value="">seleccione categoría</option>
                             <% 
@@ -111,6 +149,7 @@
                            <% for (const oneCategory of categorias) { %>
                                <option value="<%= oneCategory %>" <%= locals.old && (oneCategory == old.category) ? 'selected' : null  %> ><%= oneCategory %></option>
                            <% } %>
+                        <% } %>
                         </select>
                         <% if (locals.errors && errors.category) { %>
                             <div class="text-danger">
@@ -118,9 +157,13 @@
                             </div>
                         <% } %>
                     </div>
-                    <div class="register-username">
+                    <div class="registerbox">
                         <label for="title"><i class="fas fa-user-tie"></i> Título</label>
+                        <% if (!locals.old) { %>
+                        <input class="boxes" type="text" name="title" placeholder="Titulo" id="title" value="<%= user.title %>">
+                        <% } else { %>
                         <input class="boxes" type="text" name="title" placeholder="Titulo" id="title" value="<%= locals.old ? old.title : null %>">
+                        <% } %>
                         <% if (locals.errors && errors.title) { %>
                             <div class= "text-danger">
                                 <p class="feedback"><%= errors.title.msg %></p>
@@ -130,16 +173,11 @@
                     <div class="imagen-muestra">
                         <label><i class="fas fa-image"></i> Imagen del usuario:</label>
                         <br>
-                        <img src="" alt="Imagen del usuario">
+                        <img src="/img/avatars/<%= user.avatar%>" alt="Imagen del usuario">
                     </div>  
-                    <div class="register-username">
+                    <div class="registerbox">
                         <label><i class="fas fa-image"></i> Subir otra imagen de usuario</label>
                         <input class="boxes" type="file" name="avatar" id="avatar" accept=".jpg,.png,.gif" multiple>
-                        <% if (locals.errors && errors.avatar) { %>
-                            <div class="text-danger">
-                                <p class="feedback"><%= errors.avatar.msg %></p>
-                            </div>
-                        <% } %> 
                     </div>  
                     <div class="botones">
                         <button class="register-button" type="submit"><i class="fas fa-exclamation-triangle"></i> Modificar</button>

@@ -45,16 +45,42 @@ const Users = {
         return newUser;
     },
 
+    editUser: function(userData) {
+        let avatarDelForms = userData.avatar;
+        let allUsers = this.findAll();
+
+        if(userData.password){
+            allUsers.forEach(function(usuario){
+                if(usuario.id == userData.id){
+                    usuario.password = userData.password;
+                }
+            });
+            console.log(allUsers)
+        } else {
+            allUsers.forEach(function(usuario){
+                if(usuario.id == userData.id){
+                    usuario.first_name = userData.first_name;
+                    usuario.last_name = userData.last_name;
+                    usuario.date_birth = userData.date_birth;
+                    usuario.age = userData.age;
+                    usuario.genero = userData.genero;
+                    usuario.country = userData.country;
+                    usuario.category = userData.category;
+                    usuario.title = userData.title;
+                    if(avatarDelForms !== null ) {
+                        usuario.avatar = avatarDelForms;
+                    }
+                }
+            });
+        }
+        fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, ' '));
+    },
+
     deleteUser: function(id) {
         let allUsers = this.findAll();
         let finalUsers = allUsers.filter(oneUser => oneUser.id !== id);
         fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, ' '));
-    },
-
-    editUser: function(id) {
-        let allUsers = this.findAll();
-        let finalUsers = allUsers.filter(oneUser => oneUser.id !== id);
-    }
+    }  
 }
 
 module.exports = Users;

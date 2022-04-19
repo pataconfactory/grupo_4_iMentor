@@ -1668,7 +1668,8 @@ main .seccion-perfil-usuario .perfil-usuario-body .texto {
 
 main .seccion-perfil-usuario .perfil-usuario-footer,
 main .seccion-perfil-usuario .perfil-usuario-bio,
-main .seccion-perfil-usuario .perfil-usuario-body .register-form {
+main .seccion-perfil-usuario .perfil-usuario-body .register-form,
+main .seccion-perfil-usuario .perfil-usuario-body .password-form {
     display: flex;
     flex-wrap: wrap;
     padding: 1.5em 2em;
@@ -1679,36 +1680,43 @@ main .seccion-perfil-usuario .perfil-usuario-body .register-form {
 }
 
 main .seccion-perfil-usuario .perfil-usuario-body .register-form {
-    height: 1000px;
+    height: 970px;
+    margin-bottom: 20px;
 }
 
-main .seccion-perfil-usuario .perfil-usuario-body .register-form .botones {
+main .seccion-perfil-usuario .perfil-usuario-body .register-form .botones, main .seccion-perfil-usuario .perfil-usuario-body .password-form .botones {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    height: 100px;
 }
 
 main .seccion-perfil-usuario .perfil-usuario-body .register-form .imagen-muestra img{
     width:300px;
 }
-main .seccion-perfil-usuario .perfil-usuario-body .register-form .register-button {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 3%;
-    margin-bottom: 1.5%;
-    font-size: 10px;
+
+main .seccion-perfil-usuario .perfil-usuario-body .register-form .register-button, main .seccion-perfil-usuario .perfil-usuario-body .password-form .register-button{
+    margin: 7px 0px;
+    font-size: 12px;
     background-color: #3587A4;
     border-radius: 4px;
-    padding: 1% 3%;
     border: 0;
-    width: 90%;
+    width: 80%;
     text-decoration: none;
     color: white;
     align-items: center;
 }
 
-main .seccion-perfil-usuario .perfil-usuario-body .register-form .register-button:hover {
+main .seccion-perfil-usuario .perfil-usuario-body .password-form .botones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100px;
+    margin: auto;
+    width: 100%;
+}
+
+main .seccion-perfil-usuario .perfil-usuario-body .register-form .register-button:hover, main .seccion-perfil-usuario .perfil-usuario-body .password-form .register-button:hover{
     background-color: #88CCF1;
     color: white;
     font-weight: bold;
@@ -1716,8 +1724,56 @@ main .seccion-perfil-usuario .perfil-usuario-body .register-form .register-butto
     box-shadow: 3px 3px 5px rgb(217,217,217);
 }
 
+main .seccion-perfil-usuario .perfil-usuario-body .register-form .registerbox label, main .seccion-perfil-usuario .perfil-usuario-body .register-form .imagen-muestra label, main .seccion-perfil-usuario .perfil-usuario-body .password-form .registerbox-pw label{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+main .seccion-perfil-usuario .perfil-usuario-body .register-form .registerbox label i, main .seccion-perfil-usuario .perfil-usuario-body .register-form .imagen-muestra label i, main .seccion-perfil-usuario .perfil-usuario-body .password-form .registerbox-pw label i {
+    color:#3587A4;
+}
+
+main .seccion-perfil-usuario .perfil-usuario-body .register-form .registerbox {
+    margin: 5px 0px;
+    padding: 0px;
+    height: 60px;
+}
+
+main .seccion-perfil-usuario .perfil-usuario-body .register-form .registerbox input#date_birth.boxes{
+    flex-direction: row;
+}
+
+main .seccion-perfil-usuario .perfil-usuario-body .register-form .registerbox input, main .seccion-perfil-usuario .perfil-usuario-body .register-form .registerbox option, main .seccion-perfil-usuario .perfil-usuario-body .register-form .registerbox select {
+    font-size: 12px;
+}
+
+main .seccion-perfil-usuario .perfil-usuario-body .password-form .registerbox-pw input {
+    font-size: 12px;
+    padding: 5px ;
+    border-radius: 15px;
+}
+
+main .seccion-perfil-usuario .perfil-usuario-body .password-form .registerbox-pw input {
+    font-size: 12px;
+    padding: 5px ;
+    border-radius: 15px;
+}
+
+main .seccion-perfil-usuario .perfil-usuario-body .password-form .registerbox-pw {
+    height: 90px;
+    width: 90%;
+}
+
+main .seccion-perfil-usuario .perfil-usuario-body .password-form {
+    margin-bottom: 20px;
+}
+
+main .seccion-perfil-usuario .perfil-usuario-body .password-form .registerbox-pw .box-showpassword {
+    font-size: 10px;
+}
+
 main .seccion-perfil-usuario .perfil-usuario-footer{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 main .seccion-perfil-usuario .perfil-usuario-bio {
@@ -1732,6 +1788,7 @@ main .seccion-perfil-usuario .lista-datos {
 
 main .seccion-perfil-usuario .lista-datos li {
     padding: 5px 0;
+    font-size: 14px;
 }
 
 main .seccion-perfil-usuario .lista-datos li>.icono {
@@ -1752,11 +1809,11 @@ main .seccion-perfil-usuario .boton-rojo {
     margin: 10px 0px;
     padding: 5px 5px;
     border-radius: 5px;
-    width: 100%;
+    width: 50%;
     border: none;
     background-color: #ab0d2f;
     text-decoration: none;
-    margin: 25px auto;
+    margin: 0px auto 20px auto;
     text-align: center;
 }
 main .seccion-perfil-usuario .boton-rojo:hover{
@@ -1766,6 +1823,7 @@ main .seccion-perfil-usuario .boton-rojo:hover{
 
 main .seccion-perfil-usuario .boton-rojo a{
     color:white;
+    font-size: 12px;
 }
 
 main .seccion-perfil-usuario .opciones .boton-opciones {

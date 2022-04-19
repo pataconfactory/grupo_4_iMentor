@@ -2,7 +2,7 @@ const {check} = require('express-validator');
 const path = require('path');
 
 const validationsRegister = [
-    check('firs_name').notEmpty().withMessage('Debe completar el nombre'),
+    check('first_name').notEmpty().withMessage('Debe completar el nombre'),
     check('last_name').notEmpty().withMessage('Debe completar el apellido'),
     check('user_name').notEmpty().withMessage('Debe completar el nombre de usuario'),
     check('email').notEmpty().withMessage('Debe completar el email').bail().isEmail().withMessage('Introduzca un email valido'),

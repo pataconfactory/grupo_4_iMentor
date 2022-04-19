@@ -39,7 +39,7 @@ const usersController = {
                 }
                 return res.redirect('/users/profile');
             }
-            return res.render(path.join(__dirname, '../views/users/login'), {errors: {email: {msg: 'Las credenciales son inválidas'}}, old: req.body});
+            return res.render(path.join(__dirname, '../views/users/login'), {errors: {password: {msg: 'Las credenciales son inválidas'}}, old: req.body});
         }
         return res.render(path.join(__dirname, '../views/users/login'), {errors: {email: {msg: 'No se encuentra este email en nuestra base de datos'}}, old: req.body});
     },
@@ -50,10 +50,14 @@ const usersController = {
             return res.render(path.join(__dirname, '../views/users/register'), {errors: errors.mapped(), old: req.body});
         }
 
-        let userInDB = Users.findByField('email', req.body.email);
-        console.log(userInDB)
-        if(userInDB) {
+        let userEmailInDB = Users.findByField('email', req.body.email);
+        if(userEmailInDB) {
             return res.render(path.join(__dirname, '../views/users/register'), {errors: {email: {msg: 'Este email ya se encuentra registrado'}}, old: req.body});
+        }
+
+        let userNameInDB = Users.findByField('user_name', req.body.user_name);
+        if(userNameInDB) {
+            return res.render(path.join(__dirname, '../views/users/register'), {errors: {user_name: {msg: 'Este nombre de usuario ya se encuentra registrado'}}, old: req.body});
         }
 
         let userToCreate = {
@@ -81,7 +85,51 @@ const usersController = {
     },
 
     updateUsers: function(req, res) {
-        
+        let errors= validationResult(req);
+        if(errors.errors.length > 0){
+            return res.render(path.join(__dirname, '../views/users/userEdit'), {errors: errors.mapped(), old: req.body});
+        }
+
+        let file;
+        if(req.file !== undefined){
+            file = req.file.filename;
+        } else {
+            file = null;
+        }
+
+        let userToEdit = {
+            id: req.params.id,
+            ...req.body,
+            avatar: file
+        }
+
+        let userEdited = Users.editUser(userToEdit);
+        return res.redirect('/users/profile');
+    },
+
+    editUsersPassword: function(req, res) {
+        res.render(path.join(__dirname, '../views/users/userEditPassword'), {user: req.session.userLogged});
+    },
+
+    updateUsersPassword: function(req, res) {
+        let errors= validationResult(req);
+        if(errors.errors.length > 0){
+            return res.render(path.join(__dirname, '../views/users/userEditPassword'), {errors: errors.mapped(), old: req.body});
+        }
+
+        let id = parseInt(req.params.id);
+        let user = Users.findByPk(id);
+        let isOkPassword = bcryptjs.compareSync(req.body.password_old, user.password);
+        if(isOkPassword){
+            let userToEdit = {
+                id: req.params.id,
+                password: bcryptjs.hashSync(req.body.password, 10)
+            }
+            let userEdited = Users.editUser(userToEdit);
+            return res.redirect('/users/profile');
+        } else {
+            return res.render(path.join(__dirname, '../views/users/userEditPassword'), {errors: {password_old: {msg: 'Las credenciales son inválidas'}}, old: req.body});
+        }
     }
 };
 

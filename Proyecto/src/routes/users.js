@@ -7,6 +7,8 @@ const upload = require('../middlewares/multerRegister');
 
 const validationsRegister = require('../middlewares/ValidationsRegister');
 const validationsLogin = require('../middlewares/ValidationsLogin');
+const validationsUserEdit = require('../middlewares/ValidationsUserEdit');
+const validationsUserEditPassword = require('../middlewares/ValidationsUserEditPassword');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
@@ -18,7 +20,11 @@ router.post('/register', upload.single('avatar'), validationsRegister, usersCont
 
 //edición de usuario
 router.get('/edit/:id', usersController.editUsers);
-router.put('/edit/:id', upload.single('avatar'), validationsRegister, usersController.updateUsers);
+router.put('/edit/:id', upload.single('avatar'), validationsUserEdit, usersController.updateUsers);
+
+//edición de password
+router.get('/editPW/:id', usersController.editUsersPassword);
+router.put('/editPW/:id', validationsUserEditPassword, usersController.updateUsersPassword);
 
 //formulario de login
 router.get('/login', guestMiddleware, usersController.login);
