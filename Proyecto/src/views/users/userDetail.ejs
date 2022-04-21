@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head') %>
+        <body>
+            <%- include('../partials/header') %>
+                <main>
+                    <section class="seccion-perfil-usuario">
+                        <% if (locals.user) { %>
+                            <div class="perfil-usuario-header">
+                                <div class="perfil-usuario-portada">
+                                    <h1>Perfil de Usuario</h1>
+                                    <div class="perfil-usuario-avatar">
+                                        <img src="/img/avatars/<%= user.avatar%>" alt="imagen de usuario">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="perfil-usuario-body">
+                                <div class="perfil-usuario-bio">
+                                    <h3 class="titulo"><%= user.first_name%> <%= user.last_name%></h3>
+                                </div>
+                                <div class="perfil-usuario-footer">
+                                    <ul class="lista-datos">
+                                        <li><i class="icono fas fa-map-signs"></i>E-mail: <%= user.email%></li>
+                                        <li><i class="icono fas fa-briefcase"></i>Título: <%= user.title%></li>
+                                        <li><i class="icono fas fa-building"></i>Categoría: <%= user.category%></li>
+                                    </ul>
+                                    <ul class="lista-datos">
+                                        <li><i class="icono fas fa-user-check"></i>Nombre de usuario: <%= user.user_name%></li>
+                                        <li><i class="icono fas fa-map-marker-alt"></i> País: <%= user.country%></li>
+                                        <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento: <%= user.date_birth%></li>
+                                    </ul>
+                                </div>
+                                <div class="boton-rojo">
+                                    <a href="/users/list"><i class="fas fa-undo"></i> Volver</a>
+                                </div>
+                            </div>
+                        <% } %>
+                        <% if (locals.mentor) { %>
+                            <div class="perfil-usuario-header">
+                                <div class="perfil-usuario-portada">
+                                    <h1>Perfil de Usuario</h1>
+                                    <div class="perfil-usuario-avatar">
+                                        <img src="/img/avatars/<%= mentor.avatar%>" alt="imagen del usuario">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="perfil-usuario-body">
+                                <div class="perfil-usuario-bio">
+                                    <h3 class="titulo"><%= mentor.first_name%> <%= mentor.last_name%></h3>
+                                </div>
+                                <div class="perfil-usuario-footer">
+                                    <ul class="lista-datos">
+                                        <li><i class="icono fas fa-map-signs"></i>E-mail: <%= mentor.email%></li>
+                                        <li><i class="icono fas fa-briefcase"></i>Título: <%= mentor.title%></li>
+                                        <li><i class="icono fas fa-building"></i>Categoría: <%= mentor.category%></li>
+                                    </ul>
+                                    <ul class="lista-datos">
+                                        <li><i class="icono fas fa-user-check"></i>Nombre de usuario: <%= mentor.user_name%></li>
+                                        <li><i class="icono fas fa-map-marker-alt"></i> País: <%= mentor.country%></li>
+                                        <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento: <%= mentor.date_birth%></li>
+                                    </ul>
+                                </div>
+                                <div class="boton-volver">
+                                    <a href="/users/list"><i class="fas fa-undo"></i> Volver</a>
+                                </div>
+                            </div>
+                        <% } %>
+                    </section>
+
+                </main>
+            <%- include('../partials/footer') %>
+        </body>
+</html>

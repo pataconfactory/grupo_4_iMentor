@@ -16,7 +16,7 @@
                         <option selected="true" disabled="disabled">seleccione el servicio</option>
                         <option value="Mentorías">Mentorías</option>
                         <option value="Membresías">Membresías</option>
-                        <option value="Gif Cards">Gif Cards</option>
+                        <option value="Gift Cards">Gift Cards</option>
                     </select>
                 </p>
                 <p class="categoria-producto">
@@ -30,6 +30,9 @@
                         <option value="Marketing Digital">Marketing Digital</option>
                         <option value="Mensual">Mensual</option>
                         <option value="Anual">Anual</option>
+                        <option value="Gold">Gold</option>
+                        <option value="Platinium">Platinium</option>
+                        <option value="Black">Black</option>
                     </select>
                 </p>
             </div>
@@ -44,17 +47,20 @@
                             <div class="product-details">
                                 <h3><%= products[i].service %></h3>
                                 <h3 class="name-product"><%= products[i].name %></h3>
-                                <h3><%= products[i].mentor %></h3>
+                                <% if(products[i].service == 'Asesoría') { %>
+                                    <h3><%= products[i].mentor %></h3>
+                                    <p>0<%= products[i].duration %> horas</p>
+                                    <p><%= products[i].horario %></p>
+                                <% } %>
                                 <p><span><%= products[i].price %>$</span></p>
-                                <p>0<%= products[i].duration %> horas</p>
-                                <p><%= products[i].horario %></p>
+                                <a href="/products/detail/<%= products[i].id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
                                 <% if(locals.isLogged && locals.userLogged.category == 'Administrador') { %>
                                     <a href="/products/edit/<%= products[i].id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>
                                     <form class="eliminar" action="/products/delete/<%= products[i].id %>?_method=DELETE" method="POST">
-                                        <button type="submit" class="boton-final"><i class="fas fa-trash"></i>Eliminar</button>  
+                                        <button type="submit" class="boton-final-eliminar"><i class="fas fa-trash"></i>Eliminar</button>  
                                     </form>
                                 <% } %>
-                                <a href="/products/detail/<%= products[i].id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
+                                
                             </div>
                         </div>
                     <% } %>

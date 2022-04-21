@@ -23,8 +23,8 @@ router.get('/edit/:id', usersController.editUsers);
 router.put('/edit/:id', upload.single('avatar'), validationsUserEdit, usersController.updateUsers);
 
 //edición de password
-router.get('/editPW/:id', usersController.editUsersPassword);
-router.put('/editPW/:id', validationsUserEditPassword, usersController.updateUsersPassword);
+router.get('/editPW/:id/:email', usersController.editUsersPassword);
+router.put('/editPW/:id/:email', validationsUserEditPassword, usersController.updateUsersPassword);
 
 //formulario de login
 router.get('/login', guestMiddleware, usersController.login);
@@ -36,8 +36,11 @@ router.get('/profile', authMiddleware, usersController.profile);
 //Listado de usuarios
 router.get ('/list', authMiddleware, guestMiddleware, usersController.listUsers);
 
+//Detalle de usuarios
+router.get ('/detail/:id/:email', authMiddleware, guestMiddleware, usersController.detailUsers);
+
 //Eliminar un usuario
-router.delete('/delete/:id', usersController.destroyUsers);
+router.delete('/delete/:id/:email', usersController.destroyUsers);
 
 //Logout
 router.get('/logout', usersController.logout);

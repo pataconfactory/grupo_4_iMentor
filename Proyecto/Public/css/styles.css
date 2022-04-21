@@ -662,7 +662,7 @@ main .contenedor-product-detail {
 
 main .contenedor-product-detail  .titulo-servicios {
     margin: 0px 10px 10px 10px;
-    color: #3587A4;
+    color: black;
     font-size: 35px;
     text-align: center;
 }
@@ -1825,12 +1825,25 @@ main .seccion-perfil-usuario .boton-rojo {
     margin: 0px auto 20px auto;
     text-align: center;
 }
-main .seccion-perfil-usuario .boton-rojo:hover{
+
+main .seccion-perfil-usuario .boton-volver {
+    margin: 10px 0px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    width: 50%;
+    border: none;
+    background-color: #3587A4;
+    text-decoration: none;
+    margin: 0px auto 20px auto;
+    text-align: center;
+}
+
+main .seccion-perfil-usuario .boton-rojo:hover, main .seccion-perfil-usuario .boton-volver:hover{
     background-color: #88CCF1;    
     cursor: pointer;  
 }
 
-main .seccion-perfil-usuario .boton-rojo a{
+main .seccion-perfil-usuario .boton-rojo a, main .seccion-perfil-usuario .boton-volver a{
     color:white;
     font-size: 12px;
 }
@@ -2032,12 +2045,21 @@ main .container-productos-existentes .miniatura .product-details .boton-final{
     font-weight: bold;
 }
 
+main .container-productos-existentes .miniatura .product-details .boton-final-eliminar{
+    font-size: 14px;
+    text-decoration: none;
+    background-color: #ab0d2f;
+    color: white;
+    padding: 5px 5px;
+    font-weight: bold;
+}
+
 main .container-productos-existentes .miniatura .product-details button{
     border: none;
     cursor: pointer;
 }
 
-main .container-productos-existentes .miniatura .product-details a:hover {
+main .container-productos-existentes .miniatura .product-details a:hover,  main .container-productos-existentes .miniatura .product-details .boton-final-eliminar:hover{
     background-color: #88CCF1;
 }
 

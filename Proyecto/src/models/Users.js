@@ -41,7 +41,7 @@ const Users = {
             ...userData
         }
         allUsers.push(newUser);
-        fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, ' '));
+        //fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, ' '));
         return newUser;
     },
 

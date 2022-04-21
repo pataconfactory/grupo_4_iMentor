@@ -27,7 +27,7 @@
                 <section class="container" id="slider">
                     <% for(let i=0; i< mentors.length; i++) { %>           
                         <div class="miniatura">
-                            <img src="/img/mentors/<%= `${mentors[i].avatar}` %>" alt="Imagen del usuario">
+                            <img src="/img/avatars/<%= `${mentors[i].avatar}` %>" alt="Imagen del usuario">
                             <div class="product-details">
                                 <h3><%= mentors[i].first_name %> <%= mentors[i].last_name %></h3>
                                 <h3 class="name-product">Usuario: <%= mentors[i].user_name %></h3>
@@ -35,10 +35,10 @@
                                 <p><%= mentors[i].title %></p>
                                 <p><%= mentors[i].country %></p>
                                 <p><%= mentors[i].category %></p>
-                                <form class="eliminar" action="/users/delete/<%= mentors[i].id %>?_method=DELETE" method="POST">
-                                    <button type="submit" class="boton-final"><i class="fas fa-trash"></i>Eliminar</button>
+                                <a href="/users/detail/<%= mentors[i].id %>/<%= mentors[i].email %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
+                                <form class="eliminar" action="/users/delete/<%= mentors[i].id %>/<%= mentors[i].email %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="boton-final-eliminar"><i class="fas fa-trash"></i>Eliminar</button>
                                 </form>
-                                <a href="" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
                             </div>
                         </div>
                     <% } %>
@@ -52,10 +52,10 @@
                                 <p><%= users[i].title %></p>
                                 <p><%= users[i].country %></p>
                                 <p><%= users[i].category %></p>
-                                <form class="eliminar" action="/users/delete/<%= users[i].id %>?_method=DELETE" method="POST">
-                                    <button type="submit" class="boton-final"><i class="fas fa-trash"></i>Eliminar</button>
+                                <a href="/users/detail/<%= users[i].id %>/<%= users[i].email %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
+                                <form class="eliminar" action="/users/delete/<%= users[i].id %>/<%= users[i].email %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="boton-final-eliminar"><i class="fas fa-trash"></i>Eliminar</button>
                                 </form>
-                                <a href="" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
                             </div>
                         </div>
                     <% } %>

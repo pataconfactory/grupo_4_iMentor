@@ -20,9 +20,10 @@
                     <h2 class="nombre"><%= productoRequerido.name %></h2>
                 </div>
                 <p class="descripcion"><%= productoRequerido.description %></p>
-                <p class="datos"><span>Duración:</span>  <%= productoRequerido.duration %> horas</p>
                 <p class="datos"><span>Precio:</span> <%= productoRequerido.price %>$</p>
-                <p class="datos"><span>Descuento:</span> <%= productoRequerido.discount %>%</p>
+                <% if(productoRequerido.service !== 'Gift Cards') { %>
+                    <p class="datos"><span>Duración:</span>  <%= productoRequerido.duration %> horas</p>
+                    <p class="datos"><span>Descuento:</span> <%= productoRequerido.discount %>%</p>
                 <section class="mentor">
                     <h3>Mentor</h3>
                     <div class="informacion-mentor">
@@ -38,6 +39,7 @@
                         </div>
                     </div>
                 </section>
+                <% } %>
                 <div class="boton-adquirir">
                     <a href="/products/productCart"><i class="fa fa-shopping-cart"></i> Adquirir</a>
                 </div>

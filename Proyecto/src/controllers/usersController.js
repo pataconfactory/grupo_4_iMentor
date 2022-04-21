@@ -1,31 +1,37 @@
 const path = require('path');
 const fs = require('fs');
-const User = require('../models/Users');
 const res = require('express/lib/response');
 
 const {validationResult} = require('express-validator');
 const Users = require('../models/Users');
+const Mentors = require('../models/Mentors');
 const bcrypt =require('bcryptjs');
 const bcryptjs = require('bcryptjs');
 
-let usersJSON = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf-8');
-let users = JSON.parse (usersJSON);
-
-let mentorsJSON = fs.readFileSync(path.join(__dirname, '../data/mentors.json'), 'utf-8');
-let mentors = JSON.parse (mentorsJSON);
-
 const usersController = {
     listUsers: function(req, res) {
-        res.render(path.join(__dirname, '../views/users/listUsers'), {mentors, users})
+        let users = Users.findAll();
+        let mentors = Mentors.findAll();
+        return res.render(path.join(__dirname, '../views/users/listUsers'), {mentors, users})
+    },
+
+    detailUsers: function(req, res) {
+        let user = Users.findByField('email', req.params.email);
+
+        if (user == undefined) {
+            let mentor = Mentors.findByField('email', req.params.email);
+            return res.render(path.join(__dirname, '../views/users/userDetail'), {mentor})
+        }
+        return res.render(path.join(__dirname, '../views/users/userDetail'), {user})
     },
 
     register: function(req, res) {
         res.cookie()
-        res.render(path.join(__dirname, '../views/users/register'))
+        return res.render(path.join(__dirname, '../views/users/register'))
     },
 
     login: function(req, res) {
-        res.render(path.join(__dirname, '../views/users/login'))
+        return res.render(path.join(__dirname, '../views/users/login'))
     },
 
     loginProcess: function(req, res) {
@@ -35,6 +41,10 @@ const usersController = {
         }
 
         let userToLogin = Users.findByField('email', req.body.email);
+        if(userToLogin == undefined) {
+            userToLogin = Mentors.findByField('email', req.body.email);
+        }
+
         if(userToLogin){
             let isOkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(isOkPassword){
@@ -57,11 +67,17 @@ const usersController = {
         }
 
         let userEmailInDB = Users.findByField('email', req.body.email);
+        if(userEmailInDB == undefined){
+            userEmailInDB = Mentors.findByField('email', req.body.email);
+        }
         if(userEmailInDB) {
             return res.render(path.join(__dirname, '../views/users/register'), {errors: {email: {msg: 'Este email ya se encuentra registrado'}}, old: req.body});
         }
 
         let userNameInDB = Users.findByField('user_name', req.body.user_name);
+        if(userNameInDB == undefined){
+            userNameInDB = Mentors.findByField('user_name', req.body.email);
+        }
         if(userNameInDB) {
             return res.render(path.join(__dirname, '../views/users/register'), {errors: {user_name: {msg: 'Este nombre de usuario ya se encuentra registrado'}}, old: req.body});
         }
@@ -72,12 +88,20 @@ const usersController = {
             avatar: req.file.filename
         }
 
-        let userCreated = Users.createUser(userToCreate);
-        return res.redirect('/users/login');
+        if((req.body.category == 'Usuario') || (req.body.category == 'Administrador')) {
+            let userCreated = Users.createUser(userToCreate);
+            return res.redirect('/users/login');
+        }
+
+        if(req.body.category == 'Mentor') {
+            let mentorCreated = Mentors.createMentor(userToCreate);
+            return res.redirect('/users/login');
+        }
+        
     }, 
 
     profile: function(req, res) {
-        res.render(path.join(__dirname, '../views/users/profile'), {user: req.session.userLogged});
+        return res.render(path.join(__dirname, '../views/users/profile'), {user: req.session.userLogged});
     },
 
     logout: function(req, res) {
@@ -87,7 +111,7 @@ const usersController = {
     },
 
     editUsers: function(req, res) {
-        res.render(path.join(__dirname, '../views/users/userEdit'), {user: req.session.userLogged});
+        return res.render(path.join(__dirname, '../views/users/userEdit'), {user: req.session.userLogged});
     },
 
     updateUsers: function(req, res) {
@@ -109,12 +133,19 @@ const usersController = {
             avatar: file
         }
 
-        let userEdited = Users.editUser(userToEdit);
-        return res.redirect('/users/profile');
+        if((req.body.category == 'Usuario') || (req.body.category == 'Administrador')) {
+            let userEdited = Users.editUser(userToEdit);
+            return res.redirect('/users/profile');
+        }
+
+        if(req.body.category == 'Mentor') {
+            let mentorEdited = Mentors.editMentor(userToEdit);
+            return res.redirect('/users/profile');
+        }
     },
 
     editUsersPassword: function(req, res) {
-        res.render(path.join(__dirname, '../views/users/userEditPassword'), {user: req.session.userLogged});
+        return res.render(path.join(__dirname, '../views/users/userEditPassword'), {user: req.session.userLogged});
     },
 
     updateUsersPassword: function(req, res) {
@@ -123,22 +154,38 @@ const usersController = {
             return res.render(path.join(__dirname, '../views/users/userEditPassword'), {errors: errors.mapped(), old: req.body});
         }
 
-        let id = parseInt(req.params.id);
-        let user = Users.findByPk(id);
+        let user = Users.findByField('email', req.params.email);
+        if (user == undefined) {
+            user = Mentors.findByField('email', req.params.email);
+        }
+
         let isOkPassword = bcryptjs.compareSync(req.body.password_old, user.password);
         if(isOkPassword){
             let userToEdit = {
                 id: req.params.id,
                 password: bcryptjs.hashSync(req.body.password, 10)
             }
-            let userEdited = Users.editUser(userToEdit);
-            return res.redirect('/users/profile');
+            if((user.category == 'Usuario') || (user.category == 'Administrador')) {
+                let userEdited = Users.editUser(userToEdit);
+                return res.redirect('/users/profile');
+            }
+            if (user.category == 'Mentor'){
+                let mentorEdited = Mentors.editMentor(userToEdit);
+                return res.redirect('/users/profile');
+            }
         } else {
             return res.render(path.join(__dirname, '../views/users/userEditPassword'), {errors: {password_old: {msg: 'Las credenciales son inválidas'}}, old: req.body});
         }
     },
 
     destroyUsers: function(req, res) {
+        let user = Users.findByField('email', req.params.email);
+        if (user == undefined) {
+            let mentor = Mentors.findByField('email', req.params.email);
+            let idMentorToDelete = parseInt(req.params.id);
+            let mentorRemoved = Mentors.deleteMentor(idMentorToDelete);
+            return res.redirect('/users/list');
+        }
         let idUserToDelete = parseInt(req.params.id);
         let userRemoved = Users.deleteUser(idUserToDelete);
         return res.redirect('/users/list');
