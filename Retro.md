@@ -200,7 +200,7 @@ Mejor organización del tiempo y de las tareas entre los miembros que restan del
 <li>1. Seguir haciendo:  
   
 Reuniones periódicas para seguir el status de las tareas en progreso y de nuestros tiempos disponibles para avanzar en el proyecto.
-Comunicación continua entre los miembros por redes sociales, comunicarnos cada push o cambio en el repositorio.
+Comunicación continua entre los miembros por redes sociales, comunicamos cada push o cambio en el repositorio.
 Debug conjunto del código cuando surgen trabas o inconvenientes en el desarrollo.
   
 </li>
