@@ -1284,14 +1284,45 @@ main .login .remember-me label {
 /*Main ProductCart*/
 main .contenedor-carrito {
 	margin: 0px 15px;
-    padding: 95px 0px 0px 0px;
+    padding: 120px 0px 0px 0px;
 }
 
 main .contenedor-carrito h1 {
     margin: 15px 0px;
     text-align: center;
-    color: #3587A4;
+    color: black;
     font-size: 35px;
+}
+
+main .contenedor-carrito .contenedor_cesta_vacia {
+    display: flex;
+    flex-direction: column;
+}
+
+main .contenedor-carrito .contenedor_cesta_vacia .cesta_vacia {
+    width: 90vw;
+    height: 350px;
+    align-self: center;
+}
+
+main .contenedor-carrito .contenedor_cesta_vacia .mensaje {
+    color: #ab0d2f;
+    align-self: center;
+    font-size: 40px;
+    margin: 10px 0px;
+}
+
+main .contenedor-carrito .contenedor_cesta_vacia .mensaje_ceta_vacia {
+    color: #3587A4;
+    align-self: center;
+    font-size: 30px;
+}
+
+main .contenedor-carrito .contenedor_cesta_vacia p {
+    color: black;
+    text-align: center;
+    font-size: 16px;
+    margin: 0px 20px;
 }
 
 main .contenedor-carrito .shop {
@@ -1301,6 +1332,7 @@ main .contenedor-carrito .shop {
 main .contenedor-carrito .seccion-productos {
 	display: flex;
     width: 100%;
+    flex-direction: column;
 }
 
 main .contenedor-carrito .seccion-productos .servicio {
@@ -1491,6 +1523,7 @@ main .slide-container h2 {
     text-align: center;
     color: black;
     width: 100%;
+    padding: 15px 0px; 
 }
 
 main .slide-container {
@@ -1509,7 +1542,7 @@ main .slide-container .fasfa-arrow-circle-right, main .slide-container .fasfa-ar
 }
 
 main .slide-container .container {
-    width: 85%;
+    width: 90%;
     margin: 0px;
     display: flex;
     justify-content: flex-start;
@@ -1544,6 +1577,8 @@ main .slide-container .container .miniatura {
     overflow: hidden;
     transform: scale(.95);
     transition: all .3s;
+    width: 300px;
+    height: 390px;
 }
 
 main .slide-container .container .miniatura:hover {
@@ -1552,7 +1587,7 @@ main .slide-container .container .miniatura:hover {
 
 main .slide-container .miniatura img{
     width: 100%;
-    height: 100px;
+    height: 150px;
 }
 
 main .slide-container .miniatura .name-product{
@@ -1560,9 +1595,14 @@ main .slide-container .miniatura .name-product{
 }
 
 main .slide-container .miniatura .product-details {
+    display: flex;
     text-align: center;
     padding-bottom: 0.5em;
     background-color: #fff;
+    flex-direction:column;
+    align-items: center;
+    height: 230px;
+    justify-content: space-around;
 }
 
 main .slide-container .miniatura .product-details h3 {
@@ -1582,10 +1622,10 @@ main .slide-container .miniatura .product-details p span {
 main .slide-container .miniatura .product-details a {
     font-size: 1em;
     text-decoration: none;
-    background-color: rgb(235, 236, 164);
+    background-color: #ffbb00;
     color: black;
     padding: 3px 20px;
-
+    font-weight: bold;
 }
 
 main .slide-container .miniatura .product-details a:hover {
@@ -2273,13 +2313,25 @@ main .contenedor-detail .detalle .boton-adquirir{
     margin-top: 20px;
 }
 
-main .contenedor-detail .detalle .boton-adquirir a{
+main .contenedor-detail .detalle .boton-adquirir .boton-adquirir{
     font-size: 14px;
-    text-decoration: none;
     background-color: #ffc600;
     color: black;
     padding: 5px 15%;
     font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+main .contenedor-detail .detalle .boton-adquirir .boton-adquirir:hover{
+    background-color: #C1DFF0;
+}
+
+main .contenedor-detail .detalle .boton-adquirir .boton-adquirir i{
+    font-size: 14px;
+    color: black;
+    padding: 3px 3px 3px 0px;
+
 }
 
 /*Footer*/
@@ -2591,10 +2643,6 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
 
     main .contenedor-carrito .seccion-productos .content h4 {
         font-size: 12px;
-    }
-
-    main .contenedor-carrito {
-        padding: 75px 0px 0px 0px;
     }
 
     /*Profile*/

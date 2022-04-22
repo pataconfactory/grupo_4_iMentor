@@ -4,6 +4,7 @@ const path = require('path');
 
 const productsController = require('../controllers/productsController');
 const upload = require('../middlewares/multerProducts');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 //Rutas
 
@@ -19,7 +20,13 @@ router.put('/edit/:id', upload.single('image'), productsController.update)
 
 router.delete('/delete/:id', productsController.destroy)
 
-router.get('/productCart', productsController.productCart);
+router.get('/productCart', authMiddleware, productsController.productCart);
+
+//Agregar productos al carrito
+router.post('/productCart/:id', authMiddleware, productsController.productCartAdd);
+
+//Eliminar productos del carrito
+router.delete('/productCart/:id/:email', authMiddleware, productsController.productCartDestroy);
 
 router.get('/productServices', productsController.productServices);
 

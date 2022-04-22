@@ -40,9 +40,9 @@
                     </div>
                 </section>
                 <% } %>
-                <div class="boton-adquirir">
-                    <a href="/products/productCart"><i class="fa fa-shopping-cart"></i> Adquirir</a>
-                </div>
+                <form class="boton-adquirir" action="/products/productCart/<%= productoRequerido.id %>" method="POST">
+                    <button type="submit" class="boton-adquirir"><i class="fa fa-shopping-cart"></i> Adquirir</button>  
+                </form>
             </div>
         </div>
     </main>

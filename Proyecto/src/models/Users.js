@@ -41,22 +41,29 @@ const Users = {
             ...userData
         }
         allUsers.push(newUser);
-        //fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, ' '));
+        fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, ' '));
         return newUser;
     },
 
     editUser: function(userData) {
-        let avatarDelForms = userData.avatar;
+        let avatarDelForms;
         let allUsers = this.findAll();
-
+        if (userData.products) {
+            productsJSON = JSON.stringify(userData.products);
+            allUsers.forEach(function(usuario){
+                if(usuario.id == userData.id){
+                    usuario.products = productsJSON;
+                }
+            });
+        }
         if(userData.password){
             allUsers.forEach(function(usuario){
                 if(usuario.id == userData.id){
                     usuario.password = userData.password;
                 }
             });
-            console.log(allUsers)
         } else {
+            avatarDelForms = userData.avatar;
             allUsers.forEach(function(usuario){
                 if(usuario.id == userData.id){
                     usuario.first_name = userData.first_name;
@@ -81,7 +88,7 @@ const Users = {
         let finalUsers = allUsers.filter(oneUser => oneUser.id !== id);
         console.log(finalUsers)
         fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, ' '));
-    }  
+    }
 }
 
 module.exports = Users;

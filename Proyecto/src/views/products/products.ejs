@@ -37,9 +37,11 @@
                 </p>
             </div>
             <div class="container-productos-existentes">
-                <div class="boton-crear-producto">
-                    <a href="/products/create" class="crear-producto"><i class="fas fa-plus-circle"></i> Crear producto</a>
-                </div>
+                <% if(locals.isLogged && locals.userLogged.category == 'Administrador') { %>
+                    <div class="boton-crear-producto">
+                        <a href="/products/create" class="crear-producto"><i class="fas fa-plus-circle"></i> Crear producto</a>
+                    </div>
+                <% } %>
                 <section class="container" id="slider">
                     <% for(let i=0; i< products.length; i++) { %>           
                         <div class="miniatura">

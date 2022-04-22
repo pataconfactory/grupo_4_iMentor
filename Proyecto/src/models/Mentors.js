@@ -46,17 +46,24 @@ const Mentors = {
     },
 
     editMentor: function(mentorData) {
-        let avatarDelForms = mentorData.avatar;
+        let avatarDelForms;
         let allMentors = this.findAll();
-
+        if (userData.products) {
+            productsJSON = JSON.stringify(mentorData.products);
+            allMentors.forEach(function(mentor){
+                if(mentor.id == mentorData.id){
+                    mentor.products = productsJSON;
+                }
+            });
+        }
         if(mentorData.password){
             allMentors.forEach(function(mentor){
                 if(mentor.id == mentorData.id){
                     mentor.password = mentorData.password;
                 }
             });
-            console.log(allMentors)
         } else {
+            avatarDelForms = mentorData.avatar;
             allMentors.forEach(function(mentor){
                 if(mentor.id == mentorData.id){
                     mentor.first_namentorme = mentorData.first_name;

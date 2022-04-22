@@ -13,6 +13,7 @@
   "category": "Administrador",
   "title": "Desarrollador Full Stack Trainee",
   "terminos": "on",
+  "products": "[0]",
   "avatar": "user-1649510591616.png"
  },
  {
@@ -29,6 +30,7 @@
   "category": "Administrador",
   "title": "Profesor",
   "terminos": "on",
+  "products": "[0]",
   "avatar": "user-1650214401676.jpg"
  },
  {
@@ -45,6 +47,7 @@
   "category": "Usuario",
   "title": "Ingeniería Informática",
   "terminos": "on",
+  "products": "[0]",
   "avatar": "user-1650382685494.jpg"
  },
  {
@@ -61,6 +64,7 @@
   "category": "Usuario",
   "title": "Ingeniería en Sistemas",
   "terminos": "on",
+  "products": "[0]",
   "avatar": "user-1650382860592.jpg"
  },
  {
@@ -77,6 +81,7 @@
   "category": "Usuario",
   "title": "Profesor",
   "terminos": "on",
+  "products": "[0]",
   "avatar": "user-1650383017609.jpg"
  }
 ]

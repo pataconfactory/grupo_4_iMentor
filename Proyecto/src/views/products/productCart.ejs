@@ -10,199 +10,102 @@
     <main>
         <div class="contenedor-carrito">
             <h1>Servicios en la Cesta</h1>
-            <div class="shop">
-                <div class="seccion-productos">
-                    <article class="servicio">
-                        <img src="/img/mentor6.png" alt="Fotografía del asesor Lucas Sequeira, Desarrollador Web">
-                        <div class="content">
-                            <h3><a href="/products">Front-End</a></h3>
-                            <div class="estrellas">
-                                <form class ="escala">
-                                    <p class="clasificacion">
-                                    <input id="radio1" type="radio" name="estrellas" value="5">
-                                    <label for="radio1">★</label>
-                                    <input id="radio2" type="radio" name="estrellas" value="4">
-                                    <label for="radio2">★</label>
-                                    <input id="radio3" type="radio" name="estrellas" value="3">
-                                    <label for="radio3">★</label>
-                                    <input id="radio4" type="radio" name="estrellas" value="2">
-                                    <label for="radio4">★</label>
-                                    <input id="radio5" type="radio" name="estrellas" value="1">
-                                    <label for="radio5">★</label>
-                                    </p>
-                                </form>
-                            </div>
-                            <br>
-                            <h4>Mentor: Lucas Sequeira</h4>
-                            <h4 class="horas">03 horas</h4> 
-                            <h4>Desarrollador Web</h4>
-                            <h4>40USD$<i class="fas fa-tag"></i></h4>
-                            <h4 class="unit">Cantidad:<input type="number" name="cantidad" min="1" value="1"></h4>
-                            <button class="btn-area" type="submit"><a href="#"><i class="fa fa-trash"></i><span class="btn2">Eliminar</span></a></button>
-                        </div>
-                    </article>                    
+            <% if(!locals.productsUser[1]) {%>
+                <div class="contenedor_cesta_vacia">
+                    <img class="cesta_vacia" src= "/img/empty_cart_retina.png" alt= "imagen de cesta vacía">
+                    <h2 class="mensaje">oops!</h2>
+                    <h2 class="mensaje_ceta_vacia">Tu Cesta está Vacía...</h2>
+                    <p>No tiene artículos en su cesta de compras. Tal vez el producto se movió o eliminó, o tal vez simplemente escribió mal la dirección.</p>
                 </div>
-                <div class="right-bar">
-                    <p><span>Subtotal</span> <span>40USD$</span></p>
-                    <hr>
-                    <p><span>Tax (5%)</span> <span>2USD$</span></p>
-                    <hr>
-                    <p><span>Promoción</span> <span>USD$</span> </p>
-                    <hr>
-                    <p><input type="text" name="promocion" id="promocion" placeholder="Promoción a aplicar" class="promocion"></p>
-                    <hr>
-                    <p><span>Total</span> <span>42USD$</span></p><a href="/"><i class="fas fa-credit-card"></i>Pagar</a>
+            <% } else { %>
+                <div class="shop">
+                    <div class="seccion-productos">
+                        <% for(let i=1; i< productsUser.length; i++) { %> 
+                            <article class="servicio">
+                                <img src="/img/products/<%= `${productsUser[i].image}` %>" alt="imagen del producto">
+                                <div class="content">
+                                    <h3><a href="/products"><%= productsUser[i].name %></a></h3>
+                                    <div class="estrellas">
+                                        <form class ="escala">
+                                            <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5">
+                                            <label for="radio1">★</label>
+                                            <input id="radio2" type="radio" name="estrellas" value="4">
+                                            <label for="radio2">★</label>
+                                            <input id="radio3" type="radio" name="estrellas" value="3">
+                                            <label for="radio3">★</label>
+                                            <input id="radio4" type="radio" name="estrellas" value="2">
+                                            <label for="radio4">★</label>
+                                            <input id="radio5" type="radio" name="estrellas" value="1">
+                                            <label for="radio5">★</label>
+                                            </p>
+                                        </form>
+                                    </div>
+                                    <br>
+                                    <% if(productsUser[i].service == 'Asesoría') { %>
+                                        <h4>Mentor: <%= productsUser[i].mentor %></h4>
+                                        <h4 class="horas">0<%= productsUser[i].duration %> horas</h4> 
+                                        <h4><%= productsUser[i].mentor_titulo %></h4>
+                                    <% } %>
+                                    <% if(productsUser[i].service != 'Asesoría') { %> 
+                                        <h4><%= productsUser[i].service %></h4>
+                                    <% } %>
+                                    <h4><%= productsUser[i].price %>$<i class="fas fa-tag"></i></h4>
+                                    <h4 class="unit">Cantidad:<input type="number" name="cantidad" min="1" value="1"></h4>
+                                    <form class="" action="/products/productCart/<%= productsUser[i].id %>/<%= userLogged.email %>?_method=DELETE" method="POST">
+                                        <button class="btn-area" type="submit"><a href="#"><i class="fa fa-trash"></i><span class="btn2">Eliminar</span></a></button>  
+                                    </form>
+                                </div>
+                            </article>
+                        <% } %>                    
+                    </div>
+                    <div class="right-bar">
+                        <p><span>Subtotal</span> <span>USD$</span></p>
+                        <hr>
+                        <p><span>Tax (%)</span> <span>USD$</span></p>
+                        <hr>
+                        <p><span>Promoción</span> <span>USD$</span> </p>
+                        <hr>
+                        <p><input type="text" name="promocion" id="promocion" placeholder="Promoción a aplicar" class="promocion"></p>
+                        <hr>
+                        <p><span>Total</span> <span>USD$</span></p><a href="/"><i class="fas fa-credit-card"></i>Pagar</a>
+                    </div>
                 </div>
-            </div>
+            <% } %>
         </div>
         <div class="slide-container">
             <h2>También podría interesarte</h2>
             <i class="fas fa-arrow-circle-left"></i>
-            <section class="container" id="slider">           
-                <div class="miniatura">
-                    <img src="/img/mentor3.jpg" alt="Imagen de la mentora Patricia Garza">
-                    <div class="product-details">
-                        <h3>Asesoría</h3>
-                        <h3 class="name-product">Análisis de Datos</h3>
-                        <h3>Patricia Garza</h3>
-                        <form class ="escala">
-                            <p class="clasificacion">
-                            <input id="radio1" type="radio" name="estrellas" value="5">
-                            <label for="radio1">★</label>
-                            <input id="radio2" type="radio" name="estrellas" value="4">
-                            <label for="radio2">★</label>
-                            <input id="radio3" type="radio" name="estrellas" value="3">
-                            <label for="radio3">★</label>
-                            <input id="radio4" type="radio" name="estrellas" value="2">
-                            <label for="radio4">★</label>
-                            <input id="radio5" type="radio" name="estrellas" value="1">
-                            <label for="radio5">★</label>
-                            </p>
-                        </form>
-                        <p><span>40USD$</span>03 horas</p>
-                        <a href="/products">Ver</a>
+            <section class="container" id="slider">   
+                <% for(let i=0; i< products.length; i++) { %>          
+                    <div class="miniatura">
+                        <img src="/img/products/<%= `${products[i].image}` %>" alt="Imagen del producto">
+                        <div class="product-details">
+                            <h3><%= products[i].service %></h3>
+                            <h3 class="name-product"><%= products[i].name %></h3>
+                            <% if(products[i].service == 'Asesoría') { %>
+                                <h3><%= products[i].mentor %></h3>
+                                <p>0<%= products[i].duration %> horas</p>
+                            <% } %>
+                            <form class ="escala">
+                                <p class="clasificacion">
+                                <input id="radio1" type="radio" name="estrellas" value="5">
+                                <label for="radio1">★</label>
+                                <input id="radio2" type="radio" name="estrellas" value="4">
+                                <label for="radio2">★</label>
+                                <input id="radio3" type="radio" name="estrellas" value="3">
+                                <label for="radio3">★</label>
+                                <input id="radio4" type="radio" name="estrellas" value="2">
+                                <label for="radio4">★</label>
+                                <input id="radio5" type="radio" name="estrellas" value="1">
+                                <label for="radio5">★</label>
+                                </p>
+                            </form>
+                            <p><span><%= products[i].price %>$</span></p>
+                            <a href="/products/detail/<%= products[i].id %>"><i class="fas fa-eye"></i> Ver</a>
+                        </div>
                     </div>
-                </div>
-                <div class="miniatura">
-                    <img src="/img/mentor4.jpg" alt="Imagen de la mentora Quizaira Rodriguez">
-                    <div class="product-details">
-                        <h3>Asesoría</h3>
-                        <h3 class="name-product">Back-End</h3>
-                        <h3>Quizaira Rodriguez</h3>
-                        <form class ="escala">
-                            <p class="clasificacion">
-                            <input id="radio1" type="radio" name="estrellas" value="5">
-                            <label for="radio1">★</label>
-                            <input id="radio2" type="radio" name="estrellas" value="4">
-                            <label for="radio2">★</label>
-                            <input id="radio3" type="radio" name="estrellas" value="3">
-                            <label for="radio3">★</label>
-                            <input id="radio4" type="radio" name="estrellas" value="2">
-                            <label for="radio4">★</label>
-                            <input id="radio5" type="radio" name="estrellas" value="1">
-                            <label for="radio5">★</label>
-                            </p>
-                        </form>
-                        <p><span>40USD$</span>03 horas</p>
-                        <a href="/products">Ver</a>
-                    </div>
-                </div>
-                <div class="miniatura">
-                    <img src="/img/mentor5.jpg" alt="Imagen del mentor Pedro Gonzalez">
-                    <div class="product-details">
-                        <h3>Asesoría</h3>
-                        <h3 class="name-product">Base de Datos</h3>
-                        <h3>Pedro Gonzalez</h3>
-                        <form class ="escala">
-                            <p class="clasificacion">
-                            <input id="radio1" type="radio" name="estrellas" value="5">
-                            <label for="radio1">★</label>
-                            <input id="radio2" type="radio" name="estrellas" value="4">
-                            <label for="radio2">★</label>
-                            <input id="radio3" type="radio" name="estrellas" value="3">
-                            <label for="radio3">★</label>
-                            <input id="radio4" type="radio" name="estrellas" value="2">
-                            <label for="radio4">★</label>
-                            <input id="radio5" type="radio" name="estrellas" value="1">
-                            <label for="radio5">★</label>
-                            </p>
-                        </form>
-                        <p><span>40USD$</span>03 horas</p>
-                        <a href="/products">Ver</a>
-                    </div>
-                </div>
-                <div class="miniatura">
-                    <img src="/img/mentor6.png" alt="Imagen del mentor Lucas Sequeira">
-                    <div class="product-details">
-                        <h3>Asesoría</h3>
-                        <h3 class="name-product">Front-End</h3>
-                        <h3>Lucas Sequeira</h3>
-                        <form class ="escala">
-                            <p class="clasificacion">
-                            <input id="radio1" type="radio" name="estrellas" value="5">
-                            <label for="radio1">★</label>
-                            <input id="radio2" type="radio" name="estrellas" value="4">
-                            <label for="radio2">★</label>
-                            <input id="radio3" type="radio" name="estrellas" value="3">
-                            <label for="radio3">★</label>
-                            <input id="radio4" type="radio" name="estrellas" value="2">
-                            <label for="radio4">★</label>
-                            <input id="radio5" type="radio" name="estrellas" value="1">
-                            <label for="radio5">★</label>
-                            </p>
-                        </form>
-                        <p><span>40USD$</span>03 horas</p>
-                        <a href="/products">Ver</a>
-                    </div>
-                </div>
-                <div class="miniatura">
-                    <img src="/img/profe-tutora.jpg" alt="Imagen de la mentora Patricia Williams">
-                    <div class="product-details">
-                        <h3>Asesoría</h3>
-                        <h3 class="name-product">Marketing Digital</h3>
-                        <h3>Patricia Williams</h3>
-                        <form class ="escala">
-                            <p class="clasificacion">
-                            <input id="radio1" type="radio" name="estrellas" value="5">
-                            <label for="radio1">★</label>
-                            <input id="radio2" type="radio" name="estrellas" value="4">
-                            <label for="radio2">★</label>
-                            <input id="radio3" type="radio" name="estrellas" value="3">
-                            <label for="radio3">★</label>
-                            <input id="radio4" type="radio" name="estrellas" value="2">
-                            <label for="radio4">★</label>
-                            <input id="radio5" type="radio" name="estrellas" value="1">
-                            <label for="radio5">★</label>
-                            </p>
-                        </form>
-                        <p><span>40USD$</span>03 horas</p>
-                        <a href="/products">Ver</a>
-                    </div>
-                </div>
-                <div class="miniatura">
-                    <img src="/img/mentor7.jpg" alt="Imagen de la mentora Victoria Defagot">
-                    <div class="product-details">
-                        <h3>Asesoría</h3>
-                        <h3 class="name-product">UX/UI</h3>
-                        <h3>Victoria Defagot</h3>
-                        <form class ="escala">
-                            <p class="clasificacion">
-                            <input id="radio1" type="radio" name="estrellas" value="5">
-                            <label for="radio1">★</label>
-                            <input id="radio2" type="radio" name="estrellas" value="4">
-                            <label for="radio2">★</label>
-                            <input id="radio3" type="radio" name="estrellas" value="3">
-                            <label for="radio3">★</label>
-                            <input id="radio4" type="radio" name="estrellas" value="2">
-                            <label for="radio4">★</label>
-                            <input id="radio5" type="radio" name="estrellas" value="1">
-                            <label for="radio5">★</label>
-                            </p>
-                        </form>
-                        <p><span>40USD$</span>03 horas</p>
-                        <a href="/products">Ver</a>
-                    </div>
-                </div>
+                <% } %>
             </section>
             <i class="fas fa-arrow-circle-right"></i>
         </div>
