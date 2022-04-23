@@ -91,4 +91,8 @@
  <p>Se completó la funcionalidad mostrar contraseña en el formulario de registro</p>
  <p>Como parte de rutas accesible: solo por usuarios logueados pueden editar o eliminar productos. Los usuarios logueados no tendrán disponible la opción de crear cuenta o ingresar</p>
  
-
+<h2>Modificaciones Sprint 6:</h2>
+<strong>Miércoles 20 de abril</strong>
+<p>Revisamos las consignas de la sprint 6. Se comenzó a trabajar con el DER de la aplicación y lo compartimos con Lucas por discord</p>
+<strong>Sábado 23 de abril</strong>
+<p>Recibimos feedback del Lucas sobre el DER y se comenzó a trabajar en crear los modelos en el proyecto</p>
