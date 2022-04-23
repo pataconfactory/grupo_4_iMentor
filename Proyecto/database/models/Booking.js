@@ -1,14 +1,11 @@
 module.exports = function(sequelize, DataTypes) {
-    let alias = "booking";
+    let alias = "Booking";
 
     let cols = {
         booking_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
-        },
-        StartDate: {
-            type: DataTypes.DATE
         },
         mentor_id: {
             type: DataTypes.INTEGER
@@ -19,15 +16,29 @@ module.exports = function(sequelize, DataTypes) {
         product_id: {
             type: DataTypes.INTEGER
         },
-
+        duration_time: {
+            type: DataTypes.INTEGER
+        },
+        price: {
+            type: DataTypes.DECIMAL
+        },
+        booking_date: {
+            type: DataTypes.DATE
+        },
+        createdAt: {
+            type: DataTypes.DATE
+        },
+        updatedAt: {
+            type: DataTypes.DATE
+        }
     }
 
     let config = {
-        tableName: 'booking',
+        tableName: 'bookings',
         timestamps: true
     }
 
-    const Class = sequelize.define(alias, cols, config);
+    const Booking = sequelize.define(alias, cols, config);
 
-    return Class;
+    return Booking;
 }
