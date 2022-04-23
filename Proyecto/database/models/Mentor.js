@@ -64,5 +64,24 @@ module.exports = function(sequelize, DataTypes) {
 
     const Mentor = sequelize.define(alias, cols, config);
 
+    Mentor.associate = function(models) {
+
+        Mentor.belongsToMany(models.User, {
+            as: 'users-mentor',
+            through: 'user_mentor',
+            foreignKey: 'mentor_id',
+            otherKey: 'user_id',
+            timestamps: false
+        });
+
+        Mentor.belongsToMany(models.Product, {
+            as: 'products-mentor',
+            through: 'product_mentor',
+            foreignKey: 'mentor_id',
+            otherKey: 'product_id',
+            timestamps: false
+        });
+    };
+
     return Mentor;
 }

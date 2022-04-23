@@ -55,5 +55,26 @@ module.exports = function(sequelize, DataTypes) {
 
     const User = sequelize.define(alias, cols, config);
 
+    User.associate = function(models) {
+
+        User.belongsTo(models.Role, {
+            as: 'role-user',
+            foreignKey: 'role_id'
+        });
+
+        User.belongsToMany(models.Mentor, {
+            as: 'mentors-user',
+            through: 'user_mentor',
+            foreignKey: 'user_id',
+            otherKey: 'mentor_id',
+            timestamps: false        
+        });
+
+        User.hasMany(models.Booking, {
+            as: 'bookings-user',
+            foreignKey: 'booking_id'
+        });
+    };
+
     return User;
 }
