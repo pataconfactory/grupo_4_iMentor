@@ -72,7 +72,7 @@ module.exports = function(sequelize, DataTypes) {
 
         User.hasMany(models.Booking, {
             as: 'bookings-user',
-            foreignKey: 'booking_id'
+            foreignKey: 'user_id'
         });
     };
 

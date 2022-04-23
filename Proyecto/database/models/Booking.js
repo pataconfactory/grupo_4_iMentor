@@ -37,5 +37,23 @@ module.exports = function(sequelize, DataTypes) {
 
     const Booking = sequelize.define(alias, cols, config);
 
+    Booking.associate = function(models) {
+
+        Booking.belongsTo(models.Product, {
+            as: 'product-booking',
+            foreignKey: 'product_id'
+        });
+
+        Booking.belongsTo(models.User, {
+            as: 'user-booking',
+            foreignKey: 'user_id'
+        });
+
+        Booking.hasMany(models.Invoice, {
+            as: 'invoices-booking',
+            foreignKey: 'booking_id'
+        });
+    };
+
     return Booking;
 }

@@ -42,6 +42,11 @@ module.exports = function(sequelize, DataTypes) {
             otherKey: 'mentor_id',
             timestamps: false        
         });
+
+        Product.hasMany(models.Booking, {
+            as: 'bookings-product',
+            foreignKey: 'product_id'
+        });
     };
 
     return Product;
