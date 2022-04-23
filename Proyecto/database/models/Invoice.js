@@ -28,5 +28,13 @@ module.exports = function(sequelize, DataTypes) {
 
     const Invoice = sequelize.define(alias, cols, config);
 
+    Invoice.associate = function(models) {
+
+        Invoice.belongsTo(models.Booking, {
+            as: 'booking-invoice',
+            foreignKey: 'booking_id'
+        });
+    };
+
     return Invoice;
 }
