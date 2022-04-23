@@ -22,9 +22,6 @@ module.exports = function(sequelize, DataTypes) {
         price: {
             type: DataTypes.DECIMAL
         },
-        booking_date: {
-            type: DataTypes.DATE
-        },
         createdAt: {
             type: DataTypes.DATE
         },

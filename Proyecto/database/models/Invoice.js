@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
-        class_id: {
+        booking_id: {
             type: DataTypes.INTEGER
         },
         invoice_date: {
