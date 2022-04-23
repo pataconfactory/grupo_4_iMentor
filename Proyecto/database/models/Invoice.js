@@ -1,14 +1,17 @@
 module.exports = function(sequelize, DataTypes) {
-    let alias = "ProductCat";
+    let alias = "Invoice";
 
     let cols = {
-        productCat_id: {
+        invoice_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        category_name: {
-            type: DataTypes.STRING
+        class_id: {
+            type: DataTypes.INTEGER
+        },
+        invoice_date: {
+            type: DataTypes.DATE
         },
         createdAt: {
             type: DataTypes.DATE
@@ -19,11 +22,11 @@ module.exports = function(sequelize, DataTypes) {
     }
 
     let config = {
-        tableName: 'product_categories',
+        tableName: 'invoices',
         timestamps: true
     }
 
-    const ProductCat = sequelize.define(alias, cols, config);
+    const Invoice = sequelize.define(alias, cols, config);
 
-    return ProductCat;
+    return Invoice;
 }

@@ -59,7 +59,7 @@ module.exports = function(sequelize, DataTypes) {
 
     let config = {
         tableName: 'mentors',
-         timestamps: true
+        timestamps: true
     }
 
     const Mentor = sequelize.define(alias, cols, config);

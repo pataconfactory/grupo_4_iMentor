@@ -32,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
 
     let config = {
         tableName: 'classes',
-         timestamps: true
+        timestamps: true
     }
 
     const Class = sequelize.define(alias, cols, config);
