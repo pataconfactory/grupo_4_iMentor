@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const Users = {
+    
     fileName: path.join(__dirname, '../data/users.json'),
 
     getData: function() {

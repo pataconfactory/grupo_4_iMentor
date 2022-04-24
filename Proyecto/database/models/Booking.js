@@ -1,4 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
+    
     let alias = "Booking";
 
     let cols = {
