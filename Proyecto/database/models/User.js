@@ -8,37 +8,34 @@ module.exports = function(sequelize, DataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
-        user_email: {
+        first_name: {
             type: DataTypes.STRING
         },
-        user_password: {
-            type: DataTypes.STRING
-        },
-        user_first_name: {
-            type: DataTypes.STRING
-        },
-        user_last_name: {
+        last_name: {
             type: DataTypes.STRING
         },
         user_name: {
             type: DataTypes.STRING
         },
-        user_genre: {
+        email: {
             type: DataTypes.STRING
         },
-        user_birthday: {
+        birthday: {
             type: DataTypes.DATE
         }, 
-        user_age: {
+        age: {
             type: DataTypes.INTEGER
         },
-        user_country: {
+        country: {
             type: DataTypes.STRING
         },
-        user_title: {
+        password: {
             type: DataTypes.STRING
         },
-        user_avatar: {
+        title: {
+            type: DataTypes.STRING
+        },
+        avatar: {
             type: DataTypes.STRING
         },
         createdAt: {
@@ -63,12 +60,9 @@ module.exports = function(sequelize, DataTypes) {
             foreignKey: 'role_id'
         });
 
-        User.belongsToMany(models.Mentor, {
-            as: 'mentors-user',
-            through: 'user_mentor',
-            foreignKey: 'user_id',
-            otherKey: 'mentor_id',
-            timestamps: false        
+        User.belongsTo(models.Mentor, {
+            as: 'mentor_user_id',
+            foreignKey: 'mentor_id'
         });
 
         User.hasMany(models.Booking, {

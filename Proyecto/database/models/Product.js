@@ -11,8 +11,26 @@ module.exports = function(sequelize, DataTypes) {
         product_name: {
             type: DataTypes.STRING
         },
-        productCat_id: {
+        product_category_id: {
             type: DataTypes.INTEGER
+        },
+        product_description: {
+            type: DataTypes.STRING
+        },
+        day: {
+            type: DataTypes.STRING
+        },
+        time: {
+            type: DataTypes.TIME
+        },
+        price: {
+            type: DataTypes.DECIMAL
+        },
+        duration: {
+            type: DataTypes.INTEGER
+        },
+        product_image: {
+            type: DataTypes.STRING
         },
         createdAt: {
             type: DataTypes.DATE
@@ -33,11 +51,11 @@ module.exports = function(sequelize, DataTypes) {
 
         Product.belongsTo(models.ProductCat, {
             as: 'productCat',
-            foreignKey: 'productCat_id'
+            foreignKey: 'product_category_id'
         });
 
         Product.belongsToMany(models.Mentor, {
-            as: 'mentors-product',
+            as: 'mentors-of-product',
             through: 'product_mentor',
             foreignKey: 'product_id',
             otherKey: 'mentor_id',

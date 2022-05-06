@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
     let alias = "ProductCat";
 
     let cols = {
-        productCat_id: {
+        product_category_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -30,7 +30,7 @@ module.exports = function(sequelize, DataTypes) {
 
         ProductCat.hasMany(models.Product, {
             as: 'products-productCat',
-            foreignKey: 'productCat_id'
+            foreignKey: 'product_category_id'
         });
     };
 
