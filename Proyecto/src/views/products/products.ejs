@@ -45,20 +45,20 @@
                 <section class="container" id="slider">
                     <% for(let i=0; i< products.length; i++) { %>           
                         <div class="miniatura">
-                            <img src="/img/products/<%= `${products[i].image}` %>" alt="Imagen del producto">
+                            <img src="/img/products/<%= `${products[i].product_image}` %>" alt="Imagen del producto">
                             <div class="product-details">
-                                <h3><%= products[i].service %></h3>
-                                <h3 class="name-product"><%= products[i].name %></h3>
-                                <% if(products[i].service == 'Asesoría') { %>
+                                <h3 class="name-product"><%= products[i].product_name %></h3>
+                                <%  { %>
                                     <h3><%= products[i].mentor %></h3>
-                                    <p>0<%= products[i].duration %> horas</p>
-                                    <p><%= products[i].horario %></p>
+                                    <p>Horas: <%= products[i].duration %></p>
+                                    <p>Día: <%= products[i].day %></p>
+                                    <p>Horario: <%= products[i].time %></p>
                                 <% } %>
                                 <p><span><%= products[i].price %>$</span></p>
-                                <a href="/products/detail/<%= products[i].id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
+                                <a href="/products/detail/<%= products[i].product_category_id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
                                 <% if(locals.isLogged && locals.userLogged.category == 'Administrador') { %>
-                                    <a href="/products/edit/<%= products[i].id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>
-                                    <form class="eliminar" action="/products/delete/<%= products[i].id %>?_method=DELETE" method="POST">
+                                    <a href="/products/edit/<%= products[i].product_category_id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>
+                                    <form class="eliminar" action="/products/delete/<%= products[i].product_category_id %>?_method=DELETE" method="POST">
                                         <button type="submit" class="boton-final-eliminar"><i class="fas fa-trash"></i>Eliminar</button>  
                                     </form>
                                 <% } %>

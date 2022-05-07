@@ -4,7 +4,7 @@
 <%- include('../partials/head') %>
 
 <body>
-    
+
     <%- include('../partials/header') %>
 
     <main>
@@ -12,77 +12,91 @@
             <h2 class="">Formulario de creación de productos</h2>
             <form class="formulario-edicion-productos" action="/products/" method="POST" enctype="multipart/form-data">
                 <h3> Completar la información del producto</h3>
-                    <div>
-                        <label>Nombre del producto:</label>
-                        <input  class="box" type="text" name="name" id="name" placeholder="Nombre del producto" required>
-                    </div>
-                    <div>
-                        <label>Descripción:</label>
-                        <br>
-                        <textarea name="description" id="description" placeholder="Descripción" class="box" required></textarea>
-                    </div> 
-                    <div>
-                        <label>Servicio:</label>
-                        <select class="box" name="service" id="service">
-                            <option selected="true" disabled="disabled">seleccione el servicio</option>
-                            <option value="Asesoría">Asesoría</option>
-                            <option value="Membresía">Membresía</option>
-                            <option value="Gift Cards">Gift Cards</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label>Categoría:</label>
-                        <select class="box" name="category" id="category">
-                            <option selected="true" disabled="disabled">seleccione la categoría</option>
-                            <% for (let i = 0; i < categories.length; i++){ %>
-                            <option value="<%=categories[i].product_category_id%>">
-                                <%=categories[i].category_name%>
-                                </option>
-                         <%} %>
-                        </select>
-                    </div>
-                    <div>
-                        <label>Mentor:</label>
-                        <input class="box" type="text" name="mentor" id="mentor" placeholder="Mentor" required>
-                    </div>
-                    <div>
-                        <label>País del Mentor:</label>
-                        <input class="box" type="text" name="mentor_country" id="mentor_country" placeholder="País del mentor" required>
-                    </div>
-                    <div>
-                        <label>Título del Mentor:</label>
-                        <input class="box" type="text" name="mentor_titulo" id="mentor_titulo" placeholder="Título del mentor" required>
-                    </div>
-                    <div>
-                        <label>Cantidad de horas por Mentoría:</label>
-                        <p><input class="box"type="number" name="duration" id="duration" placeholder="Horas" min="0" required>
-                    </div> 
-                    <div>
-                        <label>Horario:</label>
-                        <select class="box" name="horario" id="horario">
-                            <option selected="true" disabled="disabled">seleccione el horario</option>
-                            <option value="10:00hs">10:00hs</option>
-                            <option value="14:00hs">14:00hs</option>
-                            <option value="18:00hs">18:00hs</option>
-                            <option value="No Aplica">No Aplica</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label>Precio:</label>
-                        <input class="box" type="number" name="price" id="price" placeholder="Precio $" min="0" required>
-                    </div>
+                <div>
+                    <label>Nombre del producto:</label>
+                    <input class="box" type="text" name="name" id="name" placeholder="Nombre del producto" required>
+                </div>
+                <div>
+                    <label>Categoría:</label>
+                    <select class="box" name="category" id="category">
+                        <option selected="true" disabled="disabled">seleccione la categoría</option>
+                        <% for (let i = 0; i < categories.length; i++){ %>
+                        <option value="<%=categories[i].product_category_id%>">
+                            <%=categories[i].category_name%>
+                        </option>
+                        <%} %>
+                    </select>
+                </div>
+                <div>
+                    <label>Descripción:</label>
+                    <br>
+                    <textarea name="description" id="description" placeholder="Descripción" class="box"
+                        required></textarea>
+                </div>
+                <div>
+                    <label>Días:</label>
+                    <select class="box" name="day" id="day">
+                        <option selected="true" disabled="disabled">seleccione qué día está disponible la mentoria
+                        </option>
+                        <option value="Lunes">Lunes</option>
+                        <option value="Martes">Martes</option>
+                        <option value="Miércoles">Miércoles</option>
+                        <option value="Jueves">Jueves</option>
+                        <option value="Viernes">Viernes</option>
+                        <option value="Sábado">Sábado</option>
+                        <option value="Domingo">Domingo</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Horario:</label>
+                    <select class="box" name="horario" id="horario">
+                        <option selected="true" disabled="disabled">seleccione el horario</option>
+                        <option value="10:00">10:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="21:00">21:00</option>
+                        <option value="No Aplica">No Aplica</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Precio:</label>
+                    <input class="box" type="number" name="price" id="price" placeholder="Precio $" min="0" required>
+                </div>
+                <div>
+                    <label>Cantidad de horas por Mentoría:</label>
+                    <p><input class="box" type="number" name="duration" id="duration" placeholder="Horas" min="0"
+                            required>
+                </div>
+                <div>
+                    <label>Mentor:</label>
+                    <input class="box" type="text" name="mentor" id="mentor" placeholder="Mentor" required>
+                </div>
+                <div>
+                    <label>País del Mentor:</label>
+                    <input class="box" type="text" name="mentor_country" id="mentor_country"
+                        placeholder="País del mentor" required>
+                </div>
+                <div>
+                    <label>Título del Mentor:</label>
+                    <input class="box" type="text" name="mentor_titulo" id="mentor_titulo"
+                        placeholder="Título del mentor" required>
+                </div>
+                <div>
                     <div>
                         <label>Descuento:</label>
-                        <input class="box" type="number" name="discount" id="discount" placeholder="Descuento %" min="0" required>
-                    </div> 
+                        <input class="box" type="number" name="discount" id="discount" placeholder="Descuento %" min="0"
+                            required>
+                    </div>
                     <div>
                         <label>Subir imagen del producto:</label>
-                        <input class="box" type="file" name="image" id="image" accept=".jpg,.png" multiple> 
-                    </div>   
-                <div class="botones">
-                    <button class="enviar" type="submit"><i class="fas fa-plus-circle"></i> Guardar producto</button>
-                    <button class="borrar" type="reset"><i class="fas fa-eraser"></i> Borrar</button>   
-                </div>
+                        <input class="box" type="file" name="image" id="image" accept=".jpg,.png" multiple>
+                    </div>
+                    <div class="botones">
+                        <button class="enviar" type="submit"><i class="fas fa-plus-circle"></i> Guardar
+                            producto</button>
+                        <button class="borrar" type="reset"><i class="fas fa-eraser"></i> Borrar</button>
+                    </div>
             </form>
             <div class="boton-cancelar">
                 <a href="/products"><i class="fas fa-times"></i> Cancelar</a>
@@ -91,4 +105,5 @@
     </main>
     <%- include('../partials/footer') %>
 </body>
+
 </html>

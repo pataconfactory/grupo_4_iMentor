@@ -19,9 +19,11 @@ db.Product.findAll()
 const productsController = {
 
     products: function (req, res) {
-        res.render(path.join(__dirname, '../views/products/products'), {
-            products
+        db.Product.findAll()
+        .then(function(products){
+            res.render(path.join(__dirname, '../views/products/products'),{products: products})
         })
+        
     },
 
     create: function (req, res) {
@@ -32,7 +34,19 @@ const productsController = {
     },
 
     store: function (req, res) {
-        let ultimoProducto = products.pop();
+        db.Product.create({
+            product_name: req.body.name,
+            product_category_id: req.body.category,
+            product_description: req.body.description,
+            day: req.body.day,
+            time: req.body.horario,
+            price: req.body.price,
+            duration: req.body.duration,
+            product_image: req.file.filename,
+        });
+        res.redirect('/products/');
+
+       /** let ultimoProducto = products.pop();
         let idUltimoProducto = ultimoProducto.id;
         let newProduct = req.body;
         newProduct.mentor_avatar = null;
@@ -43,8 +57,8 @@ const productsController = {
         products.push(newProduct);
         let newProductsJSON = JSON.stringify(products);
         console.log(newProductsJSON); /*Se ve en la Terminal*/
-        fs.writeFileSync(path.join(__dirname, '../data/products.json'), newProductsJSON);
-        res.redirect('/products/');
+        /*fs.writeFileSync(path.join(__dirname, '../data/products.json'), newProductsJSON);
+        res.redirect('/products/'); **/
     },
 
     detail: function (req, res) {
