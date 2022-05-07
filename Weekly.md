@@ -98,7 +98,8 @@
 <p>Recibimos feedback del Lucas sobre el DER y se comenzó a trabajar en crear los modelos en el proyecto</p>
 <strong>Viernes 29 de abril</strong>
 <p>Se compartió el primero script de SQL y probamos iniciarlo todas en nuestras computadoras, cómo hubo errores y modificaciones en la tabla de mentores se procedió a editar el SQL script</p>
+<p>Se acordó comenzar a rmeover las páginas que no están terminadas como newsletter, y otros links que no tienen vistas creadas para hacer m´s limpia la aplicación</p>
 <strong>Viernes 6 de Mayo</strong>
-<p>Pudimos lvantar y conectar la base de datos al proyecto, comenzamos el CRUD</p>
+<p>Pudimos levantar y conectar la base de datos al proyecto, comenzamos el CRUD</p>
 <strong>Sábado 7 de Mayo</strong>
 <p>Se creó el create y el detail (read) de productos. En el detail estamos resolviendo porque la relacion de products, produc_mentor, mentors y users no está mostrando la información de los mentores en la vista de detail:id</p>
