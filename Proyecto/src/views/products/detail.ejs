@@ -12,35 +12,35 @@
             <h1>Detalle del Servicio</h1>
             <div class="detalle">
                 <div class="caja-img-product">
-                    <h3 class="servicio"><%= productoRequerido.service %></h3>
-                    <img src="/img/products/<%= `${productoRequerido.image}` %>" alt="Imagen del producto"> 
+                    <h3 class="servicio"><%= product.service %></h3>
+                    <img src="/img/products/<%= `${product.product_image}` %>" alt="Imagen del producto"> 
                 </div>
                 <div class="name-category">
-                    <h3 class="categoria"><%= productoRequerido.category %></h3>
-                    <h2 class="nombre"><%= productoRequerido.name %></h2>
+                    <h3 class="categoria"><%= product.productCat.category_name %></h3>
+                    <h2 class="nombre"><%= product.product_name %></h2>
                 </div>
-                <p class="descripcion"><%= productoRequerido.description %></p>
-                <p class="datos"><span>Precio:</span> <%= productoRequerido.price %>$</p>
-                <% if(productoRequerido.service !== 'Gift Cards') { %>
-                    <p class="datos"><span>Duración:</span>  <%= productoRequerido.duration %> horas</p>
-                    <p class="datos"><span>Descuento:</span> <%= productoRequerido.discount %>%</p>
+                <p class="descripcion"><%= product.description %></p>
+                <p class="datos"><span>Precio:</span> <%= product.price %>$</p>
+                <% if(product.service !== 'Gift Cards') { %>
+                    <p class="datos"><span>Duración:</span> horas: <%= product.duration %> </p>
+                    <p class="datos"><span>Descuento:</span> <%= product.discount %>%</p>
                 <section class="mentor">
                     <h3>Mentor</h3>
                     <div class="informacion-mentor">
-                        <img src="/img/mentors/<%= `${productoRequerido.mentor_avatar}` %>" alt="Imagen del mentor">
+                        <img src="/img/mentors/<%= `${product.mentors_product.avatar}` %>" alt="Imagen del mentor">
                         <div class="info">
-                            <p class="reseña"><i class="fas fa-user"></i> <%= productoRequerido.mentor %></p>
-                            <p class="reseña"><i class="fas fa-light fas fa-globe"></i> <%= productoRequerido.mentor_country %></p>
-                            <p class="reseña"><i class="fas fa-chalkboard-teacher"></i> <%= productoRequerido.mentor_titulo %></p>
-                            <p class="reseña"><i class="fas fa-clock"></i> <%= productoRequerido.horario %></p>
-                            <p class="reseña"><i class="fas fa-medal"></i> Reseña del Mentor</p>
+                            <p class="reseña"><i class="fas fa-user"></i> <%= product.product_description %></p>
+                            <p class="reseña"><i class="fas fa-light fas fa-globe"></i> <%= product.mentors_product.country %></p>
+                            <p class="reseña"><i class="fas fa-chalkboard-teacher"></i> <%= product.mentors_product.country  %></p>
+                            <p class="reseña"><i class="fas fa-clock"></i> <%= product.time %></p>
+                            <p class="reseña"><i class="fas fa-medal"></i> Reseña: <%= product.mentors_product.description %></p>
                             <p class="reseña"><i class="fas fa-light fas fa-chalkboard"></i> Asesorías</p>
                             <p class="reseña"><i class="fas fa-star"></i> Calificación</p>
                         </div>
                     </div>
                 </section>
                 <% } %>
-                <form class="boton-adquirir" action="/products/productCart/<%= productoRequerido.id %>" method="POST">
+                <form class="boton-adquirir" action="/products/productCart/<%= product.product_id %>" method="POST">
                     <button type="submit" class="boton-adquirir"><i class="fa fa-shopping-cart"></i> Adquirir</button>  
                 </form>
             </div>

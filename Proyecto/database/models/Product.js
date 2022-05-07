@@ -55,7 +55,7 @@ module.exports = function(sequelize, DataTypes) {
         });
 
         Product.belongsToMany(models.Mentor, {
-            as: 'mentors-of-product',
+            as: 'mentors_product',
             through: 'product_mentor',
             foreignKey: 'product_id',
             otherKey: 'mentor_id',

@@ -62,17 +62,11 @@ const productsController = {
     },
 
     detail: function (req, res) {
-        let idProducto = db.Product.findByPk(req.params.id)
+        db.Product.findByPk(req.params.id, {
+            include: [{association: "productCat"}, {association: "mentors_product"}]
+        })
             .then(function (product) {
-                let productoRequerido = {};
-                for (let i = 0; i < products.length; i++) {
-                    if (products[i].id == idProducto) {
-                        productoRequerido = products[i];
-                        res.render(path.join(__dirname, '../views/products/detail'), {
-                            productoRequerido
-                        })
-                    }
-                }
+                res.render(path.join(__dirname, '../views/products/detail'), {product:product})
             })
     },
 
