@@ -19,7 +19,7 @@
                     <h3 class="categoria"><%= product.productCat.category_name %></h3>
                     <h2 class="nombre"><%= product.product_name %></h2>
                 </div>
-                <p class="descripcion"><%= product.description %></p>
+                <p class="descripcion"><%= product.product_description %></p>
                 <p class="datos"><span>Precio:</span> <%= product.price %>$</p>
                 <% if(product.service !== 'Gift Cards') { %>
                     <p class="datos"><span>Duración:</span> horas: <%= product.duration %> </p>
@@ -29,9 +29,9 @@
                     <div class="informacion-mentor">
                         <img src="/img/mentors/<%= `${product.mentors_product.avatar}` %>" alt="Imagen del mentor">
                         <div class="info">
-                            <p class="reseña"><i class="fas fa-user"></i> <%= product.product_description %></p>
+                            <p class="reseña"><i class="fas fa-user"></i> <%= product.mentors_product.first_name %> <%= product.mentors_product.last_name %></p>
                             <p class="reseña"><i class="fas fa-light fas fa-globe"></i> <%= product.mentors_product.country %></p>
-                            <p class="reseña"><i class="fas fa-chalkboard-teacher"></i> <%= product.mentors_product.country  %></p>
+                            <p class="reseña"><i class="fas fa-chalkboard-teacher"></i> <%= product.mentors_product.title  %></p>
                             <p class="reseña"><i class="fas fa-clock"></i> <%= product.time %></p>
                             <p class="reseña"><i class="fas fa-medal"></i> Reseña: <%= product.mentors_product.description %></p>
                             <p class="reseña"><i class="fas fa-light fas fa-chalkboard"></i> Asesorías</p>

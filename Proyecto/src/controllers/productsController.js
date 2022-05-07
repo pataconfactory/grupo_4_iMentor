@@ -15,6 +15,10 @@ db.Product.findAll()
     .then((resultado) => {
         console.log(resultado)
     })
+db.Product.findAll()
+    .then((resultado) => {
+        console.log(resultado)
+    })
 
 const productsController = {
 
