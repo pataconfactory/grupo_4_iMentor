@@ -96,3 +96,9 @@
 <p>Revisamos las consignas de la sprint 6. Se comenzó a trabajar con el DER de la aplicación y lo compartimos con Lucas por discord</p>
 <strong>Sábado 23 de abril</strong>
 <p>Recibimos feedback del Lucas sobre el DER y se comenzó a trabajar en crear los modelos en el proyecto</p>
+<strong>Viernes 29 de abril</strong>
+<p>Se compartió el primero script de SQL y probamos iniciarlo todas en nuestras computadoras, cómo hubo errores y modificaciones en la tabla de mentores se procedió a editar el SQL script</p>
+<strong>Viernes 6 de Mayo</strong>
+<p>Pudimos lvantar y conectar la base de datos al proyecto, comenzamos el CRUD</p>
+<strong>Sábado 7 de Mayo</strong>
+<p>Se creó el create y el detail (read) de productos. En el detail estamos resolviendo porque la relacion de products, produc_mentor, mentors y users no está mostrando la información de los mentores en la vista de detail:id</p>
