@@ -6,15 +6,12 @@ const Users = require('../models/Users');
 const Mentors = require('../models/Mentors');
 const bcrypt = require('bcryptjs');
 const bcryptjs = require('bcryptjs');
-const db = require("../../database/models")
+const db = require("../../database/models");
+const { promiseImpl } = require('ejs');
 
 let productsJSON = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf-8');
 let products = JSON.parse(productsJSON);
 
-db.Product.findAll()
-    .then((resultado) => {
-        console.log(resultado)
-    })
 db.Product.findAll()
     .then((resultado) => {
         console.log(resultado)
@@ -50,19 +47,6 @@ const productsController = {
         });
         res.redirect('/products/');
 
-       /** let ultimoProducto = products.pop();
-        let idUltimoProducto = ultimoProducto.id;
-        let newProduct = req.body;
-        newProduct.mentor_avatar = null;
-        let filename = req.file.filename;
-        newProduct.image = filename;
-        newProduct.id = idUltimoProducto + 1;
-        products.push(ultimoProducto);
-        products.push(newProduct);
-        let newProductsJSON = JSON.stringify(products);
-        console.log(newProductsJSON); /*Se ve en la Terminal*/
-        /*fs.writeFileSync(path.join(__dirname, '../data/products.json'), newProductsJSON);
-        res.redirect('/products/'); **/
     },
 
     detail: function (req, res) {
@@ -75,45 +59,36 @@ const productsController = {
     },
 
     edit: function (req, res) {
-        let idProducto = req.params.id;
-        let productoEditar = {};
-        for (let i = 0; i < products.length; i++) {
-            if (products[i].id == idProducto) {
-                let productoEditar = products[i];
+        let idProducto = db.Product.findByPk(req.params.id, {
+            include: [{association: "productCat"}, {association: "mentors_product"}]
+        });
+        let productCategory = db.ProductCat.findAll();
+
+        Promise.all([idProducto, productCategory])
+            .then(function([idProducto, productCategory]){
                 res.render(path.join(__dirname, '../views/products/productEdition'), {
-                    productoEditar
+                    idProducto:idProducto, productCategory:productCategory
                 })
-            }
-        }
-    },
+        })
+    
+},
 
     update: function (req, res) {
-        let idProducto = req.params.id;
-        let productEnviado = req.body;
-        let file = req.file;
-        products.forEach(function (elemento) {
-            if (elemento.id == idProducto) {
-                elemento.name = productEnviado.name;
-                elemento.description = productEnviado.description;
-                elemento.service = productEnviado.service;
-                elemento.category = productEnviado.category;
-                elemento.mentor = productEnviado.mentor;
-                elemento.mentor_country = productEnviado.country;
-                elemento.mentor_titulo = productEnviado.titulo;
-                elemento.duration = productEnviado.duration;
-                elemento.horario = productEnviado.horario;
-                elemento.price = productEnviado.price;
-                elemento.discount = productEnviado.discount;
-                if (file !== undefined) {
-                    const filename = req.file.filename;
-                    elemento.image = filename;
-                }
+        db.Product.update({
+            product_name: req.body.name,
+            product_category_id: req.body.category,
+            product_description: req.body.description,
+            day: req.body.day,
+            time: req.body.horario,
+            price: req.body.price,
+            duration: req.body.duration,
+            product_image: req.file.filename,
+        }, {
+            where: {
+                product_id: req.params.id
             }
         });
-        let productsJSON = JSON.stringify(products);
-        console.log(productsJSON);
-        fs.writeFileSync(path.join(__dirname, '../data/products.json'), productsJSON);
-        res.redirect('/products/');
+        res.redirect('../views/products/detail' + req.params.id);
     },
 
     destroy: function (req, res) {

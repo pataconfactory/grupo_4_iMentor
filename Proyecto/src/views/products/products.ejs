@@ -55,10 +55,10 @@
                                     <p>Horario: <%= products[i].time %></p>
                                 <% } %>
                                 <p><span><%= products[i].price %>$</span></p>
-                                <a href="/products/detail/<%= products[i].product_category_id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
+                                <a href="/products/detail/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
                                 <% if(locals.isLogged && locals.userLogged.category == 'Administrador') { %>
-                                    <a href="/products/edit/<%= products[i].product_category_id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>
-                                    <form class="eliminar" action="/products/delete/<%= products[i].product_category_id %>?_method=DELETE" method="POST">
+                                    <a href="/products/edit/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>
+                                    <form class="eliminar" action="/products/delete/<%= products[i].product_id %>?_method=DELETE" method="POST">
                                         <button type="submit" class="boton-final-eliminar"><i class="fas fa-trash"></i>Eliminar</button>  
                                     </form>
                                 <% } %>
