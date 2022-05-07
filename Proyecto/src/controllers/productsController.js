@@ -25,7 +25,10 @@ const productsController = {
     },
 
     create: function (req, res) {
-        res.render(path.join(__dirname, '../views/products/productCreate'))
+        db.ProductCat.findAll()
+            .then(function(categories){
+               return res.render(path.join(__dirname, '../views/products/productCreate'), {categories: categories})
+            })
     },
 
     store: function (req, res) {

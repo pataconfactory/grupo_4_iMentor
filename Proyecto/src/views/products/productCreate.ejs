@@ -34,16 +34,11 @@
                         <label>Categoría:</label>
                         <select class="box" name="category" id="category">
                             <option selected="true" disabled="disabled">seleccione la categoría</option>
-                            <option value="Front-End">Front-End</option>
-                            <option value="Back-End">Back-End</option>
-                            <option value="UI/UX">UI/UX</option>
-                            <option value="Base de Datos">Base de Datos</option>
-                            <option value="Marketing Digital">Marketing Digital</option>
-                            <option value="Mensual">Mensual</option>
-                            <option value="Anual">Anual</option>
-                            <option value="Gold">Gold</option>
-                            <option value="Platinium">Platinium</option>
-                            <option value="Black">Black</option>
+                            <% for (let i = 0; i < categories.length; i++){ %>
+                            <option value="<%=categories[i].product_category_id%>">
+                                <%=categories[i].category_name%>
+                                </option>
+                         <%} %>
                         </select>
                     </div>
                     <div>
