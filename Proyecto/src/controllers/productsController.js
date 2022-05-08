@@ -88,23 +88,15 @@ const productsController = {
                 product_id: req.params.id
             }
         });
-        res.redirect('../views/products/detail' + req.params.id);
+        res.redirect('/products/detail/' + req.params.id);
     },
 
     destroy: function (req, res) {
-        let idProducto = req.params.id;
-        let productoEliminar = {};
-        for (let i = 0; i < products.length; i++) {
-            if (products[i].id == idProducto) {
-                productoEliminar = products[i];
+        db.Product.destroy({
+            where: {
+                product_id: req.params.id
             }
-        };
-        products = products.filter(function (elemento) {
-            return (elemento != productoEliminar);
-        });
-        let productsJSON = JSON.stringify(products);
-        console.log(productsJSON);
-        fs.writeFileSync(path.join(__dirname, '../data/products.json'), productsJSON);
+        })
         res.redirect('/products/');
     },
 
