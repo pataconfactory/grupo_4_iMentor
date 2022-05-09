@@ -34,8 +34,8 @@
                                 <h3><%= users[i].email %></h3>
                                 <p><%= users[i].title %></p>
                                 <p><%= users[i].country %></p>
-                                <p><%= users[i].category %></p>
-                                <a href="/users/detail/<%= users[i].id %>/<%= users[i].email %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
+                                <p><%= users[i].role_name %></p>
+                                <a href="/users/detail/<%= users[i].user_id %>/<%= users[i].email %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
                                 <form class="eliminar" action="/users/delete/<%= users[i].id %>/<%= users[i].email %>?_method=DELETE" method="POST">
                                     <button type="submit" class="boton-final-eliminar"><i class="fas fa-trash"></i>Eliminar</button>
                                 </form>

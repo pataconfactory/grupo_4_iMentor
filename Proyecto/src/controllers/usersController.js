@@ -10,11 +10,6 @@ const bcryptjs = require('bcryptjs');
 const db = require("../../database/models");
 
 const usersController = {
-    //listUsers: function(req, res) {
-    //    let users = Users.findAll();
-    //    let mentors = Mentors.findAll();
-    //    return res.render(path.join(__dirname, '../views/users/listUsers'), {mentors, users})
-    //},
 
     listUsers: function (req, res) {
         db.User.findAll()
@@ -24,18 +19,20 @@ const usersController = {
         
     },
 
-
     detailUsers: function(req, res) {
-        let user = Users.findByField('email', req.params.email);
-
-        if (user == undefined) {
-            let mentor = Mentors.findByField('email', req.params.email);
-            return res.render(path.join(__dirname, '../views/users/userDetail'), {mentor})
-        }
-        return res.render(path.join(__dirname, '../views/users/userDetail'), {user})
+        db.User.findOne({
+            where: {
+                email: req.params.email
+            }
+            }, {include: [{association: 'role-user'}]
+        })
+            .then(function(user){
+                console.log(user)
+                return res.render(path.join(__dirname, '../views/users/userDetail'), {user:user})
+            })
     },
 
-    register: function(req, res) {
+    register: function(req,res) {
         res.cookie()
         return res.render(path.join(__dirname, '../views/users/register'))
     },
