@@ -57,7 +57,7 @@ module.exports = function(sequelize, DataTypes) {
 
         User.belongsTo(models.Role, {
             as: 'role-user',
-            foreignKey: 'role_id'
+            foreignKey: 'users_role_id_foreign'
         });
 
         User.belongsTo(models.Mentor, {
