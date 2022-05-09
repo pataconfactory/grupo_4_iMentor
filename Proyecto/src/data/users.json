@@ -47,7 +47,7 @@
   "category": "Usuario",
   "title": "Ingeniería Informática",
   "terminos": "on",
-  "products": "[0]",
+  "products": "[0,{\"name\":\"CSS: Diseño Web desde cero a avanzado\",\"description\":\"Asesorate sobre CSS desde los fundamentos hasta temas intermedios y avanzados para crear sitios y aplicaciones Web increíbles!. Crea aplicaciones Web utilizando CSS (Cascading Style Sheets) con las últimas versiones al día de hoy.\",\"service\":\"Asesoría\",\"category\":\"Front-End\",\"mentor\":\"Lucas Sequeira\",\"mentor_country\":\"Argentina\",\"mentor_titulo\":\"Desarrollador Web Full Stack\",\"duration\":\"2\",\"horario\":\"18:00hs\",\"price\":\"20\",\"discount\":\"5\",\"mentor_avatar\":\"mentor-Lucas-Sequeira.png\",\"image\":\"product-aprender-css.jpg\",\"id\":3}]",
   "avatar": "user-1650382685494.jpg"
  },
  {

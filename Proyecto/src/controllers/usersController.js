@@ -5,15 +5,25 @@ const res = require('express/lib/response');
 const {validationResult} = require('express-validator');
 const Users = require('../models/Users');
 const Mentors = require('../models/Mentors');
-const bcrypt =require('bcryptjs');
+const bcrypt = require('bcryptjs');
 const bcryptjs = require('bcryptjs');
+const db = require("../../database/models");
 
 const usersController = {
-    listUsers: function(req, res) {
-        let users = Users.findAll();
-        let mentors = Mentors.findAll();
-        return res.render(path.join(__dirname, '../views/users/listUsers'), {mentors, users})
+    //listUsers: function(req, res) {
+    //    let users = Users.findAll();
+    //    let mentors = Mentors.findAll();
+    //    return res.render(path.join(__dirname, '../views/users/listUsers'), {mentors, users})
+    //},
+
+    listUsers: function (req, res) {
+        db.User.findAll()
+        .then(function(users){
+            res.render(path.join(__dirname, '../views/users/listUsers'),{users: users})
+        })
+        
     },
+
 
     detailUsers: function(req, res) {
         let user = Users.findByField('email', req.params.email);
