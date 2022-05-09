@@ -55,9 +55,10 @@ module.exports = function(sequelize, DataTypes) {
 
     User.associate = function(models) {
 
+
         User.belongsTo(models.Role, {
             as: 'role-user',
-            foreignKey: 'users_role_id_foreign'
+            foreignKey: 'role_id'
         });
 
         User.belongsTo(models.Mentor, {
