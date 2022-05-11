@@ -38,7 +38,7 @@
                     <li class="ingresar"><a href = "/users/login">Ingresar</a></li>
                 </ul>
             <% } else { %>
-                <% if(locals.userLogged.category !== 'Administrador') { %>
+                <% if(locals.userLogged.role_id !== 2) { %>
                 <div class="menu-para-logueados">
                     <img src="/img/avatars/<%= locals.userLogged.avatar %>">
                     <button class="dropdown-btn">Hola <%= locals.userLogged.first_name %> <i class="fa fa-caret-down"></i></button>

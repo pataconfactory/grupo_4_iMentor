@@ -10,31 +10,44 @@ const bcryptjs = require('bcryptjs');
 const db = require("../../database/models");
 
 const usersController = {
-
     listUsers: function (req, res) {
-        db.User.findAll()
-        .then(function(users){
-            res.render(path.join(__dirname, '../views/users/listUsers'),{users: users})
+        db.User.findAll({
+            include: [
+                {association: "roles"},
+                {association: "users"},
+                {association: "users_products"}
+            ]
         })
-        
+        .then(function(users){
+            res.render(path.join(__dirname, '../views/users/listUsers'),{users})
+        })
     },
 
     detailUsers: function(req, res) {
-        db.User.findOne({
-            where: {
-                email: req.params.email
-            }
-            }, {include: [{association: 'role-user'}]
-        })
-            .then(function(user){
+        let ver = req.params;
+        console.log(ver)
+        db.User.findByPk(req.params.id, {include: [
+                {association: "roles"},
+                {association: "users"},
+                {association: "bookings_user"},
+                {association: "users_products"},
+            ]
+        }).then(function(user){
                 console.log(user)
-                return res.render(path.join(__dirname, '../views/users/userDetail'), {user:user})
-            })
+                return res.render(path.join(__dirname, '../views/users/userDetail'), {user})
+        })
     },
 
     register: function(req,res) {
         res.cookie()
-        return res.render(path.join(__dirname, '../views/users/register'))
+        db.Role.findAll({
+            include: [
+                {association: "roles"}
+            ]
+        })
+        .then(function(roles) {
+            return res.render(path.join(__dirname, '../views/users/register'), {roles})
+        })
     },
 
     login: function(req, res) {
@@ -47,24 +60,26 @@ const usersController = {
             return res.render(path.join(__dirname, '../views/users/login'), {errors: errors.mapped(), old: req.body});
         }
 
-        let userToLogin = Users.findByField('email', req.body.email);
-        if(userToLogin == undefined) {
-            userToLogin = Mentors.findByField('email', req.body.email);
-        }
-
-        if(userToLogin){
-            let isOkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-            if(isOkPassword){
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin;
-                if(req.body.remember) {
-                    res.cookie('userEmail', req.body.email, {maxAge: (1000 * 300)});
-                }
-                return res.redirect('/users/profile');
+        db.User.findOne({
+            where:{
+                email: req.body.email
             }
-            return res.render(path.join(__dirname, '../views/users/login'), {errors: {password: {msg: 'Las credenciales son inválidas'}}, old: req.body});
-        }
-        return res.render(path.join(__dirname, '../views/users/login'), {errors: {email: {msg: 'No se encuentra este email en nuestra base de datos'}}, old: req.body});
+        }).then((userToLogin) => {
+            let user = userToLogin.dataValues;
+            if(user){
+                let isOkPassword = bcryptjs.compareSync(req.body.password, user.password);
+                if(isOkPassword){
+                    delete user.password;
+                    req.session.userLogged = user;
+                    if(req.body.remember) {
+                        res.cookie('userEmail', req.body.email, {maxAge: (1000 * 300)});
+                    }
+                    return res.redirect('/users/profile');
+                }
+                return res.render(path.join(__dirname, '../views/users/login'), {errors: {password: {msg: 'Las credenciales son inválidas'}}, old: req.body});
+            }
+            return res.render(path.join(__dirname, '../views/users/login'), {errors: {email: {msg: 'No se encuentra este email en nuestra base de datos'}}, old: req.body});
+         })
     },
 
     processRegister: function (req, res) {
@@ -109,7 +124,17 @@ const usersController = {
     }, 
 
     profile: function(req, res) {
-        return res.render(path.join(__dirname, '../views/users/profile'), {user: req.session.userLogged});
+        let id = req.session.userLogged.user_id;
+        db.User.findByPk(id, {include: [
+                {association: "roles"},
+                {association: "users"},
+                {association: "bookings_user"},
+                {association: "users_products"},
+            ]
+        }).then(function(user){
+            console.log(user)
+            return res.render(path.join(__dirname, '../views/users/profile'), {user});
+        })
     },
 
     logout: function(req, res) {

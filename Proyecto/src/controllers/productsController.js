@@ -1,14 +1,7 @@
 const path = require('path');
-const fs = require('fs');
 const res = require('express/lib/response');
-const bcrypt =require('bcryptjs');
-const bcryptjs = require('bcryptjs');
-//const Users = require('../models/Users');
-//const Mentors = require('../models/Mentors');
 const db = require('../../database/models');
 const Op = db.Sequelize.Op;
-//let productsJSON = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf-8');
-//let products = JSON.parse (productsJSON);
 
 const productsController = {
     products: function(req, res) {
@@ -109,7 +102,6 @@ const productsController = {
            datosMentor.mentorId = resultado.dataValues.mentor_id;
            return datosMentor;
         }).then((data) => {
-            console.log(data);
             if(req.file){
                 db.Product.update({
                     product_name: req.body.name,
@@ -149,28 +141,21 @@ const productsController = {
     },
 
     destroy: function(req, res) {
-        let idProducto = req.params.id;
-        let productoEliminar = {};
-        for(let i=0; i<products.length; i++){
-            if(products[i].id == idProducto){
-                productoEliminar = products[i];   
+        db.Product.destroy({
+            where: {
+                product_id: req.params.id
             }
-        };
-        products = products.filter(function (elemento){
-			return (elemento != productoEliminar);
-        });
-        let productsJSON = JSON.stringify(products);
-        console.log(productsJSON);
-        fs.writeFileSync(path.join(__dirname, '../data/products.json'), productsJSON);
+        })
         res.redirect('/products/');
     },
 
     productServices: function(req, res) {
         res.render(path.join(__dirname, '../views/products/productServices'))
-    },
+    }
 
-    productCart: function(req, res) {
+    /*productCart: function(req, res) {
         let userEmail = req.session.userLogged.email;
+        console.log(req.session.userLogged)
         let userInDB = {};
         if((req.session.userLogged.category == 'Usuario') || (req.session.userLogged.category == 'Administrador')) {
             userInDB = Users.findByField('email', userEmail);

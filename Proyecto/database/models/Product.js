@@ -73,10 +73,10 @@ module.exports = function(sequelize, DataTypes) {
             foreignKey: 'user_id'
         });
 
-        /*Product.hasMany(models.Booking, {
+        Product.hasMany(models.Booking, {
             as: 'bookings_product',
             foreignKey: 'product_id'
-        });*/
+        });
     };
     return Product;
 }

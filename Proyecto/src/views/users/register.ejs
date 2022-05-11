@@ -131,23 +131,23 @@
                         <% } %>
                     </div>
                     <div class="register-username">
-                        <label><i class="fas fa-clipboard-list"></i>Categoría</label>
+                        <label><i class="fas fa-clipboard-list"></i>Rol</label>
                         <select class="boxes" name="category" id="category"
                             value="<%= locals.old ? old.category : null %>">
                             <option value="">seleccione categoría</option>
-                            <% if(locals.isLogged && locals.userLogged.category == 'Administrador') { %>
-                                <% let categorias = ['Usuario','Mentor','Administrador']; %>
-                                <% for (const oneCategory of categorias) { %>
-                                    <option value="<%= oneCategory %>"
-                                        <%= locals.old && (oneCategory == old.category) ? 'selected' : null  %>>
-                                        <%= oneCategory %></option>
+                            <% if(locals.isLogged && locals.userLogged.category == 'Administrador') { %>                               
+                                <% for (const oneRol of roles) { %>
+                                    <option value="<%= oneRol.role_id %>"
+                                        <%= locals.old && (oneRol.role_name == old.category) ? 'selected' : null  %>>
+                                        <%= oneRol.role_name %></option>
                                 <% } %>
                             <% } else { %>
-                                <% let categorias = ['Usuario','Mentor']; %>
-                                <% for (const oneCategory of categorias) { %>
-                                    <option value="<%= oneCategory %>"
-                                        <%= locals.old && (oneCategory == old.category) ? 'selected' : null  %>>
-                                        <%= oneCategory %></option>
+                                <% for (const oneRol of roles) { %>
+                                    <% if(oneRol.role_id != 2) { %>
+                                        <option value="<%= oneRol.role_id %>"
+                                            <%= locals.old && (oneRol.role_name == old.category) ? 'selected' : null  %>>
+                                            <%= oneRol.role_name %></option>
+                                    <% } %>
                                 <% } %>
                             <% } %>
                         </select>
@@ -175,10 +175,6 @@
                             <p class="feedback"><%= errors.avatar.msg %></p>
                         </div>
                         <% } %>
-                    </div>
-                    <div class="terminos">
-                        <input type="checkbox" name="terminos" id="terminos">
-                        <label for="terminos">Acepto los términos y condiciones</label>
                     </div>
                     <div>
                         <button class="register-button" type="submit"><i class="fas fa-plus-circle"></i>

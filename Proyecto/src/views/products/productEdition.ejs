@@ -48,29 +48,26 @@
                     </div> 
                     <div>
                         <label>Horario:</label>
-                        <select class="box" name="horario" id="horario" value="<% = productoEditar.time %>" >
-                            <option disabled="disabled">seleccione el horario</option>
-                            <option value="10:00:00">10:00hs</option>
-                            <option value="12:00:00">12:00hs</option>
-                            <option value="14:00:00">14:00hs</option>
-                            <option value="16:00:00">16:00hs</option>
-                            <option value="17:00:00">17:00hs</option>
-                            <option value="18:00:00">18:00hs</option>
-                            <option value="19:00:00">19:00hs</option>
-                            <option value="20:00:00">20:00hs</option>
-                            <option value="21:00:00">21:00hs</option>
+                        <select class="box" name="horario" id="horario" value="<%= productoEditar.time %>" >
+                            <option value="">seleccione el horario</option>
+                            <% 
+                             let horarios = ['10:00:00','12:00:00','14:00:00','16:00:00','17:00:00','18:00:00','19:00:00','20:00:00','21:00:00'];
+                            %> 
+                            <% for (const oneHorario of horarios) { %>
+                                <option value="<%= oneHorario %>" <%= oneHorario == productoEditar.time ? 'selected' : null  %> ><%= oneHorario %></option>
+                            <% } %>
                         </select>
                     </div>
                     <div>
                         <label>Día:</label>
                         <select class="box" name="dia" id="dia" value="<%= productoEditar.day %>">
-                            <option disabled="disabled">seleccione el día</option>
-                            <option value="Lunes">Lunes</option>
-                            <option value="Martes">Martes</option>
-                            <option value="Miércoles">Miércoles</option>
-                            <option value="Jueves">Jueves</option>
-                            <option value="Viernes">Viernes</option>
-                            <option value="Sábado">Sábado</option>
+                            <option value="">seleccione el día</option>
+                            <% 
+                             let dias = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+                            %> 
+                            <% for (const oneDia of dias) { %>
+                                <option value="<%= oneDia %>" <%= oneDia == productoEditar.day ? 'selected' : null  %> ><%= oneDia %></option>
+                            <% } %>
                         </select>
                     </div>
                     <div>
