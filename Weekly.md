@@ -103,3 +103,6 @@
 <p>Pudimos levantar y conectar la base de datos al proyecto, comenzamos el CRUD</p>
 <strong>Sábado 7 de Mayo</strong>
 <p>Se creó el create y el detail (read) de productos. En el detail estamos resolviendo porque la relacion de products, produc_mentor, mentors y users no está mostrando la información de los mentores en la vista de detail:id</p>
+<strong>Martes 10 de Mayo</strong>
+<p>Identificamos que el error de las asociaciones entre la tabla de product_mentor, mentor y usuario estaba mal desde las relaciones en la base de datos, se removió la tabla pivote y se hizo una nueva relación mentor-user, y product user y se completó el CRUD de productos</p>
+<p>Comenzamos a trabajar en el CRUD de usuarios</p>
