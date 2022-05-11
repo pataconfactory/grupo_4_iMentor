@@ -12,35 +12,30 @@
             <h1>Detalle del Servicio</h1>
             <div class="detalle">
                 <div class="caja-img-product">
-                    <h3 class="servicio">"Asesoría"</h3>
-                    <img src="/img/products/<%= `${product.product_image}` %>" alt="Imagen del producto"> 
+                    <h3 class="servicio"><%= productoRequerido.categories.category_name %></h3>
+                    <img src="/img/products/<%= `${productoRequerido.product_image}` %>" alt="Imagen del producto"> 
                 </div>
                 <div class="name-category">
-                    <h3 class="categoria"><%= product.productCat.category_name %></h3>
-                    <h2 class="nombre"><%= product.product_name %></h2>
+                    <h2 class="nombre"><%= productoRequerido.product_name %></h2>
                 </div>
-                <p class="descripcion"><%= product.product_description %></p>
-                <p class="datos"><span>Precio:</span> <%= product.price %>$</p>
-                <% if(product.service !== 'Gift Cards') { %>
-                    <p class="datos"><span>Duración:</span> horas: <%= product.duration %> </p>
-                    <p class="datos"><span>Descuento:</span> <%= product.discount %>%</p>
+                <p class="descripcion"><%= productoRequerido.product_description %></p>
+                <p class="datos"><span>Precio:</span> <%= productoRequerido.price %>$</p>
+                <p class="datos"><span>Duración:</span>  <%= productoRequerido.duration %> hora</p>
+                <p class="datos"><span>Horario:</span> <%= productoRequerido.day %>, <%= productoRequerido.time %>hs</p>
                 <section class="mentor">
                     <h3>Mentor</h3>
                     <div class="informacion-mentor">
-                        <img src="/img/mentors/<%= `${product.mentors_product.avatar}` %>" alt="Imagen del mentor">
+                        <img src="/img/avatars/<%= `${productoRequerido.users_products.avatar}` %>" alt="Imagen del mentor">
                         <div class="info">
-                            <p class="reseña"><i class="fas fa-user"></i> <%= product.mentors_product.first_name %> <%= product.mentors_product.last_name %></p>
-                            <p class="reseña"><i class="fas fa-light fas fa-globe"></i> <%= product.mentors_product.country %></p>
-                            <p class="reseña"><i class="fas fa-chalkboard-teacher"></i> <%= product.mentors_product.title  %></p>
-                            <p class="reseña"><i class="fas fa-clock"></i> <%= product.time %></p>
-                            <p class="reseña"><i class="fas fa-medal"></i> Reseña: <%= product.mentors_product.description %></p>
-                            <p class="reseña"><i class="fas fa-light fas fa-chalkboard"></i> Asesorías</p>
-                            <p class="reseña"><i class="fas fa-star"></i> Calificación</p>
+                            <p class="reseña"><i class="fas fa-user"></i> <%= productoRequerido.users_products.first_name %> <%= productoRequerido.users_products.last_name %></p>
+                            <p class="reseña"><i class="fas fa-light fas fa-globe"></i> <%= productoRequerido.users_products.country %></p>
+                            <p class="reseña"><i class="fas fa-chalkboard-teacher"></i> <%= productoRequerido.users_products.title %></p>
+                            <p class="reseña"><i class="fas fa-medal"></i> <%= productoRequerido.mentors.description %></p>
+                            <p class="reseña"><i class="fas fa-star"></i> <%= productoRequerido.mentors.punctuation %></p>
                         </div>
                     </div>
                 </section>
-                <% } %>
-                <form class="boton-adquirir" action="/products/productCart/<%= product.product_id %>" method="POST">
+                <form class="boton-adquirir" action="/products/productCart/<%= productoRequerido.product_id %>" method="POST">
                     <button type="submit" class="boton-adquirir"><i class="fa fa-shopping-cart"></i> Adquirir</button>  
                 </form>
             </div>

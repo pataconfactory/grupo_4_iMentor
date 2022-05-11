@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": null,
     "database": "imentor_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -9,14 +9,14 @@ module.exports = {
   "test": {
     "username": "root",
     "password": null,
-    "database": "database_test",
+    "database": "imentor_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": null,
-    "database": "database_production",
+    "database": "imentor_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

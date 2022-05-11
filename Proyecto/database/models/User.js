@@ -1,7 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    
-    let alias = "User";
-
+    let alias = 'User';
     let cols = {
         user_id: {
             type: DataTypes.INTEGER,
@@ -9,68 +7,87 @@ module.exports = function(sequelize, DataTypes) {
             autoIncrement: true
         },
         first_name: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING(50),
+            allowNull: false
         },
         last_name: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING(50),
+            allowNull: false
         },
         user_name: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING(50),
+            allowNull: false
         },
         email: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING(100),
+            allowNull: false
         },
         birthday: {
-            type: DataTypes.DATE
-        }, 
+            type: DataTypes.DATE,
+            allowNull: false
+        },
         age: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        genre: {
+            type: DataTypes.STRING(50),
+            allowNull: false
         },
         country: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING(50),
+            allowNull: false
         },
         password: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING(50),
+            allowNull: false
         },
         title: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING(100),
+            allowNull: false
         },
         avatar: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING(100),
+            allowNull: false
         },
-        createdAt: {
-            type: DataTypes.DATE
+        role_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
-        updatedAt: {
-            type: DataTypes.DATE
+        mentor_id: {
+            type: DataTypes.INTEGER
         }
     }
 
     let config = {
-        tableName: 'users',
-        timestamps: true
+        timestamps: true,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        tableName: 'users'
     }
 
     const User = sequelize.define(alias, cols, config);
 
     User.associate = function(models) {
-
-
         User.belongsTo(models.Role, {
-            as: 'role-user',
+            as: 'role_users',
             foreignKey: 'role_id'
         });
 
         User.belongsTo(models.Mentor, {
-            as: 'mentor_user_id',
-            foreignKey: 'mentor_id'
+            as: 'users',
+            foreignKey: 'mentor_id'      
         });
 
         User.hasMany(models.Booking, {
-            as: 'bookings-user',
+            as: 'bookings_user',
+            foreignKey: 'user_id'
+        });
+
+        User.hasMany(models.Product, {
+            as: 'users_products',
             foreignKey: 'user_id'
         });
     };
-
     return User;
 }

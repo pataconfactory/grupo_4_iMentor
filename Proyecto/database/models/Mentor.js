@@ -1,7 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    
-    let alias = "Mentor";
-
+    let alias = 'Mentor';
     let cols = {
         mentor_id: {
             type: DataTypes.INTEGER,
@@ -9,48 +7,43 @@ module.exports = function(sequelize, DataTypes) {
             autoIncrement: true
         },
         description: {
-            type: DataTypes.STRING
+            type: DataTypes.TEXT,
+            allowNull: false
         },
         hour_price: {
-            type: DataTypes.DECIMAL
+            type: DataTypes.DECIMAL(20),
+            allowNull: false
+        },
+        punctuation: {
+            type: DataTypes.INTEGER,
         },
         CBU: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING(50)
         },
         bank: {
-            type: DataTypes.STRING
-        },
-        createdAt: {
-            type: DataTypes.DATE
-        },
-        updatedAt: {
-            type: DataTypes.DATE
+            type: DataTypes.STRING(50)
         }
     }
 
     let config = {
+        timestamps: true,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
         tableName: 'mentors',
-        timestamps: true
     }
 
     const Mentor = sequelize.define(alias, cols, config);
 
     Mentor.associate = function(models) {
-
-        Mentor.belongsTo(models.User, {
-            as: 'mentor_user_id',
-            foreignKey: 'mentor_id'
-        });
-
-        Mentor.belongsToMany(models.Product, {
-            as: 'products_mentor',
-            through: 'product_mentor',
+        Mentor.hasMany(models.User, {
+            as: 'users',
             foreignKey: 'mentor_id',
-            otherKey: 'product_id',
-            timestamps: false
         });
-        
-    };
 
+        Mentor.hasMany(models.Product, {
+            as: 'mentors',
+            foreignKey: 'mentor_id'   
+        });
+    };
     return Mentor;
 }

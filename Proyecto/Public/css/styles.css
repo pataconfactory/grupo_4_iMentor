@@ -2300,6 +2300,7 @@ main .contenedor-detail .detalle .mentor .informacion-mentor .info{
 
 main .contenedor-detail .detalle .mentor .informacion-mentor .info .reseña{
     font-size: 20px;
+    text-align: justify;
 }
 
 main .contenedor-detail .detalle .mentor .informacion-mentor .info .reseña i:hover{

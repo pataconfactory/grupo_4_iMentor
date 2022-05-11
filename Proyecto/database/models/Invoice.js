@@ -1,7 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    
     let alias = "Invoice";
-
     let cols = {
         invoice_id: {
             type: DataTypes.INTEGER,
@@ -9,33 +7,32 @@ module.exports = function(sequelize, DataTypes) {
             autoIncrement: true
         },
         booking_id: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
         invoice_date: {
             type: DataTypes.DATE
         },
-        createdAt: {
-            type: DataTypes.DATE
-        },
-        updatedAt: {
-            type: DataTypes.DATE
+        total: {
+            type: DataTypes.DECIMAL(20),
+            allowNull: false
         }
     }
 
     let config = {
-        tableName: 'invoices',
-        timestamps: true
+        timestamps: true,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        tableName: 'invoices'
     }
 
     const Invoice = sequelize.define(alias, cols, config);
 
     Invoice.associate = function(models) {
-
         Invoice.belongsTo(models.Booking, {
-            as: 'booking-invoice',
+            as: 'booking_invoice',
             foreignKey: 'booking_id'
         });
     };
-
     return Invoice;
 }

@@ -11,28 +11,15 @@
         <div class="contenedor-edicion-productos">
             <h2>Selecciona tu categoría favorita y empieza a aprender</h2>
             <div class="opciones-desplegables">
-                <p class="servicio-producto">
-                    <select name="servicio-producto" id="">
-                        <option selected="true" disabled="disabled">seleccione el servicio</option>
-                        <option value="Mentorías">Mentorías</option>
-                        <option value="Membresías">Membresías</option>
-                        <option value="Gift Cards">Gift Cards</option>
-                    </select>
-                </p>
                 <p class="categoria-producto">
                     <select name="categoria-producto" id="">
                         <option selected="true" disabled="disabled">seleccione la categoría</option>
-                        <option value="Front-End">Front-End</option>
-                        <option value="Back-End">Back-End</option>
-                        <option value="UX/UI">UX/UI</option>
-                        <option value="Base de Datos">Base de Datos</option>
-                        <option value="Análisis de Datos">Análisis de Datos</option>
-                        <option value="Marketing Digital">Marketing Digital</option>
-                        <option value="Mensual">Mensual</option>
-                        <option value="Anual">Anual</option>
-                        <option value="Gold">Gold</option>
-                        <option value="Platinium">Platinium</option>
-                        <option value="Black">Black</option>
+                        <option value="1">Front-End</option>
+                            <option value="2">Back-End</option>
+                            <option value="3">UI/UX</option>
+                            <option value="4">Base de Datos</option>
+                            <option value="5">Marketing Digital</option>
+                            <option value="6">Análisis de Datos</option>
                     </select>
                 </p>
             </div>
@@ -47,14 +34,14 @@
                         <div class="miniatura">
                             <img src="/img/products/<%= `${products[i].product_image}` %>" alt="Imagen del producto">
                             <div class="product-details">
+                                <h3><%= products[i].categories.category_name %></h3>
                                 <h3 class="name-product"><%= products[i].product_name %></h3>
-                                <%  { %>
-                                    <h3><%= products[i].mentor %></h3>
-                                    <p>Horas: <%= products[i].duration %></p>
-                                    <p>Día: <%= products[i].day %></p>
-                                    <p>Horario: <%= products[i].time %></p>
-                                <% } %>
-                                <p><span><%= products[i].price %>$</span></p>
+                                <% %>
+                                    <h3><%= products[i].users_products.first_name %> <%= products[i].users_products.last_name %></h3>
+                                    <p>0<%= products[i].duration %> hora</p>
+                                    <p><%= products[i].day %></p>
+                                    <p><%= products[i].time %></p>
+                                <p><span>$<%= products[i].price %></span></p>
                                 <a href="/products/detail/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
                                 <% if(locals.isLogged && locals.userLogged.category == 'Administrador') { %>
                                     <a href="/products/edit/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>

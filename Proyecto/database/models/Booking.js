@@ -8,53 +8,48 @@ module.exports = function(sequelize, DataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
-        mentor_id: {
-            type: DataTypes.INTEGER
-        },
         user_id: {
             type: DataTypes.INTEGER,
+            allowNull: false
         },
         product_id: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            allowNull: false
         },
-        duration_time: {
-            type: DataTypes.INTEGER
+        quantity: {
+            type: DataTypes.INTEGER(50),
+            allowNull: false
         },
-        price: {
-            type: DataTypes.DECIMAL
-        },
-        createdAt: {
-            type: DataTypes.DATE
-        },
-        updatedAt: {
-            type: DataTypes.DATE
+        price_to_pay: {
+            type: DataTypes.DECIMAL(20),
+            allowNull: false
         }
     }
 
     let config = {
-        tableName: 'bookings',
-        timestamps: true
+        timestamps: true,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        tableName: 'bookings'
     }
 
     const Booking = sequelize.define(alias, cols, config);
 
     Booking.associate = function(models) {
-
         Booking.belongsTo(models.Product, {
-            as: 'product-booking',
+            as: 'product_booking',
             foreignKey: 'product_id'
         });
 
         Booking.belongsTo(models.User, {
-            as: 'user-booking',
+            as: 'user_booking',
             foreignKey: 'user_id'
         });
 
         Booking.hasMany(models.Invoice, {
-            as: 'invoices-booking',
+            as: 'invoices_booking',
             foreignKey: 'booking_id'
         });
     };
-
     return Booking;
 }
