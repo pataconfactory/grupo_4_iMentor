@@ -11,10 +11,12 @@
                 <img src="/img/Logo-iMentor1.png" alt="Logo iMentor" class="logo">
             </a>
             <div class="buscar">
-                <input type="text" placeholder="Buscar" required>
-                <div class="btn">
-                    <i class="fas fa-search"></i>
-                </div>
+                <form action="/products/search" method="POST">
+                    <input name="search" id="search" type="text" placeholder="Buscar">
+                    <button class="btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
             </div>
             <% if(!locals.isLogged) { %>
                 <a href="#" class="enlace-pais">

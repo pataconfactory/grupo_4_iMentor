@@ -151,6 +151,22 @@ const productsController = {
 
     productServices: function(req, res) {
         res.render(path.join(__dirname, '../views/products/productServices'))
+    },
+
+    search: function(req, res){
+        console.log(req.body.search);
+        let search = req.body.search;
+        db.Product.findAll({
+            include: [
+                {association: "mentors"},
+                {association: "categories"},
+                {association: "users_products"}
+            ]
+        })
+        .then(function(products){
+            console.log(products)
+            return res.render(path.join(__dirname, '../views/products/products'), {products})
+        })
     }
 
     /*productCart: function(req, res) {
@@ -225,7 +241,7 @@ const productsController = {
 
         res.redirect('/products/productCart');
     }
-    /*search:*/
+    */
 };
 
 module.exports = productsController;

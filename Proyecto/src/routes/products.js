@@ -13,12 +13,12 @@ router.get('/', productsController.products);
 router.get('/create', productsController.create);
 router.post('/', upload.single('image'), productsController.store);
 
-router.get('/detail/:id', productsController.detail)
+router.get('/detail/:id', productsController.detail);
 
-router.get('/edit/:id', productsController.edit)
-router.put('/edit/:id', upload.single('image'), productsController.update)
+router.get('/edit/:id', productsController.edit);
+router.put('/edit/:id', upload.single('image'), productsController.update);
 
-router.delete('/delete/:id', productsController.destroy)
+router.delete('/delete/:id', productsController.destroy);
 
 //router.get('/productCart', authMiddleware, productsController.productCart);
 
@@ -30,6 +30,6 @@ router.delete('/delete/:id', productsController.destroy)
 
 router.get('/productServices', productsController.productServices);
 
-/*router.get('/search', productsController.search); */
+router.post('/search', productsController.search);
 
 module.exports = router;
