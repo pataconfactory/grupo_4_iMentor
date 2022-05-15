@@ -134,18 +134,19 @@
                         <label><i class="fas fa-clipboard-list"></i>Rol</label>
                         <select class="boxes" name="category" id="category"
                             value="<%= locals.old ? old.category : null %>">
-                            <option value="">seleccione categoría</option>
-                            <% if(locals.isLogged && locals.userLogged.category == 'Administrador') { %>                               
+                            <option value="">seleccione rol</option>
+                            <% console.log(old.category) %>
+                            <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>                               
                                 <% for (const oneRol of roles) { %>
                                     <option value="<%= oneRol.role_id %>"
-                                        <%= locals.old && (oneRol.role_name == old.category) ? 'selected' : null  %>>
+                                        <%= locals.old && (oneRol.role_id == old.category) ? 'selected' : null  %>>
                                         <%= oneRol.role_name %></option>
                                 <% } %>
                             <% } else { %>
                                 <% for (const oneRol of roles) { %>
                                     <% if(oneRol.role_id != 2) { %>
                                         <option value="<%= oneRol.role_id %>"
-                                            <%= locals.old && (oneRol.role_name == old.category) ? 'selected' : null  %>>
+                                            <%= locals.old && (oneRol.role_id == old.category) ? 'selected' : null  %>>
                                             <%= oneRol.role_name %></option>
                                     <% } %>
                                 <% } %>

@@ -41,7 +41,6 @@ const productsController = {
            datosMentor.mentorId = resultado.dataValues.mentor_id;
            return datosMentor;
         }).then((data) => {
-            console.log(data);
             db.Product.create({
                 product_name: req.body.name,
                 product_category_id: req.body.category,
@@ -154,17 +153,17 @@ const productsController = {
     },
 
     search: function(req, res){
-        console.log(req.body.search);
         let search = req.body.search;
         db.Product.findAll({
             include: [
                 {association: "mentors"},
                 {association: "categories"},
                 {association: "users_products"}
-            ]
+            ], where: {
+                product_name: {[Op.like]: '%'+search+'%'}
+            }
         })
         .then(function(products){
-            console.log(products)
             return res.render(path.join(__dirname, '../views/products/products'), {products})
         })
     }

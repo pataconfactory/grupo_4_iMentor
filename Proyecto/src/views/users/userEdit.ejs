@@ -35,7 +35,7 @@
                     <a href="/products/productCart" class="boton-opciones cesta-compras"><i class="fas fa-shopping-basket"></i></a>
                     <a href="/paginaEnConstruccion" class="boton-opciones plataforma"><i class="fas fa-hand-pointer"></i></a>
                 </div>
-                <form action="/users/edit/<%= user.id%>?_method=PUT" method="POST" class="register-form" enctype="multipart/form-data">
+                <form action="/users/edit/<%= user.user_id%>?_method=PUT" method="POST" class="register-form" enctype="multipart/form-data">
                     <div class="registerbox">
                         <label for="first_name"><i class="fas fa-user"></i> Nombre</label>
                         <% if (!locals.old) { %>
@@ -65,7 +65,7 @@
                     <div class="registerbox">
                         <label for="date_birth"><i class="fas fa-calendar-alt"></i> Fecha de nacimiento</label>
                         <% if (!locals.old) { %>
-                        <input class="boxes" type="date" name="date_birth" id="date_birth" value="<%= user.date_birth%>">
+                        <input class="boxes" type="date" name="date_birth" id="date_birth" value="<%= user.birthday%>">
                         <% } else { %>
                         <input class="boxes" type="date" name="date_birth" id="date_birth" value="<%= locals.old ? old.date_birth : null %>">
                         <% } %>
@@ -91,13 +91,13 @@
                     <div class="registerbox">
                         <label><i class="fas fa-universal-access"></i> Género</label>
                         <% if (!locals.old) { %>
-                        <select class="boxes" name="genero" id="genero" value="<%= user.genero %>">
+                        <select class="boxes" name="genero" id="genero" value="<%= user.genre %>">
                             <option value="">seleccione género</option>
                             <% 
                              let generos = ['Femenino','Masculino','Binario'];
                             %> 
                             <% for (const oneGenero of generos) { %>
-                                <option value="<%= oneGenero %>" <%= oneGenero == user.genero ? 'selected' : null  %> ><%= oneGenero %></option>
+                                <option value="<%= oneGenero %>" <%= oneGenero == user.genre ? 'selected' : null  %> ><%= oneGenero %></option>
                             <% } %>
                         <% } else { %>
                         <select class="boxes" name="genero" id="genero" value="<%= locals.old ? old.genero : null %>">
@@ -130,25 +130,35 @@
                         <% } %>
                     </div>
                     <div class="registerbox">
-                        <label><i class="fas fa-clipboard-list"></i> Categoría</label>
+                        <label><i class="fas fa-clipboard-list"></i> Rol</label>
                         <% if (!locals.old) { %>
-                            <select class="boxes" name="category" id="category" value="<%= user.category %>">
-                                <option value="">seleccione categoría</option>
-                                <% 
-                                let categorias = ['Usuario','Mentor','Administrador'];
-                               %> 
-                               <% for (const oneCategory of categorias) { %>
-                                   <option value="<%= oneCategory %>" <%= oneCategory == user.category ? 'selected' : null  %> ><%= oneCategory %></option>
-                               <% } %>
+                            <select class="boxes" name="category" id="category" value="<%= user.role_id %>">
+                                <option value="">seleccione rol</option>
+                                <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>
+                                    <% for (const oneRol of roles) { %>
+                                    <option value="<%= oneRol.role_id %>" <%= oneRol.role_id == user.role_id ? 'selected' : null  %> ><%= oneRol.role_name %></option>
+                                    <% } %>
+                                <% } else { %>
+                                    <% for (const oneRol of roles) { %>
+                                        <% if(oneRol.role_id != 2) { %>
+                                            <option value="<%= oneRol.role_id %>" <%= oneRol.role_id == user.role_id ? 'selected' : null  %> ><%= oneRol.role_name %></option>
+                                        <% } %>
+                                    <% } %>
+                                <% } %>
                         <% } else { %>
                         <select class="boxes" name="category" id="category" value="<%= locals.old ? old.category : null %>">
-                            <option value="">seleccione categoría</option>
-                            <% 
-                            let categorias = ['Usuario','Mentor','Administrador'];
-                           %> 
-                           <% for (const oneCategory of categorias) { %>
-                               <option value="<%= oneCategory %>" <%= locals.old && (oneCategory == old.category) ? 'selected' : null  %> ><%= oneCategory %></option>
-                           <% } %>
+                            <option value="">seleccione rol</option>
+                            <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>
+                                <% for (const oneRol of roles) { %>
+                                    <option value="<%= oneRol.role_id %>" <%= locals.old && (oneRol.role_id == old.category) ? 'selected' : null  %> ><%= oneRol.role_name %></option>
+                                <% } %>
+                            <% } else {%>
+                                <% for (const oneRol of roles) { %>
+                                    <% if(oneRol.role_id != 2) { %>
+                                        <option value="<%= oneRol.role_id %>" <%= locals.old && (oneRol.role_id == old.category) ? 'selected' : null  %> ><%= oneRol.role_name %></option>
+                                    <% } %>
+                                <% } %>
+                            <% } %>    
                         <% } %>
                         </select>
                         <% if (locals.errors && errors.category) { %>

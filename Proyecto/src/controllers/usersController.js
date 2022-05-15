@@ -25,7 +25,6 @@ const usersController = {
 
     detailUsers: function(req, res) {
         let ver = req.params;
-        console.log(ver)
         db.User.findByPk(req.params.id, {include: [
                 {association: "roles"},
                 {association: "users"},
@@ -88,42 +87,49 @@ const usersController = {
             return res.render(path.join(__dirname, '../views/users/register'), {errors: errors.mapped(), old: req.body});
         }
 
-        let userEmailInDB = Users.findByField('email', req.body.email);
-        if(userEmailInDB == undefined){
-            userEmailInDB = Mentors.findByField('email', req.body.email);
-        }
-        if(userEmailInDB) {
-            return res.render(path.join(__dirname, '../views/users/register'), {errors: {email: {msg: 'Este email ya se encuentra registrado'}}, old: req.body});
-        }
+        let userEmail = db.User.findOne({
+            include: [
+                {association: "roles"},
+                {association: "users"},
+                {association: "bookings_user"},
+                {association: "users_products"},
+            ], where:{
+                email: req.body.email
+            }
+        });
+        let roles = db.Role.findAll({
+            include: [
+                {association: "roles"}
+            ]
+        });
+        Promise.all([userEmail, roles])
+        .then(function([userEmail, roles]) {
+            let userEmailInDB = userEmail;
+            if(userEmailInDB) {
+                return res.render(path.join(__dirname, '../views/users/register'), {errors: {email: {msg: 'Este email ya se encuentra registrado'}}, old: req.body, roles});
+            }
 
-        let userNameInDB = Users.findByField('user_name', req.body.user_name);
-        if(userNameInDB == undefined){
-            userNameInDB = Mentors.findByField('user_name', req.body.email);
-        }
-        if(userNameInDB) {
-            return res.render(path.join(__dirname, '../views/users/register'), {errors: {user_name: {msg: 'Este nombre de usuario ya se encuentra registrado'}}, old: req.body});
-        }
-
-        let userToCreate = {
-            ...req.body,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            products: [0],
-            avatar: req.file.filename
-        }
-
-        if((req.body.category == 'Usuario') || (req.body.category == 'Administrador')) {
-            let userCreated = Users.createUser(userToCreate);
+            let passwordHasheada = bcryptjs.hashSync(req.body.password, 10);
+            db.User.create({
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                user_name: req. body.user_name,
+                email: req.body.email,
+                birthday: req.body.date_birth,
+                age: req.body.age,
+                genre: req.body.genero,
+                country: req.body.country,
+                password: passwordHasheada,
+                title: req.body.title,
+                avatar: req.file.filename,
+                role_id: req.body.category,
+                mentor_id: null
+            });
             return res.redirect('/users/login');
-        }
-
-        if(req.body.category == 'Mentor') {
-            let mentorCreated = Mentors.createMentor(userToCreate);
-            return res.redirect('/users/login');
-        }
-        
+        });
     }, 
 
-    profile: function(req, res) {
+    profile: function( req, res ) {
         let id = req.session.userLogged.user_id;
         db.User.findByPk(id, {include: [
                 {association: "roles"},
@@ -132,7 +138,6 @@ const usersController = {
                 {association: "users_products"},
             ]
         }).then(function(user){
-            console.log(user)
             return res.render(path.join(__dirname, '../views/users/profile'), {user});
         })
     },
@@ -144,7 +149,24 @@ const usersController = {
     },
 
     editUsers: function(req, res) {
-        return res.render(path.join(__dirname, '../views/users/userEdit'), {user: req.session.userLogged});
+        let userInDB = req.session.userLogged;
+        let id = userInDB.user_id;
+        let user = db.User.findByPk(id, {include: [
+                {association: "roles"},
+                {association: "users"},
+                {association: "bookings_user"},
+                {association: "users_products"},
+            ]
+        });
+        let roles = db.Role.findAll({
+            include: [
+                {association: "roles"}
+            ]
+        });
+        Promise.all([user, roles])
+        .then(function([user, roles]) {
+            return res.render(path.join(__dirname, '../views/users/userEdit'), {user, roles});
+        })
     },
 
     updateUsers: function(req, res) {
@@ -152,32 +174,52 @@ const usersController = {
         if(errors.errors.length > 0){
             return res.render(path.join(__dirname, '../views/users/userEdit'), {errors: errors.mapped(), old: req.body});
         }
-
-        let file;
-        if(req.file !== undefined){
-            file = req.file.filename;
-        } else {
-            file = null;
-        }
-
-        let userToEdit = {
-            id: req.params.id,
-            ...req.body,
-            avatar: file
-        }
-
-        if((req.body.category == 'Usuario') || (req.body.category == 'Administrador')) {
-            let userEdited = Users.editUser(userToEdit);
-            return res.redirect('/users/profile');
-        }
-
-        if(req.body.category == 'Mentor') {
-            let mentorEdited = Mentors.editMentor(userToEdit);
-            return res.redirect('/users/profile');
-        }
+                          
+            if(req.file !== undefined){
+                db.User.update({
+                    first_name: req.body.first_name,
+                    last_name: req.body.last_name,
+                    birthday: req.body.date_birth,
+                    age: req.body.age,
+                    genre: req.body.genero,
+                    country: req.body.country,
+                    title: req.body.title,
+                    avatar: req.file.filename,
+                    role_id: req.body.category
+                },{
+                    where: {
+                        user_id: req.params.id
+                    }
+                });
+            } else {  
+                db.User.update({
+                    first_name: req.body.first_name,
+                    last_name: req.body.last_name,
+                    birthday: req.body.date_birth,
+                    age: req.body.age,
+                    genre: req.body.genero,
+                    country: req.body.country,
+                    title: req.body.title,
+                    role_id: req.body.category
+                },{
+                    where: {
+                        user_id: req.params.id
+                    }
+                });
+            }
+            let id = req.session.userLogged.user_id;
+            db.User.findByPk(id, {include: [
+                {association: "roles"},
+                {association: "users"},
+                {association: "bookings_user"},
+                {association: "users_products"},
+            ]
+            }).then(function(user){
+                return res.render(path.join(__dirname, '../views/users/profile'), {user});
+            });    
     },
 
-    editUsersPassword: function(req, res) {
+    editUsersPassword: function( req, res ) {
         return res.render(path.join(__dirname, '../views/users/userEditPassword'), {user: req.session.userLogged});
     },
 
@@ -187,41 +229,38 @@ const usersController = {
             return res.render(path.join(__dirname, '../views/users/userEditPassword'), {errors: errors.mapped(), old: req.body});
         }
 
-        let user = Users.findByField('email', req.params.email);
-        if (user == undefined) {
-            user = Mentors.findByField('email', req.params.email);
-        }
-
-        let isOkPassword = bcryptjs.compareSync(req.body.password_old, user.password);
-        if(isOkPassword){
-            let userToEdit = {
-                id: req.params.id,
-                password: bcryptjs.hashSync(req.body.password, 10)
+        let id = req.session.userLogged.user_id;
+        db.User.findByPk(id, {include: [
+            {association: "roles"},
+            {association: "users"},
+            {association: "bookings_user"},
+            {association: "users_products"},
+        ]
+        }).then(function(user){
+            let isOkPassword = bcryptjs.compareSync(req.body.password_old, user.password);
+            if(isOkPassword){
+                let passwordHasheada = bcryptjs.hashSync(req.body.password, 10);
+                db.User.update({
+                    password: passwordHasheada,
+                },{
+                    where: {
+                        user_id: req.params.id
+                    }
+                });
+                return res.render(path.join(__dirname, '../views/users/profile'), {user});
+            } else {
+                return res.render(path.join(__dirname, '../views/users/userEditPassword'), {errors: {password_old: {msg: 'Las credenciales son inválidas'}}, old: req.body});
             }
-            if((user.category == 'Usuario') || (user.category == 'Administrador')) {
-                let userEdited = Users.editUser(userToEdit);
-                return res.redirect('/users/profile');
-            }
-            if (user.category == 'Mentor'){
-                let mentorEdited = Mentors.editMentor(userToEdit);
-                return res.redirect('/users/profile');
-            }
-        } else {
-            return res.render(path.join(__dirname, '../views/users/userEditPassword'), {errors: {password_old: {msg: 'Las credenciales son inválidas'}}, old: req.body});
-        }
+        }); 
     },
 
     destroyUsers: function(req, res) {
-        let user = Users.findByField('email', req.params.email);
-        if (user == undefined) {
-            let mentor = Mentors.findByField('email', req.params.email);
-            let idMentorToDelete = parseInt(req.params.id);
-            let mentorRemoved = Mentors.deleteMentor(idMentorToDelete);
-            return res.redirect('/users/list');
-        }
-        let idUserToDelete = parseInt(req.params.id);
-        let userRemoved = Users.deleteUser(idUserToDelete);
-        return res.redirect('/users/list');
+        db.User.destroy({
+            where: {
+                user_id: req.params.id
+            }
+        })
+        res.redirect('/users/list');
     }
 };
 
