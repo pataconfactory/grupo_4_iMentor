@@ -466,7 +466,6 @@ main .contenedor-home h2 {
     color: black;
     font-size: 35px;
     text-align: center;
-    margin: 20px 0px;
 }
 
 main .contenedor-home .botones-asesorias{
@@ -526,6 +525,7 @@ main .slideshow-container {
     padding: 2%;
     background-color: #f2f2f2;
 }
+
   
 main .responsive {
     width: 50%;
@@ -533,13 +533,22 @@ main .responsive {
     height: auto;
 }
 
-main .slideshow-container img {
+
+main .slideshow-container .img-mentor{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 320px;
+    width: 260px;
+} 
+
+main .slideshow-container .img-client {
     display: block;
     margin-left: auto;
     margin-right: auto;
     height: 220px;
     width: 160px;
-} 
+}
   
 main .prev, main .next {
     cursor: pointer;
@@ -664,7 +673,7 @@ main .contenedor-sobre-servicios {
 }
 
 .sobre-servicios .contenido-textos {
-    padding: 10px 10px 10px 10px;
+    padding: 10px 50px 10px 10px;
     font-weight: 300;
     text-align: justify;
     font-size: 14px;
@@ -917,42 +926,15 @@ main .contenedor-home .contenedor-clientes h2 {
     padding-top: 10px;
 }
 
-main .contenedor-home .cards {
-    display: flex;
-    justify-content: space-evenly;
-    padding-bottom: 20px;
-}
-
-main .contenedor-home .cards .card {
-    background: #3587A4;
-    display: flex;
-    width: 90%;
-    height: 130px;
-    align-items: center;
-    justify-content: space-evenly;
-    border-radius: 5px;
-    box-shadow: 0 0 6px 0 rgb(0, 0, 0, .5);
-}
-
-main .contenedor-home .cards .card img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    /*La imagen de los clientes al hacerla pequeña se distorsionó, esto adaptó la imagen de los clientes al cuadrito*/
-    border: 3px solid white;
-    border-radius: 50%;
-    display: block;
-}
-
-main .contenedor-home .cards .card .contenido-texto-card {
-    width: 50%;
-    color: white;
-}
-
-main .contenedor-home .cards .card .contenido-texto-card p {
+main .contenedor-home .contenedor-clientes p {
     font-weight: 300;
-    padding: 5px;
-    font-size: 12px;
+    font-size: 16px;
+}
+
+main .contenedor-home .contenedor-clientes h2 {
+    background: rgb(2,0,36);
+    color: whitesmoke;
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(26,3,91,1) 31%, rgba(2,137,164,1) 100%);
 }
 
 /*##Section Mentores##*/
@@ -992,6 +974,7 @@ main .contenedor-home .cards .card .contenido-texto-card p {
     text-decoration: underline;
     margin-top: 10px;
 }
+
 
 /*gift card*/
 .contenedor-giftcard {
