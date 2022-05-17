@@ -24,7 +24,7 @@
                 </p>
             </div>
             <div class="container-productos-existentes">
-                <% if(locals.isLogged && locals.userLogged.category == 'Administrador') { %>
+                <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>
                     <div class="boton-crear-producto">
                         <a href="/products/create" class="crear-producto"><i class="fas fa-plus-circle"></i> Crear producto</a>
                     </div>
@@ -43,7 +43,7 @@
                                     <p><%= products[i].time %></p>
                                 <p><span>$<%= products[i].price %></span></p>
                                 <a href="/products/detail/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
-                                <% if(locals.isLogged && locals.userLogged.category == 'Administrador') { %>
+                                <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>
                                     <a href="/products/edit/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>
                                     <form class="eliminar" action="/products/delete/<%= products[i].product_id %>?_method=DELETE" method="POST">
                                         <button type="submit" class="boton-final-eliminar"><i class="fas fa-trash"></i>Eliminar</button>  
