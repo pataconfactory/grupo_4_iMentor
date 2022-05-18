@@ -47,8 +47,8 @@ const usersController = {
     },
 
     registerMentor: function(req,res) {
-        res.cookie();
-        return res.render(path.join(__dirname, '../views/users/registerMentor'));
+        res.cookie()
+        return res.render(path.join(__dirname, '../views/users/registerMentor'))
     },
 
     login: function(req, res) {
@@ -143,7 +143,7 @@ const usersController = {
                 });
             }
         });
-    }, 
+    },
 
     profile: function( req, res ) {
         let id = req.session.userLogged.user_id;
