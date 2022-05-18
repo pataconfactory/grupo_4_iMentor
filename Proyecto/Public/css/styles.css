@@ -440,11 +440,14 @@ main .contenedor-home .ventajas{
     flex-wrap: wrap;
     justify-content: center;
     padding: 30px 10px;
+    height: 650px;
+    align-items: center;
 }
 
 main .contenedor-home .ventajas img{
     width: 80%;
     padding-bottom: 20px;
+    height: 350px;
 }
 
 main .contenedor-home .ventajas .contenido{
@@ -453,7 +456,8 @@ main .contenedor-home .ventajas .contenido{
     width: 80%;
     text-align: justify;
     align-self: center;
-    border-top: solid 1px black ;
+    border-top: solid 3px black ;
+    height: 350px;
 }
 
 main .contenedor-home .ventajas .contenido h4{
@@ -525,14 +529,12 @@ main .slideshow-container {
     padding: 2%;
     background-color: #f2f2f2;
 }
-
-  
+ 
 main .responsive {
     width: 50%;
     max-width: 400px;
     height: auto;
 }
-
 
 main .slideshow-container .img-mentor{
     display: block;
@@ -641,7 +643,7 @@ main .button {
     text-decoration: none;
     display: block;
     font-size: 14px;
-    margin: 10px auto;
+    margin: 20px auto;
     border-radius: 4px;
     z-index: 2;
     width: 200px;
@@ -650,6 +652,10 @@ main .button {
 main .button:hover {
     background-color: #C1DFF0;
     color: black;
+}
+
+main .contenedor-home .contenedor-clientes{
+    margin: 20px 0px 0px 0px;
 }
   
 /**********************************ProductDetail.html CSS*************************************/
@@ -2914,9 +2920,10 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
 
     main .contenedor-home .ventajas .contenido{
         width: 55%;
-        border-left: solid 1px black ;
+        border-left: solid 3px black ;
         border-top: none;
         padding-left: 10px;
+        justify-content: center;
     }
 
     /* Product Detail Media Queeries (min-width: 769px)*/
