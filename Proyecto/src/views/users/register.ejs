@@ -143,6 +143,7 @@
                                 <% } %>
                             <% } else { %>
                                 <% for (const oneRol of roles) { %>
+                                    
                                     <% if(oneRol.role_id != 2) { %>
                                         <option value="<%= oneRol.role_id %>"
                                             <%= locals.old && (oneRol.role_id == old.category) ? 'selected' : null  %>>

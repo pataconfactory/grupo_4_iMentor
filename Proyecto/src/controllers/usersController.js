@@ -85,9 +85,16 @@ const usersController = {
 
     processRegister: function (req, res) {
         let errors= validationResult(req);
-        if(errors.errors.length > 0){
-            return res.render(path.join(__dirname, '../views/users/register'), {errors: errors.mapped(), old: req.body});
-        }
+            if(errors.errors.length > 0){
+                db.Role.findAll({
+                    include: [
+                        {association: "roles"}
+                    ]
+                })
+                .then(function(roles) {
+                    return res.render(path.join(__dirname, '../views/users/register'), {errors: errors.mapped(), old: req.body, roles});
+                }) 
+            }
 
         let userEmail = db.User.findOne({
             include: [
@@ -112,27 +119,29 @@ const usersController = {
             }
 
             let passwordHasheada = bcryptjs.hashSync(req.body.password, 10);
-            db.User.create({
-                first_name: req.body.first_name,
-                last_name: req.body.last_name,
-                user_name: req. body.user_name,
-                email: req.body.email,
-                birthday: req.body.date_birth,
-                age: req.body.age,
-                genre: req.body.genero,
-                country: req.body.country,
-                password: passwordHasheada,
-                title: req.body.title,
-                avatar: req.file.filename,
-                role_id: req.body.category,
-                mentor_id: null
-            }).then(function(user){
-                if(req.session.userLogged.role_id == 2) {
-                    return res.redirect('/users/list');
-                } else {
-                    return res.redirect('/users/login');
-                }
-            });
+            if(req.file){
+                db.User.create({
+                    first_name: req.body.first_name,
+                    last_name: req.body.last_name,
+                    user_name: req. body.user_name,
+                    email: req.body.email,
+                    birthday: req.body.date_birth,
+                    age: req.body.age,
+                    genre: req.body.genero,
+                    country: req.body.country,
+                    password: passwordHasheada,
+                    title: req.body.title,
+                    avatar: req.file.filename,
+                    role_id: req.body.category,
+                    mentor_id: null
+                }).then(function(user){
+                    if(req.session.userLogged.role_id == 2) {
+                        return res.redirect('/users/list');
+                    } else {
+                        return res.redirect('/users/login');
+                    }
+                });
+            }
         });
     }, 
 
