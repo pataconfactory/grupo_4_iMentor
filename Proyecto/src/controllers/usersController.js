@@ -113,9 +113,10 @@ const usersController = {
         });
         Promise.all([userEmail, roles])
         .then(function([userEmail, roles]) {
+            
             let userEmailInDB = userEmail;
-            if(userEmailInDB) {
-                return res.render(path.join(__dirname, '../views/users/register'), {errors: {email: {msg: 'Este email ya se encuentra registrado'}}, old: req.body, roles});
+            if(userEmailInDB != null) {
+                return res.render(path.join(__dirname, '../views/users/register'), { errors: {email: {msg: 'Este email ya se encuentra registrado'}}, old: req.body, roles});
             }
 
             let passwordHasheada = bcryptjs.hashSync(req.body.password, 10);
@@ -135,8 +136,11 @@ const usersController = {
                     role_id: req.body.category,
                     mentor_id: null
                 }).then(function(user){
-                    if(req.session.userLogged.role_id == 2) {
-                        return res.redirect('/users/list');
+                    
+                    if(req.session.userLogged) {
+                        if(req.session.userLogged.role_id == 2){
+                            return res.redirect('/users/list');
+                        }
                     } else {
                         return res.redirect('/users/login');
                     }
