@@ -1,10 +1,7 @@
 const path = require('path');
-const fs = require('fs');
 const res = require('express/lib/response');
 
 const {validationResult} = require('express-validator');
-const Users = require('../models/Users');
-const Mentors = require('../models/Mentors');
 const bcrypt = require('bcryptjs');
 const bcryptjs = require('bcryptjs');
 const db = require("../../database/models");
@@ -129,8 +126,13 @@ const usersController = {
                 avatar: req.file.filename,
                 role_id: req.body.category,
                 mentor_id: null
+            }).then(function(user){
+                if(req.session.userLogged.role_id == 2) {
+                    return res.redirect('/users/list');
+                } else {
+                    return res.redirect('/users/login');
+                }
             });
-            return res.redirect('/users/login');
         });
     }, 
 
@@ -180,48 +182,60 @@ const usersController = {
             return res.render(path.join(__dirname, '../views/users/userEdit'), {errors: errors.mapped(), old: req.body});
         }
                           
-            if(req.file !== undefined){
-                db.User.update({
-                    first_name: req.body.first_name,
-                    last_name: req.body.last_name,
-                    birthday: req.body.date_birth,
-                    age: req.body.age,
-                    genre: req.body.genero,
-                    country: req.body.country,
-                    title: req.body.title,
-                    avatar: req.file.filename,
-                    role_id: req.body.category
-                },{
-                    where: {
-                        user_id: req.params.id
-                    }
-                });
-            } else {  
-                db.User.update({
-                    first_name: req.body.first_name,
-                    last_name: req.body.last_name,
-                    birthday: req.body.date_birth,
-                    age: req.body.age,
-                    genre: req.body.genero,
-                    country: req.body.country,
-                    title: req.body.title,
-                    role_id: req.body.category
-                },{
-                    where: {
-                        user_id: req.params.id
-                    }
-                });
-            }
-            let id = req.session.userLogged.user_id;
-            db.User.findByPk(id, {include: [
-                {association: "roles"},
-                {association: "users"},
-                {association: "bookings_user"},
-                {association: "users_products"},
-            ]
+        if(req.file !== undefined){
+            db.User.update({
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                birthday: req.body.date_birth,
+                age: req.body.age,
+                genre: req.body.genero,
+                country: req.body.country,
+                title: req.body.title,
+                avatar: req.file.filename,
+                role_id: req.body.category
+            },{
+                where: {
+                    user_id: req.params.id
+                }
             }).then(function(user){
-                return res.render(path.join(__dirname, '../views/users/profile'), {user});
-            });    
+                let id = req.session.userLogged.user_id;
+                db.User.findByPk(id, {include: [
+                    {association: "roles"},
+                    {association: "users"},
+                    {association: "bookings_user"},
+                    {association: "users_products"},
+                ]
+                }).then(function(user){
+                    return res.render(path.join(__dirname, '../views/users/profile'), {user});
+                });
+            });
+        } else {  
+            db.User.update({
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                birthday: req.body.date_birth,
+                age: req.body.age,
+                genre: req.body.genero,
+                country: req.body.country,
+                title: req.body.title,
+                role_id: req.body.category
+            },{
+                where: {
+                    user_id: req.params.id
+                }
+            }).then(function(user){
+                let id = req.session.userLogged.user_id;
+                db.User.findByPk(id, {include: [
+                    {association: "roles"},
+                    {association: "users"},
+                    {association: "bookings_user"},
+                    {association: "users_products"},
+                ]
+                }).then(function(user){
+                    return res.render(path.join(__dirname, '../views/users/profile'), {user});
+                });
+            });
+        }         
     },
 
     editUsersPassword: function( req, res ) {
@@ -264,8 +278,9 @@ const usersController = {
             where: {
                 user_id: req.params.id
             }
-        })
-        res.redirect('/users/list');
+        }).then(function(user){
+                return res.redirect('/users/list');
+        });
     }
 };
 
