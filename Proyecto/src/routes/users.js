@@ -12,37 +12,40 @@ const validationsUserEditPassword = require('../middlewares/ValidationsUserEditP
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
-//Rutas
 
-//Formulario de registro
+//Register form
 router.get('/register', guestMiddleware, usersController.register);
 router.post('/register', upload.single('avatar'), validationsRegister, usersController.processRegister);
 
-//edición de usuario
+//Register form for mentors
+router.get('/mentorregister', guestMiddleware, usersController.registerMentor);
+//router.post('/mentorregister', upload.single('avatar'), validationsRegister, usersController.processRegisterMentor);
+
+//User edit
 router.get('/edit/:id', usersController.editUsers);
 router.put('/edit/:id', upload.single('avatar'), validationsUserEdit, usersController.updateUsers);
 
-//edición de password
+//Password edit
 router.get('/editPW/:id/:email', usersController.editUsersPassword);
 router.put('/editPW/:id/:email', validationsUserEditPassword, usersController.updateUsersPassword);
 
-//formulario de login
+//Login form
 router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', validationsLogin, usersController.loginProcess);
 
-//Perfil de Usuario
+//User profile
 router.get('/profile', authMiddleware, usersController.profile);
 
-//Listado de usuarios
+//Users list
 router.get ('/list', authMiddleware, guestMiddleware, usersController.listUsers);
 
-//Detalle de usuarios
+//User details
 router.get ('/detail/:id/:email', authMiddleware, guestMiddleware, usersController.detailUsers);
 
-//Eliminar un usuario
+//User delete
 router.delete('/delete/:id/:email', usersController.destroyUsers);
 
-//Logout
+//Log out
 router.get('/logout', usersController.logout);
 
 module.exports = router;

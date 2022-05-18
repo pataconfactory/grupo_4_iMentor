@@ -49,6 +49,11 @@ const usersController = {
         })
     },
 
+    registerMentor: function(req,res) {
+        res.cookie();
+        return res.render(path.join(__dirname, '../views/users/registerMentor'));
+    },
+
     login: function(req, res) {
         return res.render(path.join(__dirname, '../views/users/login'))
     },
