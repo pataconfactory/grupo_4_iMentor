@@ -18,23 +18,35 @@ const productsController = {
     },
 
     create: function(req, res) {
-        db.ProductCategory.findAll({
+        let categories = db.ProductCategory.findAll({
             include: [
                 {association: "categories"}
             ]
-        })
-        .then(function(categories) {
-            return res.render(path.join(__dirname, '../views/products/productCreate'), {categories})
-        })
+        });
+        let usuarios = db.User.findAll({
+            include: [
+                {association: "roles"},
+                {association: "users"},
+                {association: "users_products"}
+            ]
+        });
+        Promise.all([usuarios, categories])
+        .then(function([usuarios, categories]) {
+            let users = [];
+            for (const oneUser of usuarios) {
+               users.push(oneUser.dataValues);
+            } 
+            return res.render(path.join(__dirname, '../views/products/productCreate'), {categories, users})
+        });
     },
 
     store: function(req, res) {
         let filename = req.file.filename;
-        let emailMentor = req.body.email;
+        let idMentor = req.body.mentor;
         let datosMentor = {};
         db.User.findOne({
             where:{
-                email: {[Op.like]: emailMentor}
+                mentor_id: {[Op.like]: idMentor}
             }
         }).then((resultado) => {
            datosMentor.userId = resultado.dataValues.user_id;
@@ -52,9 +64,10 @@ const productsController = {
                 price: req.body.price,
                 duration: req.body.duration,
                 product_image: filename
+            }).then((product) => {
+                res.redirect('/products/');
             });
         })
-		res.redirect('/products/');
     },
 
     detail: function(req, res) {
@@ -83,18 +96,29 @@ const productsController = {
                 {association: "categories"}
             ]
         });
-        Promise.all([productoEditar, categories])
-        .then(function([productoEditar, categories]) {
-            return res.render(path.join(__dirname, '../views/products/productEdition'), {productoEditar, categories})
+        let usuarios = db.User.findAll({
+            include: [
+                {association: "roles"},
+                {association: "users"},
+                {association: "users_products"}
+            ]
+        });
+        Promise.all([productoEditar, categories, usuarios])
+        .then(function([productoEditar, categories, usuarios]) {
+            let users = [];
+            for (const oneUser of usuarios) {
+               users.push(oneUser.dataValues);
+            } 
+            return res.render(path.join(__dirname, '../views/products/productEdition'), {productoEditar, categories, users})
         })
     },
 
     update: function( req, res ) {
-        let emailMentor = req.body.email;
+        let idMentor = req.body.mentor;
         let datosMentor = {};
         db.User.findOne({
             where:{
-                email: {[Op.like]: emailMentor}
+                mentor_id: {[Op.like]: idMentor}
             }
         }).then((resultado) => {
            datosMentor.userId = resultado.dataValues.user_id;
@@ -117,6 +141,8 @@ const productsController = {
                     where: {
                         product_id: req.params.id
                     }
+                }).then(function(product){
+                    res.redirect('/products/detail/'+ req.params.id);
                 });
             } else {
                 db.Product.update({
@@ -133,10 +159,11 @@ const productsController = {
                     where: {
                         product_id: req.params.id
                     }
+                }).then(function(product){
+                    res.redirect('/products/detail/'+ req.params.id);
                 });
             }
         })
-		res.redirect('/products/detail/'+ req.params.id);
     },
 
     destroy: function(req, res) {
@@ -144,8 +171,10 @@ const productsController = {
             where: {
                 product_id: req.params.id
             }
+        }).then(function(product){
+            res.redirect('/products/');
         })
-        res.redirect('/products/');
+        
     },
 
     productServices: function(req, res) {

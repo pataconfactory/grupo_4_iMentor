@@ -1670,6 +1670,7 @@ main .seccion-perfil-usuario .perfil-usuario-avatar img {
     width: 100%;
     position: relative;
     border-radius: 50%;
+    height: 100%;
 }
 
 main .seccion-perfil-usuario .perfil-usuario-body {
@@ -1706,7 +1707,7 @@ main .seccion-perfil-usuario .perfil-usuario-body .password-form {
 }
 
 main .seccion-perfil-usuario .perfil-usuario-body .register-form {
-    height: 970px;
+    height: 1000px;
     margin-bottom: 20px;
 }
 
@@ -1719,6 +1720,7 @@ main .seccion-perfil-usuario .perfil-usuario-body .register-form .botones, main 
 
 main .seccion-perfil-usuario .perfil-usuario-body .register-form .imagen-muestra img{
     width:300px;
+    height: 200px;
 }
 
 main .seccion-perfil-usuario .perfil-usuario-body .register-form .register-button, main .seccion-perfil-usuario .perfil-usuario-body .password-form .register-button{

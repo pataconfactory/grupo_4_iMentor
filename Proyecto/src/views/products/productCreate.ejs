@@ -33,8 +33,17 @@
                         </select>
                     </div>
                     <div>
-                        <label>E-mail del mentor:</label>
-                        <input class="box" type="email" name="email" placeholder="elemail@ejemplo.com" id="email" required>
+                        <label>Mentor:</label>
+                        <select class="box" name="mentor" id="mentor">
+                            <option selected="true" disabled="disabled">seleccione el mentor</option>
+                            <% for (let i = 0; i < users.length; i++){ %>
+                                <% if(users[i].mentor_id != null) { %>
+                                    <option value="<%=users[i].mentor_id%>">
+                                        <%=users[i].first_name%> <%=users[i].last_name%>
+                                    </option>
+                                <% } %>
+                            <% } %>
+                        </select>
                     </div>
                     <div>
                         <label>Duración:</label>
