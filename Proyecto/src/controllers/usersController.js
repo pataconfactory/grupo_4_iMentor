@@ -90,41 +90,7 @@ const usersController = {
             return res.render(path.join(__dirname, '../views/users/register'), {errors: errors.mapped(), old: req.body});
         }
 
-        let userEmail = db.User.findOne({
-            where:{
-                email: req.body.email
-            }
-        })
-            .then(function(userEmail){
-                let userEmailInDB = userEmail;
-                console.log(userEmailInDB)
-                if(userEmailInDB != null) {
-                    return res.render(path.join(__dirname, '../views/users/register'), {errors: {email: {msg: 'Este email ya se encuentra registrado'}}, old: req.body});
-                } else {
-                    let passwordHasheada = bcryptjs.hashSync(req.body.password, 10);
-                    if(req.file){
-                        db.User.create({
-                            first_name: req.body.first_name,
-                            last_name: req.body.last_name,
-                            user_name: req. body.user_name,
-                            email: req.body.email,
-                            birthday: req.body.date_birth,
-                            age: req.body.age,
-                            genre: req.body.genero,
-                            country: req.body.country,
-                            password: passwordHasheada,
-                            title: req.body.title,
-                            avatar: req.file.filename,
-                            role_id: req.body.category,
-                            mentor_id: null
-                        })
-                    }
-                    res.redirect('/users/login');
-                }
-            })
-    },
-
-        /*let userEmail = db.User.findOne({
+        let userEmailRegistered = db.User.findOne({
             include: [
                 {association: "roles"},
                 {association: "users"},
@@ -134,164 +100,56 @@ const usersController = {
                 email: req.body.email
             }
         })
-        let roles = db.Role.findAll({
-            include: [
-                {association: "roles"}
-            ]
-        })
-            
-            .then(function(userEmail, roles){
-                let userEmailInDB = userEmail;
+            .then(function(userEmailRegistered){
+                console.log(userEmailRegistered);
+                let userEmailInDB = userEmailRegistered;
                 if(userEmailInDB != null) {
-                    return res.render(path.join(__dirname, '../views/users/register'), {errors: {email: {msg: 'Este email ya se encuentra registrado'}}, old: req.body, roles});
-                };
-                let errors = validationResult(req);
-                if(errors.errors.length > 0){
-                    db.Role.findAll({
+                   return res.render(path.join(__dirname, '../views/users/register'), {errors: {email: {msg: 'Este email ya se encuentra registrado'}}, old: req.body});
+                } else {
+                    let userNameRegistered = db.User.findOne({
                         include: [
-                            {association: "roles"}
-                        ]
+                            {association: "roles"},
+                            {association: "users"},
+                            {association: "bookings_user"},
+                            {association: "users_products"},
+                        ], where:{
+                            user_name: req.body.user_name
+                        }
                     })
-                        .then(function(roles) {
-                            return res.render(path.join(__dirname, '../views/users/register'), {errors: errors.mapped(), old: req.body, roles});
-                        });
-                } 
-            })
-            
-             .then(function(){
-                    let roles = db.Role.findAll({
-                        include: [
-                            {association: "roles"}
-                        ]
-                    });
-                    let errors = validationResult(req);
-                    if(errors.errors.length > 0){
-                        db.Role.findAll({
-                            include: [
-                                {association: "roles"}
-                            ]
-                        })
-                            .then(function(roles) {
-                                return res.render(path.join(__dirname, '../views/users/register'), {errors: errors.mapped(), old: req.body, roles});
-                            });
-                    } else if (req.session.userLogged) {
-                        if(req.session.userLogged.role_id == 2){
-                            return res.redirect('/users/list');
-                        }
-                    } else {
-                        return res.redirect('/users/login');
-                    }
-                })
-                    .then(function(roles){
-                        let passwordHasheada = bcryptjs.hashSync(req.body.password, 10);
-                        if(req.file){
-                            db.User.create({
-                                first_name: req.body.first_name,
-                                last_name: req.body.last_name,
-                                user_name: req. body.user_name,
-                                email: req.body.email,
-                                birthday: req.body.date_birth,
-                                age: req.body.age,
-                                genre: req.body.genero,
-                                country: req.body.country,
-                                password: passwordHasheada,
-                                title: req.body.title,
-                                avatar: req.file.filename,
-                                role_id: req.body.category,
-                                mentor_id: null
-                            })
-                        } else if (req.session.userLogged) {
-                            if(req.session.userLogged.role_id == 2){
-                                return res.redirect('/users/list');
+                        .then(function(userNameRegistered){
+                            let userNameInDB = userNameRegistered;
+                            if(userNameInDB != null) {
+                                return res.render(path.join(__dirname, '../views/users/register'), {errors: {user_name: {msg: 'Este nombre de usuario ya se encuentra registrado'}}, old: req.body});
+                            } else {
+                                let passwordHasheada = bcryptjs.hashSync(req.body.password, 10);
+                                if(req.file){
+                                    db.User.create({
+                                        first_name: req.body.first_name,
+                                        last_name: req.body.last_name,
+                                        user_name: req. body.user_name,
+                                        email: req.body.email,
+                                        birthday: req.body.date_birth,
+                                        age: req.body.age,
+                                        genre: req.body.genero,
+                                        country: req.body.country,
+                                        password: passwordHasheada,
+                                        title: req.body.title,
+                                        avatar: req.file.filename,
+                                        role_id: req.body.category,
+                                        mentor_id: null
+                                    })
+                                } else if (req.session.userLogged) {
+                                    if(req.session.userLogged.role_id == 2){
+                                        return res.redirect('/users/list');
+                                    }
+                                } else {
+                                    return res.redirect('/users/login');
+                                }
                             }
-                        } else {
-                            return res.redirect('/users/login');
-                        }
-                    })*/
-                    
-    
-
-        /*let errors = validationResult(req);
-        if(errors.errors.length > 0){
-            db.Role.findAll({
-                include: [
-                    {association: "roles"}
-                ]
-            })
-                .then(function(roles) {
-                    return res.render(path.join(__dirname, '../views/users/register'), {errors: errors.mapped(), old: req.body, roles});
-                });
-        } else if (req.session.userLogged) {
-            if(req.session.userLogged.role_id == 2){
-                return res.redirect('/users/list');
-            }
-        } else {
-            return res.redirect('/users/login');
-        }
-    
-        let roles = db.Role.findAll({
-            include: [
-                {association: "roles"}
-            ]
-        })
-        
-        let passwordHasheada = bcryptjs.hashSync(req.body.password, 10);
-                    if(req.file){
-                        db.User.create({
-                            first_name: req.body.first_name,
-                            last_name: req.body.last_name,
-                            user_name: req. body.user_name,
-                            email: req.body.email,
-                            birthday: req.body.date_birth,
-                            age: req.body.age,
-                            genre: req.body.genero,
-                            country: req.body.country,
-                            password: passwordHasheada,
-                            title: req.body.title,
-                            avatar: req.file.filename,
-                            role_id: 1,
-                            mentor_id: null
                         })
-                    };
-
-        /*
-        Promise.all([userEmail, roles])
-        .then(function([userEmail, roles]) {
-            
-            let userEmailInDB = userEmail;
-            if(userEmailInDB != null) {
-                   return res.render(path.join(__dirname, '../views/users/register'), { errors: {email: {msg: 'Este email ya se encuentra registrado'}}, old: req.body, roles});
-            }
-
-            let passwordHasheada = bcryptjs.hashSync(req.body.password, 10);
-            if(req.file){
-                db.User.create({
-                    first_name: req.body.first_name,
-                    last_name: req.body.last_name,
-                    user_name: req. body.user_name,
-                    email: req.body.email,
-                    birthday: req.body.date_birth,
-                    age: req.body.age,
-                    genre: req.body.genero,
-                    country: req.body.country,
-                    password: passwordHasheada,
-                    title: req.body.title,
-                    avatar: req.file.filename,
-                    role_id: req.body.category,
-                    mentor_id: null
-                }).then(function(user){
-                    
-                    if(req.session.userLogged) {
-                        if(req.session.userLogged.role_id == 2){
-                            return res.redirect('/users/list');
-                        }
-                    } else {
-                        return res.redirect('/users/login');
-                    }
-                });
-            }
-        }); 
-    },*/
+                } 
+            })  
+    },
 
     profile: function(req,res) {
         let id = req.session.userLogged.user_id;
