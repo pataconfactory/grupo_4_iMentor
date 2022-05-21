@@ -312,6 +312,10 @@ main .register-form .boxes {
     margin-top: 1.5%;
 }
 
+main #category {
+    display: none;
+}
+
 main .register-form .text-danger {
     display: flex;
     justify-content: flex-start;   
@@ -1643,11 +1647,6 @@ main .seccion-perfil-usuario .perfil-usuario-portada {
     width: 90%;
     height: 17em;
     border-radius: 0 0 20px 20px;
-    /*background-image: linear-gradient(45deg, #fcff42 , #CC9900);
-    background-image: url('https://www.istockphoto.com/es/vector/lectores-de-libros-equipo-de-negocios-hombre-y-mujer-piensan-analizar-el-trabajo-gm1271676038-374182041');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;*/
 }
 
 main .seccion-perfil-usuario .perfil-usuario-avatar {
