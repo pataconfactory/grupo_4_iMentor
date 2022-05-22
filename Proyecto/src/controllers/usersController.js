@@ -5,6 +5,7 @@ const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
 const bcryptjs = require('bcryptjs');
 const db = require("../../database/models");
+const fetch = require('node-fetch');
 
 const usersController = {
     listUsers: function (req, res) {
@@ -34,16 +35,9 @@ const usersController = {
         })
     },
 
-    register: function(req,res) {
-        res.cookie()
-        db.Role.findAll({
-            include: [
-                {association: "roles"}
-            ]
-        })
-        .then(function(roles) {
-            return res.render(path.join(__dirname, '../views/users/register'), {roles})
-        })
+    register: function(req, res) {
+        res.cookie();
+        return res.render(path.join(__dirname, '../views/users/register'))
     },
 
     registerMentor: function(req,res) {
@@ -83,7 +77,7 @@ const usersController = {
          })
     },
 
-    processRegister: function (req, res) {
+    processRegister: function(req, res) {
 
         let errors = validationResult(req);
         if(errors.errors.length > 0){
@@ -101,7 +95,6 @@ const usersController = {
             }
         })
             .then(function(userEmailRegistered){
-                console.log(userEmailRegistered);
                 let userEmailInDB = userEmailRegistered;
                 if(userEmailInDB != null) {
                    return res.render(path.join(__dirname, '../views/users/register'), {errors: {email: {msg: 'Este email ya se encuentra registrado'}}, old: req.body});
@@ -120,7 +113,7 @@ const usersController = {
                             let userNameInDB = userNameRegistered;
                             if(userNameInDB != null) {
                                 return res.render(path.join(__dirname, '../views/users/register'), {errors: {user_name: {msg: 'Este nombre de usuario ya se encuentra registrado'}}, old: req.body});
-                            } else {
+                            } else if(userNameInDB == null){
                                 let passwordHasheada = bcryptjs.hashSync(req.body.password, 10);
                                 if(req.file){
                                     db.User.create({
@@ -138,16 +131,19 @@ const usersController = {
                                         role_id: req.body.category,
                                         mentor_id: null
                                     })
-                                } else if (req.session.userLogged) {
+                                } 
+                            }
+                        })
+                            .then(function(newUser){
+                                if(req.session.userLogged){
                                     if(req.session.userLogged.role_id == 2){
                                         return res.redirect('/users/list');
                                     }
                                 } else {
                                     return res.redirect('/users/login');
                                 }
-                            }
-                        })
-                } 
+                            })       
+                }
             })  
     },
 
