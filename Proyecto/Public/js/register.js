@@ -5,11 +5,20 @@ window.addEventListener('load', function(){
             return response.json()})
         .then(function(countries) {
 
-            let option = document.querySelector('#country');
+            countries.sort(function (a, b){
+                return (a.name.common.toLowerCase().localeCompare(b.name.common.toLowerCase()))
+            });
 
+            
+            let countriesArray = [];
             for(let i=0; i < countries.length; i++){
-                option.innerHTML += "<option>" + countries[i].name.common + "</option>";
+                countriesArray.push(countries[i].name.common);
             }
-        })
+
+            let option = document.querySelector('#country');
+            for(let i=0; i < countriesArray.length; i++){
+                option.innerHTML += "<option>" + countriesArray[i] + "</option>";
+            }
+        });
 
 }); 
