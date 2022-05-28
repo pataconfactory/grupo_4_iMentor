@@ -67,10 +67,9 @@
                         </div>
                         <% } %>
                     </div>
-                    <div class="register-age">
+                    <div class="register-age" id="register-age">
                         <label for="age"><i class="fas fa-universal-access"></i>Edad</label>
-                        <input class="boxes" type="number" name="age" id="age" placeholder="Edad" min="0"
-                            value="<%= locals.old ? old.age : null %>">
+                        <input class="boxes" type="text" name="age" id="age" placeholder="Edad" min="0" value="">
                         <% if (locals.errors && errors.age) { %>
                         <div class="text-danger">
                             <p class="feedback"><%= errors.age.msg %></p>

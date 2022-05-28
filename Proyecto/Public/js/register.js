@@ -1,3 +1,6 @@
+let date_birth = document.querySelector('#date_birth');
+let ageInput = document.querySelector('#age');
+
 window.addEventListener('load', function(){
 
     fetch('https://restcountries.com/v3.1/all')
@@ -8,7 +11,6 @@ window.addEventListener('load', function(){
             countries.sort(function (a, b){
                 return (a.name.common.toLowerCase().localeCompare(b.name.common.toLowerCase()))
             });
-
             
             let countriesArray = [];
             for(let i=0; i < countries.length; i++){
@@ -21,4 +23,35 @@ window.addEventListener('load', function(){
             }
         });
 
+    
+    date_birth.addEventListener('change', function(){
+
+        let date = this.value;
+        let age = ageCalculate(date);
+        
+        if(this.value){
+            ageInput.value = age;
+        }
+    });
+
 }); 
+
+function ageCalculate(date) {
+    var today = new Date();
+    var birthday = new Date(date);
+    var age = today.getFullYear() - birthday.getFullYear();
+    var m = today.getMonth() - birthday.getMonth();
+
+    if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) {
+        age--;
+    }
+
+    return age;
+}
+
+
+
+
+
+
+
