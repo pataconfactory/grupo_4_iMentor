@@ -391,12 +391,19 @@ main .box-register .register-button:hover {
 }
 
 main .box-register .already-register {
-    padding-top: 4px;
     display: flex;
     justify-content: center;
     font-size: 8.5px;
     text-decoration: underline;
     margin: 5%;
+}
+
+main .box-register .teach-in-iMentor {
+    display: flex;
+    justify-content: center;
+    font-size: 8.5px;
+    text-decoration: underline;
+    padding-top: 8px;
 }
 
 main .box-register .register-button i{
@@ -2652,7 +2659,6 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
 
     .contenedor-sobre-membresias {
         display: flex;
-        /* flex-direction: column; */
         flex-direction: row;
         justify-content: center;
         align-items: center;
@@ -2682,7 +2688,7 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
         font-size: 14px;
     }
 
-     main .contenedor-carrito .seccion-productos .content .unit input {
+    main .contenedor-carrito .seccion-productos .content .unit input {
         font-size: 14px;
     }
 
@@ -2780,6 +2786,10 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
         padding-top: 10px;
     }
 
+    main .box-register .teach-in-iMentor {
+        font-size: 9px;
+    }
+
     .cada-mentor a {
         font-size: 18px;
     }
@@ -2874,6 +2884,10 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
     main .box-register .already-register {
         font-size: 11px;
         padding-top: 8%;
+    }
+
+    main .box-register .teach-in-iMentor {
+        font-size: 11px;
     }
 
     main .box-register form i {
