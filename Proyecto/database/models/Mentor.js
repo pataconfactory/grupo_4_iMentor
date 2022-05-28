@@ -6,6 +6,10 @@ module.exports = function(sequelize, DataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
+        email: {
+            type: DataTypes.STRING(100),
+            allowNull: false
+        },
         description: {
             type: DataTypes.TEXT,
             allowNull: false
@@ -14,10 +18,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.DECIMAL(20),
             allowNull: false
         },
-        punctuation: {
-            type: DataTypes.INTEGER,
-        },
-        CBU: {
+        cbu: {
             type: DataTypes.STRING(50)
         },
         bank: {
@@ -45,5 +46,6 @@ module.exports = function(sequelize, DataTypes) {
             foreignKey: 'mentor_id'   
         });
     };
+
     return Mentor;
 }

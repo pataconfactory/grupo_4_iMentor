@@ -147,6 +147,96 @@ const usersController = {
             })  
     },
 
+    processRegisterMentor: function(req, res) {
+
+        let errors = validationResult(req);
+        if(errors.errors.length > 0){
+            return res.render(path.join(__dirname, '../views/users/registerMentor'), {errors: errors.mapped(), old: req.body});
+        }
+
+        let userEmailRegistered = db.User.findOne({
+            include: [
+                {association: "roles"},
+                {association: "users"},
+                {association: "bookings_user"},
+                {association: "users_products"},
+            ], where:{
+                email: req.body.email
+            }
+        })
+            .then(function(userEmailRegistered){
+                let userEmailInDB = userEmailRegistered;
+                if(userEmailInDB != null) {
+                   return res.render(path.join(__dirname, '../views/users/registerMentor'), {errors: {email: {msg: 'Este email ya se encuentra registrado'}}, old: req.body});
+                } else {
+                    let userNameRegistered = db.User.findOne({
+                        include: [
+                            {association: "roles"},
+                            {association: "users"},
+                            {association: "bookings_user"},
+                            {association: "users_products"},
+                        ], where:{
+                            user_name: req.body.user_name
+                        }
+                    })
+                        .then(function(userNameRegistered){
+                            let userNameInDB = userNameRegistered;
+                            if(userNameInDB != null) {
+                                return res.render(path.join(__dirname, '../views/users/registerMentor'), {errors: {user_name: {msg: 'Este nombre de usuario ya se encuentra registrado'}}, old: req.body});
+                            } else if(userNameInDB == null){
+                                let passwordHasheada = bcryptjs.hashSync(req.body.password, 10);
+                                if(req.file){
+                                    db.User.create({
+                                        first_name: req.body.first_name,
+                                        last_name: req.body.last_name,
+                                        user_name: req. body.user_name,
+                                        email: req.body.email,
+                                        birthday: req.body.date_birth,
+                                        age: req.body.age,
+                                        genre: req.body.genero,
+                                        country: req.body.country,
+                                        password: passwordHasheada,
+                                        title: req.body.title,
+                                        avatar: req.file.filename,
+                                        role_id: req.body.category,
+                                        mentor_id: null
+                                    })
+                            
+                                    db.Mentor.create({
+                                        email: req.body.email,
+                                        description: req.body.description,
+                                        hour_price: req.body.hour_price,
+                                        bank: req. body.bank,
+                                        cbu: req.body.cbu
+                                    })
+                                }
+                            }
+                        })
+                        .then(function(newUser){
+                            if(req.session.userLogged){
+                                if(req.session.userLogged.role_id == 2){
+                                    return res.redirect('/users/list');
+                                }
+                            } else {
+                                return res.redirect('/users/login');
+                            }
+                        })  
+                               
+                }
+            })  
+    },
+
+
+    /* 
+    db.Mentor.create({
+                                    description: req.body.description,
+                                    hour_price: req.body.hour_price,
+                                    bank: req. body.bank,
+                                    cbu: req.body.cbu
+                                     })
+                                     */
+
+
     profile: function(req,res) {
         let id = req.session.userLogged.user_id;
         db.User.findByPk(id, {include: [

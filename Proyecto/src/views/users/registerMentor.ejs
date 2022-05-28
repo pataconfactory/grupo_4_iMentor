@@ -15,7 +15,6 @@
             </div>
             <div class="box-register">
                 <h1>!Creá tu cuenta!</h1>
-                <p>Te invitamos a formar parte de nuestra comunidad</p>
                 <form action="/users/mentorregister" method="POST" class="register-form" enctype="multipart/form-data">
                     <div class="register-username">
                         <label for="first_name"><i class="fas fa-user"></i>Nombre</label>
@@ -69,8 +68,8 @@
                     </div>
                     <div class="register-age">
                         <label for="age"><i class="fas fa-universal-access"></i>Edad</label>
-                        <input class="boxes" type="number" name="age" id="age" placeholder="Edad" min="0"
-                            value="<%= locals.old ? old.age : null %>">
+                        <input class="boxes" type="text" name="age" id="age" placeholder="Edad" min="0" 
+                        value="<%= locals.old ? old.age : null %>">
                         <% if (locals.errors && errors.age) { %>
                         <div class="text-danger">
                             <p class="feedback"><%= errors.age.msg %></p>
@@ -97,8 +96,9 @@
                     </div>
                     <div class="register-username">
                         <label for="country"><i class="fas fa-flag"></i>País</label>
-                        <input class="boxes" type="text" name="country" placeholder="País" id="country"
-                            value="<%= locals.old ? old.country : null %>">
+                        <select class="boxes" name="country" id="country" value="<%= locals.old ? old.country : null %>">
+                            <option value="<%= locals.old ? old.country : null %>">Seleccione país</option>
+                        </select>
                         <% if (locals.errors && errors.country) { %>
                         <div class="text-danger">
                             <p class="feedback"><%= errors.country.msg %></p>
@@ -130,6 +130,10 @@
                         </div>
                         <% } %>
                     </div>
+                    <div class="register-username" id="category">
+                        <label><i class="fas fa-clipboard-list"></i>Rol</label>
+                        <input class="boxes" type="text" name="category" id="category" value="3">
+                    </div>
                     <div class="register-username">
                         <label for="title"><i class="fas fa-user-tie"></i>Título</label>
                         <input class="boxes" type="text" name="title" placeholder="Titulo" id="title"
@@ -142,19 +146,23 @@
                     </div>
                     <div class="register-username">
                         <label for="description"><i class="fas fa-list"></i>Descripción</label>
-                        <input class="boxes" type="text" name="description" placeholder="Inserte una breve descripción de ti..." id="description">
+                        <input class="boxes" type="text" name="description" placeholder="Inserte una breve descripción de ti..." id="description"
+                        value="<%= locals.old ? old.description : null %>">
                     </div>
                     <div class="register-username">
-                        <label for="hour-price"><i class="fas fa-dollar-sign"></i>Precio por hora</label>
-                        <input class="boxes" type="text" name="hour-price" placeholder="Precio por hora" id="hour-price">
+                        <label for="hour_price"><i class="fas fa-dollar-sign"></i>Precio por hora</label>
+                        <input class="boxes" type="text" name="hour_price" placeholder="Precio por hora" id="hour_price"
+                        value="<%= locals.old ? old.hour_price : null %>">
                     </div>
                     <div class="register-username">
                         <label for="bank"><i class="fas fa-university"></i>Banco</label>
-                        <input class="boxes" type="text" name="bank" placeholder="Banco" id="bank">
+                        <input class="boxes" type="text" name="bank" placeholder="Banco" id="bank"
+                        value="<%= locals.old ? old.bank : null %>">
                     </div>
                     <div class="register-username">
                         <label for="cbu"><i class="fas fa-university"></i>CBU</label>
-                        <input class="boxes" type="text" name="cbu" placeholder="CBU" id="cbu">
+                        <input class="boxes" type="text" name="cbu" placeholder="CBU" id="cbu"
+                        value="<%= locals.old ? old.cbu : null %>">
                     </div>
                     <div class="register-username">
                         <label><i class="fas fa-image"></i>Subir imagen de mentor</label>
@@ -180,6 +188,7 @@
 
     <%- include('../partials/footer') %>
 
+<script src="/js/register.js"></script>
 </body>
 
 </html>
