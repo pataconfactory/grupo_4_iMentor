@@ -6,10 +6,6 @@ module.exports = function(sequelize, DataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
-        email: {
-            type: DataTypes.STRING(100),
-            allowNull: false
-        },
         description: {
             type: DataTypes.TEXT,
             allowNull: false

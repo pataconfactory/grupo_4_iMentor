@@ -55,7 +55,8 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         },
         mentor_id: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            allowNull: false
         }
     }
 
@@ -76,7 +77,7 @@ module.exports = function(sequelize, DataTypes) {
 
         User.belongsTo(models.Mentor, {
             as: 'users',
-            foreignKey: 'mentor_id'      
+            foreignKey: 'mentor_id'
         });
 
         User.hasMany(models.Booking, {
