@@ -301,9 +301,6 @@ const usersController = {
                                             cbu: req.body.cbu
                                         })
                                         .then(function (mentor) {
-                                            console.log({
-                                                mentor
-                                            });
                                             if (!mentor) {
                                                 return res.render(path.join(__dirname, '../views/not-found'));
                                             } else {
@@ -344,24 +341,25 @@ const usersController = {
     profile: function (req, res) {
         let id = req.session.userLogged.user_id;
         db.User.findByPk(id, {
-            include: [{
-                    association: "roles"
-                },
-                {
-                    association: "users"
-                },
-                {
-                    association: "bookings_user"
-                },
-                {
-                    association: "users_products"
-                },
-            ]
-        }).then(function (user) {
-            return res.render(path.join(__dirname, '../views/users/profile'), {
-                user
-            });
-        })
+                include: [{
+                        association: "roles"
+                    },
+                    {
+                        association: "users"
+                    },
+                    {
+                        association: "bookings_user"
+                    },
+                    {
+                        association: "users_products"
+                    },
+                ]
+            })
+            .then(function (user) {
+                return res.render(path.join(__dirname, '../views/users/profile'), {
+                    user
+                });
+            })
     },
 
     logout: function (req, res) {
@@ -545,13 +543,41 @@ const usersController = {
     },
 
     destroyUsers: function (req, res) {
-        db.User.destroy({
-            where: {
-                user_id: req.params.id
-            }
-        }).then(function (user) {
-            return res.redirect('/users/list');
-        });
+        db.User.findOne({
+                include: [{
+                        association: "roles"
+                    },
+                    {
+                        association: "users"
+                    },
+                    {
+                        association: "bookings_user"
+                    },
+                    {
+                        association: "users_products"
+                    }
+                ],
+                where: {
+                    user_id: req.params.id
+                }
+            })
+            .then(function (user) {
+                db.User.destroy({
+                    where: {
+                        user_id: req.params.id
+                    }
+                }).then(function (userDeleted) {
+                    if (user.mentor_id) {
+                        db.Mentor.destroy({
+                            where: {
+                                mentor_id: user.mentor_id
+                            }
+                        })
+                        return res.redirect('/users/list');
+                    }
+                })
+
+            })
     }
 };
 
