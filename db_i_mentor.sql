@@ -9,7 +9,7 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- CreaciÛn de la Base de Datos
+-- Creaci√≥n de la Base de Datos
 
 DROP DATABASE IF EXISTS imentor_db;
 CREATE DATABASE imentor_db;
@@ -26,7 +26,6 @@ CREATE TABLE `imentor_db`.`mentors` (
   `mentor_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `description` TEXT NOT NULL,
   `hour_price` DECIMAL(20) NOT NULL,
-  `punctuation` INT(10) NULL DEFAULT NULL,
   `CBU` VARCHAR(50) NULL,
   `bank` VARCHAR(50) NULL DEFAULT NULL,
   `created_at` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -42,13 +41,13 @@ CREATE TABLE `imentor_db`.`mentors` (
 LOCK TABLES `imentor_db`.`mentors` WRITE;
 /*!40000 ALTER TABLE `mentors` DISABLE KEYS */;
 INSERT INTO `imentor_db`.`mentors` 
-VALUES (1,'Hola soy Lucas Sequeira, soy Argentino y trabajo como desarrollador hace 5 aÒos. Me apasiona la tecnologia y entender como funcionan las cosas. Soy un entusiasta del mundo crypto como proyecto y me gusta andar en bici!',1500,5,'7854236900145876500321','HSBC',NULL,NULL),
-(2,'Soy Patricia de Ciudad de Mexico y trabajo como Product Owner desde hace varios aÒos. Me apasiona el mundo de las IT, soy autodidacta y me gusta conocer nuevas gastronomÌas!',1000,4,'8569745210365000258752','BBVA',NULL,NULL),
-(3,'Hi! mi nombre es Pedro Gonzalez soy de Colombia, trabajo como Ingeniero en Sistemas en una empresa importante desde hace algunos aÒos, siempre estoy aprendiendo cosas nuevas en el mundo de las ITs y me apasiona enseÒarles a mis estudiantes!',1300,5,'5873695210045600014589','BBVA',NULL,NULL),
-(4,'Hola mi nombre es Juan soy Colombiano, trabajo como Digital Technology Teacher desde hace 5 aÒos. La programaciÛn cambiÛ mi vida. EnseÒo haciendo!!.',1300,4,'56986321540000047800025','Galicia',NULL,NULL),
-(5,'Hola mi nombre es Victoria, soy de Argentina, trabajo como DiseÒadora Gr·fica desde hace 4 aÒos, me apasiona el diseÒo y poder brindar capacitaciÛn ˙til es mi manera significativa de ser parte de la comunidad creativa.',1000,4,'7854636985000654789100','HSBC',NULL,NULL),
-(6,'Hi Dev! mi nombre es Raiza Colmenares soy de Venezuela, trabajo como Scrum Master y Team Leader en una empresa de desarrollo de software. Soy una de esas personas a las que les gusta aprender de todo y, tambiÈn, me gusta enseÒar lo que he aprendido. ',1500,4,'7854236900045800698532','Santander RÌo',NULL,NULL),
-(7,'Mi nombre es Susana,soy de Argentina,tengo m·s de 7 aÒos de experiencia en el mundo del Marketing Digital. Actualmente me dedico a la DirecciÛn de Proyectos y tengo negocios en el rubro de EducaciÛn Digital y Marketing de Afiliados',1000,4,'5698630000789001456808','Galicia',NULL,NULL);
+VALUES (1,'Hola soy Lucas Sequeira, soy Argentino y trabajo como desarrollador hace 5 a√±os. Me apasiona la tecnologia y entender como funcionan las cosas. Soy un entusiasta del mundo crypto como proyecto y me gusta andar en bici!',1500,'7854236900145876500321','HSBC',NULL,NULL),
+(2,'Soy Patricia de Ciudad de Mexico y trabajo como Product Owner desde hace varios a√±os. Me apasiona el mundo de las IT, soy autodidacta y me gusta conocer nuevas gastronom√≠as!',1000,'8569745210365000258752','BBVA',NULL,NULL),
+(3,'Hi! mi nombre es Pedro Gonzalez soy de Colombia, trabajo como Ingeniero en Sistemas en una empresa importante desde hace algunos a√±os, siempre estoy aprendiendo cosas nuevas en el mundo de las ITs y me apasiona ense√±arles a mis estudiantes!',1300,'5873695210045600014589','BBVA',NULL,NULL),
+(4,'Hola mi nombre es Juan soy Colombiano, trabajo como Digital Technology Teacher desde hace 5 a√±os. La programaci√≥n cambi√≥ mi vida. Ense√±o haciendo!!.',1300,'56986321540000047800025','Galicia',NULL,NULL),
+(5,'Hola mi nombre es Victoria, soy de Argentina, trabajo como Dise√±adora Gr√°fica desde hace 4 a√±os, me apasiona el dise√±o y poder brindar capacitaci√≥n √∫til es mi manera significativa de ser parte de la comunidad creativa.',1000,'7854636985000654789100','HSBC',NULL,NULL),
+(6,'Hi Dev! mi nombre es Raiza Colmenares soy de Venezuela, trabajo como Scrum Master y Team Leader en una empresa de desarrollo de software. Soy una de esas personas a las que les gusta aprender de todo y, tambi√©n, me gusta ense√±ar lo que he aprendido. ',1500,'7854236900045800698532','Santander R√≠o',NULL,NULL),
+(7,'Mi nombre es Susana,soy de Argentina,tengo m√°s de 7 a√±os de experiencia en el mundo del Marketing Digital. Actualmente me dedico a la Direcci√≥n de Proyectos y tengo negocios en el rubro de Educaci√≥n Digital y Marketing de Afiliados',1000,'5698630000789001456808','Galicia',NULL,NULL);
 UNLOCK TABLES;
 
 --
@@ -101,7 +100,7 @@ CREATE TABLE `imentor_db`.`users` (
   `title` VARCHAR(100) NOT NULL,
   `avatar` VARCHAR(100) NOT NULL,
   `role_id` int(10) UNSIGNED NOT NULL,
-  `mentor_id` int(10) UNSIGNED NULL,
+  `mentor_id` int(10) UNSIGNED not NULL,
   `created_at` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` DATETIME ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_id`),
@@ -119,13 +118,13 @@ CREATE TABLE `imentor_db`.`users` (
 LOCK TABLES `imentor_db`.`users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `imentor_db`.`users` 
-VALUES (1,'Quizaira','Rodriguez','Quiz_92','kiss02andre@gmail.com','1992-08-06',29,'Femenino','Venezuela','$2a$10$7VKydN2X/gUayOv3kBxPpOQMoo8M.lNFfL5sQI7Tno4Gdfc5IGHfW','Desarrollador Full Stack Trainee','user-1649510591616.png',2,NULL,NULL,NULL),
-(2,'Patricia','Williams','PatriWill','pattywilliams20@gmail.com','1992-03-20',30,'Femenino','Venezuela','$2a$10$FaWw9UGapO6GZEQXfhA77uKO66VwsFca9c/nb8rHPA4QGtCEPRmVm','Profesor','user-1650214401676.jpg',2,NULL,NULL,NULL),
+VALUES (1,'Quizaira','Rodriguez','Quiz_92','kiss02andre@gmail.com','1992-08-06',29,'Femenino','Venezuela','$2a$10$7VKydN2X/gUayOv3kBxPpOQMoo8M.lNFfL5sQI7Tno4Gdfc5IGHfW','Desarrollador Full Stack Trainee','user-1649510591616.png',2,0,NULL,NULL),
+(2,'Patricia','Williams','PatriWill','pattywilliams20@gmail.com','1992-03-20',30,'Femenino','Venezuela','$2a$10$FaWw9UGapO6GZEQXfhA77uKO66VwsFca9c/nb8rHPA4QGtCEPRmVm','Profesor','user-1650214401676.jpg',2,0,NULL,NULL),
 (3,'Lucas','Sequeira','lucas_sequeira','lucassequeira@gmail.com','1978-04-19',43,'Masculino','Argentina','$2a$10$mydM.Qj01C5qnDwpshIvduySTA.YntlD9x/HMrESFXCqjWcx98V5y','Desarrollador Web Full Stack','mentor-1650563693435.png',3,1,NULL,NULL),
 (4,'Patricia','Garza','patricia_garza','patriciagarza@gmail.com','1987-09-24',34,'Femenino','Mexico','$2a$10$I/2YlDg9dyjtQlwGq3aaS.l9opnyEhTIoYtpN/OIHFTUh8TowrY1i','Analista Funcional de Sistemas','mentor-1650563807291.jpg',3,2,NULL,NULL),
 (5,'Pedro','Gonzalez','pedro_gonzalez','pedrogonzalez@gmail.com','1967-01-15',55,'Masculino','Colombia','$2a$10$ngI.beg8/dB.79HOjeAoQ.Ey6xZ6Mv6n.mUe62uzSL2MwG75.Ub0C','Ingeniero en Sistemas','mentor-1650564026782.jpg',3,3,NULL,NULL),
 (6,'Juan','Juanes','juan_juanes','juanjuanes@gmail.com','1974-12-03',47,'Masculino','Colombia','$2a$10$.lIDoY30lhS.caWYuLoJre0QjcMMaSnbP85ny1YzQnI0AS.GFB/xS','Digital Technology Teacher','mentor-1650564299509.jpg',3,4,NULL,NULL),
-(7,'Victoria','Defagot','victoria_defagot','victoriadefagot@gmail.com','1996-03-03',26,'Femenino','Argentina','$2a$10$oFYPaNhrJwWiCZsyFPlXIOUIL.xJwYiTTo06e/BaEQrYOVItinnge','DiseÒadora Gr·fica','mentor-1650564116740.jpg',3,5,NULL,NULL),
+(7,'Victoria','Defagot','victoria_defagot','victoriadefagot@gmail.com','1996-03-03',26,'Femenino','Argentina','$2a$10$oFYPaNhrJwWiCZsyFPlXIOUIL.xJwYiTTo06e/BaEQrYOVItinnge','Dise√±adora Gr√°fica','mentor-1650564116740.jpg',3,5,NULL,NULL),
 (8,'Raiza','Colmenares','rapico72','rapico72@gmail.com','1972-12-10',49,'Femenino','Venezuela','$2a$10$UqPL6kK.vACzEfNk.fZiiOb2W4sg071ygt2GQNEjtvdT/Xx.BNi4C','Desarrolladora Full Stack','mentor-1650568878221.jpg',3,6,NULL,NULL),
 (9,'Susana','Roca','susana_roca','roca_susana@gmail.com','1990-04-21',31,'Femenino','Argentina','$2a$10$DKxjcyWHarHGlTqv32UP9OIQwTSQniLFn.jkGOqUpoA/aBDaFriCK','Community Manager','mentor-Patricia-Williams.jpg',3,7,NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
@@ -159,7 +158,7 @@ VALUES (1,'Front-End',NULL,NULL),
 (3,'UI/UX',NULL,NULL),
 (4,'Base de Datos',NULL,NULL),
 (5,'Marketing Digital',NULL,NULL),
-(6,'An·lisis de Datos',NULL,NULL);
+(6,'An√°lisis de Datos',NULL,NULL);
 /*!40000 ALTER TABLE `product_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -201,27 +200,27 @@ CREATE TABLE `imentor_db`.`products` (
 LOCK TABLES `imentor_db`.`products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
 INSERT INTO `imentor_db`.`products` 
-VALUES (1,'CSS: DiseÒo Web desde cero a avanzado',1,1,3,'Asesorate sobre CSS desde los fundamentos hasta temas intermedios y avanzados para crear sitios y aplicaciones Web increÌbles!. Crea aplicaciones Web utilizando CSS (Cascading Style Sheets) con las ˙ltimas versiones al dÌa de hoy.','Lunes','18:00:00',1950,1,'product-aprender-css.jpg',NULL,NULL),
-(2,'CSS: DiseÒo Web desde cero a avanzado',1,1,3,'Asesorate sobre CSS desde los fundamentos hasta temas intermedios y avanzados para crear sitios y aplicaciones Web increÌbles!. Crea aplicaciones Web utilizando CSS (Cascading Style Sheets) con las ˙ltimas versiones al dÌa de hoy.','MiÈrcoles','18:00:00',1950,1,'product-aprender-css.jpg',NULL,NULL),
-(3,'CSS: DiseÒo Web desde cero a avanzado',1,1,3,'Asesorate sobre CSS desde los fundamentos hasta temas intermedios y avanzados para crear sitios y aplicaciones Web increÌbles!. Crea aplicaciones Web utilizando CSS (Cascading Style Sheets) con las ˙ltimas versiones al dÌa de hoy.','Viernes','18:00:00',1950,1,'product-aprender-css.jpg',NULL,NULL),
-(4,'CSS: HTML5: DiseÒo Web desde cero a avanzado',1,2,4,'Asesorate sobre HTML5 desde los fundamentos hasta temas intermedios y avanzados para crear sitios y aplicaciones Web increÌbles!. Crea p·ginas basadas en las mejores pr·cticas con HTML','Martes','10:00:00',1300,1,'product-html5.jpg',NULL,NULL),
-(5,'CSS: HTML5: DiseÒo Web desde cero a avanzado',1,2,4,'Asesorate sobre HTML5 desde los fundamentos hasta temas intermedios y avanzados para crear sitios y aplicaciones Web increÌbles!. Crea p·ginas basadas en las mejores pr·cticas con HTML','Jueves','10:00:00',1300,1,'product-html5.jpg',NULL,NULL),
-(6,'CSS: HTML5: DiseÒo Web desde cero a avanzado',1,2,4,'Asesorate sobre HTML5 desde los fundamentos hasta temas intermedios y avanzados para crear sitios y aplicaciones Web increÌbles!. Crea p·ginas basadas en las mejores pr·cticas con HTML','S·bado','10:00:00',1300,1,'product-html5.jpg',NULL,NULL),
-(7,'Node.js: De cero a experto',2,6,8,'Aprende a crear aplicaciones Back-End con Node.js y Express desde cero con ejemplos pr·cticos, buenas practicas de programaciÛn y tips que te ayudar·n a convertirte en un experto en el desarrollo Back-End','Lunes','20:00:00',1950,1,'product-nodejs.jpg',NULL,NULL),
-(8,'Node.js: De cero a experto',2,6,8,'Aprende a crear aplicaciones Back-End con Node.js y Express desde cero con ejemplos pr·cticos, buenas practicas de programaciÛn y tips que te ayudar·n a convertirte en un experto en el desarrollo Back-End','MiÈrcoles','20:00:00',1950,1,'product-nodejs.jpg',NULL,NULL),
-(9,'Node.js: De cero a experto',2,6,8,'Aprende a crear aplicaciones Back-End con Node.js y Express desde cero con ejemplos pr·cticos, buenas practicas de programaciÛn y tips que te ayudar·n a convertirte en un experto en el desarrollo Back-End','Viernes','20:00:00',1950,1,'product-nodejs.jpg',NULL,NULL),
-(10,'Base de datos de MySQL y SQL Server desde cero a full stack',4,3,5,'AsesorÌa sobre como gestionar base de datos en los servidores de MySQL y SQL Server. CreaciÛn, intercalaciÛn y seguridad de base de datos.','Lunes','19:00:00',1690,1,'product-sql-and-mysql.jpg',NULL,NULL),
-(11,'Base de datos de MySQL y SQL Server desde cero a full stack',4,3,5,'AsesorÌa sobre como gestionar base de datos en los servidores de MySQL y SQL Server. CreaciÛn, intercalaciÛn y seguridad de base de datos.','Miercoles','19:00:00',1690,1,'product-sql-and-mysql.jpg',NULL,NULL),
-(12,'Base de datos de MySQL y SQL Server desde cero a full stack',4,3,5,'AsesorÌa sobre como gestionar base de datos en los servidores de MySQL y SQL Server. CreaciÛn, intercalaciÛn y seguridad de base de datos.','Viernes','19:00:00',1690,1,'product-sql-and-mysql.jpg',NULL,NULL),
-(13,'DiseÒo Web desde cero a avanzado',3,5,7,'AsesorÌa sobre como utilizar herramientas de ediciÛn de cÛdigo de un modo m·s ·gil. Definir el diseÒo y usabilidad de una p·gina web. Hacer diseÒo Responsive Design y Mobile First.','Martes','12:00:00',1300,1,'product-ux-ui.png',NULL,NULL),
-(14,'DiseÒo Web desde cero a avanzado',3,5,7,'AsesorÌa sobre como utilizar herramientas de ediciÛn de cÛdigo de un modo m·s ·gil. Definir el diseÒo y usabilidad de una p·gina web. Hacer diseÒo Responsive Design y Mobile First.','Jueves','12:00:00',1300,1,'product-ux-ui.png',NULL,NULL),
-(15,'DiseÒo Web desde cero a avanzado',3,5,7,'AsesorÌa sobre como utilizar herramientas de ediciÛn de cÛdigo de un modo m·s ·gil. Definir el diseÒo y usabilidad de una p·gina web. Hacer diseÒo Responsive Design y Mobile First.','S·bado','12:00:00',1300,1,'product-ux-ui.png',NULL,NULL),
-(16,'Marketing Digital en el 2022',5,7,9,'AsesorÌa sobre cada uno de los elementos claves del marketing digital desde cero hasta un nivel experto con lo cual, podr·s abrirte paso a travÈs de los negocios por Internet y ver las enormes ventajas que tiene respecto a un negocio tradicional.','Martes','21:00:00',1300,1,'product-marketing-digital.jpg',NULL,NULL),
-(17,'Marketing Digital en el 2022',5,7,9,'AsesorÌa sobre cada uno de los elementos claves del marketing digital desde cero hasta un nivel experto con lo cual, podr·s abrirte paso a travÈs de los negocios por Internet y ver las enormes ventajas que tiene respecto a un negocio tradicional.','Jueves','21:00:00',1300,1,'product-marketing-digital.jpg',NULL,NULL),
-(18,'Marketing Digital en el 2022',5,7,9,'AsesorÌa sobre cada uno de los elementos claves del marketing digital desde cero hasta un nivel experto con lo cual, podr·s abrirte paso a travÈs de los negocios por Internet y ver las enormes ventajas que tiene respecto a un negocio tradicional.','S·bado','21:00:00',1300,1,'product-marketing-digital.jpg',NULL,NULL),
-(19,'An·lisis de Datos y Gr·ficos con Python: Panda y Matplotlib',6,4,6,'An·lisis de datos con la librerÌa Pandas y la librerÌa Matplotlib de Python. La primera herramienta permite moldear los datos en base a lo que se quiere analizar y asÌ visualizarlos de una mejor manera. Y la segunda herramienta, permite graficar a nuestro gusto y de diferentes maneras, los datos que se quieren analizar y representar.','Lunes','17:00:00',1690,1,'product-codpython.jpg',NULL,NULL),
-(20,'An·lisis de Datos y Gr·ficos con Python: Panda y Matplotlib',6,4,6,'An·lisis de datos con la librerÌa Pandas y la librerÌa Matplotlib de Python. La primera herramienta permite moldear los datos en base a lo que se quiere analizar y asÌ visualizarlos de una mejor manera. Y la segunda herramienta, permite graficar a nuestro gusto y de diferentes maneras, los datos que se quieren analizar y representar.','MiÈrcoles','17:00:00',1690,1,'product-codpython.jpg',NULL,NULL),
-(21,'An·lisis de Datos y Gr·ficos con Python: Panda y Matplotlib',6,4,6,'An·lisis de datos con la librerÌa Pandas y la librerÌa Matplotlib de Python. La primera herramienta permite moldear los datos en base a lo que se quiere analizar y asÌ visualizarlos de una mejor manera. Y la segunda herramienta, permite graficar a nuestro gusto y de diferentes maneras, los datos que se quieren analizar y representar.','Viernes','17:00:00',1690,1,'product-codpython.jpg',NULL,NULL);
+VALUES (1,'CSS: Dise√±o Web desde cero a avanzado',1,1,3,'Asesorate sobre CSS desde los fundamentos hasta temas intermedios y avanzados para crear sitios y aplicaciones Web incre√≠bles!. Crea aplicaciones Web utilizando CSS (Cascading Style Sheets) con las √∫ltimas versiones al d√≠a de hoy.','Lunes','18:00:00',1950,1,'product-aprender-css.jpg',NULL,NULL),
+(2,'CSS: Dise√±o Web desde cero a avanzado',1,1,3,'Asesorate sobre CSS desde los fundamentos hasta temas intermedios y avanzados para crear sitios y aplicaciones Web incre√≠bles!. Crea aplicaciones Web utilizando CSS (Cascading Style Sheets) con las √∫ltimas versiones al d√≠a de hoy.','Mi√©rcoles','18:00:00',1950,1,'product-aprender-css.jpg',NULL,NULL),
+(3,'CSS: Dise√±o Web desde cero a avanzado',1,1,3,'Asesorate sobre CSS desde los fundamentos hasta temas intermedios y avanzados para crear sitios y aplicaciones Web incre√≠bles!. Crea aplicaciones Web utilizando CSS (Cascading Style Sheets) con las √∫ltimas versiones al d√≠a de hoy.','Viernes','18:00:00',1950,1,'product-aprender-css.jpg',NULL,NULL),
+(4,'CSS: HTML5: Dise√±o Web desde cero a avanzado',1,2,4,'Asesorate sobre HTML5 desde los fundamentos hasta temas intermedios y avanzados para crear sitios y aplicaciones Web incre√≠bles!. Crea p√°ginas basadas en las mejores pr√°cticas con HTML','Martes','10:00:00',1300,1,'product-html5.jpg',NULL,NULL),
+(5,'CSS: HTML5: Dise√±o Web desde cero a avanzado',1,2,4,'Asesorate sobre HTML5 desde los fundamentos hasta temas intermedios y avanzados para crear sitios y aplicaciones Web incre√≠bles!. Crea p√°ginas basadas en las mejores pr√°cticas con HTML','Jueves','10:00:00',1300,1,'product-html5.jpg',NULL,NULL),
+(6,'CSS: HTML5: Dise√±o Web desde cero a avanzado',1,2,4,'Asesorate sobre HTML5 desde los fundamentos hasta temas intermedios y avanzados para crear sitios y aplicaciones Web incre√≠bles!. Crea p√°ginas basadas en las mejores pr√°cticas con HTML','S√°bado','10:00:00',1300,1,'product-html5.jpg',NULL,NULL),
+(7,'Node.js: De cero a experto',2,6,8,'Aprende a crear aplicaciones Back-End con Node.js y Express desde cero con ejemplos pr√°cticos, buenas practicas de programaci√≥n y tips que te ayudar√°n a convertirte en un experto en el desarrollo Back-End','Lunes','20:00:00',1950,1,'product-nodejs.jpg',NULL,NULL),
+(8,'Node.js: De cero a experto',2,6,8,'Aprende a crear aplicaciones Back-End con Node.js y Express desde cero con ejemplos pr√°cticos, buenas practicas de programaci√≥n y tips que te ayudar√°n a convertirte en un experto en el desarrollo Back-End','Mi√©rcoles','20:00:00',1950,1,'product-nodejs.jpg',NULL,NULL),
+(9,'Node.js: De cero a experto',2,6,8,'Aprende a crear aplicaciones Back-End con Node.js y Express desde cero con ejemplos pr√°cticos, buenas practicas de programaci√≥n y tips que te ayudar√°n a convertirte en un experto en el desarrollo Back-End','Viernes','20:00:00',1950,1,'product-nodejs.jpg',NULL,NULL),
+(10,'Base de datos de MySQL y SQL Server desde cero a full stack',4,3,5,'Asesor√≠a sobre como gestionar base de datos en los servidores de MySQL y SQL Server. Creaci√≥n, intercalaci√≥n y seguridad de base de datos.','Lunes','19:00:00',1690,1,'product-sql-and-mysql.jpg',NULL,NULL),
+(11,'Base de datos de MySQL y SQL Server desde cero a full stack',4,3,5,'Asesor√≠a sobre como gestionar base de datos en los servidores de MySQL y SQL Server. Creaci√≥n, intercalaci√≥n y seguridad de base de datos.','Miercoles','19:00:00',1690,1,'product-sql-and-mysql.jpg',NULL,NULL),
+(12,'Base de datos de MySQL y SQL Server desde cero a full stack',4,3,5,'Asesor√≠a sobre como gestionar base de datos en los servidores de MySQL y SQL Server. Creaci√≥n, intercalaci√≥n y seguridad de base de datos.','Viernes','19:00:00',1690,1,'product-sql-and-mysql.jpg',NULL,NULL),
+(13,'Dise√±o Web desde cero a avanzado',3,5,7,'Asesor√≠a sobre como utilizar herramientas de edici√≥n de c√≥digo de un modo m√°s √°gil. Definir el dise√±o y usabilidad de una p√°gina web. Hacer dise√±o Responsive Design y Mobile First.','Martes','12:00:00',1300,1,'product-ux-ui.png',NULL,NULL),
+(14,'Dise√±o Web desde cero a avanzado',3,5,7,'Asesor√≠a sobre como utilizar herramientas de edici√≥n de c√≥digo de un modo m√°s √°gil. Definir el dise√±o y usabilidad de una p√°gina web. Hacer dise√±o Responsive Design y Mobile First.','Jueves','12:00:00',1300,1,'product-ux-ui.png',NULL,NULL),
+(15,'Dise√±o Web desde cero a avanzado',3,5,7,'Asesor√≠a sobre como utilizar herramientas de edici√≥n de c√≥digo de un modo m√°s √°gil. Definir el dise√±o y usabilidad de una p√°gina web. Hacer dise√±o Responsive Design y Mobile First.','S√°bado','12:00:00',1300,1,'product-ux-ui.png',NULL,NULL),
+(16,'Marketing Digital en el 2022',5,7,9,'Asesor√≠a sobre cada uno de los elementos claves del marketing digital desde cero hasta un nivel experto con lo cual, podr√°s abrirte paso a trav√©s de los negocios por Internet y ver las enormes ventajas que tiene respecto a un negocio tradicional.','Martes','21:00:00',1300,1,'product-marketing-digital.jpg',NULL,NULL),
+(17,'Marketing Digital en el 2022',5,7,9,'Asesor√≠a sobre cada uno de los elementos claves del marketing digital desde cero hasta un nivel experto con lo cual, podr√°s abrirte paso a trav√©s de los negocios por Internet y ver las enormes ventajas que tiene respecto a un negocio tradicional.','Jueves','21:00:00',1300,1,'product-marketing-digital.jpg',NULL,NULL),
+(18,'Marketing Digital en el 2022',5,7,9,'Asesor√≠a sobre cada uno de los elementos claves del marketing digital desde cero hasta un nivel experto con lo cual, podr√°s abrirte paso a trav√©s de los negocios por Internet y ver las enormes ventajas que tiene respecto a un negocio tradicional.','S√°bado','21:00:00',1300,1,'product-marketing-digital.jpg',NULL,NULL),
+(19,'An√°lisis de Datos y Gr√°ficos con Python: Panda y Matplotlib',6,4,6,'An√°lisis de datos con la librer√≠a Pandas y la librer√≠a Matplotlib de Python. La primera herramienta permite moldear los datos en base a lo que se quiere analizar y as√≠ visualizarlos de una mejor manera. Y la segunda herramienta, permite graficar a nuestro gusto y de diferentes maneras, los datos que se quieren analizar y representar.','Lunes','17:00:00',1690,1,'product-codpython.jpg',NULL,NULL),
+(20,'An√°lisis de Datos y Gr√°ficos con Python: Panda y Matplotlib',6,4,6,'An√°lisis de datos con la librer√≠a Pandas y la librer√≠a Matplotlib de Python. La primera herramienta permite moldear los datos en base a lo que se quiere analizar y as√≠ visualizarlos de una mejor manera. Y la segunda herramienta, permite graficar a nuestro gusto y de diferentes maneras, los datos que se quieren analizar y representar.','Mi√©rcoles','17:00:00',1690,1,'product-codpython.jpg',NULL,NULL),
+(21,'An√°lisis de Datos y Gr√°ficos con Python: Panda y Matplotlib',6,4,6,'An√°lisis de datos con la librer√≠a Pandas y la librer√≠a Matplotlib de Python. La primera herramienta permite moldear los datos en base a lo que se quiere analizar y as√≠ visualizarlos de una mejor manera. Y la segunda herramienta, permite graficar a nuestro gusto y de diferentes maneras, los datos que se quieren analizar y representar.','Viernes','17:00:00',1690,1,'product-codpython.jpg',NULL,NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
