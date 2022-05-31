@@ -100,7 +100,7 @@ CREATE TABLE `imentor_db`.`users` (
   `title` VARCHAR(100) NOT NULL,
   `avatar` VARCHAR(100) NOT NULL,
   `role_id` int(10) UNSIGNED NOT NULL,
-  `mentor_id` int(10) UNSIGNED not NULL,
+  `mentor_id` int(10) UNSIGNED default NULL,
   `created_at` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` DATETIME ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_id`),
