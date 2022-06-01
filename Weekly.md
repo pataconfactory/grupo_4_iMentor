@@ -107,3 +107,16 @@
 <p>Identificamos que el error de las asociaciones entre la tabla de product_mentor, mentor y usuario estaba mal desde las relaciones en la base de datos, se removió la tabla pivote y se hizo una nueva relación mentor-user, y product user y se completó el CRUD de productos</p>
 <p>Fueron removidas las páginas y links que no están en uso</p>
 <p>Comenzamos a trabajar en el CRUD de usuarios</p>
+
+  <h2>Modificaciones Sprint 7:</h2>
+<strong>Lunes 30 de Mayo</strong>
+<p>Dividimos las tareas y nos asignamos las actividades en las tarjetas de user stories</p>
+<strong>Martes 31 de Mayo</strong>
+<p>Comenzamos a trabajar con las validaciones del front end de usuarios y productos</p>
+<p>Se modificó la vista de Register mentor ejs, se hicieron modificaciones en el header y footer</p>
+<p>Se actualizó el script de base de datos para permitir que el mentor ID pudiese ser nulo por defecto en la tabla users, y se pudan registrar usuarios sin ser mentores</p>
+<p>Pusheadas las validaciones del front end de usuarios con lo requerido para el srpint</p>
+<strong>Miércoles 1 de junio</strong>
+<p>Se pusheo la validación de creación de producto con lo requerido para la sprint</p>
+<p>Hicimos una meeting para revisar el funcionamiento de la aplicación crear, actualizar, eliminar un usuario y un producto</p>
+<p>Definimos qué mejoras tenemos que seguir trabajando para el siguiente sprint, como validación de producto en el front, agregar api de países a la edición del usuario, crear vista de contacto</p>
