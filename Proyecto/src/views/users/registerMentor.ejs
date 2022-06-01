@@ -9,12 +9,12 @@
 
     <main>
         <div class="banner-register">
-            <div class="background-register"></div>
-            <div class="box-img-register">
-                <img src="/img/student-laptop.jpg" alt="Student registering">
+            <div class="box-img-register-mentor">
+                <img src="/img/woman-laptop.jpg" alt="mentoring">
             </div>
             <div class="box-register">
-                <h1>!Creá tu cuenta!</h1>
+                <h1>¡Ven a enseñar con nosotros!</h1>
+                <p class="community">Conviértete en mentor y cambia vidas, incluida la tuya.</p>
                 <form action="/users/mentorregister" method="POST" class="register-form" enctype="multipart/form-data">
                     <div class="register-username">
                         <label for="first_name"><i class="fas fa-user"></i>Nombre</label>
@@ -130,10 +130,6 @@
                         </div>
                         <% } %>
                     </div>
-                    <div class="register-username" id="category">
-                        <label><i class="fas fa-clipboard-list"></i>Rol</label>
-                        <input class="boxes" type="text" name="category" id="category" value="3">
-                    </div>
                     <div class="register-username">
                         <label for="title"><i class="fas fa-user-tie"></i>Título</label>
                         <input class="boxes" type="text" name="title" placeholder="Titulo" id="title"
@@ -146,12 +142,12 @@
                     </div>
                     <div class="register-username">
                         <label for="description"><i class="fas fa-list"></i>Descripción</label>
-                        <input class="boxes" type="text" name="description" placeholder="Inserte una breve descripción de ti..." id="description"
+                        <input class="boxes" type="text" name="description" placeholder="Coloca una breve descripción sobre ti" id="description"
                         value="<%= locals.old ? old.description : null %>">
                     </div>
                     <div class="register-username">
                         <label for="hour_price"><i class="fas fa-dollar-sign"></i>Precio por hora</label>
-                        <input class="boxes" type="text" name="hour_price" placeholder="Precio por hora" id="hour_price"
+                        <input class="boxes" type="text" name="hour_price" placeholder="Precio por hora" id="hour_price" min="0" 
                         value="<%= locals.old ? old.hour_price : null %>">
                     </div>
                     <div class="register-username">
@@ -180,7 +176,7 @@
                     </div>
                 </form>
                 <div class="already-register">
-                    <a href="/login">¿Ya tienes una cuenta?</a>
+                    <a href="/users/login">¿Ya tienes una cuenta?</a>
                 </div>
             </div>
         </div>

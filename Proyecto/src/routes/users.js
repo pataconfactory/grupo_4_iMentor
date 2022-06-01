@@ -18,8 +18,8 @@ router.get('/register', guestMiddleware, usersController.register);
 router.post('/register', upload.single('avatar'), validationsRegister, usersController.processRegister);
 
 //Register form for mentors
-router.get('/mentorregister', guestMiddleware, usersController.registerMentor);
-router.post('/mentorregister', upload.single('avatar'), validationsRegister, usersController.processRegisterMentor);
+router.get('/mentor_register', guestMiddleware, usersController.registerMentor);
+router.post('/mentor_register', upload.single('avatar'), validationsRegister, usersController.processRegisterMentor);
 
 //User edit
 router.get('/edit/:id', usersController.editUsers);

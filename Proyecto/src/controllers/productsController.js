@@ -18,7 +18,7 @@ const productsController = {
     },
 
     create: function(req, res) {
-        let categories = db.ProductCategory.findAll({
+        let categorias = db.ProductCategory.findAll({
             include: [
                 {association: "categories"}
             ]
@@ -30,12 +30,16 @@ const productsController = {
                 {association: "users_products"}
             ]
         });
-        Promise.all([usuarios, categories])
-        .then(function([usuarios, categories]) {
+        Promise.all([usuarios, categorias])
+        .then(function([usuarios, categorias]) {
+            let categories =[];
+            for (const oneCategory of categorias) {
+                categories.push(oneCategory.dataValues);
+            }; 
             let users = [];
             for (const oneUser of usuarios) {
                users.push(oneUser.dataValues);
-            } 
+            }
             return res.render(path.join(__dirname, '../views/products/productCreate'), {categories, users})
         });
     },

@@ -265,7 +265,7 @@ main .banner-register {
 main .banner-register h1 {
     display: flex;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 50px;
     font-size: 35px;
     color: black;
     text-align: center;
@@ -312,9 +312,9 @@ main .register-form .boxes {
     margin-top: 1.5%;
 }
 
-main #category {
+/*main #category {
     display: none;
-}
+}*/
 
 main .register-form .text-danger {
     display: flex;
@@ -396,6 +396,7 @@ main .box-register .already-register {
     font-size: 8.5px;
     text-decoration: underline;
     margin: 5%;
+    font-weight: bold;
 }
 
 main .box-register .teach-in-iMentor {
@@ -404,6 +405,11 @@ main .box-register .teach-in-iMentor {
     font-size: 8.5px;
     text-decoration: underline;
     padding-top: 8px;
+    font-weight: bold;
+}
+
+main .box-register .teach-in-iMentor a, main .box-register .already-register a{
+    color: #004173;
 }
 
 main .box-register .register-button i{
@@ -1847,7 +1853,7 @@ main .seccion-perfil-usuario .boton-rojo {
     border: none;
     background-color: #ab0d2f;
     text-decoration: none;
-    margin: 0px auto 20px auto;
+    margin: 20px auto 40px auto;
     text-align: center;
 }
 
@@ -2587,7 +2593,7 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
 
     /*Profile*/
     main .seccion-perfil-usuario{
-        padding: 80px 0px 0px 0px;
+        padding: 100px 0px 0px 0px;
     }
 
 
@@ -2716,10 +2722,10 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
         width: 40vw;
         justify-content: center;
         background-color: white;
-        align-self: center;
         padding: 0px 20px;
         background-color: #f2f2f2;
         border-right: #C1DFF0 solid 4px;
+        border-left: #C1DFF0 solid 4px;
     }
 
     main .banner-register .box-img-register {
@@ -2728,10 +2734,23 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
         order: 1;
     }
 
+    main .banner-register .box-img-register-mentor {
+        display: flex;
+        width: 60vw;
+        order: -1;
+    }
+
     main .banner-register .box-img-register img{
         display: block;
         width: 100%;
         object-fit: cover;
+    }
+
+    main .banner-register .box-img-register-mentor img{
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
     }
    
     main .banner-register h3 {
