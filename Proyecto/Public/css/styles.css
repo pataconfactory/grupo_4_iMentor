@@ -312,16 +312,9 @@ main .register-form .boxes {
     margin-top: 1.5%;
 }
 
-/*main #category {
-    display: none;
-}*/
-
 main .register-form .text-danger {
     display: flex;
-    justify-content: flex-start;   
-}
-
-main .register-form .text-danger .feedback{
+    justify-content: flex-start;
     color: #ab0d2f;
     font-weight: bold;
     padding: 0px;
@@ -363,20 +356,6 @@ main .box-register .show-password {
     font-size: 7px;
     align-items: center;
     margin-top: 2%;
-}
-
-main .box-showpassword .password-length, .register-email .email-error,
-.register-username .first_name-error, .register-username .last_name-error, 
-.register-username .user_name-error, .register-birth .date_birth-error,
-.register-username .genre-error, .register-username .country-error,
-.register-username .title-error, .register-username .description-error, 
-.register-username .hour_price-error, .register-username .bank-error, 
-.register-username .cbu-error, .register-username .avatar-error {
-    font-size: 10px;
-    display: flex;
-    justify-content: flex-start; 
-    color: red;
-    text-align: left;
 }
 
 main .box-register .register-button {
@@ -1158,10 +1137,7 @@ main .box-login .login {
 
 main .box-login .login .text-danger {
     display: flex;
-    justify-content: flex-start;   
-}
-
-main .box-login .login .text-danger .feedback{
+    justify-content: flex-start;
     color: #ab0d2f;
     font-weight: bold;
     padding: 0px;
@@ -1245,8 +1221,11 @@ main .login .email-error, .login .password-error {
     font-size: 10px;
     display: flex;
     justify-content: flex-start; 
-    color: red;
     text-align: left;
+    color: #ab0d2f;
+    font-weight: bold;
+    padding: 0px;
+    margin: 0px;
 }
 
 main .login .login-button a {
@@ -2850,6 +2829,10 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
     .cada-mentor a {
         font-size: 18px;
     }
+
+    main .register-form .text-danger p {
+        font-size: 9px;
+    }
 }
 
 @media (min-width: 769px){
@@ -2906,7 +2889,6 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
     /* Register Page Main Media Queries (min-width: 769px)*/
     main .banner-register h3 {
         font-size: 22px;
-        /*padding-top: 7px;*/
     }
 
     main .banner-register p {
@@ -2949,6 +2931,10 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
 
     main .box-register form i {
         font-size: 14px;
+    }
+
+    main .register-form .text-danger p {
+        font-size: 10px;
     }
 
     /*home Media queries*/

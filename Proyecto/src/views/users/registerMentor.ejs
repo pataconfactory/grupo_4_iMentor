@@ -25,7 +25,9 @@
                             <p class="feedback"><%= errors.first_name.msg %></p>
                         </div>
                         <% } %>
-                        <p class="first_name-error"></p>
+                        <div class="text-danger">
+                            <p class="first_name-error"></p>
+                        </div>
                     </div>
                     <div class="register-username">
                         <label for="last_name"><i class="fas fa-user"></i>Apellido</label>
@@ -36,7 +38,9 @@
                             <p class="feedback"><%= errors.last_name.msg %></p>
                         </div>
                         <% } %>
-                        <p class="last_name-error"></p>
+                        <div class="text-danger">
+                            <p class="last_name-error"></p>
+                        </div>
                     </div>
                     <div class="register-username">
                         <label for="user_name"><i class="fas fa-user-circle"></i>Nombre de usuario</label>
@@ -47,18 +51,22 @@
                             <p class="feedback"><%= errors.user_name.msg %></p>
                         </div>
                         <% } %>
-                        <p class="user_name-error"></p>
+                        <div class="text-danger">
+                            <p class="user_name-error"></p>
+                        </div>
                     </div>
                     <div class="register-email">
                         <label for="email"><i class="fas fa-envelope"></i>E-mail</label>
-                        <input class="boxes" type="email" name="email" placeholder="tuemail@ejemplo.com" id="email"
+                        <input class="boxes" type="text" name="email" placeholder="tuemail@ejemplo.com" id="email"
                             value="<%= locals.old ? old.email : null %>">
                         <% if (locals.errors && errors.email) { %>
                         <div class="text-danger">
                             <p class="feedback"><%= errors.email.msg %></p>
                         </div>
                         <% } %>
-                        <p class="email-error"></p>
+                        <div class="text-danger">
+                            <p class="email-error"></p>
+                        </div>
                     </div>
                     <div class="register-birth">
                         <label for="date_birth"><i class="fas fa-calendar-alt"></i>Fecha de nacimiento</label>
@@ -69,7 +77,9 @@
                             <p class="feedback"><%= errors.date_birth.msg %></p>
                         </div>
                         <% } %>
-                        <p class="date_birth-error"></p>
+                        <div class="text-danger">
+                            <p class="date_birth-error"></p>
+                        </div>
                     </div>
                     <div class="register-age">
                         <label for="age"><i class="fas fa-universal-access"></i>Edad</label>
@@ -98,7 +108,9 @@
                             <p class="feedback"><%= errors.genero.msg %></p>
                         </div>
                         <% } %>
-                        <p class="genre-error"></p>
+                        <div class="text-danger">
+                            <p class="genre-error"></p>
+                        </div>
                     </div>
                     <div class="register-username">
                         <label for="country"><i class="fas fa-flag"></i>País</label>
@@ -110,14 +122,18 @@
                             <p class="feedback"><%= errors.country.msg %></p>
                         </div>
                         <% } %>
-                        <p class="country-error"></p>
+                        <div class="text-danger">
+                            <p class="country-error"></p>
+                        </div>
                     </div>
                     <div class="register-password">
                         <label for="password"><i class="fas fa-lock"></i>Contraseña</label>
                         <div class="box-showpassword">
                             <input class="boxes" type="password" name="password" value="" id="password"
                                 placeholder="Contraseña">
-                            <p class="password-length"></p>
+                            <div class="text-danger">
+                                <p class="password-length"></p>
+                            </div>
                             <div class="show-password"><br>
                                 <input type="checkbox" name="show-password" onclick="myFunction()">Mostrar Contraseña
                                 <script>
@@ -147,41 +163,53 @@
                             <p class="feedback"><%= errors.title.msg %></p>
                         </div>
                         <% } %>
-                        <p class="title-error"></p>
+                        <div class="text-danger">
+                            <p class="title-error"></p>
+                        </div>
                     </div>
                     <div class="register-username">
                         <label for="description"><i class="fas fa-list"></i>Descripción</label>
                         <input class="boxes" type="text" name="description" placeholder="Coloca una breve descripción sobre ti" id="description"
                         value="<%= locals.old ? old.description : null %>">
-                        <p class="description-error"></p>
+                        <div class="text-danger">
+                            <p class="description-error"></p>
+                        </div>
                     </div>
                     <div class="register-username">
                         <label for="hour_price"><i class="fas fa-dollar-sign"></i>Precio por hora</label>
                         <input class="boxes" type="text" name="hour_price" placeholder="Precio por hora" id="hour_price" min="0" 
                         value="<%= locals.old ? old.hour_price : null %>">
-                        <p class="hour_price-error"></p>
+                        <div class="text-danger">
+                            <p class="hour_price-error"></p>
+                        </div>
                     </div>
                     <div class="register-username">
                         <label for="bank"><i class="fas fa-university"></i>Banco</label>
                         <input class="boxes" type="text" name="bank" placeholder="Banco" id="bank"
                         value="<%= locals.old ? old.bank : null %>">
-                        <p class="bank-error"></p>
+                        <div class="text-danger">
+                            <p class="bank-error"></p>
+                        </div>
                     </div>
                     <div class="register-username">
                         <label for="cbu"><i class="fas fa-university"></i>CBU</label>
                         <input class="boxes" type="text" name="cbu" placeholder="CBU" id="cbu"
                         value="<%= locals.old ? old.cbu : null %>">
-                        <p class="cbu-error"></p>
+                        <div class="text-danger">
+                            <p class="cbu-error"></p>
+                        </div>
                     </div>
                     <div class="register-username">
-                        <label><i class="fas fa-image"></i>Subir imagen de mentor</label>
+                        <label><i class="fas fa-image"></i>Subir imagen de usuario</label>
                         <input class="boxes" type="file" name="avatar" id="avatar" accept=".jpg,.jpeg,.png,.gif" multiple>
                         <% if (locals.errors && errors.avatar) { %>
                         <div class="text-danger">
                             <p class="feedback"><%= errors.avatar.msg %></p>
                         </div>
                         <% } %>
-                        <p class="file-error"></p>
+                        <div class="text-danger">
+                            <p class="avatar-error"></p>
+                        </div>
                     </div>
                     <div>
                         <button class="register-button" type="submit"><i class="fas fa-plus-circle"></i>
