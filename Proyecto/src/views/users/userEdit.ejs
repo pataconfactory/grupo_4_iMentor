@@ -35,7 +35,10 @@
                     <a href="/products/productCart" class="boton-opciones cesta-compras"><i class="fas fa-shopping-basket"></i></a>
                     <a href="/paginaEnConstruccion" class="boton-opciones plataforma"><i class="fas fa-hand-pointer"></i></a>
                 </div>
-                <form action="/users/edit/<%= user.user_id%>?_method=PUT" method="POST" class="register-form" enctype="multipart/form-data">
+                <% if(locals.isLogged && locals.userLogged.role_id == 3) { %>
+                    <a class="button" href="/users/editMentor/<%= user.mentor_id %>/<%= user.email %>"><i class="fas fa-edit"></i> Modificar información de Mentor</a>
+                <% } %>
+                <form action="/users/edit/<%= user.user_id %>?_method=PUT" method="POST" class="register-form" enctype="multipart/form-data">
                     <div class="registerbox">
                         <label for="first_name"><i class="fas fa-user"></i> Nombre</label>
                         <% if (!locals.old) { %>
@@ -130,44 +133,6 @@
                         <% } %>
                     </div>
                     <div class="registerbox">
-                        <label><i class="fas fa-clipboard-list"></i> Rol</label>
-                        <% if (!locals.old) { %>
-                            <select class="boxes" name="category" id="category" value="<%= user.role_id %>">
-                                <option value="">seleccione rol</option>
-                                <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>
-                                    <% for (const oneRol of roles) { %>
-                                    <option value="<%= oneRol.role_id %>" <%= oneRol.role_id == user.role_id ? 'selected' : null  %> ><%= oneRol.role_name %></option>
-                                    <% } %>
-                                <% } else { %>
-                                    <% for (const oneRol of roles) { %>
-                                        <% if(oneRol.role_id != 2) { %>
-                                            <option value="<%= oneRol.role_id %>" <%= oneRol.role_id == user.role_id ? 'selected' : null  %> ><%= oneRol.role_name %></option>
-                                        <% } %>
-                                    <% } %>
-                                <% } %>
-                        <% } else { %>
-                        <select class="boxes" name="category" id="category" value="<%= locals.old ? old.category : null %>">
-                            <option value="">seleccione rol</option>
-                            <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>
-                                <% for (const oneRol of roles) { %>
-                                    <option value="<%= oneRol.role_id %>" <%= locals.old && (oneRol.role_id == old.category) ? 'selected' : null  %> ><%= oneRol.role_name %></option>
-                                <% } %>
-                            <% } else {%>
-                                <% for (const oneRol of roles) { %>
-                                    <% if(oneRol.role_id != 2) { %>
-                                        <option value="<%= oneRol.role_id %>" <%= locals.old && (oneRol.role_id == old.category) ? 'selected' : null  %> ><%= oneRol.role_name %></option>
-                                    <% } %>
-                                <% } %>
-                            <% } %>    
-                        <% } %>
-                        </select>
-                        <% if (locals.errors && errors.category) { %>
-                            <div class="text-danger">
-                                <p class="feedback"><%= errors.category.msg %></p>
-                            </div>
-                        <% } %>
-                    </div>
-                    <div class="registerbox">
                         <label for="title"><i class="fas fa-user-tie"></i> Título</label>
                         <% if (!locals.old) { %>
                         <input class="boxes" type="text" name="title" placeholder="Titulo" id="title" value="<%= user.title %>">
@@ -181,12 +146,20 @@
                         <% } %>
                     </div>
                     <div class="imagen-muestra">
-                        <label><i class="fas fa-image"></i> Imagen del usuario:</label>
+                        <% if(locals.isLogged && locals.userLogged.role_id == 3) { %>
+                            <label><i class="fas fa-image"></i> Imagen del mentor:</label>
+                        <% } else { %>
+                            <label><i class="fas fa-image"></i> Imagen del usuario:</label>
+                        <% } %>
                         <br>
                         <img src="/img/avatars/<%= user.avatar%>" alt="Imagen del usuario">
                     </div>  
                     <div class="registerbox">
-                        <label><i class="fas fa-image"></i> Subir otra imagen de usuario</label>
+                        <% if(locals.isLogged && locals.userLogged.role_id == 3) { %>
+                            <label><i class="fas fa-image"></i> Subir otra imagen de mentor</label>
+                        <% } else { %>
+                            <label><i class="fas fa-image"></i> Subir otra imagen de usuario</label>
+                        <% } %>
                         <input class="boxes" type="file" name="avatar" id="avatar" accept=".jpg,.png,.gif" multiple>
                     </div>  
                     <div class="botones">

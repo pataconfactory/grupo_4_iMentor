@@ -61,7 +61,7 @@
                     </div>
                     <div class="register-email">
                         <label for="email"><i class="fas fa-envelope"></i>E-mail</label>
-                        <input class="boxes" type="text" name="email" placeholder="tuemail@ejemplo.com" id="email"
+                        <input class="boxes" type="email" name="email" placeholder="tuemail@ejemplo.com" id="email"
                             value="<%= locals.old ? old.email : null %>">
                         <% if (locals.errors && errors.email) { %>
                         <div class="text-danger">
@@ -161,6 +161,32 @@
                         <% } %>
                     </div>
                     <div class="register-username">
+                        <label><i class="fas fa-clipboard-list"></i>Rol</label>
+                        <select class="boxes" name="category" id="category" value="<%= locals.old ? old.category : null %>">
+                            <option value="">seleccione rol</option>
+                            <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>  
+                                <% let roles = [{role_id: 1, role_name:'Usuario'},{role_id: 2, role_name:'Administrador'}];%>                             
+                                <% for (const oneRol of roles) { %>
+                                    <option value="<%= oneRol.role_id %>"
+                                        <%= locals.old && (oneRol.role_id == old.category) ? 'selected' : null  %>>
+                                        <%= oneRol.role_name %></option>
+                                <% } %>
+                            <% } else { %>
+                                <% let roles = [{role_id: 1, role_name:'Usuario'}];%>
+                                <% for (const oneRol of roles) { %>
+                                    <option value="<%= oneRol.role_id %>"
+                                        <%= locals.old && (oneRol.role_id == old.category) ? 'selected' : null  %>>
+                                        <%= oneRol.role_name %></option>
+                                <% } %>
+                            <% } %>
+                        </select>
+                        <% if (locals.errors && errors.category) { %>
+                        <div class="text-danger">
+                            <p class="feedback"><%= errors.category.msg %></p>
+                        </div>
+                        <% } %>
+                    </div>
+                    <div class="register-username">
                         <label for="title"><i class="fas fa-user-tie"></i>Título</label>
                         <input class="boxes" type="text" name="title" placeholder="Título" id="title"
                             value="<%= locals.old ? old.title : null %>">
@@ -187,7 +213,7 @@
                     </div>
                     <div>
                         <button class="register-button" type="submit"><i class="fas fa-plus-circle"></i>
-                            Registrarse</button>
+                            Registrar</button>
                         <button class="register-button" type="reset"><i class="fas fa-eraser"></i>Borrar</button>
                     </div>
                 </form>

@@ -9,6 +9,7 @@ const validationsRegister = require('../middlewares/ValidationsRegister');
 const validationsLogin = require('../middlewares/ValidationsLogin');
 const validationsUserEdit = require('../middlewares/ValidationsUserEdit');
 const validationsUserEditPassword = require('../middlewares/ValidationsUserEditPassword');
+const validationsRegisterMentor = require('../middlewares/ValidationsRegisterMentor');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
@@ -28,6 +29,10 @@ router.put('/edit/:id', upload.single('avatar'), validationsUserEdit, usersContr
 //Password edit
 router.get('/editPW/:id/:email', usersController.editUsersPassword);
 router.put('/editPW/:id/:email', validationsUserEditPassword, usersController.updateUsersPassword);
+
+//Mentor edit
+router.get('/editMentor/:id/:email', usersController.editMentor);
+router.put('/editMentor/:id/:email', usersController.updateMentor);
 
 //Login form
 router.get('/login', guestMiddleware, usersController.login);

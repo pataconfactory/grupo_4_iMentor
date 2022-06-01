@@ -57,7 +57,7 @@
                     </div>
                     <div class="register-email">
                         <label for="email"><i class="fas fa-envelope"></i>E-mail</label>
-                        <input class="boxes" type="text" name="email" placeholder="tuemail@ejemplo.com" id="email"
+                        <input class="boxes" type="email" name="email" placeholder="tuemail@ejemplo.com" id="email"
                             value="<%= locals.old ? old.email : null %>">
                         <% if (locals.errors && errors.email) { %>
                         <div class="text-danger">
@@ -171,6 +171,11 @@
                         <label for="description"><i class="fas fa-list"></i>Descripción</label>
                         <input class="boxes" type="text" name="description" placeholder="Coloca una breve descripción sobre ti" id="description"
                         value="<%= locals.old ? old.description : null %>">
+                        <% if (locals.errors && errors.description) { %>
+                            <div class="text-danger">
+                                <p class="feedback"><%= errors.description.msg %></p>
+                            </div>
+                        <% } %>
                         <div class="text-danger">
                             <p class="description-error"></p>
                         </div>
@@ -179,6 +184,11 @@
                         <label for="hour_price"><i class="fas fa-dollar-sign"></i>Precio por hora</label>
                         <input class="boxes" type="text" name="hour_price" placeholder="Precio por hora" id="hour_price" min="0" 
                         value="<%= locals.old ? old.hour_price : null %>">
+                        <% if (locals.errors && errors.hour_price) { %>
+                            <div class="text-danger">
+                                <p class="feedback"><%= errors.hour_price.msg %></p>
+                            </div>
+                        <% } %>
                         <div class="text-danger">
                             <p class="hour_price-error"></p>
                         </div>
@@ -187,6 +197,11 @@
                         <label for="bank"><i class="fas fa-university"></i>Banco</label>
                         <input class="boxes" type="text" name="bank" placeholder="Banco" id="bank"
                         value="<%= locals.old ? old.bank : null %>">
+                        <% if (locals.errors && errors.bank) { %>
+                            <div class="text-danger">
+                                <p class="feedback"><%= errors.bank.msg %></p>
+                            </div>
+                        <% } %>
                         <div class="text-danger">
                             <p class="bank-error"></p>
                         </div>
@@ -195,12 +210,17 @@
                         <label for="cbu"><i class="fas fa-university"></i>CBU</label>
                         <input class="boxes" type="text" name="cbu" placeholder="CBU" id="cbu"
                         value="<%= locals.old ? old.cbu : null %>">
+                        <% if (locals.errors && errors.cbu) { %>
+                            <div class="text-danger">
+                                <p class="feedback"><%= errors.cbu.msg %></p>
+                            </div>
+                        <% } %>
                         <div class="text-danger">
                             <p class="cbu-error"></p>
                         </div>
                     </div>
                     <div class="register-username">
-                        <label><i class="fas fa-image"></i>Subir imagen de usuario</label>
+                        <label><i class="fas fa-image"></i>Subir imagen de mentor</label>
                         <input class="boxes" type="file" name="avatar" id="avatar" accept=".jpg,.jpeg,.png,.gif" multiple>
                         <% if (locals.errors && errors.avatar) { %>
                         <div class="text-danger">
@@ -213,7 +233,7 @@
                     </div>
                     <div>
                         <button class="register-button" type="submit"><i class="fas fa-plus-circle"></i>
-                            Registrarse</button>
+                            Registrar</button>
                         <button class="register-button" type="reset"><i class="fas fa-eraser"></i> Borrar</button>
                     </div>
                 </form>

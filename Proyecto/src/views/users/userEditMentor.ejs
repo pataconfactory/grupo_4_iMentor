@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+
+<body>
+    
+    <%- include('../partials/header') %>
+
+    <main>
+        <section class="seccion-perfil-usuario">
+            <div class="perfil-usuario-header">
+                <div class="perfil-usuario-portada">
+                    <h1>Perfil de Usuario</h1>
+                    <div class="perfil-usuario-avatar">
+                        <img src="/img/avatars/<%= user.avatar %>" alt="imagen de usuario">
+                    </div>
+                </div>
+            </div>
+            <div class="perfil-usuario-body">
+                <div class="perfil-usuario-bio">
+                    <h3 class="titulo"><%= user.first_name %> <%= user.last_name%></h3>
+                    <p class="texto">Hola , ¡Bienvenido a i_MENTOR!. Es para nosotros un placer que te hayas unido a esta comunidad sin igual.</p>
+                </div>
+                <div class="perfil-usuario-footer">
+                    <ul class="lista-datos">
+                        <li><i class="icono fas fa-map-signs"></i>E-mail: <%= user.email%></li>
+                    </ul>
+                    <ul class="lista-datos">
+                        <li><i class="icono fas fa-user-check"></i>Nombre de usuario: <%= user.user_name%></li>
+                    </ul>
+                </div>
+                <div class="opciones">
+                    <a href="" class="boton-opciones editar"><i class="fas fa-pen"></i></a>
+                    <a href="/products/productCart" class="boton-opciones cesta-compras"><i class="fas fa-shopping-basket"></i></a>
+                    <a href="/paginaEnConstruccion" class="boton-opciones plataforma"><i class="fas fa-hand-pointer"></i></a>
+                </div>
+                <form action="/users/editMentor/<%= user.mentor_id %>/<%= user.email %>?_method=PUT" method="POST" class="register-form mentor">
+                        <div class="registerbox">
+                            <label for="description"><i class="fas fa-list"></i>Descripción</label>
+                            <% if (!locals.old) { %>
+                                <input class="boxes" type="text" name="description" placeholder="Coloca una breve descripción sobre ti" id="description" value="<%= mentor.description %>">
+                            <% } else { %>
+                                <input class="boxes" type="text" name="description" placeholder="Coloca una breve descripción sobre ti" id="description" value="<%= locals.old ? old.description : null %>">
+                            <% } %>
+                            <% if (locals.errors && errors.description) { %>
+                                <div class="text-danger">
+                                    <p class="feedback"><%= errors.description.msg %></p>
+                                </div>
+                            <% } %>
+                        </div>
+                        <div class="registerbox">
+                            <label for="hour_price"><i class="fas fa-dollar-sign"></i>Precio por hora</label>
+                            <% if (!locals.old) { %>
+                                <input class="boxes" type="text" name="hour_price" placeholder="Precio por hora" id="hour_price" min="0" value="<%= mentor.hour_price %>">
+                            <% } else { %>
+                                <input class="boxes" type="text" name="hour_price" placeholder="Precio por hora" id="hour_price" min="0" value="<%= locals.old ? old.hour_price : null %>">
+                            <% } %>
+                            <% if (locals.errors && errors.hour_price) { %>
+                                <div class="text-danger">
+                                    <p class="feedback"><%= errors.hour_price.msg %></p>
+                                </div>
+                            <% } %>
+                        </div>
+                        <div class="registerbox">
+                            <label for="bank"><i class="fas fa-university"></i>Banco</label>
+                            <% if (!locals.old) { %>
+                                <input class="boxes" type="text" name="bank" placeholder="Banco" id="bank" value="<%= mentor.bank %>">
+                            <% } else { %>
+                                <input class="boxes" type="text" name="bank" placeholder="Banco" id="bank" value="<%= locals.old ? old.bank : null %>">
+                            <% } %>
+                            <% if (locals.errors && errors.bank) { %>
+                                <div class="text-danger">
+                                    <p class="feedback"><%= errors.bank.msg %></p>
+                                </div>
+                            <% } %>
+                        </div>
+                        <div class="registerbox">
+                            <label for="cbu"><i class="fas fa-university"></i>CBU</label>
+                            <% if (!locals.old) { %>
+                                <input class="boxes" type="text" name="cbu" placeholder="CBU" id="cbu" value="<%= mentor.cbu %>">
+                            <% } else { %>
+                                <input class="boxes" type="text" name="cbu" placeholder="CBU" id="cbu" value="<%= locals.old ? old.cbu : null %>">
+                            <% } %>
+                            <% if (locals.errors && errors.cbu) { %>
+                                <div class="text-danger">
+                                    <p class="feedback"><%= errors.cbu.msg %></p>
+                                </div>
+                            <% } %>
+                        </div>
+                    <div class="botones">
+                        <button class="register-button" type="submit"><i class="fas fa-exclamation-triangle"></i> Modificar</button>
+                        <button class="register-button" type="reset"><i class="fas fa-eraser"></i> Borrar</button>   
+                    </div>
+                </form>
+                <div class="boton-rojo">
+                    <a href="/users/profile">Cancelar</a>
+                </div>
+            </div>
+        </section>  
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

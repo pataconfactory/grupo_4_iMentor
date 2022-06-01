@@ -1,7 +1,7 @@
 const {check} = require('express-validator');
 const path = require('path');
 
-const validationsRegister = [
+const validationsRegisterMentor = [
     check('first_name').notEmpty().withMessage('Debe completar el nombre'),
     check('last_name').notEmpty().withMessage('Debe completar el apellido'),
     check('user_name').notEmpty().withMessage('Debe completar el nombre de usuario'),
@@ -11,8 +11,11 @@ const validationsRegister = [
     check('genero').notEmpty().withMessage('Debe seleccionar el genero'),
     check('country').notEmpty().withMessage('Debe completar el país'),
     check('password').notEmpty().withMessage('Debe completar la contraseña').bail().isLength({min:8, max:12}).withMessage('Debe introducir una contraseña que tenga como mínimo 8 caracteres y como máximo 12 caracteres').bail().isAlphanumeric().withMessage('Debe introducir una contraseña que contenga solo letras y números'),
-    check('category').notEmpty().withMessage('Debe seleccionar el rol del usuario'),
     check('title').notEmpty().withMessage('Debe completar el título'),
+    check('description').notEmpty().withMessage('Debe completar la descripción'),
+    check('hour_price').notEmpty().withMessage('Debe completar el precio de la hora de mentoría'),
+    check('bank').notEmpty().withMessage('Debe completar el banco'),
+    check('cbu').notEmpty().withMessage('Debe completar el CBU'),
     check('avatar').custom((value, {req}) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif'];
@@ -29,4 +32,4 @@ const validationsRegister = [
     })
 ]; 
 
-module.exports = validationsRegister;
+module.exports = validationsRegisterMentor;

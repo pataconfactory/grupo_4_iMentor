@@ -8,7 +8,6 @@ const validationsUserEdit = [
     check('age').notEmpty().withMessage('Debe completar la edad').bail().isNumeric().withMessage('Debe introducir la edad utilizando números'),
     check('genero').notEmpty().withMessage('Debe seleccionar el genero'),
     check('country').notEmpty().withMessage('Debe completar el país'),
-    check('category').notEmpty().withMessage('Debe seleccionar la categoría del usuario'),
     check('title').notEmpty().withMessage('Debe completar el título')
 ]; 
 
