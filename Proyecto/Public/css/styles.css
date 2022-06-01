@@ -312,10 +312,6 @@ main .register-form .boxes {
     margin-top: 1.5%;
 }
 
-/*main #category {
-    display: none;
-}*/
-
 main .register-form .text-danger {
     display: flex;
     justify-content: flex-start;   
@@ -375,8 +371,10 @@ main .box-showpassword .password-length, .register-email .email-error,
     font-size: 10px;
     display: flex;
     justify-content: flex-start; 
-    color: red;
     text-align: left;
+    color: #ab0d2f;
+    font-weight: bold;
+    padding: 0px;
 }
 
 main .box-register .register-button {
@@ -1245,8 +1243,11 @@ main .login .email-error, .login .password-error {
     font-size: 10px;
     display: flex;
     justify-content: flex-start; 
-    color: red;
     text-align: left;
+    color: #ab0d2f;
+    font-weight: bold;
+    padding: 0px;
+    margin: 0px;
 }
 
 main .login .login-button a {
