@@ -1,12 +1,9 @@
-window.addEventListener('load', () => {
-    campoTitulo = document.getElementById('name').focus()
-})
+/* declaro todas las variables de ID y Clase*/
 
 let id = (id) => document.getElementById(id);
 let classes = (classes) => document.getElementsByClassName(classes);
 
-/* declaro todas las variables de ID y Clase*/
-let form = id("formulario"),
+let btn = id("submit"),
     errorName = id("error-name"),
     errorDescription = id("error-description"),
     errorCategory = id("error-category"),
@@ -29,6 +26,36 @@ errorNameSubmit = id("error-name"),
     submitErrorSubmit = id("submit-error-submit")
 var inputs = document.querySelectorAll("input, select")
 
+/*SUBMIT*/
+btn.addEventListener('click', function (event) {
+    window.alert("Por favor completa todos los campos del formulario");
+    inputs.forEach(input =>{
+        if (input.value == ""){
+        event.preventDefault()
+        errorNameSubmit.innerHTML= 'Debes completar el nombre del producto';
+        errorDescriptionSubmit.innerHTML =   'Debe completar la descripción del producto'
+        errorCategorySubmit.innerHTML = 'Seleccione una categoría'
+        errorMentorSubmit.innerHTML = 'seleccione el mentor'
+        errorDurationSubmit.innerHTML = 'La duración en horas es requerida (sólo digitos)'
+        errorHorarioSubmit.innerHTML  = 'seleccione un horario'
+        errorDiaSubmit.innerHTML = 'seleccione el día'
+        errorPriceSubmit.innerHTML = 'El precio en pesos argentinos es requerido'
+        errorImageSubmit.innerHTML = 'El formato de archivo no es válido, las extensiones permitidas son .jpg, .jpeg, .png y .gif'
+      
+        
+    }
+
+    }
+
+    )})
+
+
+/*Autofocus*/
+window.addEventListener('load', function (event) {
+    campoTitulo = document.getElementById('name').focus;
+})
+
+
 /* Valida el nombre del producto*/
 function validateName() {
     let name = document.getElementById('name').value;
@@ -42,7 +69,7 @@ function validateName() {
         return false
     }
 
-    errorName.innerHTML = '<i class="far fa-check-circle success-icon"></i>';
+    errorName.innerHTML = '<i class="far fa-check-circle success-icon"> válido</i>';
     return true;
 
 }
@@ -57,7 +84,7 @@ function validateDescription() {
         errorDescription.innerHTML = 'Faltan ' + left + ' caracteres para completar la descripción del producto';
         return false;
     }
-    errorDescription.innerHTML = '<i class="far fa-check-circle success-icon"></i>';
+    errorDescription.innerHTML = '<i class="far fa-check-circle success-icon"> válido</i>';
     return true;
 }
 
@@ -84,7 +111,7 @@ function validatementor() {
         return false;
     }
 
-    errorMentor.innerHTML = '<i class="far fa-check-circle success-icon"></i>';
+    errorMentor.innerHTML = '<i class="far fa-check-circle success-icon"> </i>';
     return true;
 }
 
@@ -102,7 +129,7 @@ function validateduration() {
         return false;
     }
 
-    errorDuration.innerHTML = '<i class="far fa-check-circle success-icon"></i>';
+    errorDuration.innerHTML = '<i class="far fa-check-circle success-icon"> válido</i>';
     return true;
 }
 
@@ -161,25 +188,5 @@ imageProducto.addEventListener('change', function () {
     }
 });
 
-/* INPUT*/
-/*
-form.addEventListener('submit', function (e) {
-    inputs.forEach(input =>{
-        if (input.value == ""){
-        e.preventDefault()
-        errorNameSubmit.innerHTML= 'Debes completar el nombre del producto';
-        errorDescriptionSubmit.innerHTML =   'Faltan '  + left  +' caracteres para completar la descripción del producto'
-        errorCategorySubmit.innerHTML = 'Seleccione una categoría'
-        errorMentorSubmit.innerHTML = 'seleccione el mentor'
-        errorDurationSubmit.innerHTML = 'La duración en horas es requerida (sólo digitos)'
-        errorHorarioSubmit.innerHTML  = 'seleccione un horario'
-        errorDiaSubmit.innerHTML = 'seleccione el día'
-        errorPriceSubmit.innerHTML = 'El precio en pesos argentinos es requerido'
-        errorImageSubmit.innerHTML = 'El formato de archivo no es válido, las extensiones permitidas son .jpg, .jpeg, .png y .gif'
-      
-        
-    }
 
-    }
 
-    )})*/

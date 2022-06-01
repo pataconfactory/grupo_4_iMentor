@@ -10,7 +10,7 @@
     <main>
         <div class="contenedor-edicion-productos">
             <h2 class="">Formulario de creación de productos</h2>
-            <form class="formulario-edicion-productos" action="/products/" method="POST" enctype="multipart/form-data">
+            <form class="formulario-edicion-productos" id='formulario' action="/products/" method="POST" enctype="multipart/form-data">
                 <h3> Completar la información del producto</h3>
                 <div class="input-group">
                     <label>Nombre del producto:</label>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="input-group">
                     <label>Duración:</label>
-                    <p><input class="box" type="number" name="duration" id="duration" placeholder="Horas" min="1"
+                    <p><input class="box" type="number" name="duration" id="duration" placeholder="Horas" min="1" size="2" maxlength="2"
                         onclick="validateduration()"required>
                         <span id="error-duration"></span>
                         <span id="error-duration-submit"></span>
@@ -97,6 +97,7 @@
                     <label>Precio:</label>
                     <input class="box" type="number" name="price" id="price" placeholder="Precio $" min="0" onclick="validatePrice()" required>
                     <span id="error-price"></span>
+                    <span id="error-price-submit"></span>
                 </div>
                 <div class="input-group">
                     <label>Subir imagen del producto:</label>
@@ -105,7 +106,7 @@
                     <span id="error-image-submit"></span>
                 </div>
                 <div class="botones">
-                    <button class="enviar" onclick="validateButton()" type="submit"><i class="fas fa-plus-circle"></i> Guardar producto</button>
+                    <button class="enviar" id='submit' type="submit"><i class="fas fa-plus-circle"></i> Guardar producto</button>
                     <span id="submit-error"></span>
                     <button class="borrar" type="reset"><i class="fas fa-eraser"></i> Borrar</button>
                 </div>
