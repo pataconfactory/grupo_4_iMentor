@@ -365,6 +365,20 @@ main .box-register .show-password {
     margin-top: 2%;
 }
 
+main .box-showpassword .password-length, .register-email .email-error,
+.register-username .first_name-error, .register-username .last_name-error, 
+.register-username .user_name-error, .register-birth .date_birth-error,
+.register-username .genre-error, .register-username .country-error,
+.register-username .title-error, .register-username .description-error, 
+.register-username .hour_price-error, .register-username .bank-error, 
+.register-username .cbu-error, .register-username .avatar-error {
+    font-size: 10px;
+    display: flex;
+    justify-content: flex-start; 
+    color: red;
+    text-align: left;
+}
+
 main .box-register .register-button {
     display: flex;
     flex-wrap: wrap;
@@ -1221,6 +1235,14 @@ main .login .login-button {
     margin-top: 2%;
 }
 
+main .login .email-error, .login .password-error {
+    font-size: 10px;
+    display: flex;
+    justify-content: flex-start; 
+    color: red;
+    text-align: left;
+}
+
 main .login .login-button a {
     text-decoration: none;
     color: #000;
@@ -1262,6 +1284,7 @@ main .login .remember-me {
     font-size: 8.5px;
     align-items: center;
     display: flex;
+    margin-top: 10px;
 }
 
 main .login .remember-me label {

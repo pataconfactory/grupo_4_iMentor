@@ -18,17 +18,19 @@
                     <a href="/users/mentorregister">¿Quieres enseñar en iMentor?</a>
                 </div>
                 <h1>!Creá tu cuenta!</h1>
-                <p class="community">Te invitamos a formar parte de nuestra comunidad y comenzar hoy a formar tu futuro.</p>
+                <p class="community">Te invitamos a formar parte de nuestra comunidad y comenzar hoy a formar tu futuro.
+                </p>
                 <form action="/users/register" method="POST" class="register-form" enctype="multipart/form-data">
                     <div class="register-username">
                         <label for="first_name"><i class="fas fa-user"></i>Nombre</label>
-                        <input class="boxes" type="text" name="first_name" placeholder="Nombre" id="first_name"
+                        <input class="boxes" type="text" name="first_name" autofocus placeholder="Nombre" id="first_name"
                             value="<%= locals.old ? old.first_name : null %>">
                         <% if (locals.errors && errors.first_name) { %>
                         <div class="text-danger">
                             <p class="feedback"><%= errors.first_name.msg %></p>
                         </div>
                         <% } %>
+                        <p class="first_name-error"></p>
                     </div>
                     <div class="register-username">
                         <label for="last_name"><i class="fas fa-user"></i>Apellido</label>
@@ -39,6 +41,7 @@
                             <p class="feedback"><%= errors.last_name.msg %></p>
                         </div>
                         <% } %>
+                        <p class="last_name-error"></p>
                     </div>
                     <div class="register-username">
                         <label for="user_name"><i class="fas fa-user-circle"></i>Nombre de usuario</label>
@@ -49,16 +52,18 @@
                             <p class="feedback"><%= errors.user_name.msg %></p>
                         </div>
                         <% } %>
+                        <p class="user_name-error"></p>
                     </div>
                     <div class="register-email">
                         <label for="email"><i class="fas fa-envelope"></i>E-mail</label>
-                        <input class="boxes" type="email" name="email" placeholder="tuemail@ejemplo.com" id="email"
+                        <input class="boxes" type="text" name="email" placeholder="tuemail@ejemplo.com" id="email"
                             value="<%= locals.old ? old.email : null %>">
                         <% if (locals.errors && errors.email) { %>
                         <div class="text-danger">
                             <p class="feedback"><%= errors.email.msg %></p>
                         </div>
                         <% } %>
+                        <p class="email-error"></p>
                     </div>
                     <div class="register-birth">
                         <label for="date_birth"><i class="fas fa-calendar-alt"></i>Fecha de nacimiento</label>
@@ -69,11 +74,12 @@
                             <p class="feedback"><%= errors.date_birth.msg %></p>
                         </div>
                         <% } %>
+                        <p class="date_birth-error"></p>
                     </div>
                     <div class="register-age" id="register-age">
                         <label for="age"><i class="fas fa-universal-access"></i>Edad</label>
                         <input class="boxes" type="text" name="age" id="age" placeholder="Edad" min="0"
-                        value="<%= locals.old ? old.age : null %>">
+                            value="<%= locals.old ? old.age : null %>">
                         <% if (locals.errors && errors.age) { %>
                         <div class="text-danger">
                             <p class="feedback"><%= errors.age.msg %></p>
@@ -89,7 +95,8 @@
                             %>
                             <% for (const oneGenero of generos) { %>
                             <option value="<%= oneGenero %>"
-                                <%= locals.old && (oneGenero == old.genero) ? 'selected' : null  %>><%= oneGenero %></option>
+                                <%= locals.old && (oneGenero == old.genero) ? 'selected' : null  %>><%= oneGenero %>
+                            </option>
                             <% } %>
                         </select>
                         <% if (locals.errors && errors.genero) { %>
@@ -97,10 +104,12 @@
                             <p class="feedback"><%= errors.genero.msg %></p>
                         </div>
                         <% } %>
+                        <p class="genre-error"></p>
                     </div>
                     <div class="register-username">
                         <label for="country"><i class="fas fa-flag"></i>País</label>
-                        <select class="boxes" name="country" id="country" value="<%= locals.old ? old.country : null %>">
+                        <select class="boxes" name="country" id="country"
+                            value="<%= locals.old ? old.country : null %>">
                             <option value="">Seleccione país</option>
                         </select>
                         <% if (locals.errors && errors.country) { %>
@@ -108,12 +117,14 @@
                             <p class="feedback"><%= errors.country.msg %></p>
                         </div>
                         <% } %>
+                        <p class="country-error"></p>
                     </div>
                     <div class="register-password">
                         <label for="password"><i class="fas fa-lock"></i>Contraseña</label>
                         <div class="box-showpassword">
                             <input class="boxes" type="password" name="password" value="" id="password"
                                 placeholder="Contraseña">
+                            <p class="password-length"></p>
                             <div class="show-password"><br>
                                 <input type="checkbox" name="show-password" onclick="myFunction()">Mostrar Contraseña
                                 <script>
@@ -147,15 +158,17 @@
                             <p class="feedback"><%= errors.title.msg %></p>
                         </div>
                         <% } %>
+                        <p class="title-error"></p>
                     </div>
                     <div class="register-username">
                         <label><i class="fas fa-image"></i>Subir imagen de usuario</label>
-                        <input class="boxes" type="file" name="avatar" id="avatar" accept=".jpg,.png,.gif" multiple>
+                        <input class="boxes" type="file" name="avatar" id="avatar" accept=".jpg,.jpeg,.png,.gif" multiple>
                         <% if (locals.errors && errors.avatar) { %>
                         <div class="text-danger">
                             <p class="feedback"><%= errors.avatar.msg %></p>
                         </div>
                         <% } %>
+                        <p class="avatar-error"></p>
                     </div>
                     <div>
                         <button class="register-button" type="submit"><i class="fas fa-plus-circle"></i>
@@ -171,7 +184,8 @@
     </main>
 
     <%- include('../partials/footer') %>
-<script src="/js/register.js"></script>
+    <script src="/js/register.js"></script>
+    <script src="/js/register-validations-front.js"></script>
 </body>
 
 </html>
