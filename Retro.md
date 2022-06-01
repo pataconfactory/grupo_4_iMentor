@@ -310,3 +310,61 @@ Más investigación sobre cada tecnología para resolver errores que se presenta
 
 </ul><br>
 
+<h1>Retrospectiva Sprint 7</h1>
+
+<ul>                             
+<li>1. Seguir haciendo:  
+  
+Reforzar la comunicación y reuniones periódicas para seguir el status de las tareas en progreso y de nuestros tiempos disponibles para avanzar en el proyecto.
+Revisar continuamente la funcionalidad de la aplicación y comunicar defectos o errores para revisarlos y arreglarlos a tiempo.
+  
+</li>
+
+<li>2. Menos de:    
+  
+No pautar reuniones para revisar y discutir el proyecto continuamente.
+Trabajar en los entregables a último momento ya que podríamos mejorar la calidad de la aplicación con más tiempo.
+Mover entregables pendientes para otra sprint.
+  
+</li>
+
+<li>3. Más de: 
+
+1- Pair developing o shadowing: Creemos que es una buena práctica para estar todas alineadas.
+  
+2- Proactividad por parte de los miembros del equipo. 
+  
+3- Utilización del trello con descripción de las tareas en las tarjetas.  
+  
+4- Comunicación seguida vía whatsapp.
+
+5- Investigar soluciones para implementar las consignas.
+  
+6- Trabajo en equipo.
+  
+7- Revisión constante del código para estar todas al día y preguntar en caso de no entender algo.
+
+8- Paciencia, disponibilidad para ayudar, seguir el trabajo de las demás, generar buen clima.
+  
+</li>
+
+<li>4. Dejar de hacer: 
+ 
+Esperar las correciones para seguir avanzando. Debemos ser más proactivas.
+Realización de las actividades poco tiempo antes de la entrega del sprint.
+No hacer actualizaciones del código seguidamente y evitar acumulación de mejoras.
+  
+</li>
+
+<li>5. Empezar a hacer:
+
+Revisiones periódicas de estética y visuales de nuestro sitio web.
+Desarrollo y armado de contenido teórico-escrito de nuestro sitio web.
+Ser más conciente de los tiempos entre sprints y de los tiempos que tiene cada una disponible para desarrollar. 
+Revisión del código cuándo hay nuevos push para estar al día con el proyecto y las actualizaciones.
+Más investigación sobre cada tecnología para resolver errores que se presentan en el proyecto sobre SQL, Node, etc.
+
+</li>
+
+</ul><br>
+
