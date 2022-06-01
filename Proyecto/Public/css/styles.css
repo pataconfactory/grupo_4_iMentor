@@ -1963,6 +1963,8 @@ main .seccion-perfil-usuario .boton-opciones.plataforma {
 }
 /************************************/
 /**Main productEdition*/
+
+
 main .contenedor-edicion-productos {
     padding: 120px 0px 0px 0px;
 }
@@ -2019,6 +2021,19 @@ main .contenedor-edicion-productos .container-productos-existentes a:hover {
     color: black;  
 }
 
+main .contenedor-edicion-productos .input-group span {
+    color: red;
+    font-size: 14px;
+}
+
+main .contenedor-edicion-productos .input-group span i {
+    color: seagreen;
+}
+
+#submit-error {
+    color: red;
+    font-size: 14px;
+}
 main .container-productos-existentes .container {
     width: 100%;
     margin: 0px;

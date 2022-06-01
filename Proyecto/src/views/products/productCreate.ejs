@@ -4,7 +4,7 @@
 <%- include('../partials/head') %>
 
 <body>
-    
+
     <%- include('../partials/header') %>
 
     <main>
@@ -12,81 +12,92 @@
             <h2 class="">Formulario de creación de productos</h2>
             <form class="formulario-edicion-productos" action="/products/" method="POST" enctype="multipart/form-data">
                 <h3> Completar la información del producto</h3>
-                    <div>
-                        <label>Nombre del producto:</label>
-                        <input  class="box" type="text" name="name" id="name" placeholder="Nombre del producto" required>
-                    </div>
-                    <div>
-                        <label>Descripción:</label>
-                        <br>
-                        <textarea name="description" id="description" placeholder="Descripción" class="box" required></textarea>
-                    </div> 
-                    <div>
-                        <label>Categoría:</label>
-                        <select class="box" name="category" id="category">
-                            <option selected="true" disabled="disabled">seleccione la categoría</option>
-                            <% for (let i = 0; i < categories.length; i++){ %>
-                                <option value="<%=categories[i].product_category_id%>">
-                                    <%=categories[i].category_name%>
-                                </option>
-                            <% } %>
-                        </select>
-                    </div>
-                    <div>
-                        <label>Mentor:</label>
-                        <select class="box" name="mentor" id="mentor">
-                            <option selected="true" disabled="disabled">seleccione el mentor</option>
-                            <% for (let i = 0; i < users.length; i++){ %>
-                                <% if(users[i].mentor_id != null) { %>
-                                    <option value="<%=users[i].mentor_id%>">
-                                        <%=users[i].first_name%> <%=users[i].last_name%>
-                                    </option>
-                                <% } %>
-                            <% } %>
-                        </select>
-                    </div>
-                    <div>
-                        <label>Duración:</label>
-                        <p><input class="box"type="number" name="duration" id="duration" placeholder="Horas" min="0" required>
-                    </div> 
-                    <div>
-                        <label>Horario:</label>
-                        <select class="box" name="horario" id="horario">
-                            <option selected="true" disabled="disabled">seleccione el horario</option>
-                            <option value="10:00:00">10:00:00</option>
-                            <option value="12:00:00">12:00:00</option>
-                            <option value="14:00:00">14:00:00</option>
-                            <option value="16:00:00">16:00:00</option>
-                            <option value="17:00:00">17:00:00</option>
-                            <option value="18:00:00">18:00:00</option>
-                            <option value="19:00:00">19:00:00</option>
-                            <option value="20:00:00">20:00:00</option>
-                            <option value="21:00:00">21:00:00</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label>Día:</label>
-                        <select class="box" name="dia" id="dia">
-                            <option selected="true" disabled="disabled">seleccione el día</option>
-                            <option value="Lunes">Lunes</option>
-                            <option value="Martes">Martes</option>
-                            <option value="Miércoles">Miércoles</option>
-                            <option value="Jueves">Jueves</option>
-                            <option value="Viernes">Viernes</option>
-                            <option value="Sábado">Sábado</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label>Precio:</label>
-                        <input class="box" type="number" name="price" id="price" placeholder="Precio $" min="0" required>
-                    </div>
-                    <div>
-                        <label>Subir imagen del producto:</label>
-                        <input class="box" type="file" name="image" id="image" accept=".jpg,.png" multiple> 
-                    </div>   
+                <div class="input-group">
+                    <label>Nombre del producto:</label>
+                    <input class="box" type="text" name="name" id="name" placeholder="Nombre del producto" onkeyup="validateName()" required>
+                    <span id="error-name">sadgfsdf</span>
+                </div>
+                <div class="input-group">
+                    <label>Descripción:</label>
+                    <br>
+                    <textarea name="description" id="description" placeholder="Descripción" class="box"
+                    onkeyup="validateDescription()" required></textarea>
+                    <span id="error-description"></span>
+                </div>
+                <div class="input-group">
+                    <label>Categoría:</label>
+                    <select class="box" name="category" id="category">
+                        <option selected="true" disabled="disabled">seleccione la categoría</option>
+                        <% for (let i = 0; i < categories.length; i++){ %>
+                        <option value="<%=categories[i].product_category_id%>">
+                            <%=categories[i].category_name%>
+                        </option>
+                        <% } %>
+                    </select>
+                    <span id="error-category"></span>
+                </div>
+                <div class="input-group">
+                    <label>Mentor:</label>
+                    <select class="box" name="mentor" id="mentor">
+                        <option selected="true" disabled="disabled">seleccione el mentor</option>
+                        <% for (let i = 0; i < users.length; i++){ %>
+                        <% if(users[i].mentor_id != null) { %>
+                        <option value="<%=users[i].mentor_id%>">
+                            <%=users[i].first_name%> <%=users[i].last_name%>
+                        </option>
+                        <% } %>
+                        <% } %>
+                    </select>
+                    <span id="error-mentor"></span>
+                </div>
+                <div class="input-group">
+                    <label>Duración:</label>
+                    <p><input class="box" type="number" name="duration" id="duration" placeholder="Horas" min="0"
+                            required>
+                </div>
+                <div class="input-group">
+                    <label>Horario:</label>
+                    <select class="box" name="horario" id="horario">
+                        <option selected="true" disabled="disabled">seleccione el horario</option>
+                        <option value="10:00:00">10:00:00</option>
+                        <option value="12:00:00">12:00:00</option>
+                        <option value="14:00:00">14:00:00</option>
+                        <option value="16:00:00">16:00:00</option>
+                        <option value="17:00:00">17:00:00</option>
+                        <option value="18:00:00">18:00:00</option>
+                        <option value="19:00:00">19:00:00</option>
+                        <option value="20:00:00">20:00:00</option>
+                        <option value="21:00:00">21:00:00</option>
+                    </select>
+                    <span id="error-horario"></span>
+                </div>
+                <div class="input-group">
+                    <label>Día:</label>
+                    <select class="box" name="dia" id="dia">
+                        <option selected="true" disabled="disabled">seleccione el día</option>
+                        <option value="Lunes">Lunes</option>
+                        <option value="Martes">Martes</option>
+                        <option value="Miércoles">Miércoles</option>
+                        <option value="Jueves">Jueves</option>
+                        <option value="Viernes">Viernes</option>
+                        <option value="Sábado">Sábado</option>
+                    </select>
+                    <span id="error-dia"></span>
+                </div>
+                <div class="input-group">
+                    <label>Precio:</label>
+                    <input class="box" type="number" name="price" id="price" placeholder="Precio $" min="0" required>
+                    <span id="error-price"></span>
+                </div>
+                <div class="input-group">
+                    <label>Subir imagen del producto:</label>
+                    <input class="box" type="file" name="image" id="image" accept=".jpg,.png" multiple>
+                    <span id="error-image"></span>
+                </div>
                 <div class="botones">
                     <button class="enviar" type="submit"><i class="fas fa-plus-circle"></i> Guardar producto</button>
-                    <button class="borrar" type="reset"><i class="fas fa-eraser"></i> Borrar</button>   
+                    <span id="submit-error"></span>
+                    <button class="borrar" type="reset"><i class="fas fa-eraser"></i> Borrar</button>
                 </div>
             </form>
             <div class="boton-cancelar">
@@ -95,5 +106,7 @@
         </div>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/productCreateFront.js"></script>
 </body>
+
 </html>
