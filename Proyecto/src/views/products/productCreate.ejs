@@ -14,19 +14,22 @@
                 <h3> Completar la información del producto</h3>
                 <div class="input-group">
                     <label>Nombre del producto:</label>
-                    <input class="box" type="text" name="name" id="name" placeholder="Nombre del producto" onkeyup="validateName()" required>
-                    <span id="error-name">sadgfsdf</span>
+                    <input class="box" type="text" name="name" id="name" placeholder="Nombre del producto"
+                        onclick="validateName()" required>
+                    <span id="error-name"></span>
+                    <span id="error-name-submit"></span>
                 </div>
                 <div class="input-group">
                     <label>Descripción:</label>
                     <br>
                     <textarea name="description" id="description" placeholder="Descripción" class="box"
-                    onkeyup="validateDescription()" required></textarea>
+                        onclick="validateDescription()" required></textarea>
                     <span id="error-description"></span>
+                    <span id="error-description-submit"></span>
                 </div>
                 <div class="input-group">
                     <label>Categoría:</label>
-                    <select class="box" name="category" id="category">
+                    <select class="box" name="category" id="category" onclick="validatecategory()">
                         <option selected="true" disabled="disabled">seleccione la categoría</option>
                         <% for (let i = 0; i < categories.length; i++){ %>
                         <option value="<%=categories[i].product_category_id%>">
@@ -35,10 +38,11 @@
                         <% } %>
                     </select>
                     <span id="error-category"></span>
+                    <span id="error-category-submit"></span>
                 </div>
                 <div class="input-group">
                     <label>Mentor:</label>
-                    <select class="box" name="mentor" id="mentor">
+                    <select class="box" name="mentor" id="mentor" onclick="validatementor()">
                         <option selected="true" disabled="disabled">seleccione el mentor</option>
                         <% for (let i = 0; i < users.length; i++){ %>
                         <% if(users[i].mentor_id != null) { %>
@@ -49,15 +53,18 @@
                         <% } %>
                     </select>
                     <span id="error-mentor"></span>
+                    <span id="error-mentor-submit"></span>
                 </div>
                 <div class="input-group">
                     <label>Duración:</label>
-                    <p><input class="box" type="number" name="duration" id="duration" placeholder="Horas" min="0"
-                            required>
+                    <p><input class="box" type="number" name="duration" id="duration" placeholder="Horas" min="1"
+                        onclick="validateduration()"required>
+                        <span id="error-duration"></span>
+                        <span id="error-duration-submit"></span>
                 </div>
                 <div class="input-group">
                     <label>Horario:</label>
-                    <select class="box" name="horario" id="horario">
+                    <select class="box" name="horario" id="horario" onclick="validatehorario()">
                         <option selected="true" disabled="disabled">seleccione el horario</option>
                         <option value="10:00:00">10:00:00</option>
                         <option value="12:00:00">12:00:00</option>
@@ -70,10 +77,11 @@
                         <option value="21:00:00">21:00:00</option>
                     </select>
                     <span id="error-horario"></span>
+                    <span id="error-horario-submit"></span>
                 </div>
                 <div class="input-group">
                     <label>Día:</label>
-                    <select class="box" name="dia" id="dia">
+                    <select class="box" name="dia" id="dia" onclick="validateDia()">
                         <option selected="true" disabled="disabled">seleccione el día</option>
                         <option value="Lunes">Lunes</option>
                         <option value="Martes">Martes</option>
@@ -83,19 +91,21 @@
                         <option value="Sábado">Sábado</option>
                     </select>
                     <span id="error-dia"></span>
+                    <span id="error-dia-submit"></span>
                 </div>
                 <div class="input-group">
                     <label>Precio:</label>
-                    <input class="box" type="number" name="price" id="price" placeholder="Precio $" min="0" required>
+                    <input class="box" type="number" name="price" id="price" placeholder="Precio $" min="0" onclick="validatePrice()" required>
                     <span id="error-price"></span>
                 </div>
                 <div class="input-group">
                     <label>Subir imagen del producto:</label>
                     <input class="box" type="file" name="image" id="image" accept=".jpg,.png" multiple>
                     <span id="error-image"></span>
+                    <span id="error-image-submit"></span>
                 </div>
                 <div class="botones">
-                    <button class="enviar" type="submit"><i class="fas fa-plus-circle"></i> Guardar producto</button>
+                    <button class="enviar" onclick="validateButton()" type="submit"><i class="fas fa-plus-circle"></i> Guardar producto</button>
                     <span id="submit-error"></span>
                     <button class="borrar" type="reset"><i class="fas fa-eraser"></i> Borrar</button>
                 </div>

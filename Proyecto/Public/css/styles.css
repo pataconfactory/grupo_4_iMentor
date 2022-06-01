@@ -2001,8 +2001,8 @@ main .contenedor-edicion-productos .container-productos-existentes a:hover {
 }
 
 main .contenedor-edicion-productos .input-group span {
-    color: red;
-    font-size: 14px;
+    color: #ab0d2f;
+    font-size: 10px;
 }
 
 main .contenedor-edicion-productos .input-group span i {
