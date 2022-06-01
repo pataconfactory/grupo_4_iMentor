@@ -13,10 +13,10 @@
                 </div>
                 <p>Te damos la bienvenida :)</p>
                 <div class="login">
-                    <form action="/users/login" method="POST">
+                    <form action="/users/login" method="POST" class="login-form">
                         <div class="login-email">
                             <i class="fas fa-solid fas fa-envelope"></i>
-                            <input class="box-email" type="email" name="email" placeholder="tuemail@ejemplo.com"
+                            <input class="box-email" type="text" name="email" placeholder="tuemail@ejemplo.com"
                                 autofocus id="email" value="<%= locals.old ? old.email : null %>">
                         </div>
                         <% if (locals.errors && errors.email) { %>
@@ -24,7 +24,9 @@
                             <p class="feedback"><%= errors.email.msg %></p>
                         </div>
                         <% } %>
-                        <p class="email-error"></p>
+                        <div class="text-danger">
+                            <p class="email-error"></p>
+                        </div>
                         <div class="login-password">
                             <i class="fas fa-solid fas fa-lock"></i>
                             <input class="box-password" type="password" name="password" value="" id="password"
@@ -35,7 +37,9 @@
                             <p class="feedback"><%= errors.password.msg %></p>
                         </div>
                         <% } %>
-                        <p class="password-error"></p>
+                        <div class="text-danger">
+                            <p class="password-error"></p>
+                        </div>
                         <div class="remember-me">
                             <input type="checkbox" name="remember">
                             <label>Recordar mi usuario</label>
