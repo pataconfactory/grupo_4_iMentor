@@ -26,7 +26,7 @@ errorNameSubmit = id("error-name"),
     submitErrorSubmit = id("submit-error-submit")
 var inputs = document.querySelectorAll("input, select")
 
-/*SUBMIT*/
+/* 
 btn.addEventListener('click', function (event) {
     window.alert("Por favor completa todos los campos del formulario");
     inputs.forEach(input =>{
@@ -47,8 +47,7 @@ btn.addEventListener('click', function (event) {
 
     }
 
-    )})
-
+    )}) */ 
 
 /*Autofocus*/
 window.addEventListener('load', function (event) {
