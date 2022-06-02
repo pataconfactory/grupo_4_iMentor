@@ -450,7 +450,7 @@ main .contenedor-home .ventajas{
     flex-wrap: wrap;
     justify-content: center;
     padding: 30px 10px;
-    height: 650px;
+    height: 660px;
     align-items: center;
 }
 
@@ -474,6 +474,10 @@ main .contenedor-home .ventajas .contenido h4{
     font-size: 28px;
     text-align: center;
     padding: 10px 0px;
+}
+
+main .contenedor-home .ventajas .contenido .texto-ventajas{
+    font-size: 12px;
 }
 
 main .contenedor-home h2 {
@@ -569,8 +573,6 @@ main .prev, main .next {
     width: auto;
     padding: 16px;
     margin-top: -22px;
-    margin-left: 40px;
-    margin-right: 40px;
     color: black;
     font-weight: bold;
     font-size: 30px;
@@ -942,8 +944,8 @@ main .contenedor-home .contenedor-clientes h2 {
 }
 
 main .contenedor-home .contenedor-clientes p {
-    font-weight: 300;
-    font-size: 16px;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 main .contenedor-home .contenedor-clientes h2 {
@@ -1856,7 +1858,7 @@ main .seccion-perfil-usuario .boton-rojo {
     margin: 10px 0px;
     padding: 5px 5px;
     border-radius: 5px;
-    width: 50%;
+    width: 60%;
     border: none;
     background-color: #ab0d2f;
     text-decoration: none;
@@ -1915,6 +1917,26 @@ main .seccion-perfil-usuario .boton-opciones.cesta-compras {
 
 main .seccion-perfil-usuario .boton-opciones.plataforma {
     background-color: #2D848A;
+}
+
+main .seccion-perfil-usuario .boton-mentor {
+    margin: 10px 0px;
+    padding: 10px 5px;
+    border-radius: 5px;
+    width: 60%;
+    border: none;
+    background-color: #ffc600;
+    text-decoration: none;
+    margin: 20px auto 40px auto;
+    text-align: center;
+    color:black;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+main .seccion-perfil-usuario .boton-mentor:hover {
+    background-color: #88CCF1;    
+    cursor: pointer;  
 }
 
 /* adactacion a dispositivos */
@@ -2615,7 +2637,7 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
 
     /*Profile*/
     main .seccion-perfil-usuario{
-        padding: 100px 0px 0px 0px;
+        padding: 80px 0px 0px 0px;
     }
 
 
@@ -2668,7 +2690,7 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
 
     main .button {
         width: 300px;
-      }
+    }
 
     /* Product Detail Media Queries (min-width: 769px)*/
     main .contenedor-sobre-servicios {
@@ -2956,12 +2978,6 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
     }
 
     main .contenedor-home h1 {
-        top: 150px;
-        font-size: 42px;
-        right: 40px;
-    }
-
-    main .contenedor-home h1 {
         top: 170px;
         font-size: 26px;
         padding: 15px;
@@ -2972,6 +2988,7 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
     }
 
     main .contenedor-home .ventajas{
+        height: 600px;
         flex-wrap: nowrap;
         justify-content: space-around;
     }
@@ -2986,9 +3003,17 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
         border-left: solid 3px black ;
         border-top: none;
         padding-left: 10px;
-        justify-content: center;
+        justify-content: space-around;
     }
 
+    main .contenedor-home .ventajas .contenido .texto-ventajas{
+        font-size: 18px;
+    }
+
+    main .prev, main .next {
+        margin-right: 100px;
+        margin-left: 85px;
+    }
     /* Product Detail Media Queeries (min-width: 769px)*/
     .titulo {
         font-size: 40px;

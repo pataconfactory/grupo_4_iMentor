@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
-    "username": "",
-    "password": '',
+    "username": "root",
+    "password": null,
     "database": "imentor_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
