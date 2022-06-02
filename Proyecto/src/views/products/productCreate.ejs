@@ -10,142 +10,154 @@
     <main>
         <div class="contenedor-edicion-productos">
             <h2 class="">Formulario de creación de productos</h2>
-            <form class="formulario-edicion-productos" id='formulario' action="/products/" method="POST" enctype="multipart/form-data">
+            <form class="formulario-edicion-productos" id='formulario' action="/products/" method="POST"
+                enctype="multipart/form-data">
                 <h3> Completar la información del producto</h3>
                 <div class="input-group">
                     <label>Nombre del producto:</label>
                     <input class="box" type="text" name="name" id="name" placeholder="Nombre del producto"
-                        onclick="validateName()" value="<%= locals.old ? old.name : null %>" >
+                        value="<%= locals.old ? old.name : null %>">
                     <% if (locals.errors && errors.name) { %>
-                        <div class="text-danger">
-                            <p class="feedback"><%= errors.name.msg %></p>
-                        </div>
+                    <div class="text-danger">
+                        <p class="feedback"><%= errors.name.msg %></p>
+                    </div>
                     <% } %>
-                    <span id="error-name"></span>
-                    <span id="error-name-submit"></span>
+                    <div class="text-danger">
+                    <p id="error-name"></p>
+                    </div>
                 </div>
                 <div class="input-group">
                     <label>Descripción:</label>
                     <br>
                     <textarea name="description" id="description" placeholder="Descripción" class="box"
-                        onclick="validateDescription()" value="<%= locals.old ? old.description : null %>" ></textarea>
+                        value="<%= locals.old ? old.description : null %>"></textarea>
                     <% if (locals.errors && errors.description) { %>
-                        <div class="text-danger">
-                            <p class="feedback"><%= errors.description.msg %></p>
-                        </div>
+                    <div class="text-danger">
+                        <p class="feedback"><%= errors.description.msg %></p>
+                    </div>
                     <% } %>
-                    <span id="error-description"></span>
-                    <span id="error-description-submit"></span>
+                    <div class="text-danger">
+                    <p id="error-description"></p>
+                    </div>
                 </div>
                 <div class="input-group">
                     <label>Categoría:</label>
-                    <select class="box" name="category" id="category" onclick="validatecategory()" value="<%= locals.old ? old.category : null %>" >
+                    <select class="box" name="category" id="category" value="<%= locals.old ? old.category : null %>">
                         <option value="">seleccione la categoría</option>
-                        <% let categorias = [{product_category_id: 1, category_name:'Front-End'},{product_category_id: 2, category_name:'Back-End'},{product_category_id: 3, category_name:'UI/UX'},{product_category_id: 4, category_name:'Base de Datos'},{product_category_id: 5, category_name:'Marketing Digital'},{product_category_id: 6, category_name:'Análisis de Datos'}];%> 
+                        <% let categorias = [{product_category_id: 1, category_name:'Front-End'},{product_category_id: 2, category_name:'Back-End'},{product_category_id: 3, category_name:'UI/UX'},{product_category_id: 4, category_name:'Base de Datos'},{product_category_id: 5, category_name:'Marketing Digital'},{product_category_id: 6, category_name:'Análisis de Datos'}];%>
                         <% for (const oneCategory of categorias) { %>
-                            <option value="<%= oneCategory.product_category_id %>"
-                                <%= locals.old && (oneCategory.product_category_id == old.category) ? 'selected' : null  %>>
-                                <%= oneCategory.category_name %></option>
+                        <option value="<%= oneCategory.product_category_id %>"
+                            <%= locals.old && (oneCategory.product_category_id == old.category) ? 'selected' : null  %>>
+                            <%= oneCategory.category_name %></option>
                         <% } %>
                     </select>
                     <% if (locals.errors && errors.category) { %>
-                        <div class="text-danger">
-                            <p class="feedback"><%= errors.category.msg %></p>
-                        </div>
+                    <div class="text-danger">
+                        <p class="feedback"><%= errors.category.msg %></p>
+                    </div>
                     <% } %>
-                    <span id="error-category"></span>
-                    <span id="error-category-submit"></span>
+                    <div class="text-danger">
+                    <p id="error-category"></p>
+                    </div>
                 </div>
                 <div class="input-group">
                     <label>Mentor:</label>
-                    <select class="box" name="mentor" id="mentor" onclick="validatementor()">
+                    <select class="box" name="mentor" id="mentor">
                         <option selected="true" disabled="disabled">seleccione el mentor</option>
                         <% for (let i = 0; i < users.length; i++){ %>
-                            <% if(users[i].mentor_id != null) { %>
-                            <option value="<%=users[i].mentor_id%>">
-                                <%=users[i].first_name%> <%=users[i].last_name%>
-                            </option>
-                            <% } %>
+                        <% if(users[i].mentor_id != null) { %>
+                        <option value="<%=users[i].mentor_id%>">
+                            <%=users[i].first_name%> <%=users[i].last_name%>
+                        </option>
+                        <% } %>
                         <% } %>
                     </select>
-                    <span id="error-mentor"></span>
-                    <span id="error-mentor-submit"></span>
+                    <div class="text-danger">
+                    <p id="error-mentor"></p>
+                    </div>
                 </div>
                 <div class="input-group">
                     <label>Duración:</label>
-                    <input class="box" type="number" name="duration" id="duration" placeholder="Horas" min="1" size="2" maxlength="2"
-                        onclick="validateduration()" value="<%= locals.old ? old.duration : null %>" >
-                        <% if (locals.errors && errors.duration) { %>
-                            <div class="text-danger">
-                                <p class="feedback"><%= errors.duration.msg %>
-                            </div>
-                        <% } %>   
-                        <span id="error-duration"></span>
-                        <span id="error-duration-submit"></span>
+                    <input class="box" type="number" name="duration" id="duration" placeholder="Horas" min="1" size="2"
+                        maxlength="2" value="<%= locals.old ? old.duration : null %>">
+                    <% if (locals.errors && errors.duration) { %>
+                    <div class="text-danger">
+                        <p class="feedback"><%= errors.duration.msg %>
+                    </div>
+                    <% } %>
+                    <div class="text-danger">
+                    <p id="error-duration"></p>
+                    </div>
                 </div>
                 <div class="input-group">
                     <label>Horario:</label>
-                    <select class="box" name="horario" id="horario" onclick="validatehorario()" value="<%= locals.old ? old.horario : null %>">
+                    <select class="box" name="horario" id="horario" value="<%= locals.old ? old.horario : null %>">
                         <option value="">seleccione el horario</option>
-                        <% let horarios = [{valor: '10:00:00', horario:'10:00:00'},{valor: '12:00:00', horario:'12:00:00'},{valor: '14:00:00', horario:'14:00:00'},{valor: '16:00:00', horario:'16:00:00'},{valor: '17:00:00', horario:'17:00:00'},{valor: '18:00:00', horario:'18:00:00'},{valor: '19:00:00', horario:'19:00:00'},{valor: '20:00:00', horario:'20:00:00'},{valor: '21:00:00', horario:'21:00:00'}];%> 
+                        <% let horarios = [{valor: '10:00:00', horario:'10:00:00'},{valor: '12:00:00', horario:'12:00:00'},{valor: '14:00:00', horario:'14:00:00'},{valor: '16:00:00', horario:'16:00:00'},{valor: '17:00:00', horario:'17:00:00'},{valor: '18:00:00', horario:'18:00:00'},{valor: '19:00:00', horario:'19:00:00'},{valor: '20:00:00', horario:'20:00:00'},{valor: '21:00:00', horario:'21:00:00'}];%>
                         <% for (const oneHorario of horarios) { %>
-                            <option value="<%= oneHorario.valor %>"
-                                <%= locals.old && (oneHorario.valor == old.horario) ? 'selected' : null  %>>
-                                <%= oneHorario.horario %></option>
+                        <option value="<%= oneHorario.valor %>"
+                            <%= locals.old && (oneHorario.valor == old.horario) ? 'selected' : null  %>>
+                            <%= oneHorario.horario %></option>
                         <% } %>
                     </select>
                     <% if (locals.errors && errors.horario) { %>
-                        <div class="text-danger">
-                            <p class="feedback"><%= errors.horario.msg %></p>
-                        </div>
+                    <div class="text-danger">
+                        <p class="feedback"><%= errors.horario.msg %></p>
+                    </div>
                     <% } %>
-                    <span id="error-horario"></span>
-                    <span id="error-horario-submit"></span>
+                    <div class="text-danger">
+                    <p id="error-horario"></p>
+                    </div>
                 </div>
                 <div class="input-group">
                     <label>Día:</label>
-                    <select class="box" name="dia" id="dia" onclick="validateDia()" value="<%= locals.old ? old.dia : null %>">
+                    <select class="box" name="dia" id="dia" value="<%= locals.old ? old.dia : null %>">
                         <option value="">seleccione el día</option>
-                        <% let dias = [{valor: "Lunes", dia:"Lunes"},{valor: "Martes", dia:"Martes"},{valor: "Miércoles", dia:"Miércoles"},{valor: "Jueves", dia:"Jueves"},{valor: "Viernes", dia:"Viernes"},{valor: "Sábado", dia:"Sábado"}];%> 
+                        <% let dias = [{valor: "Lunes", dia:"Lunes"},{valor: "Martes", dia:"Martes"},{valor: "Miércoles", dia:"Miércoles"},{valor: "Jueves", dia:"Jueves"},{valor: "Viernes", dia:"Viernes"},{valor: "Sábado", dia:"Sábado"}];%>
                         <% for (const oneDia of dias) { %>
-                            <option value="<%= oneDia.valor %>"
-                                <%= locals.old && (oneDia.valor == old.dia) ? 'selected' : null  %>>
-                                <%= oneDia.dia %></option>
+                        <option value="<%= oneDia.valor %>"
+                            <%= locals.old && (oneDia.valor == old.dia) ? 'selected' : null  %>>
+                            <%= oneDia.dia %></option>
                         <% } %>
                     </select>
                     <% if (locals.errors && errors.dia) { %>
-                        <div class="text-danger">
-                            <p class="feedback"><%= errors.dia.msg %></p>
-                        </div>
+                    <div class="text-danger">
+                        <p class="feedback"><%= errors.dia.msg %></p>
+                    </div>
                     <% } %>
-                    <span id="error-dia"></span>
-                    <span id="error-dia-submit"></span>
+                    <div class="text-danger">
+                    <p id="error-dia"></p>
+                    </div>
                 </div>
                 <div class="input-group">
                     <label>Precio:</label>
-                    <input class="box" type="number" name="price" id="price" placeholder="Precio $" min="0" onclick="validatePrice()" value="<%= locals.old ? old.price : null %>" >
+                    <input class="box" type="number" name="price" id="price" placeholder="Precio $" min="0"
+                        value="<%= locals.old ? old.price : null %>">
                     <% if (locals.errors && errors.price) { %>
-                        <div class="text-danger">
-                            <p class="feedback"><%= errors.price.msg %></p>
-                        </div>
-                    <% } %> 
-                    <span id="error-price"></span>
-                    <span id="error-price-submit"></span>
+                    <div class="text-danger">
+                        <p class="feedback"><%= errors.price.msg %></p>
+                    </div>
+                    <% } %>
+                    <div class="text-danger">
+                    <p id="error-price"></p>
+                    </div>
                 </div>
                 <div class="input-group">
                     <label>Subir imagen del producto:</label>
                     <input class="box" type="file" name="image" id="image" accept=".jpg,.jpeg,.png,.gif" multiple>
                     <% if (locals.errors && errors.image) { %>
-                        <div class="text-danger">
-                            <p class="feedback"><%= errors.image.msg %></p>
-                        </div>
+                    <div class="text-danger">
+                        <p class="feedback"><%= errors.image.msg %></p>
+                    </div>
                     <% } %>
+                    <div class="text-danger">
                     <span id="error-image"></span>
-                    <span id="error-image-submit"></span>
+                    </div>
                 </div>
                 <div class="botones">
-                    <button class="enviar" id='submit' type="submit"><i class="fas fa-plus-circle"></i> Guardar producto</button>
-                    <span id="submit-error"></span>
+                    <button class="enviar" type="submit"><i class="fas fa-plus-circle"></i> Guardar
+                        producto</button>
+                    <p id="submit-error"></p>
                     <button class="borrar" type="reset"><i class="fas fa-eraser"></i> Borrar</button>
                 </div>
             </form>

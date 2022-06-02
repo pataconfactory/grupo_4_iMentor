@@ -1,191 +1,226 @@
-/* declaro todas las variables de ID y Clase*/
+window.addEventListener('load', function () {
 
-let id = (id) => document.getElementById(id);
-let classes = (classes) => document.getElementsByClassName(classes);
+    let id = (id) => document.getElementById(id);
 
-let btn = id("submit"),
-    errorName = id("error-name"),
-    errorDescription = id("error-description"),
-    errorCategory = id("error-category"),
-    errorMentor = id("error-mentor"),
-    errorDuration = id("error-duration"),
-    errorHorario = id("error-horario"),
-    errorDia = id("error-dia"),
-    errorPrice = id("error-price"),
-    errorImage = id("error-image"),
-    submitError = id("submit-error")
-errorNameSubmit = id("error-name"),
-    errorDescriptionSubmit = id("error-description-submit"),
-    errorCategorySubmit = id("error-category-submit"),
-    errorMentorSubmit = id("error-mentor-submit"),
-    errorDurationSubmit = id("error-duration-submit"),
-    errorHorarioSubmit = id("error-horario-submit"),
-    errorDiaSubmit = id("error-dia-submit"),
-    errorPriceSubmit = id("error-price-submit"),
-    errorImageSubmit = id("error-image-submit"),
-    submitErrorSubmit = id("submit-error-submit")
-var inputs = document.querySelectorAll("input, select")
+    let form = this.document.querySelector('.formulario-edicion-productos');
+    let campoTitulo = id("name"),
+        campoDescription = id("description"),
+        campoCategory = id("category"),
+        campoMentor = id("mentor"),
+        campoDuration = id("duration"),
+        campoHorario = id("horario"),
+        campoDia = id("dia"),
+        campoPrice = id("price"),
+        campoImage = id("image");
 
-/* 
-btn.addEventListener('click', function (event) {
-    window.alert("Por favor completa todos los campos del formulario");
-    inputs.forEach(input =>{
-        if (input.value == ""){
-        event.preventDefault()
-        errorNameSubmit.innerHTML= 'Debes completar el nombre del producto';
-        errorDescriptionSubmit.innerHTML =   'Debe completar la descripción del producto'
-        errorCategorySubmit.innerHTML = 'Seleccione una categoría'
-        errorMentorSubmit.innerHTML = 'seleccione el mentor'
-        errorDurationSubmit.innerHTML = 'La duración en horas es requerida (sólo digitos)'
-        errorHorarioSubmit.innerHTML  = 'seleccione un horario'
-        errorDiaSubmit.innerHTML = 'seleccione el día'
-        errorPriceSubmit.innerHTML = 'El precio en pesos argentinos es requerido'
-        errorImageSubmit.innerHTML = 'El formato de archivo no es válido, las extensiones permitidas son .jpg, .jpeg, .png y .gif'
-      
-        
-    }
+    form.addEventListener('submit', function (event) {
 
-    }
+        let errors = [];
 
-    )}) */ 
-
-/*Autofocus*/
-window.addEventListener('load', function (event) {
-    campoTitulo = document.getElementById('name').focus;
-})
-
-
-/* Valida el nombre del producto*/
-function validateName() {
-    let name = document.getElementById('name').value;
-    if (name.length === 0) {
-        errorName.innerHTML = 'Debes completar el nombre del producto';
-        return false;
-    }
-
-    if (name.length < 5) {
-        errorName.innerHTML = 'El nombre debe tener al menos 5 caracteres';
-        return false
-    }
-
-    errorName.innerHTML = '<i class="far fa-check-circle success-icon"> válido</i>';
-    return true;
-
-}
-
-/* Valida la descripción*/
-function validateDescription() {
-    let descripcion = document.getElementById('description').value;
-    var textRequired = 20;
-    var left = textRequired - descripcion.length;
-
-    if (left > 0) {
-        errorDescription.innerHTML = 'Faltan ' + left + ' caracteres para completar la descripción del producto';
-        return false;
-    }
-    errorDescription.innerHTML = '<i class="far fa-check-circle success-icon"> válido</i>';
-    return true;
-}
-
-/* Valida la categororía*/
-function validatecategory() {
-    let campoCategory = document.getElementById('category').value;
-
-    if (campoCategory === 'seleccione la categoría') {
-        errorCategory.innerHTML = 'Seleccione una categoría';
-        return false;
-    }
-
-    errorCategory.innerHTML = '<i class="far fa-check-circle success-icon"></i>';
-    return true;
-}
-
-/* Valida el mentor*/
-
-function validatementor() {
-    let campoMentor = document.getElementById('mentor').value;
-
-    if (campoMentor === 'seleccione el mentor') {
-        errorMentor.innerHTML = 'seleccione el mentor';
-        return false;
-    }
-
-    errorMentor.innerHTML = '<i class="far fa-check-circle success-icon"> </i>';
-    return true;
-}
-
-/* Valida la duración*/
-function validateduration() {
-    let campoDuration = document.getElementById('duration').value;
-
-    if (campoDuration.length == 0) {
-        errorDuration.innerHTML = 'La duración en horas es requerida (sólo digitos)';
-        return false;
-
-    }
-    if (campoDuration >= 10) {
-        errorDuration.innerHTML = 'Debe ser menos de 10 horas';
-        return false;
-    }
-
-    errorDuration.innerHTML = '<i class="far fa-check-circle success-icon"> válido</i>';
-    return true;
-}
-
-/* Valida el horario*/
-function validatehorario() {
-    let campoHorario = document.getElementById('horario').value;
-
-    if (campoHorario === 'seleccione el horario') {
-        errorHorario.innerHTML = 'seleccione un horario';
-        return false;
-    }
-
-    errorHorario.innerHTML = '<i class="far fa-check-circle success-icon"></i>';
-    return true;
-}
-
-/* Valida el día*/
-
-function validateDia() {
-    let campoDia = document.getElementById('dia').value;
-
-    if (campoDia === 'seleccione el día') {
-        errorDia.innerHTML = 'seleccione el día';
-        return false;
-    }
-
-    errorDia.innerHTML = '<i class="far fa-check-circle success-icon"></i>';
-    return true;
-}
-
-/* Valida el precio*/
-function validatePrice() {
-    let campoPrice = document.getElementById('price').value;
-
-    if (campoPrice == 0) {
-        errorPrice.innerHTML = 'El precio en pesos argentinos es requerido';
-        return false;
-
-    }
-
-    errorPrice.innerHTML = '<i class="far fa-check-circle success-icon"></i>';
-    return true;
-
-
-}
-/* Valida la imagen*/
-let imageProducto = document.querySelector('#image');
-imageProducto.addEventListener('change', function () {
-    let imageProductoValue = imageProducto.value;
-    if (imageProductoValue) {
-        if (!(imageProductoValue.includes('.jpg') || imageProductoValue.includes('.jpeg') || imageProductoValue.includes('.png') || imageProductoValue.includes('.gif'))) {
-            errorImage.innerHTML = 'El formato de archivo no es válido, las extensiones permitidas son .jpg, .jpeg, .png y .gif';
-        } else {
-            errorImage.innerHTML = '';
+        let campoTituloValue = campoTitulo.value;
+        console.log(campoTituloValue)
+        let errorTitulo = document.getElementById('error-name');
+        if (!campoTituloValue) {
+            errorTitulo.innerHTML = 'Debe completar el nombre de la asesoría';
+            errors.push('Debe completar el nombre de la asesoría');
+        } else if (campoTituloValue.length < 5) {
+            errorTitulo.innerHTML = 'El nombre debe tener al menos 5 caracteres';
+            errors.push('El nombre debe tener al menos 5 caracteres');
         }
-    }
+
+        let campoDescriptionValue = campoDescription.value;
+        let errorDescription = document.getElementById('error-description');
+        if (!campoDescriptionValue) {
+            errorDescription.innerHTML = 'Debe completar la descripción del producto';
+            errors.push('Debe completar la descripción del producto');
+        } else if (campoDescriptionValue.length < 20) {
+            errorDescription.innerHTML = 'La descripción debe tener al menos 20 caracteres';
+            errors.push('La descripción debe tener al menos 20 caracteres');
+        }
+
+        let categoryError = document.getElementById('error-category');
+        let categoryValue = campoCategory.value;
+        if (!categoryValue) {
+            categoryError.innerHTML = 'Debe seleccionar la categoría de la mentoría';
+            errors.push('Debe seleccionar la categoría de la mentoría');
+        }
+
+        let mentorError = document.getElementById('error-mentor');
+        let mentorValue = campoMentor.value;
+        if (!mentorValue) {
+            mentorError.innerHTML = 'Debe seleccionar un mentor';
+            errors.push('Debe seleccionar un mentor');
+        }
+
+
+        let durationError = document.getElementById('error-duration');
+        let durationValue = campoDuration.value;
+        if (!durationValue) {
+            durationError.innerHTML = 'Debe completar la duración de la mentoría';
+            errors.push('Debe completar la duración de la mentoría');
+        }
+
+        let horarioError = document.getElementById('error-horario');
+        let horarioValue = campoHorario.value;
+        if (!horarioValue) {
+            horarioError.innerHTML = 'Debe seleccionar el horario de la mentoría';
+            errors.push('Debe seleccionar el horario de la mentoría');
+        }
+
+        let diaError = document.getElementById('error-dia');
+        let diaValue = campoDia.value;
+        if (!diaValue) {
+            diaError.innerHTML = 'Debe seleccionar el día de la mentoría';
+            errors.push('Debe seleccionar el día de la mentoría');
+        }
+
+        let priceError = document.getElementById('error-price');
+        let priceValue = campoPrice.value;
+        if (!priceValue) {
+            priceError.innerHTML = 'Debe completar el precio';
+            errors.push('Debe completar el precio');
+        }
+
+        let imageError = document.getElementById('error-image');
+        let imageValue = campoImage.value;
+        if (!imageValue) {
+            imageError.innerHTML = 'Debes cargar la imagen de la mentoría';
+            errors.push('Debes cargar la imagen de la mentoría');
+        } else {
+            if (!(imageValue.includes('.jpg') || imageValue.includes('.jpeg') || imageValue.includes('.png') || imageValue.includes('.gif'))) {
+                imageError.innerHTML = 'El formato de archivo no es válido, las extensiones permitidas son .jpg, .jpeg, .png y .gif';
+                errors.push('El formato de archivo no es válido, las extensiones permitidas son .jpg, .jpeg, .png y .gif');
+            }
+        }
+
+        if (errors.length > 0) {
+            event.preventDefault();
+        }
+    });
+
+    let errorTitulo = document.getElementById('error-name');
+    campoTitulo.addEventListener('focus', function () {
+        errorTitulo.innerHTML = 'El nombre debe tener al menos 5 caracteres';
+    });
+
+    campoTitulo.addEventListener('blur', function () {
+        let campoTituloValue = campoTitulo.value;
+        if (!campoTituloValue) {
+            errorTitulo.innerHTML = 'Debe completar el nombre de la asesoría';
+        } else if (campoTituloValue.length > 5) {
+            errorTitulo.innerHTML = '';
+        } else {
+            errorTitulo.innerHTML = 'El nombre debe tener al menos 5 caracteres';
+        }
+    });
+
+    let tituloProd = [];
+    campoTitulo.addEventListener('keypress', function (e) {
+        let key = e.key;
+        tituloProd.push(key);
+        if (tituloProd.length > 5) {
+            errorTitulo.innerHTML = '';
+        }
+    });
+
+    let errorDescription = document.getElementById('error-description');
+    campoDescription.addEventListener('focus', function () {
+        errorDescription.innerHTML = 'La descripción debe tener al menos 20 caracteres';
+    });
+    campoDescription.addEventListener('blur', function () {
+        let campoDescriptionValue = campoDescription.value;
+        if (!campoDescriptionValue) {
+            errorDescription.innerHTML = 'Debe completar la descripción del producto';
+        } else if (campoDescriptionValue.length > 20) {
+            errorDescription.innerHTML = '';
+        } else {
+            errorDescription.innerHTML = ' descripción debe tener al menos 20 caracteres';
+        }
+    });
+
+    let descriptionProd = [];
+    campoDescription.addEventListener('keypress', function (e) {
+        let key = e.key;
+        descriptionProd.push(key);
+        if (descriptionProd.length > 20) {
+            errorDescription.innerHTML = '';
+        }
+    });
+
+    let categoryError = document.getElementById('error-category');
+    campoCategory.addEventListener('blur', function () {
+        let categoryValue = campoCategory.value;
+        if (!categoryValue) {
+            categoryError.innerHTML = 'Debe seleccionar la categoría de la mentoría';
+        } else {
+            categoryError.innerHTML = '';
+        }
+    });
+
+    let mentorError = document.getElementById('error-mentor');
+    campoMentor.addEventListener('blur', function () {
+        let mentorValue = campoMentor.value;
+        if (!mentorValue) {
+            mentorError.innerHTML = 'Debe seleccionar un mentor';
+        } else {
+            mentorError.innerHTML = '';
+        }
+    });
+
+
+    let durationError = document.getElementById('error-duration');
+    campoDuration.addEventListener('blur', function () {
+        let durationValue = campoDuration.value;
+        if (!durationValue) {
+            durationError.innerHTML = 'Debe completar la duración de la mentoría';
+        } else {
+            durationError.innerHTML = '';
+        }
+    });
+
+    let horarioError = document.getElementById('error-horario');
+    campoHorario.addEventListener('blur', function () {
+        let horarioValue = campoHorario.value;
+        if (!horarioValue) {
+            horarioError.innerHTML = 'Debe seleccionar el horario de la mentoría';
+        } else {
+            horarioError.innerHTML = '';
+        }
+    });
+
+    let diaError = document.getElementById('error-dia');
+    campoDia.addEventListener('blur', function () {
+        let diaValue = campoDia.value;
+        if (!diaValue) {
+            diaError.innerHTML = 'Debe seleccionar el día de la mentoría';
+        } else {
+            diaError.innerHTML = '';
+        }
+    });
+
+    let priceError = document.getElementById('error-price');
+    campoPrice.addEventListener('blur', function () {
+        let priceValue = campoPrice.value;
+        if (!priceValue) {
+            priceError.innerHTML = 'Debe completar el precio';
+        } else {
+            priceError.innerHTML = '';
+        }
+    });
+
+    let imageError = document.getElementById('error-image');
+    campoImage.addEventListener('change', function () {
+        let imageValue = campoImage.value;
+        if (!imageValue) {
+            imageError.innerHTML = 'Debes cargar la imagen de la mentoría';
+        } else {
+            if (!(imageValue.includes('.jpg') || imageValue.includes('.jpeg') || imageValue.includes('.png') || imageValue.includes('.gif'))) {
+                imageError.innerHTML = 'El formato de archivo no es válido, las extensiones permitidas son .jpg, .jpeg, .png y .gif';
+            } else {
+                imageError.innerHTML = '';
+            }
+        }
+
+    });
+
 });
-
-
-
