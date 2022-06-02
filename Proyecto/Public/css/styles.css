@@ -655,7 +655,6 @@ main .button {
     font-size: 14px;
     margin: 20px auto;
     border-radius: 4px;
-    z-index: 2;
     width: 200px;
 }
   
@@ -1723,6 +1722,12 @@ main .seccion-perfil-usuario .perfil-usuario-body .password-form {
 main .seccion-perfil-usuario .perfil-usuario-body .register-form {
     height: 1000px;
     margin-bottom: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main .seccion-perfil-usuario .perfil-usuario-body .register-form.mentor {
+    height: 450px;
 }
 
 main .seccion-perfil-usuario .perfil-usuario-body .register-form .botones, main .seccion-perfil-usuario .perfil-usuario-body .password-form .botones {
