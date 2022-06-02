@@ -73,11 +73,11 @@
                 </div>
                 <div class="input-group">
                     <label>Duración:</label>
-                    <p><input class="box" type="number" name="duration" id="duration" placeholder="Horas" min="1" size="2" maxlength="2"
+                    <input class="box" type="number" name="duration" id="duration" placeholder="Horas" min="1" size="2" maxlength="2"
                         onclick="validateduration()" value="<%= locals.old ? old.duration : null %>" >
                         <% if (locals.errors && errors.duration) { %>
                             <div class="text-danger">
-                                <p class="feedback"><%= errors.duration.msg %></p>
+                                <p class="feedback"><%= errors.duration.msg %>
                             </div>
                         <% } %>   
                         <span id="error-duration"></span>

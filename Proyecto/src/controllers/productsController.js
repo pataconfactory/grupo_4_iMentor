@@ -106,9 +106,30 @@ const productsController = {
                 {association: "users_products"}
             ]
         });
-        let categories = db.ProductCategory.findAll({
+        let usuarios = db.User.findAll({
             include: [
-                {association: "categories"}
+                {association: "roles"},
+                {association: "users"},
+                {association: "users_products"}
+            ]
+        });
+        Promise.all([productoEditar, usuarios])
+        .then(function([productoEditar, usuarios]) {
+            let users = [];
+            for (const oneUser of usuarios) {
+               users.push(oneUser.dataValues);
+            } 
+            return res.render(path.join(__dirname, '../views/products/productEdition'), {productoEditar, users})
+        })
+    },
+
+    update: function( req, res ) {
+        let errors = validationResult(req);
+        let productoEditar = db.Product.findByPk(req.params.id, {
+            include: [
+                {association: "mentors"},
+                {association: "categories"},
+                {association: "users_products"}
             ]
         });
         let usuarios = db.User.findAll({
@@ -118,67 +139,69 @@ const productsController = {
                 {association: "users_products"}
             ]
         });
-        Promise.all([productoEditar, categories, usuarios])
-        .then(function([productoEditar, categories, usuarios]) {
-            let users = [];
-            for (const oneUser of usuarios) {
-               users.push(oneUser.dataValues);
-            } 
-            return res.render(path.join(__dirname, '../views/products/productEdition'), {productoEditar, categories, users})
+        Promise.all([productoEditar, usuarios])
+        .then(function([productoEditar, usuarios]) {
+            if (errors.errors.length > 0) {
+                let users = [];
+                for (const oneUser of usuarios) {
+                users.push(oneUser.dataValues);
+                } 
+                return res.render(path.join(__dirname, '../views/products/productEdition'), {productoEditar, users,  errors: errors.mapped(), old: req.body})
+            }
         })
-    },
 
-    update: function( req, res ) {
-        let idMentor = req.body.mentor;
-        let datosMentor = {};
-        db.User.findOne({
-            where:{
-                mentor_id: {[Op.like]: idMentor}
-            }
-        }).then((resultado) => {
-           datosMentor.userId = resultado.dataValues.user_id;
-           datosMentor.mentorId = resultado.dataValues.mentor_id;
-           return datosMentor;
-        }).then((data) => {
-            if(req.file){
-                db.Product.update({
-                    product_name: req.body.name,
-                    product_category_id: req.body.category,
-                    mentor_id: data.mentorId,
-                    user_id: data.userId,
-                    product_description: req.body.description,
-                    day: req.body.dia,
-                    time: req.body.horario,
-                    price: req.body.price,
-                    duration: req.body.duration,
-                    product_image: req.file.filename
-                },{
-                    where: {
-                        product_id: req.params.id
-                    }
-                }).then(function(product){
-                    res.redirect('/products/detail/'+ req.params.id);
-                });
-            } else {
-                db.Product.update({
-                    product_name: req.body.name,
-                    product_category_id: req.body.category,
-                    mentor_id: data.mentorId,
-                    user_id: data.userId,
-                    product_description: req.body.description,
-                    day: req.body.dia,
-                    time: req.body.horario,
-                    price: req.body.price,
-                    duration: req.body.duration,
-                },{
-                    where: {
-                        product_id: req.params.id
-                    }
-                }).then(function(product){
-                    res.redirect('/products/detail/'+ req.params.id);
-                });
-            }
-        })
+        if (errors.errors.length == 0) {
+            let idMentor = req.body.mentor;
+            let datosMentor = {};
+            db.User.findOne({
+                where:{
+                    mentor_id: {[Op.like]: idMentor}
+                }
+            }).then((resultado) => {
+            datosMentor.userId = resultado.dataValues.user_id;
+            datosMentor.mentorId = resultado.dataValues.mentor_id;
+            return datosMentor;
+            }).then((data) => {
+                if(req.file){
+                    db.Product.update({
+                        product_name: req.body.name,
+                        product_category_id: req.body.category,
+                        mentor_id: data.mentorId,
+                        user_id: data.userId,
+                        product_description: req.body.description,
+                        day: req.body.dia,
+                        time: req.body.horario,
+                        price: req.body.price,
+                        duration: req.body.duration,
+                        product_image: req.file.filename
+                    },{
+                        where: {
+                            product_id: req.params.id
+                        }
+                    }).then(function(product){
+                        return res.redirect('/products/detail/'+ req.params.id);
+                    });
+                } else {
+                    db.Product.update({
+                        product_name: req.body.name,
+                        product_category_id: req.body.category,
+                        mentor_id: data.mentorId,
+                        user_id: data.userId,
+                        product_description: req.body.description,
+                        day: req.body.dia,
+                        time: req.body.horario,
+                        price: req.body.price,
+                        duration: req.body.duration,
+                    },{
+                        where: {
+                            product_id: req.params.id
+                        }
+                    }).then(function(product){
+                        return res.redirect('/products/detail/'+ req.params.id);
+                    });
+                }
+            })
+        }
     },
 
     destroy: function(req, res) {
