@@ -23,7 +23,6 @@ const usersController = {
     },
 
     detailUsers: function (req, res) {
-        let ver = req.params;
         db.User.findByPk(req.params.id, {
             include: [
                 {association: "roles"},
