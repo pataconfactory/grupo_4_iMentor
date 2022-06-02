@@ -19,60 +19,70 @@ const productsController = {
     },
 
     create: function(req, res) {
-        let categorias = db.ProductCategory.findAll({
-            include: [
-                {association: "categories"}
-            ]
-        });
-        let usuarios = db.User.findAll({
+        db.User.findAll({
             include: [
                 {association: "roles"},
                 {association: "users"},
                 {association: "users_products"}
             ]
-        });
-        Promise.all([usuarios, categorias])
-        .then(function([usuarios, categorias]) {
-            let categories =[];
-            for (const oneCategory of categorias) {
-                categories.push(oneCategory.dataValues);
-            }; 
+        })
+        .then(function(usuarios) {
             let users = [];
             for (const oneUser of usuarios) {
                users.push(oneUser.dataValues);
             }
-            return res.render(path.join(__dirname, '../views/products/productCreate'), {categories, users})
+            return res.render(path.join(__dirname, '../views/products/productCreate'), {users})
         });
     },
 
     store: function(req, res) {
-        let filename = req.file.filename;
-        let idMentor = req.body.mentor;
-        let datosMentor = {};
-        db.User.findOne({
-            where:{
-                mentor_id: {[Op.like]: idMentor}
-            }
-        }).then((resultado) => {
-           datosMentor.userId = resultado.dataValues.user_id;
-           datosMentor.mentorId = resultado.dataValues.mentor_id;
-           return datosMentor;
-        }).then((data) => {
-            db.Product.create({
-                product_name: req.body.name,
-                product_category_id: req.body.category,
-                mentor_id: data.mentorId,
-                user_id: data.userId,
-                product_description: req.body.description,
-                day: req.body.dia,
-                time: req.body.horario,
-                price: req.body.price,
-                duration: req.body.duration,
-                product_image: filename
-            }).then((product) => {
-                res.redirect('/products/');
-            });
+        let errors = validationResult(req);
+        db.User.findAll({
+            include: [
+                {association: "roles"},
+                {association: "users"},
+                {association: "users_products"}
+            ]
         })
+        .then(function(usuarios) {
+            if (errors.errors.length > 0) {
+                let users = [];
+                for (const oneUser of usuarios) {
+                users.push(oneUser.dataValues);
+                }
+                return res.render(path.join(__dirname, '../views/products/productCreate'), {users, errors: errors.mapped(), old: req.body});
+            }
+        });
+
+        if(req.file){
+            let filename = req.file.filename;
+            let idMentor = req.body.mentor;
+            let datosMentor = {};
+            db.User.findOne({
+                where:{
+                    mentor_id: {[Op.like]: idMentor}
+                }
+            }).then((resultado) => {
+            datosMentor.userId = resultado.dataValues.user_id;
+            datosMentor.mentorId = resultado.dataValues.mentor_id;
+            return datosMentor;
+            }).then((data) => {
+                db.Product.create({
+                    product_name: req.body.name,
+                    product_category_id: req.body.category,
+                    mentor_id: data.mentorId,
+                    user_id: data.userId,
+                    product_description: req.body.description,
+                    day: req.body.dia,
+                    time: req.body.horario,
+                    price: req.body.price,
+                    duration: req.body.duration,
+                    product_image: filename
+                }).then((product) => {
+                    res.redirect('/products/');
+                });
+            })
+        }
     },
 
     detail: function(req, res) {

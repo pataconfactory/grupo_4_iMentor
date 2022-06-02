@@ -6,14 +6,14 @@ const productsController = require('../controllers/productsController');
 const upload = require('../middlewares/multerProducts');
 const authMiddleware = require('../middlewares/authMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
-//const validationsProductCreate = require('../middlewares/ValidationsProductCreate')
+const validationsProductCreate = require('../middlewares/ValidationsProductCreate')
 
 //Rutas
 
 router.get('/', productsController.products);
 
 router.get('/create', authMiddleware, guestMiddleware, productsController.create);
-router.post('/', upload.single('image'), productsController.store);
+router.post('/', upload.single('image'), validationsProductCreate, productsController.store);
 
 router.get('/detail/:id', productsController.detail);
 
