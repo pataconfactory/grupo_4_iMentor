@@ -36,11 +36,10 @@
                             <div class="product-details">
                                 <h3><%= products[i].categories.category_name %></h3>
                                 <h3 class="name-product"><%= products[i].product_name %></h3>
-                                <% %>
-                                    <h3><%= products[i].users_products.first_name %> <%= products[i].users_products.last_name %></h3>
-                                    <p>0<%= products[i].duration %> hora</p>
-                                    <p><%= products[i].day %></p>
-                                    <p><%= products[i].time %></p>
+                                <h3><%= products[i].users_products.first_name %> <%= products[i].users_products.last_name %></h3>
+                                <p>0<%= products[i].duration %> hora</p>
+                                <p><%= products[i].day %></p>
+                                <p><%= products[i].time %></p>
                                 <p><span>$<%= products[i].price %></span></p>
                                 <a href="/products/detail/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
                                 <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>
@@ -48,8 +47,7 @@
                                     <form class="eliminar" action="/products/delete/<%= products[i].product_id %>?_method=DELETE" method="POST">
                                         <button type="submit" class="boton-final-eliminar"><i class="fas fa-trash"></i>Eliminar</button>  
                                     </form>
-                                <% } %>
-                                
+                                <% } %>  
                             </div>
                         </div>
                     <% } %>

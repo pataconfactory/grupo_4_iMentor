@@ -233,24 +233,23 @@ const productsController = {
         .then(function(products){
             return res.render(path.join(__dirname, '../views/products/products'), {products})
         })
-    }
-
-    /*productCart: function(req, res) {
-        let userEmail = req.session.userLogged.email;
-        console.log(req.session.userLogged)
-        let userInDB = {};
-        if((req.session.userLogged.category == 'Usuario') || (req.session.userLogged.category == 'Administrador')) {
-            userInDB = Users.findByField('email', userEmail);
-        }
-        if (req.session.userLogged.category == 'Mentor'){
-            userInDB = Mentors.findByField('email', userEmail);
-        }
-       
-        let productsUser = JSON.parse(userInDB.products)
-        res.render(path.join(__dirname, '../views/products/productCart'), {products, productsUser})
     },
+
+    productCart: function(req, res) {
+        let userEmail = req.session.userLogged.email;
+        db.Product.findAll({
+            include: [
+                {association: "mentors"},
+                {association: "categories"},
+                {association: "users_products"}
+            ]
+        })
+        .then(function(products) {
+            return res.render(path.join(__dirname, '../views/products/productCart'), {products})
+        })
+    }
     
-    productCartAdd: function(req, res) {
+    /*productCartAdd: function(req, res) {
         let userEmail = req.session.userLogged.email;
         let userInDB = {};
         if((req.session.userLogged.category == 'Usuario') || (req.session.userLogged.category == 'Administrador')) {

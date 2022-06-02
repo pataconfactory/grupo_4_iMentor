@@ -22,7 +22,7 @@ router.put('/edit/:id', upload.single('image'), validationsProductEdition, produ
 
 router.delete('/delete/:id', productsController.destroy);
 
-//router.get('/productCart', authMiddleware, productsController.productCart);
+router.get('/productCart', authMiddleware, productsController.productCart);
 
 //Agregar productos al carrito
 //router.post('/productCart/:id', authMiddleware, productsController.productCartAdd);
