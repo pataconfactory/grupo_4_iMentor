@@ -4,9 +4,9 @@ const path = require('path');
 const {validationResult} = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const db = require("../../database/models");
-const fetch = require('node-fetch');
-const {redirect} = require('express/lib/response');
-const { all } = require('express/lib/application');
+//const fetch = require('node-fetch');
+//const {redirect} = require('express/lib/response');
+//const { all } = require('express/lib/application');
 
 const usersController = {
     listUsers: function (req, res) {
