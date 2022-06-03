@@ -5,16 +5,55 @@ const Op = db.Sequelize.Op;
 
 const productCartController = {
     productCart: function(req, res) {
-        let userEmail = req.session.userLogged.email;
-        db.Product.findAll({
+        let userId = req.session.userLogged.user_id;
+
+        let products = db.Product.findAll({
             include: [
                 {association: "mentors"},
                 {association: "categories"},
                 {association: "users_products"}
             ]
-        })
-        .then(function(products) {
-            return res.render(path.join(__dirname, '../views/products/productCart'), {products})
+        });
+
+        let bookings = db.Booking.findAll({
+            include: [
+                {association: "product_booking"},
+                {association: "user_booking"},
+                {association: "invoices_booking"}
+            ], where:{
+                user_id: {[Op.like]: userId}
+            }
+        });
+        
+        let users = db.User.findAll({
+            include: [
+                {association: "roles"},
+                {association: "users"},
+                {association: "users_products"}
+            ]
+        });
+        
+        Promise.all([products, bookings, users])
+        .then(function([products, bookings, users]) {
+            let productsCart = bookings;
+            if(productsCart.length == 0){
+                return res.render(path.join(__dirname, '../views/products/productCart'), {products})
+            } else if(productsCart.length > 0){
+                let cifras = {};
+                let subTotal = 0;
+                for(oneProductsCart of productsCart) {
+                    subTotal = subTotal + parseInt(oneProductsCart.price_to_pay);
+                }
+                cifras.subTotal = subTotal;
+                
+                let iva = (( subTotal * 21) / 100);
+                cifras.iva = iva;
+
+                let total = subTotal + iva;
+                cifras.total = total;
+
+                return res.render(path.join(__dirname, '../views/products/productCart'), {products, bookings, users, cifras}) 
+            }
         })
     },
     
@@ -43,36 +82,19 @@ const productCartController = {
         })
         
 
-    }/*,
+    },
 
     productCartDestroy: function(req, res) {
-        let idProduct = parseInt(req.params.id);
-        let user = Users.findByField('email', req.params.email);
-        if (user == undefined) {
-            user = Mentors.findByField('email', req.params.email);
-        }
-        let productsUser = JSON.parse(user.products);
-        let productoEliminar = {};
-        for(let i=1; i<productsUser.length; i++){
-            if(productsUser[i].id == idProduct){
-                productoEliminar = productsUser[i];   
+        let bookingId = req.params.id;
+        
+        db.Booking.destroy({
+            where: {
+                booking_id: bookingId
             }
-        };
-        productsUser = productsUser.filter(function (elemento){
-			return (elemento != productoEliminar);
-        });
-        user.products = productsUser;
-
-        if((user.category == 'Usuario') || (user.category == 'Administrador')) {
-            Users.editUser(user);
-        }
-        if (user.category == 'Mentor'){
-            Mentors.editMentor(user);
-        }
-
-        res.redirect('/products/productCart');
+        }).then(function(product){
+            return res.redirect('/products/productCart');
+        })
     }
-    */
 };
 
 module.exports = productCartController;

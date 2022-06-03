@@ -33,6 +33,6 @@ router.get('/productCart', authMiddleware, productCartController.productCart);
 router.post('/productCart/:id', authMiddleware, productCartController.productCartAdd);
 
 //Eliminar productos del carrito
-//router.delete('/productCart/:id/:email', authMiddleware, productCartController.productCartDestroy);
+router.delete('/productCart/:id', authMiddleware, productCartController.productCartDestroy);
 
 module.exports = router;
