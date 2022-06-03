@@ -63,8 +63,16 @@
                         <hr>
                         <p><span>IVA (21%)</span> <span>$<%= cifras.iva%></span></p>
                         <hr>
-                        <p><span>Promoción</span> </p>
+                        <p><span>Método de Pago</span> </p>
+                        <p><select class="promocion" name="metodo_pago" id="metodo_pago" value="">
+                            <option value="">seleccione el método de pago</option>
+                            <% let metodosPago = ["Tarjeta de débito","Tarjeta de crédito", "MercadoPago"];%>
+                            <% for (const oneMetodoPago of metodosPago) { %>
+                            <option value=""><%= oneMetodoPago %></option>
+                            <% } %>
+                        </select></p>
                         <hr>
+                        <p><span>Promoción</span></p>
                         <p><input type="text" name="promocion" id="promocion" placeholder="Promoción a aplicar" class="promocion"></p>
                         <hr>
                         <p><span>Total</span> <span>$<%= cifras.total%></span></p><a href="/"><i class="fas fa-credit-card"></i>Pagar</a>
