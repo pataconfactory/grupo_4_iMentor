@@ -410,6 +410,10 @@ main .box-register .register-button i{
     align-items: center;
 }
 
+main .register-form .register-username.oculto {
+    display: none;
+}
+
 /*Home Page Main*/
 /**********************************BANNER*************************************/
 main .contenedor-home {

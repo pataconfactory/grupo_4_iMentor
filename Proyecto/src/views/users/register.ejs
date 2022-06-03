@@ -160,32 +160,34 @@
                         </div>
                         <% } %>
                     </div>
-                    <div class="register-username">
-                        <label><i class="fas fa-clipboard-list"></i>Rol</label>
-                        <select class="boxes" name="category" id="category" value="<%= locals.old ? old.category : null %>">
-                            <option value="">seleccione rol</option>
-                            <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>  
-                                <% let roles = [{role_id: 1, role_name:'Usuario'},{role_id: 2, role_name:'Administrador'}];%>                             
-                                <% for (const oneRol of roles) { %>
-                                    <option value="<%= oneRol.role_id %>"
-                                        <%= locals.old && (oneRol.role_id == old.category) ? 'selected' : null  %>>
-                                        <%= oneRol.role_name %></option>
-                                <% } %>
-                            <% } else { %>
-                                <% let roles = [{role_id: 1, role_name:'Usuario'}];%>
-                                <% for (const oneRol of roles) { %>
-                                    <option value="<%= oneRol.role_id %>"
-                                        <%= locals.old && (oneRol.role_id == old.category) ? 'selected' : null  %>>
-                                        <%= oneRol.role_name %></option>
-                                <% } %>
+                    <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>  
+                        <div class="register-username">
+                            <label><i class="fas fa-clipboard-list"></i>Rol</label>
+                            <select class="boxes" name="category" id="category" value="<%= locals.old ? old.category : null %>">
+                                <option value="">seleccione rol</option>
+                                    <% let roles = [{role_id: 1, role_name:'Usuario'},{role_id: 2, role_name:'Administrador'}];%>                             
+                                    <% for (const oneRol of roles) { %>
+                                        <option value="<%= oneRol.role_id %>"
+                                            <%= locals.old && (oneRol.role_id == old.category) ? 'selected' : null  %>>
+                                            <%= oneRol.role_name %></option>
+                                    <% } %>
+                            </select>
+                            <% if (locals.errors && errors.category) { %>
+                                <div class="text-danger">
+                                    <p class="feedback"><%= errors.category.msg %></p>
+                                </div>
                             <% } %>
-                        </select>
-                        <% if (locals.errors && errors.category) { %>
-                        <div class="text-danger">
-                            <p class="feedback"><%= errors.category.msg %></p>
                         </div>
-                        <% } %>
-                    </div>
+                    <% } else { %>
+                        <div class="register-username oculto">
+                            <label><i class="fas fa-clipboard-list"></i>Rol</label>
+                            <% let roles = {role_id: 1, role_name:'Usuario'};%>
+                                <select class="boxes" name="category" id="category" value="<%= roles.role_id %>">
+                                    <option value="<%= roles.role_id %>"><%= roles.role_name %></option>
+                                </select>
+                        </div>
+                    <% } %>
+                        
                     <div class="register-username">
                         <label for="title"><i class="fas fa-user-tie"></i>Título</label>
                         <input class="boxes" type="text" name="title" placeholder="Título" id="title"
