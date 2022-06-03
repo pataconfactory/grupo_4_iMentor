@@ -1,6 +1,5 @@
 const path = require('path');
 const {validationResult} = require('express-validator');
-const res = require('express/lib/response');
 const db = require('../../database/models');
 const Op = db.Sequelize.Op;
 
@@ -233,80 +232,7 @@ const productsController = {
         .then(function(products){
             return res.render(path.join(__dirname, '../views/products/products'), {products})
         })
-    },
-
-    productCart: function(req, res) {
-        let userEmail = req.session.userLogged.email;
-        db.Product.findAll({
-            include: [
-                {association: "mentors"},
-                {association: "categories"},
-                {association: "users_products"}
-            ]
-        })
-        .then(function(products) {
-            return res.render(path.join(__dirname, '../views/products/productCart'), {products})
-        })
     }
-    
-    /*productCartAdd: function(req, res) {
-        let userEmail = req.session.userLogged.email;
-        let userInDB = {};
-        if((req.session.userLogged.category == 'Usuario') || (req.session.userLogged.category == 'Administrador')) {
-            userInDB = Users.findByField('email', userEmail);
-        }
-        if (req.session.userLogged.category == 'Mentor'){
-            userInDB = Mentors.findByField('email', userEmail);
-        }
-
-        let productsUser = JSON.parse(userInDB.products);
-        let idProduct = req.params.id;
-        let product = {};
-        for(let i=0; i<products.length; i++){
-            if(products[i].id == idProduct){
-                product = products[i]; 
-                productsUser.push(product);
-            }
-        }
-        userInDB.products = productsUser;
-
-        if((userInDB.category == 'Usuario') || (userInDB.category == 'Administrador')) {
-            Users.editUser(userInDB);
-        }
-        if (userInDB.category == 'Mentor'){
-            Mentors.editMentor(userInDB);
-        }
-        res.redirect('/products/productCart')
-    },
-
-    productCartDestroy: function(req, res) {
-        let idProduct = parseInt(req.params.id);
-        let user = Users.findByField('email', req.params.email);
-        if (user == undefined) {
-            user = Mentors.findByField('email', req.params.email);
-        }
-        let productsUser = JSON.parse(user.products);
-        let productoEliminar = {};
-        for(let i=1; i<productsUser.length; i++){
-            if(productsUser[i].id == idProduct){
-                productoEliminar = productsUser[i];   
-            }
-        };
-        productsUser = productsUser.filter(function (elemento){
-			return (elemento != productoEliminar);
-        });
-        user.products = productsUser;
-
-        if((user.category == 'Usuario') || (user.category == 'Administrador')) {
-            Users.editUser(user);
-        }
-        if (user.category == 'Mentor'){
-            Mentors.editMentor(user);
-        }
-
-        res.redirect('/products/productCart');
-    }
-    */
 };
 
 module.exports = productsController;
