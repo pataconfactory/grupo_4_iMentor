@@ -312,7 +312,7 @@ main .register-form .boxes {
     margin-top: 1.5%;
 }
 
-main .register-form .text-danger, main .formulario-edicion-productos .text-danger{
+main .register-form .text-danger, main .formulario-edicion-productos .text-danger, main .password-form .registerbox-pw .text-danger{
     display: flex;
     justify-content: flex-start;
     color: #ab0d2f;

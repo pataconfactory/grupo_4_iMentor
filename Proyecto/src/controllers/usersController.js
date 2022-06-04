@@ -173,7 +173,7 @@ const usersController = {
         if (errors.errors.length > 0) {
             return res.render(path.join(__dirname, '../views/users/registerMentor'), {errors: errors.mapped(), old: req.body});
         }
-        console.log(req.body)
+        
         db.User.findOne({
             include: [
                 {association: "roles"},
@@ -364,10 +364,6 @@ const usersController = {
 
     updateUsersPassword: function (req, res) {
         let errors = validationResult(req);
-        if (errors.errors.length > 0) {
-            return res.render(path.join(__dirname, '../views/users/userEditPassword'), { errors: errors.mapped(), old: req.body});
-        }
-
         let id = req.session.userLogged.user_id;
         db.User.findByPk(id, {
             include: [
@@ -377,21 +373,27 @@ const usersController = {
                 {association: "users_products"},
             ]
         }).then(function (user) {
-            let isOkPassword = bcryptjs.compareSync(req.body.password_old, user.password);
-            if (isOkPassword) {
-                let passwordHasheada = bcryptjs.hashSync(req.body.password, 10);
-                db.User.update({
-                    password: passwordHasheada,
-                }, {
-                    where: {
-                        user_id: req.params.id
-                    }
-                });
-                return res.render(path.join(__dirname, '../views/users/profile'), {user});
-            } else {
-                return res.render(path.join(__dirname, '../views/users/userEditPassword'), {errors: {password_old: {msg: 'Las credenciales son inválidas'}},old: req.body});
+            if (errors.errors.length > 0) {
+                return res.render(path.join(__dirname, '../views/users/userEditPassword'), { errors: errors.mapped(), old: req.body, user});
             }
-        });
+
+            if (errors.errors.length == 0) {
+                let isOkPassword = bcryptjs.compareSync(req.body.password_old, user.password);
+                if (isOkPassword) {
+                    let passwordHasheada = bcryptjs.hashSync(req.body.password, 10);
+                    db.User.update({
+                        password: passwordHasheada,
+                    }, {
+                        where: {
+                            user_id: req.params.id
+                        }
+                    });
+                    return res.render(path.join(__dirname, '../views/users/profile'), {user});
+                } else {
+                    return res.render(path.join(__dirname, '../views/users/userEditPassword'), {errors: {password_old: {msg: 'Las credenciales son inválidas'}},old: req.body});
+                }
+            }
+        });  
     },
 
     editMentor: function ( req, res  ) {
