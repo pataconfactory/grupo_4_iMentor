@@ -100,7 +100,13 @@ window.addEventListener('load', function () {
 
     let errorTitulo = document.getElementById('error-name');
     campoTitulo.addEventListener('focus', function () {
-        errorTitulo.innerHTML = 'El nombre debe tener al menos 5 caracteres';
+        if (!campoTituloValue) {
+            errorTitulo.innerHTML = 'Debe completar el nombre de la asesoría';
+        } else if (campoTituloValue.length > 5) {
+            errorTitulo.innerHTML = '';
+        } else {
+            errorTitulo.innerHTML = 'El nombre debe tener al menos 5 caracteres';
+        }
     });
 
     campoTitulo.addEventListener('blur', function () {

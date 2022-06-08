@@ -4,182 +4,217 @@
 <%- include('../partials/head') %>
 
 <body>
-    
+
     <%- include('../partials/header') %>
 
     <main>
         <div class="contenedor-edicion-productos">
             <h2 class="">Formulario de edición de productos</h2>
-            <form class="formulario-edicion-productos" action="/products/edit/<%= productoEditar.product_id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="formulario-edicion-productos"
+                action="/products/edit/<%= productoEditar.product_id %>?_method=PUT" method="POST"
+                enctype="multipart/form-data">
                 <h3> Modificar la información del producto <%= productoEditar.product_name %></h3>
-                    <div>
-                        <label>Nombre del producto:</label>
-                        <% if (!locals.old) { %>
-                            <input  class="box" type="text" name="name" id="name" value="<%= productoEditar.product_name %>">
-                        <% } else { %>
-                            <input class="box" type="text" name="name" id="name" placeholder="Nombre del producto" value="<%= locals.old ? old.name : null %>" >
-                        <% } %>
-                        <% if (locals.errors && errors.name) { %>
-                            <div class="text-danger">
-                                <p class="feedback"><%= errors.name.msg %></p>
-                            </div>
-                        <% } %>
+                <div>
+                    <label>Nombre del producto:</label>
+                    <% if (!locals.old) { %>
+                    <input class="box" type="text" name="name" id="name" value="<%= productoEditar.product_name %>">
+                    <% } else { %>
+                    <input class="box" type="text" name="name" id="name" placeholder="Nombre del producto"
+                        value="<%= locals.old ? old.name : null %>">
+                    <% } %>
+                    <% if (locals.errors && errors.name) { %>
+                    <div class="text-danger">
+                        <p class="feedback"><%= errors.name.msg %></p>
                     </div>
-                    <div>
-                        <label>Descripción:</label>
-                        <br>
-                        <% if (!locals.old) { %>
-                            <textarea name="description" id="description" class="box"><%= productoEditar.product_description %></textarea>
-                        <% } else { %>
-                            <textarea name="description" id="description" placeholder="Descripción" class="box" value="<%= locals.old ? old.description : null %>" ></textarea>
-                        <% } %>
-                        <% if (locals.errors && errors.description) { %>
-                            <div class="text-danger">
-                                <p class="feedback"><%= errors.description.msg %></p>
-                            </div>
-                        <% } %>
+                    <% } %>
+                </div>
+                <div class="text-danger">
+                    <p id="error-name"></p>
+                </div>
+                <div>
+                    <label>Descripción:</label>
+                    <br>
+                    <% if (!locals.old) { %>
+                    <textarea name="description" id="description"
+                        class="box"><%= productoEditar.product_description %></textarea>
+                    <% } else { %>
+                    <textarea name="description" id="description" placeholder="Descripción" class="box"
+                        value="<%= locals.old ? old.description : null %>"></textarea>
+                    <% } %>
+                    <% if (locals.errors && errors.description) { %>
+                    <div class="text-danger">
+                        <p class="feedback"><%= errors.description.msg %></p>
                     </div>
-                    <div>
-                        <label>Categoría:</label>
-                        <% if (!locals.old) { %>
-                            <select class="box" name="category" id="category" value="<%= productoEditar.product_category_id %>">
+                    <% } %>
+                </div>
+                <div class="text-danger">
+                    <p id="error-description"></p>
+                </div>
+                <div>
+                    <label>Categoría:</label>
+                    <% if (!locals.old) { %>
+                    <select class="box" name="category" id="category" value="<%= productoEditar.product_category_id %>">
+                        <option value="">seleccione la categoría</option>
+                        <% let categorias = [{product_category_id: 1, category_name:'Front-End'},{product_category_id: 2, category_name:'Back-End'},{product_category_id: 3, category_name:'UI/UX'},{product_category_id: 4, category_name:'Base de Datos'},{product_category_id: 5, category_name:'Marketing Digital'},{product_category_id: 6, category_name:'Análisis de Datos'}];%>
+                        <% for (const oneCategory of categorias) { %>
+                        <option value="<%= oneCategory.product_category_id %>"
+                            <%= oneCategory.product_category_id == productoEditar.product_category_id ? 'selected' : null  %>>
+                            <%= oneCategory.category_name %></option>
+                        <% }%>
+                        <% } else { %>
+                        <select class="box" name="category" id="category"
+                            value="<%= locals.old ? old.category : null %>">
                             <option value="">seleccione la categoría</option>
-                            <% let categorias = [{product_category_id: 1, category_name:'Front-End'},{product_category_id: 2, category_name:'Back-End'},{product_category_id: 3, category_name:'UI/UX'},{product_category_id: 4, category_name:'Base de Datos'},{product_category_id: 5, category_name:'Marketing Digital'},{product_category_id: 6, category_name:'Análisis de Datos'}];%> 
+                            <% let categorias = [{product_category_id: 1, category_name:'Front-End'},{product_category_id: 2, category_name:'Back-End'},{product_category_id: 3, category_name:'UI/UX'},{product_category_id: 4, category_name:'Base de Datos'},{product_category_id: 5, category_name:'Marketing Digital'},{product_category_id: 6, category_name:'Análisis de Datos'}];%>
                             <% for (const oneCategory of categorias) { %>
-                                <option value="<%= oneCategory.product_category_id %>"
-                                    <%= oneCategory.product_category_id == productoEditar.product_category_id ? 'selected' : null  %>>
-                                    <%= oneCategory.category_name %></option>
-                            <% }%>
-                        <% } else { %>
-                            <select class="box" name="category" id="category" value="<%= locals.old ? old.category : null %>" >
-                                <option value="">seleccione la categoría</option>
-                                <% let categorias = [{product_category_id: 1, category_name:'Front-End'},{product_category_id: 2, category_name:'Back-End'},{product_category_id: 3, category_name:'UI/UX'},{product_category_id: 4, category_name:'Base de Datos'},{product_category_id: 5, category_name:'Marketing Digital'},{product_category_id: 6, category_name:'Análisis de Datos'}];%> 
-                                <% for (const oneCategory of categorias) { %>
-                                    <option value="<%= oneCategory.product_category_id %>"
-                                        <%= locals.old && (oneCategory.product_category_id == old.category) ? 'selected' : null  %>>
-                                        <%= oneCategory.category_name %></option>
-                                <% } %>
-                        <% } %>
-                        </select>
-                        <% if (locals.errors && errors.category) { %>
-                            <div class="text-danger">
-                                <p class="feedback"><%= errors.category.msg %></p>
-                            </div>
-                        <% } %>
-                    </div>
-                    <div>
-                        <label>Mentor:</label>
-                        <select class="box" name="mentor" id="mentor" value="">
-                            <option disabled="disabled">seleccione el mentor</option>
-                            <% for (let i = 0; i < users.length; i++){ %>
-                                <% if(users[i].mentor_id != null) { %>
-                                    <% if (users[i].mentor_id == productoEditar.mentor_id) { %>
-                                        <option value="<%=users[i].mentor_id%>" selected>
-                                            <%=users[i].first_name%> <%=users[i].last_name%>
-                                        </option>
-                                    <% } else { %>
-                                        <option value="<%=users[i].mentor_id%>">
-                                            <%=users[i].first_name%> <%=users[i].last_name%>
-                                        </option>
-                                    <% } %>
-                                <% } %>
+                            <option value="<%= oneCategory.product_category_id %>"
+                                <%= locals.old && (oneCategory.product_category_id == old.category) ? 'selected' : null  %>>
+                                <%= oneCategory.category_name %></option>
+                            <% } %>
                             <% } %>
                         </select>
+                        <% if (locals.errors && errors.category) { %>
+                        <div class="text-danger">
+                            <p class="feedback"><%= errors.category.msg %></p>
+                        </div>
+                        <% } %>
+                </div>
+                <div class="text-danger">
+                    <p id="error-category"></p>
+                </div>
+                <div>
+                    <label>Mentor:</label>
+                    <select class="box" name="mentor" id="mentor" value="">
+                        <option disabled="disabled">seleccione el mentor</option>
+                        <% for (let i = 0; i < users.length; i++){ %>
+                        <% if(users[i].mentor_id != null) { %>
+                        <% if (users[i].mentor_id == productoEditar.mentor_id) { %>
+                        <option value="<%=users[i].mentor_id%>" selected>
+                            <%=users[i].first_name%> <%=users[i].last_name%>
+                        </option>
+                        <% } else { %>
+                        <option value="<%=users[i].mentor_id%>">
+                            <%=users[i].first_name%> <%=users[i].last_name%>
+                        </option>
+                        <% } %>
+                        <% } %>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="text-danger">
+                    <p id="error-mentor"></p>
+                </div>
+                <div>
+                    <label>Duración:</label>
+                    <% if (!locals.old) { %>
+                    <input class="box" type="number" name="duration" id="duration"
+                        value="<%= productoEditar.duration %>" min="0">
+                    <% } else { %>
+                    <input class="box" type="number" name="duration" id="duration" placeholder="Horas" min="1" size="2"
+                        maxlength="2" value="<%= locals.old ? old.duration : null %>">
+                    <% } %>
+                    <% if (locals.errors && errors.duration) { %>
+                    <div class="text-danger">
+                        <p class="feedback"><%= errors.duration.msg %>
                     </div>
-                    <div>
-                        <label>Duración:</label>
-                        <% if (!locals.old) { %>
-                            <input class="box"type="number" name="duration" id="duration" value="<%= productoEditar.duration %>" min="0">
+                    <% } %>
+                </div>
+                <div class="text-danger">
+                    <p id="error-duration"></p>
+                </div>
+                <div>
+                    <label>Horario:</label>
+                    <% if (!locals.old) { %>
+                    <select class="box" name="horario" id="horario" value="<%= productoEditar.time %>">
+                        <option value="">seleccione el horario</option>
+                        <% let horarios = [{valor: '10:00:00', horario:'10:00:00'},{valor: '12:00:00', horario:'12:00:00'},{valor: '14:00:00', horario:'14:00:00'},{valor: '16:00:00', horario:'16:00:00'},{valor: '17:00:00', horario:'17:00:00'},{valor: '18:00:00', horario:'18:00:00'},{valor: '19:00:00', horario:'19:00:00'},{valor: '20:00:00', horario:'20:00:00'},{valor: '21:00:00', horario:'21:00:00'}];%>
+                        <% for (const oneHorario of horarios) { %>
+                        <option value="<%= oneHorario.valor %>"
+                            <%= oneHorario.valor == productoEditar.time ? 'selected' : null  %>>
+                            <%= oneHorario.horario %></option>
+                        <% }%>
                         <% } else { %>
-                            <input class="box" type="number" name="duration" id="duration" placeholder="Horas" min="1" size="2" maxlength="2" value="<%= locals.old ? old.duration : null %>" >
-                        <% } %>
-                        <% if (locals.errors && errors.duration) { %>
-                            <div class="text-danger">
-                                <p class="feedback"><%= errors.duration.msg %>
-                            </div>
-                        <% } %> 
-                    </div> 
-                    <div>
-                        <label>Horario:</label>
-                        <% if (!locals.old) { %>
-                            <select class="box" name="horario" id="horario" value="<%= productoEditar.time %>" >
-                                <option value="">seleccione el horario</option>
-                                <% let horarios = [{valor: '10:00:00', horario:'10:00:00'},{valor: '12:00:00', horario:'12:00:00'},{valor: '14:00:00', horario:'14:00:00'},{valor: '16:00:00', horario:'16:00:00'},{valor: '17:00:00', horario:'17:00:00'},{valor: '18:00:00', horario:'18:00:00'},{valor: '19:00:00', horario:'19:00:00'},{valor: '20:00:00', horario:'20:00:00'},{valor: '21:00:00', horario:'21:00:00'}];%> 
+                        <select class="box" name="horario" id="horario" value="<%= locals.old ? old.horario : null %>">
+                            <option value="">seleccione el horario</option>
+                            <% let horarios = [{valor: '10:00:00', horario:'10:00:00'},{valor: '12:00:00', horario:'12:00:00'},{valor: '14:00:00', horario:'14:00:00'},{valor: '16:00:00', horario:'16:00:00'},{valor: '17:00:00', horario:'17:00:00'},{valor: '18:00:00', horario:'18:00:00'},{valor: '19:00:00', horario:'19:00:00'},{valor: '20:00:00', horario:'20:00:00'},{valor: '21:00:00', horario:'21:00:00'}];%>
                             <% for (const oneHorario of horarios) { %>
-                                <option value="<%= oneHorario.valor %>"
-                                    <%= oneHorario.valor == productoEditar.time ? 'selected' : null  %>>
-                                    <%= oneHorario.horario %></option>
-                            <% }%>
-                        <% } else { %>
-                            <select class="box" name="horario" id="horario" value="<%= locals.old ? old.horario : null %>">
-                                <option value="">seleccione el horario</option>
-                                <% let horarios = [{valor: '10:00:00', horario:'10:00:00'},{valor: '12:00:00', horario:'12:00:00'},{valor: '14:00:00', horario:'14:00:00'},{valor: '16:00:00', horario:'16:00:00'},{valor: '17:00:00', horario:'17:00:00'},{valor: '18:00:00', horario:'18:00:00'},{valor: '19:00:00', horario:'19:00:00'},{valor: '20:00:00', horario:'20:00:00'},{valor: '21:00:00', horario:'21:00:00'}];%> 
-                                <% for (const oneHorario of horarios) { %>
-                                    <option value="<%= oneHorario.valor %>"
-                                        <%= locals.old && (oneHorario.valor == old.horario) ? 'selected' : null  %>>
-                                        <%= oneHorario.horario %></option>
-                                <% } %>
-                        <% } %>
+                            <option value="<%= oneHorario.valor %>"
+                                <%= locals.old && (oneHorario.valor == old.horario) ? 'selected' : null  %>>
+                                <%= oneHorario.horario %></option>
+                            <% } %>
+                            <% } %>
                         </select>
                         <% if (locals.errors && errors.horario) { %>
-                            <div class="text-danger">
-                                <p class="feedback"><%= errors.horario.msg %></p>
-                            </div>
+                        <div class="text-danger">
+                            <p class="feedback"><%= errors.horario.msg %></p>
+                        </div>
                         <% } %>
-                    </div>
-                    <div>
-                        <label>Día:</label>
-                        <% if (!locals.old) { %>
-                            <select class="box" name="dia" id="dia" value="<%= productoEditar.day %>">
-                                <option value="">seleccione el día</option>
-                                <% let dias = [{valor: "Lunes", dia:"Lunes"},{valor: "Martes", dia:"Martes"},{valor: "Miércoles", dia:"Miércoles"},{valor: "Jueves", dia:"Jueves"},{valor: "Viernes", dia:"Viernes"},{valor: "Sábado", dia:"Sábado"}];%> 
-                                <% for (const oneDia of dias) { %>
-                                <option value="<%= oneDia.valor %>"
-                                    <%= oneDia.valor == productoEditar.day ? 'selected' : null  %>>
-                                    <%= oneDia.dia %></option>
-                            <% }%>
+                </div>
+                <div class="text-danger">
+                    <p id="error-horario"></p>
+                </div>
+                <div>
+                    <label>Día:</label>
+                    <% if (!locals.old) { %>
+                    <select class="box" name="dia" id="dia" value="<%= productoEditar.day %>">
+                        <option value="">seleccione el día</option>
+                        <% let dias = [{valor: "Lunes", dia:"Lunes"},{valor: "Martes", dia:"Martes"},{valor: "Miércoles", dia:"Miércoles"},{valor: "Jueves", dia:"Jueves"},{valor: "Viernes", dia:"Viernes"},{valor: "Sábado", dia:"Sábado"}];%>
+                        <% for (const oneDia of dias) { %>
+                        <option value="<%= oneDia.valor %>"
+                            <%= oneDia.valor == productoEditar.day ? 'selected' : null  %>>
+                            <%= oneDia.dia %></option>
+                        <% }%>
                         <% } else { %>
-                            <select class="box" name="dia" id="dia" value="<%= locals.old ? old.dia : null %>">
-                                <option value="">seleccione el día</option>
-                                <% let dias = [{valor: "Lunes", dia:"Lunes"},{valor: "Martes", dia:"Martes"},{valor: "Miércoles", dia:"Miércoles"},{valor: "Jueves", dia:"Jueves"},{valor: "Viernes", dia:"Viernes"},{valor: "Sábado", dia:"Sábado"}];%> 
-                                <% for (const oneDia of dias) { %>
-                                    <option value="<%= oneDia.valor %>"
-                                        <%= locals.old && (oneDia.valor == old.dia) ? 'selected' : null  %>>
-                                        <%= oneDia.dia %></option>
-                                <% } %>
-                        <% } %>
+                        <select class="box" name="dia" id="dia" value="<%= locals.old ? old.dia : null %>">
+                            <option value="">seleccione el día</option>
+                            <% let dias = [{valor: "Lunes", dia:"Lunes"},{valor: "Martes", dia:"Martes"},{valor: "Miércoles", dia:"Miércoles"},{valor: "Jueves", dia:"Jueves"},{valor: "Viernes", dia:"Viernes"},{valor: "Sábado", dia:"Sábado"}];%>
+                            <% for (const oneDia of dias) { %>
+                            <option value="<%= oneDia.valor %>"
+                                <%= locals.old && (oneDia.valor == old.dia) ? 'selected' : null  %>>
+                                <%= oneDia.dia %></option>
+                            <% } %>
+                            <% } %>
                         </select>
                         <% if (locals.errors && errors.dia) { %>
-                            <div class="text-danger">
-                                <p class="feedback"><%= errors.dia.msg %></p>
-                            </div>
+                        <div class="text-danger">
+                            <p class="feedback"><%= errors.dia.msg %></p>
+                        </div>
                         <% } %>
+                </div>
+                <div class="text-danger">
+                    <p id="error-dia"></p>
+                </div>
+                <div>
+                    <label>Precio:</label>
+                    <% if (!locals.old) { %>
+                    <input class="box" type="number" name="price" id="price" value="<%= productoEditar.price %>"
+                        min="0">
+                    <% } else { %>
+                    <input class="box" type="number" name="price" id="price" placeholder="Precio $" min="0"
+                        value="<%= locals.old ? old.price : null %>">
+                    <% } %>
+                    <% if (locals.errors && errors.price) { %>
+                    <div class="text-danger">
+                        <p class="feedback"><%= errors.price.msg %></p>
                     </div>
-                    <div>
-                        <label>Precio:</label>
-                        <% if (!locals.old) { %>
-                            <input class="box" type="number" name="price" id="price" value="<%= productoEditar.price %>" min="0">
-                        <% } else { %>
-                            <input class="box" type="number" name="price" id="price" placeholder="Precio $" min="0" value="<%= locals.old ? old.price : null %>" >
-                        <% } %>
-                        <% if (locals.errors && errors.price) { %>
-                            <div class="text-danger">
-                                <p class="feedback"><%= errors.price.msg %></p>
-                            </div>
-                        <% } %> 
-                    </div>
-                    <div class="imagen-muestra">
-                        <label>Imagen del producto:</label>
-                        <br>
-                        <img src="/img/products/<%= `${productoEditar.product_image}` %>" alt="Imagen del producto">
-                    </div>  
-                    <div>
-                        <label>Subir otra imagen del producto:</label>
-                        <input class="box" type="file" name="image" id="image" accept=".jpg,.png" value="" multiple> 
-                    </div>   
+                    <% } %>
+                </div>
+                <div class="text-danger">
+                    <p id="error-price"></p>
+                </div>
+                <div class="imagen-muestra">
+                    <label>Imagen del producto:</label>
+                    <br>
+                    <img src="/img/products/<%= `${productoEditar.product_image}` %>" alt="Imagen del producto">
+                </div>
+                <div>
+                    <label>Subir otra imagen del producto:</label>
+                    <input class="box" type="file" name="image" id="image" accept=".jpg,.png" value="" multiple>
+                </div>
                 <div class="botones">
                     <button class="enviar" type="submit"><i class="fas fa-plus-circle"></i> Guardar</button>
-                    <button class="borrar" type="reset"><i class="fas fa-eraser"></i> Borrar</button>   
+                    <p id="submit-error"></p>
+                    <button class="borrar" type="reset"><i class="fas fa-eraser"></i> Borrar</button>
                 </div>
             </form>
             <div class="boton-cancelar">
@@ -188,5 +223,7 @@
         </div>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/productCreateFront.js"></script>
 </body>
+
 </html>
