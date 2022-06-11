@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
-
 const usersController  = require('../controllers/usersController');
 const upload = require('../middlewares/multerRegister');
 
@@ -20,7 +18,7 @@ router.post('/register', upload.single('avatar'), validationsRegister, usersCont
 
 //Register form for mentors
 router.get('/mentor_register', guestMiddleware, usersController.registerMentor);
-router.post('/mentor_register', upload.single('avatar'), validationsRegister, usersController.processRegisterMentor);
+router.post('/mentor_register', upload.single('avatar'), validationsRegisterMentor, usersController.processRegisterMentor);
 
 //User edit
 router.get('/edit/:id', usersController.editUsers);

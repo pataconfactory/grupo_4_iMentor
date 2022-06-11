@@ -15,11 +15,11 @@
                     <select name="categoria-producto" id="">
                         <option selected="true" disabled="disabled">seleccione la categoría</option>
                         <option value="1">Front-End</option>
-                            <option value="2">Back-End</option>
-                            <option value="3">UI/UX</option>
-                            <option value="4">Base de Datos</option>
-                            <option value="5">Marketing Digital</option>
-                            <option value="6">Análisis de Datos</option>
+                        <option value="2">Back-End</option>
+                        <option value="3">UI/UX</option>
+                        <option value="4">Base de Datos</option>
+                        <option value="5">Marketing Digital</option>
+                        <option value="6">Análisis de Datos</option>
                     </select>
                 </p>
             </div>
@@ -40,6 +40,7 @@
                                 <p>0<%= products[i].duration %> hora</p>
                                 <p><%= products[i].day %></p>
                                 <p><%= products[i].time %></p>
+                                <p><%= products[i].date %></p>
                                 <p><span>$<%= products[i].price %></span></p>
                                 <a href="/products/detail/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
                                 <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>

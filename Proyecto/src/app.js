@@ -5,9 +5,14 @@ const path = require('path');
 const productRoutes = require('./routes/products');
 const mainRoutes = require('./routes/main');
 const userRoutes = require('./routes/users');
-const methodOverride =  require('method-override');
 const userLoggedMidleware = require('./middlewares/userLoggedMiddleware');
+
+const methodOverride =  require('method-override');
 const cookieParser = require('cookie-parser');
+
+//Rutas de la API
+const apiUsersRouter = require('./routes/api/users');
+const apiProductsRouter = require('./routes/api/products');
 
 // ************ express()************
 const app = express();
@@ -18,8 +23,8 @@ app.use(cookieParser());
 app.use(userLoggedMidleware);
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
 app.use(methodOverride('_method'));
+app.use(express.json());
 
 //************ Template Engine************
 const viewsPath = path.join(__dirname, './views');
@@ -29,6 +34,10 @@ app.set('views', viewsPath);
 app.use('/', mainRoutes);
 app.use('/products', productRoutes);
 app.use('/users', userRoutes);
+
+//**************API*************/
+app.use('/api/users', apiUsersRouter);
+app.use('/api/products', apiProductsRouter);
 
 app.use( (req, res, next) => {
     res.status(404).render('not-found');
