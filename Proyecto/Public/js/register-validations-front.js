@@ -63,9 +63,19 @@ window.addEventListener('load', function () {
         let dateBirth = document.querySelector('#date_birth');
         let dateBirthError = document.querySelector('.date_birth-error');
         let dateBirthValue = dateBirth.value;
+        let birthday = new Date(dateBirthValue);
+        let today = new Date();
+        let dayToday = today.getDate();
+        let monthToday = today.getMonth() + 1;
+        let yearToday = today.getFullYear();
+        let minYear = yearToday - 10;
+        let minDate = new Date(minYear + '-' + monthToday + '-' + dayToday);
         if (!dateBirthValue) {
             dateBirthError.innerHTML = 'Debes completar la fecha de nacimiento';
             errors.push('Debes completar la fecha de nacimiento');
+        } else if(birthday>minDate){
+            dateBirthError.innerHTML = 'La edad mínima para registrarse es de 10 años';
+            errors.push('La edad mínima para registrarse es de 10 años');
         }
 
         let genre = document.querySelector('#genero');
@@ -195,8 +205,18 @@ window.addEventListener('load', function () {
     let dateBirthError = document.querySelector('.date_birth-error');
     dateBirth.addEventListener('blur', function () {
         let dateBirthValue = dateBirth.value;
+        let birthday = new Date(dateBirthValue);
+        let today = new Date();
+        let dayToday = today.getDate();
+        let monthToday = today.getMonth() + 1;
+        let yearToday = today.getFullYear();
+        let minYear = yearToday - 10;
+        let minDate = new Date(minYear + '-' + monthToday + '-' + dayToday);
+
         if (!dateBirthValue) {
             dateBirthError.innerHTML = 'Debes completar la fecha de nacimiento';
+        } else if(birthday>minDate){
+            dateBirthError.innerHTML = 'La edad mínima para registrarse es de 10 años';
         } else {
             dateBirthError.innerHTML = '';
         }
