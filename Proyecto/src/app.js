@@ -14,6 +14,7 @@ const cookieParser = require('cookie-parser');
 //Rutas de la API
 const apiUsersRouter = require('./routes/api/users');
 const apiProductsRouter = require('./routes/api/products');
+const apiCategoriesRouter = require('./routes/api/categories');
 
 // ************ express()************
 const app = express();
@@ -40,6 +41,7 @@ app.use('/users', userRoutes);
 //**************API*************/
 app.use('/api/users', apiUsersRouter);
 app.use('/api/products', apiProductsRouter);
+app.use('/api/categories', apiCategoriesRouter);
 
 app.use( (req, res, next) => {
     res.status(404).render('not-found');
