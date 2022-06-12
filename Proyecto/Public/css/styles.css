@@ -1148,6 +1148,7 @@ main .box-login .login .text-danger {
     padding: 0px;
     font-size: 10px;
     margin: 0px;
+    margin-bottom: 2%;
 }
 
 main .login .login-email, main .login .login-password {
@@ -1212,6 +1213,10 @@ main .box-login .references .not-register, main .box-login .references .password
     padding-top: 4%;
 }
 
+main .box-login .password-forgotten {
+    margin-bottom: 4%;
+}
+
 main .login .login-button {
     padding: 1.4%;
     border-radius: 4px;
@@ -1219,7 +1224,7 @@ main .login .login-button {
     background-color: rgb(217,217,217);
     width: 100%;
     font-size: 11px;
-    margin-top: 2%;
+    margin-top: 4%;
 }
 
 main .login .email-error, .login .password-error {
@@ -1257,6 +1262,7 @@ main .box-login .help {
     justify-content: center;
     font-size: 9.5px;
     text-decoration: underline;
+    margin-bottom: 4%;
 }
 
 main .box-login .politics .terms {
@@ -1279,6 +1285,27 @@ main .login .remember-me {
 
 main .login .remember-me label {
     margin-left: 5px;
+}
+
+main .login .show-password {
+    display: flex;
+    font-size: 8.5px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+main .login .show-password label {
+    margin-left: 5px;
+}
+
+.password-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+p.password-error {
+    margin-bottom: 2%;
 }
 
 /*******************************/
@@ -3150,6 +3177,10 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
     
     main .login .remember-me label {
         margin-left: 5px;
+    }
+
+    main .login .show-password {
+        font-size: 9.5px;
     }
     
     /*Medias Queries Product Cart*/

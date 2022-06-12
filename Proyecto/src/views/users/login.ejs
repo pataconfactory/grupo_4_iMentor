@@ -40,10 +40,26 @@
                         <div class="text-danger">
                             <p class="password-error"></p>
                         </div>
-                        <div class="remember-me">
-                            <input type="checkbox" name="remember">
-                            <label>Recordar mi usuario</label>
-                        </div>
+                        <section class="password-section">
+                            <div class="show-password"><br>
+                                <input type="checkbox" name="show-password" onclick="myFunction()">
+                                <label>Mostrar contraseña</label>
+                                <script>
+                                    function myFunction() {
+                                        var x = document.getElementById("password");
+                                        if (x.type === "password") {
+                                            x.type = "text";
+                                        } else {
+                                            x.type = "password";
+                                        }
+                                    }
+                                </script>
+                            </div>
+                            <div class="remember-me">
+                                <input type="checkbox" name="remember">
+                                <label>Recordar mi usuario</label>
+                            </div>
+                        </section>
                         <button class="login-button" type="submit">Ingresar</button>
                     </form>
                 </div>
@@ -54,12 +70,6 @@
                     <div class="password-forgotten">
                         <a href="#">Olvidé mi contraseña</a>
                     </div>
-                </div>
-                <div class="help">
-                    <a href="#">¡Necesito ayuda!</a>
-                </div>
-                <div class="politics">
-                    <a href="#" class="terms">Términos y Condiciones · Política de Privacidad</a>
                 </div>
             </div>
         </div>
