@@ -6,6 +6,7 @@ const productRoutes = require('./routes/products');
 const mainRoutes = require('./routes/main');
 const userRoutes = require('./routes/users');
 const userLoggedMidleware = require('./middlewares/userLoggedMiddleware');
+const cors = require('cors')
 
 const methodOverride =  require('method-override');
 const cookieParser = require('cookie-parser');
@@ -25,6 +26,7 @@ app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(express.json());
+app.use( cors() )
 
 //************ Template Engine************
 const viewsPath = path.join(__dirname, './views');
@@ -42,6 +44,7 @@ app.use('/api/products', apiProductsRouter);
 app.use( (req, res, next) => {
     res.status(404).render('not-found');
 });
+
 
 app.listen(3001, ()  => {
     console.log('IMentor está corriendo');
