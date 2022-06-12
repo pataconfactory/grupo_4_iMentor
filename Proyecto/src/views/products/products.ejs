@@ -12,14 +12,15 @@
             <h2>Selecciona tu categoría favorita y empieza a aprender</h2>
             <div class="opciones-desplegables">
                 <p class="categoria-producto">
-                    <select name="categoria-producto" id="">
-                        <option selected="true" disabled="disabled">seleccione la categoría</option>
-                        <option value="1">Front-End</option>
-                        <option value="2">Back-End</option>
-                        <option value="3">UI/UX</option>
-                        <option value="4">Base de Datos</option>
-                        <option value="5">Marketing Digital</option>
-                        <option value="6">Análisis de Datos</option>
+                    <select name="categoria-producto" id="" class="select">
+                        <option selected="true" disabled="disabled">Seleccione la categoría</option>
+                            <option class="all" value="0">Todas</option>
+                            <option class="front-end" value="1">Front-End</option>
+                            <option class="back-end" value="2">Back-End</option>
+                            <option class="ui-ux" value="3">UI/UX</option>
+                            <option class="database" value="4">Base de Datos</option>
+                            <option class="marketing" value="5">Marketing Digital</option>
+                            <option clas="data-analysis" value="6">Análisis de Datos</option>
                     </select>
                 </p>
             </div>
@@ -30,26 +31,146 @@
                     </div>
                 <% } %>
                 <section class="container" id="slider">
-                    <% for(let i=0; i< products.length; i++) { %>           
+                    <% for(let i=0; i< products.length; i++) { %>
                         <div class="miniatura">
-                            <img src="/img/products/<%= `${products[i].product_image}` %>" alt="Imagen del producto">
-                            <div class="product-details">
-                                <h3><%= products[i].categories.category_name %></h3>
-                                <h3 class="name-product"><%= products[i].product_name %></h3>
-                                <h3><%= products[i].users_products.first_name %> <%= products[i].users_products.last_name %></h3>
-                                <p>0<%= products[i].duration %> hora</p>
-                                <p><%= products[i].day %></p>
-                                <p><%= products[i].time %></p>
-                                <p><%= products[i].date %></p>
-                                <p><span>$<%= products[i].price %></span></p>
-                                <a href="/products/detail/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
-                                <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>
-                                    <a href="/products/edit/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>
-                                    <form class="eliminar" action="/products/delete/<%= products[i].product_id %>?_method=DELETE" method="POST">
-                                        <button type="submit" class="boton-final-eliminar"><i class="fas fa-trash"></i>Eliminar</button>  
-                                    </form>
-                                <% } %>  
+                            <% if(products[i].product_category_id == 1) { %>
+                            <div id="one" class="">  
+                                <img src="/img/products/<%= `${products[i].product_image}` %>" alt="Imagen del producto">
+                                <div class="product-details">
+                                    <h3><%= products[i].categories.category_name %></h3>
+                                    <h3 class="name-product"><%= products[i].product_name %></h3>
+                                    <h3><%= products[i].users_products.first_name %> <%= products[i].users_products.last_name %></h3>
+                                    <p>0<%= products[i].duration %> hora</p>
+                                    <p><%= products[i].day %></p>
+                                    <p class="date"><%= products[i].date %></p>
+                                    <p><%= products[i].time %></p>
+                                    <p><span>$<%= products[i].price %></span></p>
+                                    <a href="/products/detail/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
+                                    <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>
+                                        <a href="/products/edit/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>
+                                        <form class="eliminar" action="/products/delete/<%= products[i].product_id %>?_method=DELETE" method="POST">
+                                            <button type="submit" class="boton-final-eliminar"><i class="fas fa-trash"></i>Eliminar</button>  
+                                        </form>
+                                    <% } %>  
+                                </div>  
                             </div>
+                            <% } %>
+
+                            <% if(products[i].product_category_id == 2) { %>
+                            <div id="two" class="">
+                                <img src="/img/products/<%= `${products[i].product_image}` %>" alt="Imagen del producto">
+                                <div class="product-details">
+                                    <h3><%= products[i].categories.category_name %></h3>
+                                    <h3 class="name-product"><%= products[i].product_name %></h3>
+                                    <h3><%= products[i].users_products.first_name %> <%= products[i].users_products.last_name %></h3>
+                                    <p>0<%= products[i].duration %> hora</p>
+                                    <p><%= products[i].day %></p>
+                                    <p class="date"><%= products[i].date %></p>
+                                    <p><%= products[i].time %></p>
+                                    <p><span>$<%= products[i].price %></span></p>
+                                    <a href="/products/detail/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
+                                    <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>
+                                        <a href="/products/edit/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>
+                                        <form class="eliminar" action="/products/delete/<%= products[i].product_id %>?_method=DELETE" method="POST">
+                                            <button type="submit" class="boton-final-eliminar"><i class="fas fa-trash"></i>Eliminar</button>  
+                                        </form>
+                                    <% } %>  
+                                </div>
+                            </div>
+                            <% } %>
+
+                            <% if(products[i].product_category_id == 3) { %>
+                            <div id="three" class="">
+                                <img src="/img/products/<%= `${products[i].product_image}` %>" alt="Imagen del producto">
+                                <div class="product-details">
+                                    <h3><%= products[i].categories.category_name %></h3>
+                                    <h3 class="name-product"><%= products[i].product_name %></h3>
+                                    <h3><%= products[i].users_products.first_name %> <%= products[i].users_products.last_name %></h3>
+                                    <p>0<%= products[i].duration %> hora</p>
+                                    <p><%= products[i].day %></p>
+                                    <p class="date"><%= products[i].date %></p>
+                                    <p><%= products[i].time %></p>
+                                    <p><span>$<%= products[i].price %></span></p>
+                                    <a href="/products/detail/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
+                                    <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>
+                                        <a href="/products/edit/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>
+                                        <form class="eliminar" action="/products/delete/<%= products[i].product_id %>?_method=DELETE" method="POST">
+                                            <button type="submit" class="boton-final-eliminar"><i class="fas fa-trash"></i>Eliminar</button>  
+                                        </form>
+                                    <% } %>  
+                                </div>
+                            </div>
+                            <% } %>
+                            
+                            <% if(products[i].product_category_id == 4) { %>
+                            <div id="four" class="">
+                                <img src="/img/products/<%= `${products[i].product_image}` %>" alt="Imagen del producto">
+                                <div class="product-details">
+                                    <h3><%= products[i].categories.category_name %></h3>
+                                    <h3 class="name-product"><%= products[i].product_name %></h3>
+                                    <h3><%= products[i].users_products.first_name %> <%= products[i].users_products.last_name %></h3>
+                                    <p>0<%= products[i].duration %> hora</p>
+                                    <p><%= products[i].day %></p>
+                                    <p class="date"><%= products[i].date %></p>
+                                    <p><%= products[i].time %></p>
+                                    <p><span>$<%= products[i].price %></span></p>
+                                    <a href="/products/detail/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
+                                    <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>
+                                        <a href="/products/edit/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>
+                                        <form class="eliminar" action="/products/delete/<%= products[i].product_id %>?_method=DELETE" method="POST">
+                                            <button type="submit" class="boton-final-eliminar"><i class="fas fa-trash"></i>Eliminar</button>  
+                                        </form>
+                                    <% } %>  
+                                </div>
+                            </div>
+                            <% } %>
+                            
+                            <% if(products[i].product_category_id == 5) { %>
+                            <div id="five" class="">
+                                <img src="/img/products/<%= `${products[i].product_image}` %>" alt="Imagen del producto">
+                                <div class="product-details">
+                                    <h3><%= products[i].categories.category_name %></h3>
+                                    <h3 class="name-product"><%= products[i].product_name %></h3>
+                                    <h3><%= products[i].users_products.first_name %> <%= products[i].users_products.last_name %></h3>
+                                    <p>0<%= products[i].duration %> hora</p>
+                                    <p><%= products[i].day %></p>
+                                    <p class="date"><%= products[i].date %></p>
+                                    <p><%= products[i].time %></p>
+                                    <p><span>$<%= products[i].price %></span></p>
+                                    <a href="/products/detail/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
+                                    <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>
+                                        <a href="/products/edit/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>
+                                        <form class="eliminar" action="/products/delete/<%= products[i].product_id %>?_method=DELETE" method="POST">
+                                            <button type="submit" class="boton-final-eliminar"><i class="fas fa-trash"></i>Eliminar</button>  
+                                        </form>
+                                    <% } %>  
+                                </div>
+                            </div>
+                            <% } %>
+                            
+                            <% if(products[i].product_category_id == 6) { %>
+                            <div id="six" class="">
+                                <img src="/img/products/<%= `${products[i].product_image}` %>" alt="Imagen del producto">
+                                <div class="product-details">
+                                    <h3><%= products[i].categories.category_name %></h3>
+                                    <h3 class="name-product"><%= products[i].product_name %></h3>
+                                    <h3><%= products[i].users_products.first_name %> <%= products[i].users_products.last_name %></h3>
+                                    <p>0<%= products[i].duration %> hora</p>
+                                    <p><%= products[i].day %></p>
+                                    <p class="date"><%= products[i].date %></p>
+                                    <p><%= products[i].time %></p>
+                                    <p><span>$<%= products[i].price %></span></p>
+                                    <a href="/products/detail/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
+                                    <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>
+                                        <a href="/products/edit/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>
+                                        <form class="eliminar" action="/products/delete/<%= products[i].product_id %>?_method=DELETE" method="POST">
+                                            <button type="submit" class="boton-final-eliminar"><i class="fas fa-trash"></i>Eliminar</button>  
+                                        </form>
+                                    <% } %>  
+                                </div>
+                            </div>
+                            <% } %>
+
                         </div>
                     <% } %>
                 </section>
@@ -57,5 +178,7 @@
         </div>
     </main>
     <%- include('../partials/footer') %>
+
+    <script src="/js/products.js"></script>
 </body>
 </html>
