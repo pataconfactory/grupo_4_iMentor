@@ -78,9 +78,10 @@
                     <div class="registerbox">
                         <label for="age"><i class="fas fa-universal-access"></i> Edad</label>
                         <% if (!locals.old) { %>
-                        <input class="boxes" type="number" name="age" id="age" placeholder="Edad" min="0" value="<%= user.age%>">
+                        <input class="boxes" type="text" name="age" id="age" placeholder="Edad" min="0" value="<%= user.age%>">
                         <% } else { %>
-                        <input class="boxes" type="number" name="age" id="age" placeholder="Edad" min="0" value="<%= locals.old ? old.age : null %>">
+                        <input class="boxes" type="text" name="age" id="age" placeholder="Edad" min="0"
+                            value="<%= locals.old ? old.age : null %>">
                         <% } %>
                         <% if (locals.errors && errors.age) { %>
                             <div class="text-danger">
@@ -119,9 +120,14 @@
                     <div class="registerbox">
                         <label for="country"><i class="fas fa-flag"></i> País</label>
                         <% if (!locals.old) { %>
-                        <input class="boxes" type="text" name="country" placeholder="País" id="country" value="<%= user.country %>">
+                            <select class="boxes" name="country" id="country" value="<%= user.country %>">
+                                <option value="<%= user.country %>"><%= user.country %></option>
+                            </select>
                         <% } else { %>
-                        <input class="boxes" type="text" name="country" placeholder="País" id="country" value="<%= locals.old ? old.country : null %>">
+                        <select class="boxes" name="country" id="country"
+                            value="<%= locals.old ? old.country : null %>">
+                            <option value="">Seleccione país</option>
+                        </select>
                         <% } %>
                         <% if (locals.errors && errors.country) { %>
                             <div class="text-danger">
@@ -174,5 +180,7 @@
         </section>  
     </main>
     <%- include('../partials/footer') %>
+
+    <script src="/js/register.js"></script>
 </body>
 </html>

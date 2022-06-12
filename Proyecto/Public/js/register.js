@@ -23,7 +23,6 @@ window.addEventListener('load', function(){
             }
         });
 
-    
     date_birth.addEventListener('change', function(){
 
         let date = this.value;
