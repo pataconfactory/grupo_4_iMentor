@@ -25,22 +25,6 @@
                                 <img src="/img/products/<%= `${oneBooking.product_booking.product_image}` %>" alt="imagen del producto">
                                 <div class="content">
                                     <h3><a href="/products/detail/<%= oneBooking.product_id %>"><%= oneBooking.product_booking.product_name %></a></h3>
-                                    <div class="estrellas">
-                                        <form class ="escala">
-                                            <p class="clasificacion">
-                                            <input id="radio1" type="radio" name="estrellas" value="5">
-                                            <label for="radio1">★</label>
-                                            <input id="radio2" type="radio" name="estrellas" value="4">
-                                            <label for="radio2">★</label>
-                                            <input id="radio3" type="radio" name="estrellas" value="3">
-                                            <label for="radio3">★</label>
-                                            <input id="radio4" type="radio" name="estrellas" value="2">
-                                            <label for="radio4">★</label>
-                                            <input id="radio5" type="radio" name="estrellas" value="1">
-                                            <label for="radio5">★</label>
-                                            </p>
-                                        </form>
-                                    </div>
                                     <br>
                                     <% for(oneUser of users) { %>
                                         <% if(oneUser.user_id == oneBooking.product_booking.user_id){%>
@@ -48,7 +32,11 @@
                                         <% } %> 
                                     <% } %>
                                     <h4 class="horas">0<%= oneBooking.product_booking.duration %> hora</h4> 
-                                    <h4><%= oneBooking.product_booking.day %> a las <%= oneBooking.product_booking.time %></h4>
+                                    <h4>Día: <%= oneBooking.product_booking.day %> a las <%= oneBooking.product_booking.time %></h4>
+                                    <% let dateDB = oneBooking.product_booking.date; %>
+                                    <% let array_date = dateDB.split('-'); %>
+                                    <% let fecha_con_formato = array_date[2] +'-'+ array_date[1] +'-'+ array_date[0] %>
+                                    <h4>Fecha: <%= fecha_con_formato %></h4>
                                     <h4><%= oneBooking.product_booking.price %>$<i class="fas fa-tag"></i></h4>
                                     <h4 class="unit">Cantidad:<input type="number" name="cantidad" min="1" value="1"></h4>
                                     <form class="" action="/products/productCart/<%= oneBooking.booking_id %>?_method=DELETE" method="POST">
@@ -84,7 +72,10 @@
             <h2>También podría interesarte</h2>
             <i class="fas fa-arrow-circle-left"></i>
             <section class="container" id="slider">   
-                <% for(let i=0; i< products.length; i++) { %>          
+                <% for(let i=0; i< products.length; i++) { %> 
+                    <% let dateDB = products[i].date; %>
+                    <% let array_date = dateDB.split('-'); %>
+                    <% let fecha_con_formato = array_date[2] +'-'+ array_date[1] +'-'+ array_date[0] %>         
                     <div class="miniatura">
                         <img src="/img/products/<%= `${products[i].product_image}` %>" alt="Imagen del producto">
                         <div class="product-details">
@@ -92,20 +83,8 @@
                             <h3 class="name-product"><%= products[i].product_name %></h3>
                             <h3><%= products[i].users_products.first_name %> <%= products[i].users_products.last_name %></h3>
                             <p>0<%= products[i].duration %> hora</p>
-                            <form class ="escala">
-                                <p class="clasificacion">
-                                <input id="radio1" type="radio" name="estrellas" value="5">
-                                <label for="radio1">★</label>
-                                <input id="radio2" type="radio" name="estrellas" value="4">
-                                <label for="radio2">★</label>
-                                <input id="radio3" type="radio" name="estrellas" value="3">
-                                <label for="radio3">★</label>
-                                <input id="radio4" type="radio" name="estrellas" value="2">
-                                <label for="radio4">★</label>
-                                <input id="radio5" type="radio" name="estrellas" value="1">
-                                <label for="radio5">★</label>
-                                </p>
-                            </form>
+                            <p><%= products[i].day %></p>
+                            <p><%= fecha_con_formato %></p>
                             <p><span><%= products[i].price %>$</span></p>
                             <a href="/products/detail/<%= products[i].product_id %>"><i class="fas fa-eye"></i> Ver</a>
                         </div>

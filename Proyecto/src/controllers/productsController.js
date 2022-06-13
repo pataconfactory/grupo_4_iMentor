@@ -10,9 +10,9 @@ const productsController = {
                 {association: "mentors"},
                 {association: "categories"},
                 {association: "users_products"}
-            ]
+            ] 
         })
-        .then(function(products) {
+        .then(function(products) {           
             return res.render(path.join(__dirname, '../views/products/products'), {products})
         })
     },
