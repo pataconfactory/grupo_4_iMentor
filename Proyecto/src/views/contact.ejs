@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+<body>
+
+    <main>
+        <div class="container-contact-main">
+            <form class="contact-form" onsubmit="return false">
+                <h3>Contáctanos</h3>
+                <input type="text" id="name" placeholder="Ingrese su nombre" required>
+                <input type="email" id="email" placeholder="Ingrese su Email" required>
+                <input type="text" id="phone" placeholder="Ingrese su número de telefóno" required>
+                <textarea name="" id="message" cols="30" rows="4" placeholder="Déjanos tu mensaje"></textarea>
+                <button onclick="sendContact();">Send contact</button>
+            </form>
+        </div>
+    </main>
+    <script src="/js/contactValidation.js"></script>
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "imentornext@gmail.com",
+                Password: "Imentor2022",
+                To: 'imentornext@gmail.com',
+                From: document.getElementById("email").value,
+                Subject: "Nuevo contacto",
+                Body: "Nombre: " + document.getElementById("name").value 
+                    + "<br> Email: " + document.getElementById("email").value
+                    + "<br> Telefóno: " + document.getElementById("phone").value
+                    + "<br> Mensaje: " + document.getElementById("message").value
+            }).then(
+                message => alert("Mensaje enviado")
+            );
+        }
+    </script>
+</body>
+
+</html>

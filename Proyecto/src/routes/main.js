@@ -5,6 +5,8 @@ const mainController = require('../controllers/mainController');
 
 router.get('/', mainController.index);
 
+router.get('/contact', mainController.contact);
+
 router.get('/paginaEnConstruccion', mainController.paginaConstruccion);
 
 module.exports = router;

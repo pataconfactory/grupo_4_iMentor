@@ -9,6 +9,13 @@ const mainController = {
     paginaConstruccion: function (req, res) {
         res.render('paginaEnConstruccion')
     },
-};
+
+    contact: function (req, res) {
+        res.cookie();
+        return res.render(path.join(__dirname, '../views/contact'))
+    },
+
+
+ }
 
 module.exports = mainController;
