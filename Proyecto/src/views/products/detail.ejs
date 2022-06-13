@@ -22,6 +22,10 @@
                 <p class="datos"><span>Precio:</span> <%= productoRequerido.price %>$</p>
                 <p class="datos"><span>Duración:</span>  <%= productoRequerido.duration %> hora</p>
                 <p class="datos"><span>Horario:</span> <%= productoRequerido.day %>, <%= productoRequerido.time %>hs</p>
+                <% let dateDB = productoRequerido.date; %>
+                <% let array_date = dateDB.split('-'); %>
+                <% let fecha_con_formato = array_date[2] +'-'+ array_date[1] +'-'+ array_date[0] %> 
+                <p class="datos"><span>Fecha:</span> <%= fecha_con_formato %></p>
                 <section class="mentor">
                     <h3>Mentor</h3>
                     <div class="informacion-mentor">
@@ -31,7 +35,6 @@
                             <p class="reseña"><i class="fas fa-light fas fa-globe"></i> <%= productoRequerido.users_products.country %></p>
                             <p class="reseña"><i class="fas fa-chalkboard-teacher"></i> <%= productoRequerido.users_products.title %></p>
                             <p class="reseña"><i class="fas fa-medal"></i> <%= productoRequerido.mentors.description %></p>
-                            <p class="reseña"><i class="fas fa-star"></i> <%= productoRequerido.mentors.punctuation %></p>
                         </div>
                     </div>
                 </section>
