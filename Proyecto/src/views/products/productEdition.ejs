@@ -123,6 +123,37 @@
                     <p id="error-duration"></p>
                 </div>
                 <div>
+                    <label>Día:</label>
+                    <% if (!locals.old) { %>
+                    <select class="box" name="dia" id="dia" value="<%= productoEditar.day %>">
+                        <option value="">seleccione el día</option>
+                        <% let dias = [{valor: "Lunes", dia:"Lunes"},{valor: "Martes", dia:"Martes"},{valor: "Miércoles", dia:"Miércoles"},{valor: "Jueves", dia:"Jueves"},{valor: "Viernes", dia:"Viernes"},{valor: "Sábado", dia:"Sábado"}];%>
+                        <% for (const oneDia of dias) { %>
+                        <option value="<%= oneDia.valor %>"
+                            <%= oneDia.valor == productoEditar.day ? 'selected' : null  %>>
+                            <%= oneDia.dia %></option>
+                        <% }%>
+                        <% } else { %>
+                        <select class="box" name="dia" id="dia" value="<%= locals.old ? old.dia : null %>">
+                            <option value="">seleccione el día</option>
+                            <% let dias = [{valor: "Lunes", dia:"Lunes"},{valor: "Martes", dia:"Martes"},{valor: "Miércoles", dia:"Miércoles"},{valor: "Jueves", dia:"Jueves"},{valor: "Viernes", dia:"Viernes"},{valor: "Sábado", dia:"Sábado"}];%>
+                            <% for (const oneDia of dias) { %>
+                            <option value="<%= oneDia.valor %>"
+                                <%= locals.old && (oneDia.valor == old.dia) ? 'selected' : null  %>>
+                                <%= oneDia.dia %></option>
+                            <% } %>
+                            <% } %>
+                        </select>
+                        <% if (locals.errors && errors.dia) { %>
+                        <div class="text-danger">
+                            <p class="feedback"><%= errors.dia.msg %></p>
+                        </div>
+                        <% } %>
+                </div>
+                <div class="text-danger">
+                    <p id="error-dia"></p>
+                </div>
+                <div>
                     <label>Horario:</label>
                     <% if (!locals.old) { %>
                     <select class="box" name="horario" id="horario" value="<%= productoEditar.time %>">
@@ -154,35 +185,21 @@
                     <p id="error-horario"></p>
                 </div>
                 <div>
-                    <label>Día:</label>
+                    <label>Fecha:</label>
                     <% if (!locals.old) { %>
-                    <select class="box" name="dia" id="dia" value="<%= productoEditar.day %>">
-                        <option value="">seleccione el día</option>
-                        <% let dias = [{valor: "Lunes", dia:"Lunes"},{valor: "Martes", dia:"Martes"},{valor: "Miércoles", dia:"Miércoles"},{valor: "Jueves", dia:"Jueves"},{valor: "Viernes", dia:"Viernes"},{valor: "Sábado", dia:"Sábado"}];%>
-                        <% for (const oneDia of dias) { %>
-                        <option value="<%= oneDia.valor %>"
-                            <%= oneDia.valor == productoEditar.day ? 'selected' : null  %>>
-                            <%= oneDia.dia %></option>
-                        <% }%>
-                        <% } else { %>
-                        <select class="box" name="dia" id="dia" value="<%= locals.old ? old.dia : null %>">
-                            <option value="">seleccione el día</option>
-                            <% let dias = [{valor: "Lunes", dia:"Lunes"},{valor: "Martes", dia:"Martes"},{valor: "Miércoles", dia:"Miércoles"},{valor: "Jueves", dia:"Jueves"},{valor: "Viernes", dia:"Viernes"},{valor: "Sábado", dia:"Sábado"}];%>
-                            <% for (const oneDia of dias) { %>
-                            <option value="<%= oneDia.valor %>"
-                                <%= locals.old && (oneDia.valor == old.dia) ? 'selected' : null  %>>
-                                <%= oneDia.dia %></option>
-                            <% } %>
-                            <% } %>
-                        </select>
-                        <% if (locals.errors && errors.dia) { %>
-                        <div class="text-danger">
-                            <p class="feedback"><%= errors.dia.msg %></p>
-                        </div>
-                        <% } %>
+                    <input class="box" type="date" name="date" id="date" value="<%= productoEditar.date %>">
+                    <% } else { %>
+                    <input class="box" type="date" name="date" id="date" 
+                        value="<%= locals.old ? old.date : null %>">
+                    <% } %>
+                    <% if (locals.errors && errors.date) { %>
+                    <div class="text-danger">
+                        <p class="feedback"><%= errors.date.msg %></p>
+                    </div>
+                    <% } %>
                 </div>
                 <div class="text-danger">
-                    <p id="error-dia"></p>
+                    <p id="error-date"></p>
                 </div>
                 <div>
                     <label>Precio:</label>

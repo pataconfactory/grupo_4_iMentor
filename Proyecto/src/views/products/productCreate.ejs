@@ -90,6 +90,26 @@
                     </div>
                 </div>
                 <div class="input-group">
+                    <label>Día:</label>
+                    <select class="box" name="dia" id="dia" value="<%= locals.old ? old.dia : null %>">
+                        <option value="">seleccione el día</option>
+                        <% let dias = [{valor: "Lunes", dia:"Lunes"},{valor: "Martes", dia:"Martes"},{valor: "Miércoles", dia:"Miércoles"},{valor: "Jueves", dia:"Jueves"},{valor: "Viernes", dia:"Viernes"},{valor: "Sábado", dia:"Sábado"}];%>
+                        <% for (const oneDia of dias) { %>
+                        <option value="<%= oneDia.valor %>"
+                            <%= locals.old && (oneDia.valor == old.dia) ? 'selected' : null  %>>
+                            <%= oneDia.dia %></option>
+                        <% } %>
+                    </select>
+                    <% if (locals.errors && errors.dia) { %>
+                    <div class="text-danger">
+                        <p class="feedback"><%= errors.dia.msg %></p>
+                    </div>
+                    <% } %>
+                    <div class="text-danger">
+                    <p id="error-dia"></p>
+                    </div>
+                </div>
+                <div class="input-group">
                     <label>Horario:</label>
                     <select class="box" name="horario" id="horario" value="<%= locals.old ? old.horario : null %>">
                         <option value="">seleccione el horario</option>
@@ -110,23 +130,16 @@
                     </div>
                 </div>
                 <div class="input-group">
-                    <label>Día:</label>
-                    <select class="box" name="dia" id="dia" value="<%= locals.old ? old.dia : null %>">
-                        <option value="">seleccione el día</option>
-                        <% let dias = [{valor: "Lunes", dia:"Lunes"},{valor: "Martes", dia:"Martes"},{valor: "Miércoles", dia:"Miércoles"},{valor: "Jueves", dia:"Jueves"},{valor: "Viernes", dia:"Viernes"},{valor: "Sábado", dia:"Sábado"}];%>
-                        <% for (const oneDia of dias) { %>
-                        <option value="<%= oneDia.valor %>"
-                            <%= locals.old && (oneDia.valor == old.dia) ? 'selected' : null  %>>
-                            <%= oneDia.dia %></option>
-                        <% } %>
-                    </select>
-                    <% if (locals.errors && errors.dia) { %>
+                    <label>Fecha:</label>
+                    <input class="box" type="date" name="date" id="date" 
+                        value="<%= locals.old ? old.date : null %>">
+                    <% if (locals.errors && errors.date) { %>
                     <div class="text-danger">
-                        <p class="feedback"><%= errors.dia.msg %></p>
+                        <p class="feedback"><%= errors.date.msg %></p>
                     </div>
                     <% } %>
                     <div class="text-danger">
-                    <p id="error-dia"></p>
+                    <p id="error-date"></p>
                     </div>
                 </div>
                 <div class="input-group">

@@ -8,6 +8,7 @@ const validationsProductEdition = [
     check('duration').notEmpty().withMessage('Debe completar la duración de la mentoría').bail().isNumeric().withMessage('Debe introducir la duración utilizando números'),
     check('horario').notEmpty().withMessage('Debe seleccionar el horario de la mentoría'),
     check('dia').notEmpty().withMessage('Debe seleccionar el día de la mentoría'),
+    check('date').notEmpty().withMessage('Debe completar la fecha'),
     check('price').notEmpty().withMessage('Debe completar el precio').bail().isNumeric().withMessage('Debe introducir el precio utilizando números')
 ]; 
 
