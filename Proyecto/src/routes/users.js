@@ -51,4 +51,6 @@ router.delete('/delete/:id/:email', usersController.destroyUsers);
 //Log out
 router.get('/logout', usersController.logout);
 
+router.post('/roles', usersController.searchRoles);
+
 module.exports = router;

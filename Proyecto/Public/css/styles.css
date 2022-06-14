@@ -2025,9 +2025,10 @@ main .contenedor-edicion-productos .opciones-desplegables {
     justify-content: end;
     flex-wrap: wrap;
     margin: 0px 0px 10px 0px;
+    margin-right: 1%;
 }
 
-main .opciones-desplegables .servicio-producto, main .opciones-desplegables .categoria-producto {
+main .opciones-desplegables .roles, main .opciones-desplegables .categories {
     margin: 0px 15px 0px 15px;
 }
 
