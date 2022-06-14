@@ -1332,6 +1332,11 @@ main .contenedor-carrito .contenedor_cesta_vacia .cesta_vacia {
     height: 350px;
     align-self: center;
 }
+main .contenedor-carrito .contenedor_cesta_vacia .caja_vacia {
+    width: 35vw;
+    height: 350px;
+    align-self: center;
+}
 
 main .contenedor-carrito .contenedor_cesta_vacia .mensaje {
     color: #ab0d2f;
@@ -1462,7 +1467,7 @@ main .contenedor-carrito .right-bar {
 	flex: 25%;
 	margin-left: 0px;
 	padding: 20px;
-	height: 350px;
+	height: 380px;
 	border-radius: 5px;
 	background: #fff;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -1485,7 +1490,7 @@ main .contenedor-carrito .right-bar p {
 	font-size: 15px;
 }
 
-main .contenedor-carrito .right-bar a {
+main .contenedor-carrito .right-bar button {
     margin: 10px 0px 0px 0px;
 	background-color: #3587A4;
 	color: #fff;
@@ -1496,13 +1501,15 @@ main .contenedor-carrito .right-bar a {
 	line-height: 40px;
     border-radius: 5px;
     cursor: pointer;
+    border: none;
+    width: 100%;
 }
 
 main .contenedor-carrito .right-bar i {
 	margin-right: 15px;
 }
 
-main .contenedor-carrito .right-bar a:hover {
+main .contenedor-carrito .right-bar button:hover {
 	background-color: #88CCF1;
 	font-weight: bold;
 }

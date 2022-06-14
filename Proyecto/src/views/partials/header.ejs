@@ -46,7 +46,7 @@
                     <button class="dropdown-btn">Hola <%= locals.userLogged.first_name %> <i class="fa fa-caret-down"></i></button>
                     <div class="dropdown-container">
                         <a href="/users/profile">Mi Perfil</a>
-                        <a href="/paginaEnConstruccion">Mis Compras</i></a>
+                        <a href="/products/productInvoice">Mis Compras</i></a>
                         <a href="/users/logout">Cerrar sesión</a>
                     </div>
                 </div>
@@ -55,6 +55,7 @@
                     <li><a href = "/products/productServices">Servicios</a></li>
                     <li><a href = "/products">Mentorias</a></li>
                     <li><a href = "/users/mentor_register">Enseña en iMentor</a></li>
+                    <li class="cesta"><a href = "/products/productCart"><i class="fas fa-shopping-basket"></i></a></li>
                 </ul>
                 <% } else { %>
                     <div class="menu-para-logueados">
@@ -62,7 +63,7 @@
                         <button class="dropdown-btn">Hola <%= locals.userLogged.first_name %> <i class="fa fa-caret-down"></i></button>
                         <div class="dropdown-container">
                             <a href="/users/profile">Mi Perfil</a>
-                            <a href="/products/productCart">Mis Compras</i></a>
+                            <a href="/products/productInvoice">Mis Compras</i></a>
                             <a href="/users/logout">Cerrar sesión</a>
                         </div>
                     </div>

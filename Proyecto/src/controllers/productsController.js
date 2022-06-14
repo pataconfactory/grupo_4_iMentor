@@ -232,6 +232,52 @@ const productsController = {
         .then(function(products){
             return res.render(path.join(__dirname, '../views/products/products'), {products})
         })
+    },
+
+    productInvoice: function(req, res){
+        let userId = req.session.userLogged.user_id;
+
+        let products = db.Product.findAll({
+            include: [
+                {association: "mentors"},
+                {association: "categories"},
+                {association: "users_products"}
+            ]
+        });
+
+        let bookings = db.Booking.findAll({
+            include: [
+                {association: "product_booking"},
+                {association: "user_booking"},
+                {association: "invoices_booking"}
+            ], where:{
+                user_id: {[Op.like]: userId}
+            }
+        });
+        
+        let users = db.User.findAll({
+            include: [
+                {association: "roles"},
+                {association: "users"},
+                {association: "users_products"}
+            ]
+        });
+
+        let invoices = db.Invoice.findAll({
+            include: [
+                {association: "booking_invoice"},
+            ]
+        })
+        
+        Promise.all([products, bookings, users, invoices])
+        .then(function([products, bookings, users, invoices]) {
+            let productInvoice = invoices;
+            if(productInvoice.length == 0){
+                return res.render(path.join(__dirname, '../views/products/productInvoice'), {products})
+            } else if(productInvoice.length > 0){
+                return res.render(path.join(__dirname, '../views/products/productCart'), {products, invoices, users}) 
+            }
+        })
     }
 };
 
