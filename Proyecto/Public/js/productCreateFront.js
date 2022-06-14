@@ -8,6 +8,7 @@ window.addEventListener('load', function () {
         campoCategory = id("category"),
         campoMentor = id("mentor"),
         campoDuration = id("duration"),
+        campoDate = id("date"),
         campoHorario = id("horario"),
         campoDia = id("dia"),
         campoPrice = id("price"),
@@ -65,6 +66,13 @@ window.addEventListener('load', function () {
         if (!horarioValue) {
             horarioError.innerHTML = 'Debe seleccionar el horario de la mentoría';
             errors.push('Debe seleccionar el horario de la mentoría');
+        }
+
+        let dateError = document.getElementById('error-date');
+        let dateValue = campoDate.value;
+        if (!dateValue) {
+            dateError.innerHTML = 'Debe seleccionar la fecha de la mentoría';
+            errors.push('Debe seleccionar la fecha de la mentoría');
         }
 
         let diaError = document.getElementById('error-dia');
@@ -183,6 +191,16 @@ window.addEventListener('load', function () {
             durationError.innerHTML = '';
         }
     });
+
+    let dateError = document.getElementById('error-date');
+    campoDuration.addEventListener('blur', function () {
+    let dateValue = campoDate.value;
+    if (!dateValue) {
+        dateError.innerHTML = 'Debe seleccionar la fecha de la mentoría';
+        errors.push('Debe seleccionar la fecha de la mentoría');
+         }
+    })
+
 
     let horarioError = document.getElementById('error-horario');
     campoHorario.addEventListener('blur', function () {
