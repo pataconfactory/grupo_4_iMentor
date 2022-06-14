@@ -94,6 +94,9 @@ const productCartController = {
         }).then(function(product){
             return res.redirect('/products/productCart');
         })
+    },
+
+    productsToPay: function(req, res) {
     }
 };
 

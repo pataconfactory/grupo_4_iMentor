@@ -28,11 +28,16 @@ router.get('/productServices', productsController.productServices);
 router.post('/search', productsController.search);
 
 router.get('/productCart', authMiddleware, productCartController.productCart);
+router.post('/productCart/:id', productCartController.productsToPay);
+
+router.get('/productInvoice', authMiddleware, productsController.productInvoice);
 
 //Agregar productos al carrito
 router.post('/productCart/:id', authMiddleware, productCartController.productCartAdd);
 
 //Eliminar productos del carrito
 router.delete('/productCart/:id', authMiddleware, productCartController.productCartDestroy);
+
+
 
 module.exports = router;
