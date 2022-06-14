@@ -11,17 +11,19 @@
         <div class="contenedor-edicion-productos">
             <h2>Selecciona tu categoría favorita y empieza a aprender</h2>
             <div class="opciones-desplegables">
-                <p class="categoria-producto">
-                    <select name="categoria-producto" id="" class="select">
-                        <option selected="true" disabled="disabled">Seleccione la categoría</option>
-                            <option class="all" value="0">Todas</option>
-                            <option class="front-end" value="1">Front-End</option>
-                            <option class="back-end" value="2">Back-End</option>
-                            <option class="ui-ux" value="3">UI/UX</option>
-                            <option class="database" value="4">Base de Datos</option>
-                            <option class="marketing" value="5">Marketing Digital</option>
-                            <option clas="data-analysis" value="6">Análisis de Datos</option>
-                    </select>
+                <p class="categories">
+                    <form action="/products/categories" method="POST" class='select-form'>
+                        <select name="categories" id="categories" class="select">
+                            <option selected="true" disabled="disabled">Seleccione la categoría</option>
+                                <option class="all" value="0">Todas</option>
+                                <option class="front-end" value="1">Front-End</option>
+                                <option class="back-end" value="2">Back-End</option>
+                                <option class="ui-ux" value="3">UI/UX</option>
+                                <option class="database" value="4">Base de Datos</option>
+                                <option class="marketing" value="5">Marketing Digital</option>
+                                <option clas="data-analysis" value="6">Análisis de Datos</option>
+                        </select>
+                    </form>
                 </p>
             </div>
             <div class="container-productos-existentes">

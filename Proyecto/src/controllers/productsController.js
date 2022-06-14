@@ -1,70 +1,97 @@
 const path = require('path');
-const {validationResult} = require('express-validator');
+const {
+    validationResult
+} = require('express-validator');
 const db = require('../../database/models');
 const Op = db.Sequelize.Op;
 
 const productsController = {
-    products: function(req, res) {
+    products: function (req, res) {
         db.Product.findAll({
-            include: [
-                {association: "mentors"},
-                {association: "categories"},
-                {association: "users_products"}
-            ] 
-        })
-        .then(function(products) {           
-            return res.render(path.join(__dirname, '../views/products/products'), {products})
-        })
+                include: [{
+                        association: "mentors"
+                    },
+                    {
+                        association: "categories"
+                    },
+                    {
+                        association: "users_products"
+                    }
+                ]
+            })
+            .then(function (products) {
+                return res.render(path.join(__dirname, '../views/products/products'), {
+                    products
+                })
+            })
     },
 
-    create: function(req, res) {
+    create: function (req, res) {
         db.User.findAll({
-            include: [
-                {association: "roles"},
-                {association: "users"},
-                {association: "users_products"}
-            ]
-        })
-        .then(function(usuarios) {
-            let users = [];
-            for (const oneUser of usuarios) {
-               users.push(oneUser.dataValues);
-            }
-            return res.render(path.join(__dirname, '../views/products/productCreate'), {users})
-        });
-    },
-
-    store: function(req, res) {
-        let errors = validationResult(req);
-        db.User.findAll({
-            include: [
-                {association: "roles"},
-                {association: "users"},
-                {association: "users_products"}
-            ]
-        })
-        .then(function(usuarios) {
-            if (errors.errors.length > 0) {
+                include: [{
+                        association: "roles"
+                    },
+                    {
+                        association: "users"
+                    },
+                    {
+                        association: "users_products"
+                    }
+                ]
+            })
+            .then(function (usuarios) {
                 let users = [];
                 for (const oneUser of usuarios) {
-                users.push(oneUser.dataValues);
+                    users.push(oneUser.dataValues);
                 }
-                return res.render(path.join(__dirname, '../views/products/productCreate'), {users, errors: errors.mapped(), old: req.body});
-            }
-        });
+                return res.render(path.join(__dirname, '../views/products/productCreate'), {
+                    users
+                })
+            });
+    },
 
-        if(req.file){
+    store: function (req, res) {
+        let errors = validationResult(req);
+        db.User.findAll({
+                include: [{
+                        association: "roles"
+                    },
+                    {
+                        association: "users"
+                    },
+                    {
+                        association: "users_products"
+                    }
+                ]
+            })
+            .then(function (usuarios) {
+                if (errors.errors.length > 0) {
+                    let users = [];
+                    for (const oneUser of usuarios) {
+                        users.push(oneUser.dataValues);
+                    }
+                    return res.render(path.join(__dirname, '../views/products/productCreate'), {
+                        users,
+                        errors: errors.mapped(),
+                        old: req.body
+                    });
+                }
+            });
+
+        if (req.file) {
             let filename = req.file.filename;
             let idMentor = req.body.mentor;
             let datosMentor = {};
             db.User.findOne({
-                where:{
-                    mentor_id: {[Op.like]: idMentor}
+                where: {
+                    mentor_id: {
+                        [Op.like]: idMentor
+                    }
                 }
             }).then((resultado) => {
-            datosMentor.userId = resultado.dataValues.user_id;
-            datosMentor.mentorId = resultado.dataValues.mentor_id;
-            return datosMentor;
+                datosMentor.userId = resultado.dataValues.user_id;
+                datosMentor.mentorId = resultado.dataValues.mentor_id;
+                return datosMentor;
             }).then((data) => {
                 db.Product.create({
                     product_name: req.body.name,
@@ -84,84 +111,121 @@ const productsController = {
         }
     },
 
-    detail: function(req, res) {
+    detail: function (req, res) {
         db.Product.findByPk(req.params.id, {
-            include: [
-                {association: "mentors"},
-                {association: "categories"},
-                {association: "users_products"}
-            ]
-        })
-        .then(function(productoRequerido) {
-            return res.render(path.join(__dirname, '../views/products/detail'), {productoRequerido})
-        })          
+                include: [{
+                        association: "mentors"
+                    },
+                    {
+                        association: "categories"
+                    },
+                    {
+                        association: "users_products"
+                    }
+                ]
+            })
+            .then(function (productoRequerido) {
+                return res.render(path.join(__dirname, '../views/products/detail'), {
+                    productoRequerido
+                })
+            })
     },
 
-    edit: function(req, res) {
+    edit: function (req, res) {
         let productoEditar = db.Product.findByPk(req.params.id, {
-            include: [
-                {association: "mentors"},
-                {association: "categories"},
-                {association: "users_products"}
+            include: [{
+                    association: "mentors"
+                },
+                {
+                    association: "categories"
+                },
+                {
+                    association: "users_products"
+                }
             ]
         });
         let usuarios = db.User.findAll({
-            include: [
-                {association: "roles"},
-                {association: "users"},
-                {association: "users_products"}
+            include: [{
+                    association: "roles"
+                },
+                {
+                    association: "users"
+                },
+                {
+                    association: "users_products"
+                }
             ]
         });
         Promise.all([productoEditar, usuarios])
-        .then(function([productoEditar, usuarios]) {
-            let users = [];
-            for (const oneUser of usuarios) {
-               users.push(oneUser.dataValues);
-            } 
-            return res.render(path.join(__dirname, '../views/products/productEdition'), {productoEditar, users})
-        })
-    },
-
-    update: function( req, res ) {
-        let errors = validationResult(req);
-        let productoEditar = db.Product.findByPk(req.params.id, {
-            include: [
-                {association: "mentors"},
-                {association: "categories"},
-                {association: "users_products"}
-            ]
-        });
-        let usuarios = db.User.findAll({
-            include: [
-                {association: "roles"},
-                {association: "users"},
-                {association: "users_products"}
-            ]
-        });
-        Promise.all([productoEditar, usuarios])
-        .then(function([productoEditar, usuarios]) {
-            if (errors.errors.length > 0) {
+            .then(function ([productoEditar, usuarios]) {
                 let users = [];
                 for (const oneUser of usuarios) {
-                users.push(oneUser.dataValues);
-                } 
-                return res.render(path.join(__dirname, '../views/products/productEdition'), {productoEditar, users,  errors: errors.mapped(), old: req.body})
-            }
-        })
+                    users.push(oneUser.dataValues);
+                }
+                return res.render(path.join(__dirname, '../views/products/productEdition'), {
+                    productoEditar,
+                    users
+                })
+            })
+    },
+
+    update: function (req, res) {
+        let errors = validationResult(req);
+        let productoEditar = db.Product.findByPk(req.params.id, {
+            include: [{
+                    association: "mentors"
+                },
+                {
+                    association: "categories"
+                },
+                {
+                    association: "users_products"
+                }
+            ]
+        });
+        let usuarios = db.User.findAll({
+            include: [{
+                    association: "roles"
+                },
+                {
+                    association: "users"
+                },
+                {
+                    association: "users_products"
+                }
+            ]
+        });
+        Promise.all([productoEditar, usuarios])
+            .then(function ([productoEditar, usuarios]) {
+                if (errors.errors.length > 0) {
+                    let users = [];
+                    for (const oneUser of usuarios) {
+                        users.push(oneUser.dataValues);
+                    }
+                    return res.render(path.join(__dirname, '../views/products/productEdition'), {
+                        productoEditar,
+                        users,
+                        errors: errors.mapped(),
+                        old: req.body
+                    })
+                }
+            })
 
         if (errors.errors.length == 0) {
             let idMentor = req.body.mentor;
             let datosMentor = {};
             db.User.findOne({
-                where:{
-                    mentor_id: {[Op.like]: idMentor}
+                where: {
+                    mentor_id: {
+                        [Op.like]: idMentor
+                    }
                 }
             }).then((resultado) => {
-            datosMentor.userId = resultado.dataValues.user_id;
-            datosMentor.mentorId = resultado.dataValues.mentor_id;
-            return datosMentor;
+                datosMentor.userId = resultado.dataValues.user_id;
+                datosMentor.mentorId = resultado.dataValues.mentor_id;
+                return datosMentor;
             }).then((data) => {
-                if(req.file){
+                if (req.file) {
                     db.Product.update({
                         product_name: req.body.name,
                         product_category_id: req.body.category,
@@ -173,12 +237,12 @@ const productsController = {
                         price: req.body.price,
                         duration: req.body.duration,
                         product_image: req.file.filename
-                    },{
+                    }, {
                         where: {
                             product_id: req.params.id
                         }
-                    }).then(function(product){
-                        return res.redirect('/products/detail/'+ req.params.id);
+                    }).then(function (product) {
+                        return res.redirect('/products/detail/' + req.params.id);
                     });
                 } else {
                     db.Product.update({
@@ -191,93 +255,171 @@ const productsController = {
                         time: req.body.horario,
                         price: req.body.price,
                         duration: req.body.duration,
-                    },{
+                    }, {
                         where: {
                             product_id: req.params.id
                         }
-                    }).then(function(product){
-                        return res.redirect('/products/detail/'+ req.params.id);
+                    }).then(function (product) {
+                        return res.redirect('/products/detail/' + req.params.id);
                     });
                 }
             })
         }
     },
 
-    destroy: function(req, res) {
+    destroy: function (req, res) {
         db.Product.destroy({
             where: {
                 product_id: req.params.id
             }
-        }).then(function(product){
+        }).then(function (product) {
             res.redirect('/products/');
         })
-        
+
     },
 
-    productServices: function(req, res) {
+    productServices: function (req, res) {
         res.render(path.join(__dirname, '../views/products/productServices'))
     },
 
-    search: function(req, res){
+    search: function (req, res) {
         let search = req.body.search;
         db.Product.findAll({
-            include: [
-                {association: "mentors"},
-                {association: "categories"},
-                {association: "users_products"}
-            ], where: {
-                product_name: {[Op.like]: '%'+search+'%'}
-            }
-        })
-        .then(function(products){
-            return res.render(path.join(__dirname, '../views/products/products'), {products})
-        })
+                include: [{
+                        association: "mentors"
+                    },
+                    {
+                        association: "categories"
+                    },
+                    {
+                        association: "users_products"
+                    }
+                ],
+                where: {
+                    product_name: {
+                        [Op.like]: '%' + search + '%'
+                    }
+                }
+            })
+            .then(function (products) {
+                return res.render(path.join(__dirname, '../views/products/products'), {
+                    products
+                })
+            })
     },
 
-    productInvoice: function(req, res){
+    searchCategories: function (req, res) {
+        let category = req.body.categories;
+        if (category == 0) {
+            db.Product.findAll({
+                    include: [{
+                            association: "mentors"
+                        },
+                        {
+                            association: "categories"
+                        },
+                        {
+                            association: "users_products"
+                        }
+                    ]
+                })
+                .then(function (products) {
+                    return res.render(path.join(__dirname, '../views/products/products'), {
+                        products
+                    })
+                })
+        } else {
+            db.Product.findAll({
+                    include: [{
+                            association: "mentors"
+                        },
+                        {
+                            association: "categories"
+                        },
+                        {
+                            association: "users_products"
+                        }
+                    ],
+                    where: {
+                        product_category_id: category
+                    }
+                })
+                .then(function (products) {
+                    return res.render(path.join(__dirname, '../views/products/products'), {
+                        products
+                    })
+                })
+        }
+    },
+
+    productInvoice: function (req, res) {
         let userId = req.session.userLogged.user_id;
 
         let products = db.Product.findAll({
-            include: [
-                {association: "mentors"},
-                {association: "categories"},
-                {association: "users_products"}
+            include: [{
+                    association: "mentors"
+                },
+                {
+                    association: "categories"
+                },
+                {
+                    association: "users_products"
+                }
             ]
         });
 
         let bookings = db.Booking.findAll({
-            include: [
-                {association: "product_booking"},
-                {association: "user_booking"},
-                {association: "invoices_booking"}
-            ], where:{
-                user_id: {[Op.like]: userId}
+            include: [{
+                    association: "product_booking"
+                },
+                {
+                    association: "user_booking"
+                },
+                {
+                    association: "invoices_booking"
+                }
+            ],
+            where: {
+                user_id: {
+                    [Op.like]: userId
+                }
             }
         });
-        
+
         let users = db.User.findAll({
-            include: [
-                {association: "roles"},
-                {association: "users"},
-                {association: "users_products"}
+            include: [{
+                    association: "roles"
+                },
+                {
+                    association: "users"
+                },
+                {
+                    association: "users_products"
+                }
             ]
         });
 
         let invoices = db.Invoice.findAll({
-            include: [
-                {association: "booking_invoice"},
-            ]
+            include: [{
+                association: "booking_invoice"
+            }, ]
         })
-        
+
         Promise.all([products, bookings, users, invoices])
-        .then(function([products, bookings, users, invoices]) {
-            let productInvoice = invoices;
-            if(productInvoice.length == 0){
-                return res.render(path.join(__dirname, '../views/products/productInvoice'), {products})
-            } else if(productInvoice.length > 0){
-                return res.render(path.join(__dirname, '../views/products/productCart'), {products, invoices, users}) 
-            }
-        })
+            .then(function ([products, bookings, users, invoices]) {
+                let productInvoice = invoices;
+                if (productInvoice.length == 0) {
+                    return res.render(path.join(__dirname, '../views/products/productInvoice'), {
+                        products
+                    })
+                } else if (productInvoice.length > 0) {
+                    return res.render(path.join(__dirname, '../views/products/productCart'), {
+                        products,
+                        invoices,
+                        users
+                    })
+                }
+            })
     }
 };
 
