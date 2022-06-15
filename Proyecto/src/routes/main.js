@@ -6,8 +6,11 @@ const mainController = require('../controllers/mainController');
 router.get('/', mainController.index);
 
 router.get('/paginaEnConstruccion', mainController.paginaConstruccion);
+
 router.get('/contact', mainController.contact);
 router.post('/contact', mainController.processContact);
+
+router.get('/contact/sent');
 
 
 module.exports = router;

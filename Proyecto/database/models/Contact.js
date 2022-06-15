@@ -31,11 +31,5 @@ module.exports = function(sequelize, DataTypes) {
 
     const Contact = sequelize.define(alias, cols, config);
 
-    Contact.associate = function(models) {
-        Contact.belongsTo(models.User, {
-            as: 'user_contact',
-            foreignKey: 'user_id'
-        });
-    };
     return Contact;
 }
