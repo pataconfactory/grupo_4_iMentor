@@ -88,6 +88,11 @@ module.exports = function(sequelize, DataTypes) {
             as: 'users_products',
             foreignKey: 'user_id'
         });
+        User.hasMany(models.Contact, {
+            as: 'contact_user',
+            foreignKey: 'user_id'
+        });
+        
     };
     return User;
 }

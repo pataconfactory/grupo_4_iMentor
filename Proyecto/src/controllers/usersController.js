@@ -462,7 +462,40 @@ const usersController = {
                 });  
             }     
         })
+    },
+
+    searchRoles: function (req, res) {
+        let role = req.body.roles;
+        if(role == 0){
+            db.User.findAll({
+                include: [
+                    {association: "roles"},
+                    {association: "users"},
+                    {association: "bookings_user"},
+                    {association: "users_products"},
+                ]
+            })
+            .then(function(users) {    
+                return res.render(path.join(__dirname, '../views/users/listUsers'), {users});
+            })
+        } else {
+            db.User.findAll({
+                include: [
+                    {association: "roles"},
+                    {association: "users"},
+                    {association: "bookings_user"},
+                    {association: "users_products"},
+                ],
+                where: {
+                    role_id: role
+                    }
+            })
+            .then(function(users) {    
+                return res.render(path.join(__dirname, '../views/users/listUsers'), {users});
+            })
+        }
     }
+
 };
 
 module.exports = usersController;

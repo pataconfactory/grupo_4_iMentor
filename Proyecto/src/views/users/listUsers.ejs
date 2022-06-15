@@ -11,13 +11,16 @@
         <div class="contenedor-edicion-productos">
             <h2>Usuarios Existentes</h2>
             <div class="opciones-desplegables">
-                <p class="servicio-producto">
-                    <select name="servicio-producto" id="">
-                        <option selected="true" disabled="disabled">seleccione la categoría</option>
-                        <option value="Mentorías">Usuarios</option>
-                        <option value="Membresías">Mentores</option>
-                        <option value="Gif Cards">Administradores</option>
-                    </select>
+                <p class="roles">
+                    <form action="/users/roles" method="POST" class="select-form">
+                        <select name="roles" id="roles" class="select">
+                            <option selected="true" disabled="disabled">seleccione la categoría</option>
+                            <option value="0">Todas</option>
+                            <option value="1">Usuarios</option>
+                            <option value="3">Mentores</option>
+                            <option value="2">Administradores</option>
+                        </select>
+                    </form>
                 </p>
             </div>
             <div class="container-productos-existentes">
@@ -47,5 +50,7 @@
         </div>
     </main>
     <%- include('../partials/footer') %>
+
+    <script src="/js/users.js"></script>
 </body>
 </html>

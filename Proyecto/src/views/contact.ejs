@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+<body>
+
+    <main>
+        <div class="container-contact-main">
+            <form action="/contact" method="POST" class="contact-form">
+                <h3>Contáctanos</h3>
+                <input type="text" id="name" placeholder="Ingrese su nombre">
+                <div class="text-danger">
+                    <p class="name-error"></p>
+                </div>
+                <input type="email" id="email" placeholder="Ingrese su Email">
+                <div class="text-danger">
+                    <p class="email-error"></p>
+                </div>
+                <input type="text" id="phone" placeholder="Ingrese su número de telefóno">
+                <div class="text-danger">
+                    <p class="phone-error"></p>
+                </div>
+                <textarea name="" id="message" cols="30" rows="4" placeholder="Déjanos tu mensaje"></textarea>
+                <div class="text-danger">
+                    <p class="message-error"></p>
+                </div>
+                <button type="submit">Send contact</button>
+            </form>
+        </div>
+    </main>
+    <script src="/js/contactValidation.js"></script>
+</body>
+
+</html>

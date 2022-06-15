@@ -27,6 +27,8 @@ router.get('/productServices', productsController.productServices);
 
 router.post('/search', productsController.search);
 
+router.post('/categories', productsController.searchCategories);
+
 router.get('/productInvoice', authMiddleware, productsController.productInvoice);
 
 router.get('/productCart', authMiddleware, productCartController.productCart);
