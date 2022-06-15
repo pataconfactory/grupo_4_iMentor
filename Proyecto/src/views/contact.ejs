@@ -4,24 +4,48 @@
 <%- include('./partials/head') %>
 
 <body>
-    
+    <%- include('./partials/header') %>
     <main>
         <div class="container-contact-main">
-            <form action="/contact" method="POST" class="contact-form">
+            <form action="/contact/" method="POST" class="contact-form">
                 <h3>Contáctanos</h3>
-                <input type="text" id="name" placeholder="Ingrese su nombre">
+                <input type="text" name="name" id="name" placeholder="Ingrese su nombre"
+                value="<%= locals.old ? old.name : null %>">
+                <% if (locals.errors && errors.name) { %>
+                <div class="text-danger">
+                    <p class="feedback"><%= errors.name.msg %></p>
+                </div>
+                <% } %>
                 <div class="text-danger">
                     <p class="name-error"></p>
                 </div>
-                <input type="email" id="email" placeholder="Ingrese su Email">
+                <input type="email" name="email" id="email" placeholder="Ingrese su Email"
+                value="<%= locals.old ? old.email : null %>">
+                <% if (locals.errors && errors.email) { %>
+                <div class="text-danger">
+                    <p class="feedback"><%= errors.email.msg %></p>
+                </div>
+                <% } %>
                 <div class="text-danger">
                     <p class="email-error"></p>
                 </div>
-                <input type="text" id="phone" placeholder="Ingrese su número de telefóno">
+                <input type="number" name="phone" id="phone" placeholder="Ingrese su número de telefóno"
+                value="<%= locals.old ? old.phone : null %>">
+                <% if (locals.errors && errors.phone) { %>
+                <div class="text-danger">
+                    <p class="feedback"><%= errors.phone.msg %></p>
+                </div>
+                <% } %>
                 <div class="text-danger">
                     <p class="phone-error"></p>
                 </div>
-                <textarea name="" id="message" cols="30" rows="4" placeholder="Déjanos tu mensaje"></textarea>
+                <textarea name="message" id="message" cols="30" rows="4" placeholder="Déjanos tu mensaje"></textarea
+                value="<%= locals.old ? old.message : null %>">
+                <% if (locals.errors && errors.message) { %>
+                <div class="text-danger">
+                    <p class="feedback"><%= errors.message.msg %></p>
+                </div>
+                <% } %>
                 <div class="text-danger">
                     <p class="message-error"></p>
                 </div>
@@ -29,7 +53,7 @@
             </form>
         </div>
     </main>
-    
+    <%- include('./partials/footer') %>
     <script src="/js/contactValidation.js"></script>
 </body>
 
