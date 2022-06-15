@@ -9,33 +9,36 @@ module.exports = function(sequelize, DataTypes) {
             autoIncrement: true
         },
         contact_user_name: {
-            type: DataTypes.STRING(50),
+            type: DataTypes.STRING(300),
             allowNull: false
         },
-        contact_user_mail: {
-            type: DataTypes.STRING(100),
+        contact_user_email: {
+            type: DataTypes.STRING(300),
             allowNull: false
+        },
+        phone: {
+            type: DataTypes.STRING(50)
         },
         contact_message: {
             type: DataTypes.TEXT,
             allowNull: false
-        },
+        }
     }
 
     let config = {
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
-        tableName: 'contact'
+        tableName: 'contacts'
     }
 
     const Contact = sequelize.define(alias, cols, config);
 
-    Contact.associate = function(models) {
+    /*Contact.associate = function(models) {
         Contact.belongsTo(models.User, {
             as: 'user_contact',
             foreignKey: 'user_id'
         });
-    };
+    };*/
     return Contact;
 }
