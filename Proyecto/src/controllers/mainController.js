@@ -15,6 +15,10 @@ const mainController = {
         return res.render(path.join(__dirname, '../views/contact'))
     },
 
+    processContact: function (req, res) {
+        res.cookie();
+        return res.render(path.join(__dirname, '../views/contact'))
+    },
 
  }
 

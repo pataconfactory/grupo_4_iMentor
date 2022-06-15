@@ -193,7 +193,7 @@ window.addEventListener('load', function () {
     });
 
     let dateError = document.getElementById('error-date');
-    campoDuration.addEventListener('blur', function () {
+    dateError.addEventListener('blur', function () {
     let dateValue = campoDate.value;
     if (!dateValue) {
         dateError.innerHTML = 'Debe seleccionar la fecha de la mentoría';
