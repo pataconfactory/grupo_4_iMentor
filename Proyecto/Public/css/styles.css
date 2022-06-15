@@ -313,7 +313,7 @@ main .register-form .boxes {
     margin-top: 1.5%;
 }
 
-main .contact-form .text-danger, .register-form .text-danger, main .formulario-edicion-productos .text-danger, main .password-form .registerbox-pw .text-danger{
+main .container-contact-main .text-danger, main .contact-form .text-danger, .register-form .text-danger, main .formulario-edicion-productos .text-danger, main .password-form .registerbox-pw .text-danger{
     display: flex;
     justify-content: flex-start;
     color: #ab0d2f;
@@ -2567,6 +2567,8 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
     align-items: center;
     justify-content: center;
     background: linear-gradient( #C1DFF0, transparent);
+    flex-direction: column;
+    padding-top: 120px;
 }
 
 .contact-form {
@@ -2577,7 +2579,7 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
     width: 80%;
     max-width: 600px;
     border-radius: 15px;
-    margin: 130px 0px 50px 0px;
+    margin: 20px 0px 50px 0px;
     box-shadow: 0 0 12px rgb(0 0 0 / 20%);
 }
 
@@ -2610,6 +2612,16 @@ main .botones-pagina-en-construccion .btn-pagina-construccion a, h3{
     margin: 20px auto 0;
     border-radius: 30px;
     
+}
+
+main .container-contact-main .message-error{
+    color: #ab0d2f;
+    font-weight: bold;
+    padding: 0px;
+    font-size: 18px;
+    margin: 10px auto;
+    text-align: center;
+    width: 70%;
 }
 /*###############################################################*/
 

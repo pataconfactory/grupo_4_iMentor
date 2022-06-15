@@ -7,6 +7,11 @@
     <%- include('./partials/header') %>
     <main>
         <div class="container-contact-main">
+            <% if(locals.mensaje_usuario != undefined) { %>
+                <div>
+                    <p class="message-error"><%= locals.mensaje_usuario %></p>
+                </div>
+            <% } %>
             <form action="/contact/" method="POST" class="contact-form">
                 <h3>Contáctanos</h3>
                 <input type="text" name="name" id="name" placeholder="Ingrese su nombre"

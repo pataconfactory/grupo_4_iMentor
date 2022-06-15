@@ -24,20 +24,19 @@ const mainController = {
             return res.render(path.join(__dirname, '../views/contact'), {errors: errors.mapped(), old: req.body});
         }
 
-        db.Contact.create({
-            contact_user_name: req.body.name,
-            contact_user_email: req.body.email,
-            phone: req.body.phone,
-            contact_message: req.body.message
-        })
-        .then((contacto) => {
-            return res.redirect('/contact/sent');
-        });
-    },
-
-    contactSent: function (req, res) {
-        res.cookie();
-        return res.render(path.join(__dirname, '../views/contactSent'))
+        if(errors.errors.length == 0){
+            db.Contact.create({
+                contact_user_name: req.body.name,
+                contact_user_email: req.body.email,
+                phone: req.body.phone,
+                contact_message: req.body.message
+            })
+            .then((contacto) => {
+                let mensaje_usuario = "Su mensaje fue enviado con éxito, dentro de poco nuestro equipo se pondrá en contacto con usted. Gracias por comunicarse con i_Mentor."
+                return res.render(path.join(__dirname, '../views/contact'), {mensaje_usuario})
+            });
+        }
+        
     }
 
  }

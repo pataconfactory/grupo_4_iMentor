@@ -11,6 +11,4 @@ router.get('/paginaEnConstruccion', mainController.paginaConstruccion);
 router.get('/contact', mainController.contact);
 router.post('/contact', validationsContact, mainController.processContact);
 
-router.get('/contact/sent', mainController.contactSent);
-
 module.exports = router;
