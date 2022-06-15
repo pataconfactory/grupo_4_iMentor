@@ -267,7 +267,7 @@ const productsController = {
             include: [
                 {association: "booking_invoice"},
             ]
-        })
+        });
         
         Promise.all([products, bookings, users, invoices])
         .then(function([products, bookings, users, invoices]) {
@@ -275,7 +275,7 @@ const productsController = {
             if(productInvoice.length == 0){
                 return res.render(path.join(__dirname, '../views/products/productInvoice'), {products})
             } else if(productInvoice.length > 0){
-                return res.render(path.join(__dirname, '../views/products/productCart'), {products, invoices, users}) 
+                return res.render(path.join(__dirname, '../views/products/productInvoice'), {products, invoices, users}) 
             }
         })
     }

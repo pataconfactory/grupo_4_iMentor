@@ -10,14 +10,22 @@
     <main>
         <div class="contenedor-carrito">
             <h1>Servicios en la Cesta</h1>
-            <% if(locals.bookings == undefined){ %>
+            <% if( (locals.bookings == undefined) && (locals.invoices == undefined)){ %>
                 <div class="contenedor_cesta_vacia">
                     <img class="cesta_vacia" src= "/img/empty_cart_retina.png" alt= "imagen de cesta vacía">
                     <h2 class="mensaje">oops!</h2>
                     <h2 class="mensaje_ceta_vacia">Tu Cesta está Vacía...</h2>
                     <p>No tiene artículos en su cesta de compras. Tal vez el producto se movió o eliminó, o tal vez simplemente escribió mal la dirección.</p>
                 </div>
-            <% } else { %>
+            <% } else if((locals.bookings) && (locals.invoices) && (locals.reservas_sin_pagar == undefined)){ %>
+
+                    <div class="contenedor_cesta_vacia">
+                        <img class="cesta_vacia" src= "/img/empty_cart_retina.png" alt= "imagen de cesta vacía">
+                        <h2 class="mensaje">oops!</h2>
+                        <h2 class="mensaje_ceta_vacia">Tu Cesta está Vacía...</h2>
+                        <p>No tiene artículos en su cesta de compras. Tal vez el producto se movió o eliminó, o tal vez simplemente escribió mal la dirección.</p>
+                    </div>
+            <% } else if(locals.bookings && (locals.invoices == undefined)){ %>
                 <div class="shop">
                     <div class="seccion-productos"> 
                         <% for(oneBooking of bookings) { %>
@@ -42,22 +50,22 @@
                                         <button class="btn-area" type="submit"><a href="#"><i class="fa fa-trash"></i><span class="btn2">Eliminar</span></a></button>  
                                     </form>
                                 </div>
-                            </article>
+                            </article> 
                         <% } %>             
                     </div>
                     <div class="right-bar">
                         <form class="form-totals" action="/products/productCart/<%= locals.userLogged.user_id %>" method="POST">
                             <label>Subtotal:</label>
-                            <input class="promocion" type="number" name="subtotal" id="subtotal" placeholder="$" min="0" value="<%= cifras.subTotal %>">
+                            <input class="promocion" type="number" step="0.01" name="subtotal" id="subtotal" placeholder="$" min="0" value="<%= cifras.subTotal %>">
                             <hr>
                             <label>IVA (21%):</label>
-                            <input class="promocion" type="number" name="iva" id="iva" placeholder="$" min="0" value="<%= cifras.iva %>">
+                            <input class="promocion" type="number" step="0.01" name="iva" id="iva" placeholder="$" min="0" value="<%= cifras.iva %>">
                             <hr>
                             <label>Total:</label>
-                            <input class="promocion" type="number" name="total" id="total" placeholder="$" min="0" value="<%= cifras.total %>">
+                            <input class="promocion" type="number" step="0.01" name="total" id="total" placeholder="$" min="0" value="<%= cifras.total %>">
                             <hr>
                             <label>Método de Pago:</label>
-                                <select class="promocion" name="metodo_pago" id="metodo_pago" value="">
+                                <select class="promocion" name="metodo_pago" id="metodo_pago" value="" required>
                                 <option value="">seleccione el método de pago</option>
                                 <% let metodosPago = ["Tarjeta de débito","Tarjeta de crédito", "MercadoPago"];%>
                                 <% for (const oneMetodoPago of metodosPago) { %>
@@ -68,7 +76,63 @@
                         </form>
                     </div>
                 </div>
-            <% } %>     
+            <% } else {%>
+                <div class="shop">
+                    <div class="seccion-productos"> 
+                        <% let reservas_sin_pagar = locals.reservas_sin_pagar %>
+                        <% let comparacion %>
+                        <% for(oneBooking of bookings) { %>
+                            <% comparacion = reservas_sin_pagar.includes(oneBooking.booking_id) %>
+                            <% if(comparacion) { %>
+                                <article class="servicio">
+                                    <img src="/img/products/<%= `${oneBooking.product_booking.product_image}` %>" alt="imagen del producto">
+                                    <div class="content">
+                                        <h3><a href="/products/detail/<%= oneBooking.product_id %>"><%= oneBooking.product_booking.product_name %></a></h3>
+                                        <br>
+                                        <% for(oneUser of users) { %>
+                                            <% if(oneUser.user_id == oneBooking.product_booking.user_id){%>
+                                                <h4>Mentor: <%= oneUser.first_name%> <%= oneUser.last_name%></h4>
+                                            <% } %> 
+                                        <% } %>
+                                        <h4 class="horas">0<%= oneBooking.product_booking.duration %> hora</h4> 
+                                        <h4>Día: <%= oneBooking.product_booking.day %> a las <%= oneBooking.product_booking.time %></h4>
+                                        <% let dateDB = oneBooking.product_booking.date; %>
+                                        <% let array_date = dateDB.split('-'); %>
+                                        <% let fecha_con_formato = array_date[2] +'-'+ array_date[1] +'-'+ array_date[0] %>
+                                        <h4>Fecha: <%= fecha_con_formato %></h4>
+                                        <h4><%= oneBooking.product_booking.price %>$<i class="fas fa-tag"></i></h4>
+                                        <form class="" action="/products/productCart/<%= oneBooking.booking_id %>?_method=DELETE" method="POST">
+                                            <button class="btn-area" type="submit"><a href="#"><i class="fa fa-trash"></i><span class="btn2">Eliminar</span></a></button>  
+                                        </form>
+                                    </div>
+                                </article>
+                            <% } %>
+                        <% } %>             
+                    </div>
+                    <div class="right-bar">
+                        <form class="form-totals" action="/products/productCart/<%= locals.userLogged.user_id %>" method="POST">
+                            <label>Subtotal:</label>
+                            <input class="promocion" type="number" step="0.01" name="subtotal" id="subtotal" placeholder="$" min="0" value="<%= cifras.subTotal %>">
+                            <hr>
+                            <label>IVA (21%):</label>
+                            <input class="promocion" type="number" step="0.01" name="iva" id="iva" placeholder="$" min="0" value="<%= cifras.iva %>">
+                            <hr>
+                            <label>Total:</label>
+                            <input class="promocion" type="number" step="0.01" name="total" id="total" placeholder="$" min="0" value="<%= cifras.total %>">
+                            <hr>
+                            <label>Método de Pago:</label>
+                                <select class="promocion" name="metodo_pago" id="metodo_pago" value="" required>
+                                <option value="">seleccione el método de pago</option>
+                                <% let metodosPago = ["Tarjeta de débito","Tarjeta de crédito", "MercadoPago"];%>
+                                <% for (const oneMetodoPago of metodosPago) { %>
+                                    <option value="<%= oneMetodoPago %>"><%= oneMetodoPago %></option>
+                                <% } %>
+                                </select>                            
+                            <button type="submit" class=""><i class="fas fa-credit-card"></i>Pagar</button>  
+                        </form>
+                    </div>
+                </div>
+            <% } %>    
         </div>
         <div class="slide-container">
             <h2>También podría interesarte</h2>

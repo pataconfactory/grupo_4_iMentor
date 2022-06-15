@@ -11,7 +11,20 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         },
         invoice_date: {
-            type: DataTypes.DATE
+            type: DataTypes.DATEONLY,
+            defaultValue: sequelize.fn('NOW'),
+        },
+        payment_method: {
+            type: DataTypes.STRING(50),
+            allowNull: false
+        },
+        subtotal: {
+            type: DataTypes.DECIMAL(20),
+            allowNull: false
+        },
+        iva: {
+            type: DataTypes.DECIMAL(20),
+            allowNull: false
         },
         total: {
             type: DataTypes.DECIMAL(20),

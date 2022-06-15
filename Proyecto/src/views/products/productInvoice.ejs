@@ -20,34 +20,33 @@
             <% } else { %>
                 <div class="shop">
                     <div class="seccion-productos"> 
-                        <% for(oneBooking of bookings) { %>
+                        <% for(oneInvoice of invoices) { %>
                             <article class="servicio">
-                                <img src="/img/products/<%= `${oneBooking.product_booking.product_image}` %>" alt="imagen del producto">
+                                <% for(oneProduct of products) { %>
+                                    <% if(oneProduct.product_id == oneInvoice.booking_invoice.product_id){%>
+                                        <img src="/img/products/<%= `${oneProduct.product_image}` %>" alt="imagen del producto">
+                                    <% } %> 
+                                <% } %>
                                 <div class="content">
-                                    <h3><a href="/products/detail/<%= oneBooking.product_id %>"><%= oneBooking.product_booking.product_name %></a></h3>
-                                    <br>
-                                    <% for(oneUser of users) { %>
-                                        <% if(oneUser.user_id == oneBooking.product_booking.user_id){%>
-                                            <h4>Mentor: <%= oneUser.first_name%> <%= oneUser.last_name%></h4>
+                                    <% let dateDB = oneInvoice.invoice_date; %>
+                                    <% let fecha = dateDB.toISOString().split('T')[0] %>
+                                    <% let hora = dateDB.toISOString().split('T')[1] %>
+                                    <% let hora_formato = hora.split('.')[0] %>
+                                    <h4>Factura: <%= oneInvoice.invoice_id %></h4>
+                                    <h4>Reserva: <%= oneInvoice.booking_id %></h4>
+                                    <h4>Fecha: <%= fecha %> <%= hora_formato %></h4>
+                                    <h4>Método de pago: <%= oneInvoice.payment_method %></h4>
+                                    <h4>Sub-total: $<%= oneInvoice.subtotal %></h4>
+                                    <h4>IVA: $<%= oneInvoice.iva %></h4>
+                                    <h4>Total: $<%= oneInvoice.total %></h4>
+                                    <% for(oneProduct of products) { %>
+                                        <% if(oneProduct.product_id == oneInvoice.booking_invoice.product_id){%>
+                                            <h4>Mentoria: "<%= oneProduct.product_name %>"</h4>
                                         <% } %> 
                                     <% } %>
-                                    <h4 class="horas">0<%= oneBooking.product_booking.duration %> hora</h4> 
-                                    <h4>Día: <%= oneBooking.product_booking.day %> a las <%= oneBooking.product_booking.time %></h4>
-                                    <% let dateDB = oneBooking.product_booking.date; %>
-                                    <% let array_date = dateDB.split('-'); %>
-                                    <% let fecha_con_formato = array_date[2] +'-'+ array_date[1] +'-'+ array_date[0] %>
-                                    <h4>Fecha: <%= fecha_con_formato %></h4>
-                                    <h4><%= oneBooking.product_booking.price %>$<i class="fas fa-tag"></i></h4>
-                                    <h4 class="unit">Cantidad:<input type="number" name="cantidad" min="1" value="1"></h4>
-                                    <form class="" action="/products/productCart/<%= oneBooking.booking_id %>?_method=DELETE" method="POST">
-                                        <button class="btn-area" type="submit"><a href="#"><i class="fa fa-trash"></i><span class="btn2">Eliminar</span></a></button>  
-                                    </form>
                                 </div>
-                            </article>
-                        <% } %>             
-                    </div>
-                    <div class="right-bar">
-                        
+                            </article> 
+                        <% } %>            
                     </div>
                 </div>
             <% } %>     
