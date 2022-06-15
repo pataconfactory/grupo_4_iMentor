@@ -12,7 +12,8 @@ const apiProductsController = {
                 {association: "categories"},
                 {association: "users_products"},
                 {association: "bookings_product"}
-            ]
+            ],
+            order:[['product_id', 'ASC']]
         })
         .then(products => {
             let frontEnd = 0;
@@ -121,6 +122,7 @@ const apiProductsController = {
             res.json(respuesta);
         });
     }
+
 };
 
 module.exports = apiProductsController;

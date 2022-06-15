@@ -21,7 +21,8 @@
                                 <option class="ui-ux" value="3">UI/UX</option>
                                 <option class="database" value="4">Base de Datos</option>
                                 <option class="marketing" value="5">Marketing Digital</option>
-                                <option clas="data-analysis" value="6">Análisis de Datos</option>
+                                <option clagit add .
+                                s="data-analysis" value="6">Análisis de Datos</option>
                         </select>
                     </form>
                 </p>
@@ -32,7 +33,6 @@
                         <a href="/products/create" class="crear-producto"><i class="fas fa-plus-circle"></i> Crear producto</a>
                     </div>
                 <% } %>
-                <% if(locals.array_id_productos_facturados.length == 0){ %>
                     <section class="container" id="slider">
                         <% for(let i=0; i< products.length; i++) { %> 
                             <% let dateDB = products[i].date; %>
@@ -60,39 +60,6 @@
                             </div>
                         <% } %>
                     </section>
-                <% } else if (locals.array_id_productos_facturados.length > 0) {%>
-                    <section class="container" id="slider">
-                        <% let comparacion %>
-                        <% for(let i=0; i< products.length; i++) { %>
-                            <% comparacion = locals.array_id_productos_facturados.includes(products[i].product_id) %>
-                            <% if(!comparacion) { %> 
-                                <% let dateDB = products[i].date; %>
-                                <% let array_date = dateDB.split('-'); %>
-                                <% let fecha_con_formato = array_date[2] +'-'+ array_date[1] +'-'+ array_date[0] %>               
-                                <div class="miniatura">
-                                    <img src="/img/products/<%= `${products[i].product_image}` %>" alt="Imagen del producto">
-                                    <div class="product-details">
-                                        <h3><%= products[i].categories.category_name %></h3>
-                                        <h3 class="name-product"><%= products[i].product_name %></h3>
-                                        <h3><%= products[i].users_products.first_name %> <%= products[i].users_products.last_name %></h3>
-                                        <p>0<%= products[i].duration %> hora</p>
-                                        <p><%= products[i].day %></p>
-                                        <p class="date"><%= fecha_con_formato %></p>
-                                        <p><%= products[i].time %></p>
-                                        <p><span>$<%= products[i].price %></span></p>
-                                        <a href="/products/detail/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-eye"></i>Ver</a>
-                                        <% if(locals.isLogged && locals.userLogged.role_id == 2) { %>
-                                            <a href="/products/edit/<%= products[i].product_id %>" class="boton-final"><i class="fas fa-pen"></i>Editar</a>
-                                            <form class="eliminar" action="/products/delete/<%= products[i].product_id %>?_method=DELETE" method="POST">
-                                                <button type="submit" class="boton-final-eliminar"><i class="fas fa-trash"></i>Eliminar</button>  
-                                            </form>
-                                        <% } %>  
-                                    </div>  
-                                </div>
-                            <% } %>
-                        <% } %>
-                    </section>
-                <% } %>
             </div>
         </div>
     </main>

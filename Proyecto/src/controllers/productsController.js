@@ -6,36 +6,16 @@ const db = require('../../database/models');
 const Op = db.Sequelize.Op;
 
 const productsController = {
-    products: function (req, res) {
-        let products = db.Product.findAll({
-                include: [{
-                        association: "mentors"
-                    },
-                    {
-                        association: "categories"
-                    },
-                    {
-                        association: "users_products"
-                    }
-                ]
-        });
-        let invoices = db.Invoice.findAll({
+    products: function(req, res) {
+        db.Product.findAll({
             include: [
-                {association: "booking_invoice"},
-            ]
-        });
-
-        Promise.all([products, invoices])
-        .then(function([products, invoices]) {
-            let array_id_productos_facturados = [];
-            for(oneInvoice of invoices){
-                array_id_productos_facturados.push(oneInvoice.booking_invoice.product_id)
-            }
-
-            return res.render(path.join(__dirname, '../views/products/products'), {
-                products , 
-                array_id_productos_facturados
-            })
+                {association: "mentors"},
+                {association: "categories"},
+                {association: "users_products"}
+            ] 
+        })
+        .then(function(products) {           
+            return res.render(path.join(__dirname, '../views/products/products'), {products})
         })
     },
 
