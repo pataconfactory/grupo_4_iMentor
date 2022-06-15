@@ -11,7 +11,8 @@ const apiUsersController = {
                 {association: "roles"},
                 {association: "users"},
                 {association: "users_products"}
-            ]
+            ],
+            order:[['user_id', 'ASC']]
         })
         .then(users => {
             let usuarios = [];
