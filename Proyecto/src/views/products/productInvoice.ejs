@@ -41,7 +41,11 @@
                                     <h4>Total: $<%= oneInvoice.total %></h4>
                                     <% for(oneProduct of products) { %>
                                         <% if(oneProduct.product_id == oneInvoice.booking_invoice.product_id){%>
-                                            <h4>Mentoria: "<%= oneProduct.product_name %>"</h4>
+                                            <% let dateDB = oneProduct.date; %>
+                                            <% let array_date = dateDB.split('-'); %>
+                                            <% let fecha_con_formato = array_date[2] +'-'+ array_date[1] +'-'+ array_date[0] %>
+                                            <h4>Mentoria:</h4>
+                                            <h4><%= oneProduct.product_name %> el <%= fecha_con_formato %> a las <%= oneProduct.time %></h4>
                                         <% } %> 
                                     <% } %>
                                 </div>
