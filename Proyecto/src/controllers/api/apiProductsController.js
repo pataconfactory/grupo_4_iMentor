@@ -64,6 +64,10 @@ const apiProductsController = {
                     id: oneProduct.product_id,
                     name: oneProduct.product_name,
                     description: oneProduct.product_description,
+                    category: [{ 
+                        id_category: oneProduct.categories.product_category_id,
+                        name_category: oneProduct.categories.category_name
+                    }],
                     detail: 'http://localhost:3001/api/products/'+oneProduct.product_id
                 })
             }
@@ -89,38 +93,32 @@ const apiProductsController = {
         })
         .then(product => {
             let respuesta = {
-                id: product.user_id,
-                nombre: product.product_name,
-                id_categoria: product.product_category_id,
-                categoria: product.categories.category_name,
+                id_product: product.user_id,
+                name: product.product_name,
+                id_category: product.product_category_id,
                 id_mentor: product.mentor_id,
-                id_usuario: product.user_id,
-                descripción: product.product_description,
-                día: product.day,
-                horario: product.time,
-                fecha: product.date,
-                precio: product.price,
-                duración: product.duration,
-                imagen_de_perfil: 'http://localhost:3001/api/users/'+product.user_id+'/'+product.product_image
+                id_user: product.user_id,
+                description: product.product_description,
+                day: product.day,
+                time: product.time,
+                date: product.date,
+                price: product.price,
+                duration: product.duration,
+                category: [{ 
+                    id_category: product.categories.product_category_id,
+                    name_category: product.categories.category_name
+                }],
+                mentor: [{
+                    id_mentor: product.users_products.mentor_id,
+                    name_mentor: product.users_products.first_name +' '+ product.users_products.last_name,
+                    country_mentor: product.users_products.country,
+                    title_mentor: product.users_products.title,
+                    description_mentor: product.mentors.description,
+                    imagen_del_mentor: '/img/avatars/'+product.users_products.avatar
+                }],
+                imagen_del_producto: '/img/products/'+product.product_image
             }
             res.json(respuesta);
-        });
-    },
-
-    image: (req, res) => {
-        db.Product.findByPk(req.params.id, {
-            include: [
-                {association: "mentors"},
-                {association: "categories"},
-                {association: "users_products"},
-                {association: "bookings_product"}
-            ]
-        })
-        .then(product => {
-            let image = {
-                imagen_del_producto: product.product_image
-            }
-            res.json(image);
         });
     }
 };

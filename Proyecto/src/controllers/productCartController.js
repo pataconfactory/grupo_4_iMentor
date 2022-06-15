@@ -166,6 +166,7 @@ const productCartController = {
                 reservas.push(
                     producto = {
                         booking_id: oneBooking.booking_id,
+                        product_id : oneBooking.product_id,
                         price_to_pay: oneBooking.price_to_pay
                     }
                 );
@@ -175,6 +176,7 @@ const productCartController = {
             let iva; 
             let total;
             let resultado;
+            let id;
             for(let i=0; i< reservas.length; i++) {
                 resultado = array_id_facturas.includes(reservas[i].booking_id)
                 if(!resultado){
@@ -193,7 +195,14 @@ const productCartController = {
                         subtotal: subTotal,
                         iva: iva,
                         total: total
-                    })
+                    });
+
+                    /*id = reservas[i].product_id;
+                    db.Product.destroy({
+                        where: {
+                            product_id: id
+                        }
+                    });*/
                 }
             }
             return res.redirect('/products/productInvoice');     

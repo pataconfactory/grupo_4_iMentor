@@ -10,7 +10,4 @@ router.get('/', apiUsersController.list);
 //Detalle del usuario
 router.get('/:id', apiUsersController.detail);
 
-//Imagen del usuario
-router.get('/:id/:avatar', apiUsersController.avatar);
-
 module.exports = router;

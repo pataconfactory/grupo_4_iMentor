@@ -10,7 +10,4 @@ router.get('/', apiProductsController.list);
 //Detalle del producto
 router.get('/:id', apiProductsController.detail);
 
-//Imagen del producto
-router.get('/:id/:image', apiProductsController.image);
-
 module.exports = router;

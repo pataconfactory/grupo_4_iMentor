@@ -76,29 +76,14 @@ const apiUsersController = {
                     país: user.country,
                     título: user.title,
                     id_mentor: user.mentor_id,
-                    imagen_de_perfil: 'http://localhost:3001/api/users/'+user.user_id+'/'+user.avatar
+                    imagen_de_perfil: '/img/avatars/'+user.avatar
                 }
                 res.json(respuesta);
             }    
         });
-    },
-
-    avatar: (req, res) => {
-        db.User.findByPk(req.params.id, {
-            include: [
-                {association: "roles"},
-                {association: "users"},
-                {association: "bookings_user"},
-                {association: "users_products"},
-            ]
-        })
-        .then(user => {
-            let avatar = {
-                imagen_de_perfil: user.avatar
-            }
-            res.json(avatar);
-        });
     }
+
+    
 };
 
 module.exports = apiUsersController;
