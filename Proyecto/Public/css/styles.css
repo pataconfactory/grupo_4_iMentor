@@ -102,8 +102,9 @@ header .navegacion .menu-para-logueados .dropdown-container {
     display: none;
     background-color: #ffc600;
     width: 65%;
-    height: 80px;
+    height: 95px;
     flex-direction: column;
+    justify-content: center;
 }
 
 header .navegacion .menu-para-logueados .dropdown-container a{
