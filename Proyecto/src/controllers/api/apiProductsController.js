@@ -64,7 +64,7 @@ const apiProductsController = {
                     id: oneProduct.product_id,
                     name: oneProduct.product_name,
                     description: oneProduct.product_description,
-                    detail: 'http://localhost:3000/api/products/'+oneProduct.product_id
+                    detail: 'http://localhost:3001/api/products/'+oneProduct.product_id
                 })
             }
 
@@ -101,7 +101,7 @@ const apiProductsController = {
                 fecha: product.date,
                 precio: product.price,
                 duración: product.duration,
-                imagen_de_perfil: 'http://localhost:3000/api/users/'+product.user_id+'/'+product.product_image
+                imagen_de_perfil: 'http://localhost:3001/api/users/'+product.user_id+'/'+product.product_image
             }
             res.json(respuesta);
         });

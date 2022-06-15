@@ -22,7 +22,7 @@ const apiUsersController = {
                     id: oneUser.user_id,
                     name: oneUser.first_name +" "+ oneUser.last_name,
                     email: oneUser.email,
-                    detail: 'http://localhost:3000/api/users/'+oneUser.user_id
+                    detail: 'http://localhost:3001/api/users/'+oneUser.user_id
                 })
             }
 
@@ -58,7 +58,7 @@ const apiUsersController = {
                     género: user.genre,
                     país: user.country,
                     título: user.title,
-                    imagen_de_perfil: 'http://localhost:3000/api/users/'+user.user_id+'/'+user.avatar
+                    imagen_de_perfil: 'http://localhost:3001/api/users/'+user.user_id+'/'+user.avatar
                 }
                 res.json(respuesta);
             }
@@ -76,7 +76,7 @@ const apiUsersController = {
                     país: user.country,
                     título: user.title,
                     id_mentor: user.mentor_id,
-                    imagen_de_perfil: 'http://localhost:3000/api/users/'+user.user_id+'/'+user.avatar
+                    imagen_de_perfil: 'http://localhost:3001/api/users/'+user.user_id+'/'+user.avatar
                 }
                 res.json(respuesta);
             }    
