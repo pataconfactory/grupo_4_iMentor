@@ -34,7 +34,7 @@
                 <div class="text-danger">
                     <p class="email-error"></p>
                 </div>
-                <input type="number" name="phone" id="phone" placeholder="Ingrese su número de telefóno"
+                <input type="number" name="phone" id="phone" placeholder="Ingrese su número de telefóno" min="0"
                 value="<%= locals.old ? old.phone : null %>">
                 <% if (locals.errors && errors.phone) { %>
                 <div class="text-danger">
