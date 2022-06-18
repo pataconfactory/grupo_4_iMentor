@@ -69,7 +69,8 @@ const apiProductsController = {
                         id_category: oneProduct.categories.product_category_id,
                         name_category: oneProduct.categories.category_name
                     }],
-                    detail: 'http://localhost:3001/api/products/'+oneProduct.product_id
+                    detail: 'http://localhost:3001/api/products/'+oneProduct.product_id,
+                    imagen_del_producto: '/img/products/'+ oneProduct.product_image
                 })
             }
 

@@ -124,7 +124,7 @@ window.addEventListener('load', function () {
     let passwordLength = document.querySelector('.password-length');
 
     password.addEventListener('focus', function () {
-        passwordLength.innerHTML = 'La constraseña debe tener al menos 8 caracteres';
+        passwordLength.innerHTML = 'La constraseña debe tener al menos 8 caracteres, un número, una letra mayúscula y un caracter especial';
     });
 
     password.addEventListener('blur', function () {
@@ -134,7 +134,7 @@ window.addEventListener('load', function () {
         } else if (passwordValue.length > 7) {
             passwordLength.innerHTML = '';
         } else {
-            passwordLength.innerHTML = 'La constraseña debe tener al menos 8 caracteres';
+            passwordLength.innerHTML = 'La constraseña debe tener al menos 8 caracteres, un número, una letra mayúscula y un caracter especial';
         }
     });
 

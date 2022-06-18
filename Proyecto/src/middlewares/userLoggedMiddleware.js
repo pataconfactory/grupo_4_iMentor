@@ -3,7 +3,7 @@ const db = require("../../database/models");
 function userLoggedMidleware(req, res, next) {
     res.locals.isLogged = false;
     
-    if(req.cookies.userEmail){
+    /* if(req.cookies.userEmail){
         let emailInCookie = req.cookies.userEmail;
     
         db.User.findOne({
@@ -22,7 +22,7 @@ function userLoggedMidleware(req, res, next) {
                 req.session.userLogged = userFromCookie.dataValues;
             }
         })
-    }
+    } */
 
     if (req.session && req.session.userLogged) {
         res.locals.isLogged = true;

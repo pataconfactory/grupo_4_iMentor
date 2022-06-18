@@ -7,7 +7,7 @@ window.addEventListener('load', function () {
         if (!passwordValue) {
             passwordError.innerHTML = 'Debes completar la contraseña';
         } else if(passwordValue.length < 8) {
-            passwordError.innerHTML = 'La constraseña debe tener al menos 8 caracteres';
+            passwordError.innerHTML = 'La constraseña debe tener al menos 8 caracteres, un número, una letra mayúscula y un caracter especial';
         } else {
             passwordError.innerHTML = '';
         }
@@ -40,8 +40,8 @@ window.addEventListener('load', function () {
             passwordError.innerHTML = 'Debes completar la contraseña';
             errors.push('Debes completar la contraseña');
         } else if (passwordValue.length < 8) {
-            passwordError.innerHTML = 'La constraseña debe tener al menos 8 caracteres';
-            errors.push('La constraseña debe tener al menos 8 caracteres');
+            passwordError.innerHTML = 'La constraseña debe tener al menos 8 caracteres, un número, una letra mayúscula y un caracter especial';
+            errors.push('La constraseña debe tener al menos 8 caracteres, un número, una letra mayúscula y un caracter especial');
         } else {
             passwordError.innerHTML = '';
         }
