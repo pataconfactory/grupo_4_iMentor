@@ -120,3 +120,20 @@
 <p>Se pusheo la validación de creación de producto con lo requerido para la sprint</p>
 <p>Hicimos una meeting para revisar el funcionamiento de la aplicación crear, actualizar, eliminar un usuario y un producto</p>
 <p>Definimos qué mejoras tenemos que seguir trabajando para el siguiente sprint, como validación de producto en el front, agregar api de países a la edición del usuario, crear vista de contacto</p>
+  
+
+<h2>Modificaciones Sprint 8:</h2>
+<strong>Lunes 6 de Junio</strong>
+<p>Dividimos las tareas y nos asignamos las actividades en las tarjetas de React y API en user stories</p>
+<strong>Martes 7 de Junio</strong>
+<p>Se creó el campo date en el modelo de productos y se cambió en la base de datos</p>
+<strong>Viernes 10 de Junio</strong>
+<p>Se comenzó a crear el dashboard con React, pero se requerían las apis</p>
+<strong>Viernes 10 de Junio</strong>
+<p>Se creó la api de usuarios y de productos</p>
+<strong>Viernes 10 de Junio</strong>
+<p>Se creó la api de usuarios y de productos</p>
+<strong>Viernes 12 de junio</strong>
+<p>Se creó la api de categories y se pusheó el dashboard consumiendo data</p>
+<p>Cómo detalles pendientes se creó la vista de contacto, con una nueva tabla en la base de datos, validaciones backen y frontend</p>
+<p>Se creó la lógica de filtrar los productos por categoría</p>
